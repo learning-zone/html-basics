@@ -4,7 +4,7 @@
 1. What is "Web-workers" and how it works?
 1. What are the meta tags ? explain its features?
 1. How to make page responsive?
-1. Difference between _<span>_ tag and _<div>_ tag?
+1. Difference between span tag and div tag?
 1. How "Geo-location API" works in html5?
 1. Difference between SVG and Canvas.
 1. Specify browser engine and its usage.
