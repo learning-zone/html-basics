@@ -4,12 +4,25 @@
 1. What is "Web-workers" and how it works?
 1. What are the meta tags ? explain its features?
 1. How to make page responsive?
-1. Difference between span tag and div tag?
+1. Difference between <span> tag and <div> tag?
 1. How "Geo-location API" works in html5?
 1. Difference between SVG and Canvas.
 1. Specify browser engine and its usage.
 1. Difference between Session storage and Cookies Storage.
 1. How localStorage works in browser ?
 1. Explain Drag and Drop tag in html5
-1. Explain WebSQL in html5 
-1. What is difference between Flex-box and grid in css?
+1. Why to use IndexedDB instead of Web SQL in HTML 5?
+1. What are the Server-Sent Events (SSE)?
+1. What are the different kinds of Doctypes available?
+1. Explain Application Cache.
+1. Explain Microdata in HTML5.
+1. List some of the formatting elements in HTML5.
+1. List the API’s available in HTML5.
+1. What is a manifest file in HTML?
+1. What are different new form element types provided by HTML5?
+1. What are the HTML tags which deprecate in HTML5?
+1. What are Waves in HTML?
+1. What is Vibration API in HTML5?
+1. What is the Battery Status API in HTML5?
+1. How you can Use Modernizr in HTML 5?
+1. What is the use of WebSocket API?
