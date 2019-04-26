@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Web-Workers</title>
+  </head>
+  <body>
+    <p>Count numbers: <output id="result"></output></p>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+    <script>
+      /**
+				*	Web Workers is a simple means for web content to run scripts in background threads. 
+				*	The worker thread can perform tasks without interfering with the user interface. 
+				*	In addition, they can perform I/O using XMLHttpRequest (although the responseXML and 
+				*	channel attributes are always null). Once created, a worker can send messages to the 
+				*	JavaScript code that created it by posting messages to an event handler specified by 
+				*	that code (and vice versa).
+        *
+			**/
+      var w;
+      function startWorker() {
+        if (typeof Worker !== 'undefined') {
+          if (typeof w == 'undefined') {
+            w = new Worker('lib/js/web-workers-example.js');
+          }
+          w.onmessage = function(event) {
+            document.getElementById('result').innerHTML = event.data;
+          };
+        } else {
+          document.getElementById('result').innerHTML =
+            'Sorry, your browser does not support Web Workers...';
+        }
+      }
+
+      function stopWorker() {
+        w.terminate();
+        w = undefined;
+      }
+    </script>
+  </body>
+</html>
