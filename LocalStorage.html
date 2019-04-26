@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+         <title>HTML5 LocalStorage</title>
+   </head>
+   <body>
+      <script type="text/javascript">
+               
+        if(localStorage){ // Check if the localStorage object exists
+            
+            localStorage.setItem("first_name", "Pradeep");
+
+            document.write("Reading from browser localStorage: Hi, " + localStorage.getItem("first_name"));
+        } else {
+            alert("Sorry, your browser do not support localStorage.");
+        }
+      </script>
+
+   </body>
+</html>
+    
