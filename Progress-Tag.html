@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Progress Tag</title>
+  </head>
+  <body>
+    <p>
+      Progress:<progress id="bar" value="0" max="100"><span>0</span>%</progress>
+    </p>
+
+    <script type="text/javascript">
+      var i = 0;
+      var progressBar = document.getElementById('bar');
+
+      function countNumbers() {
+        if (i < 100) {
+          i = i + 1;
+          progressBar.value = i;
+          // For browsers that don't support progress tag
+          progressBar.getElementsByTagName('span')[0].textContent = i;
+        }
+        // Wait for sometime before running this script again
+        setTimeout('countNumbers()', 100);
+      }
+      countNumbers();
+    </script>
+  </body>
+</html>
