@@ -13,7 +13,6 @@
 1. Explain Drag and Drop tag in html5
 1. Why to use IndexedDB instead of Web SQL in HTML 5?
 1. What are the Server-Sent Events (SSE)?
-1. What are the different kinds of Doctypes available?
 1. Explain Application Cache.
 1. Explain Microdata in HTML5.
 1. List some of the formatting elements in HTML5.
