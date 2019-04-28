@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Server Sent Events</title>
+  </head>
+  <body>
+    <h1>Getting server updates</h1>
+    <div id="result"></div>
+
+    <script>
+      /**
+       Server-sent events (SSE) is a technology enabling a browser to receive automatic 
+       updates from a server via HTTP connection. The Server-Sent Events EventSource API 
+       is standardized as part of HTML5 by the W3C.
+
+       Note:- Internet Explorer doesn't support SSE
+      **/
+      if (typeof EventSource !== 'undefined') {
+        var source = new EventSource('sse_example.php');
+        source.onmessage = function(event) {
+          document.getElementById('result').innerHTML += event.data + '<br>';
+        };
+      } else {
+        document.getElementById('result').innerHTML =
+          'Sorry, your browser does not support server-sent events...';
+      }
+    </script>
+  </body>
+</html>
