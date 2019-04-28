@@ -21,7 +21,5 @@
 1. What are different new form element types provided by HTML5?
 1. What are the HTML tags which deprecate in HTML5?
 1. What are Waves in HTML?
-1. What is Vibration API in HTML5?
-1. What is the Battery Status API in HTML5?
 1. How you can Use Modernizr in HTML 5?
 1. What is the use of WebSocket API?
