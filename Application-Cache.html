@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html manifest="example.appcache">
+  <head>
+    <title>HTML5 Application Cache</title>
+  </head>
+  <body>
+    <p id="time">
+      <button onclick="getDateTime()">Get Date and Time</button>
+    </p>
+    <p>
+      Try opening <a href="Application-Cache.html" target="_blank">this page</a>,
+      then go offline, and reload the page. The website data will be still
+      accessible.
+    </p>
+    <script type="text/javascript">
+     /**
+        The cache manifest in HTML5 is a software storage feature which provides the ability to access a web application even without a network connection.
+        This feature is in the process of being removed from the Web platform. ( Use service workers instead )
+     **/
+      function getDateTime() {
+        var date = new Date();
+        document.getElementById('time').innerHTML = date;
+      }
+    </script>
+  </body>
+</html>
