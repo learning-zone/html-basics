@@ -16,7 +16,7 @@
        Note:- Internet Explorer doesn't support SSE
       **/
       if (typeof EventSource !== 'undefined') {
-        var source = new EventSource('sse_example.php');
+        var source = new EventSource('lib/sse_example.php');
         source.onmessage = function(event) {
           document.getElementById('result').innerHTML += event.data + '<br>';
         };
