@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Microdata</title>
+  </head>
+  <body>
+    <!--
+        Microdata is a standardized way to provide additional semantics in web pages.
+
+        Search engines benefit greatly from direct access to this structured data because 
+        it allows search engines to understand the information on web pages and provide more 
+        relevant results to users.
+
+        At a high level, microdata consists of a group of name-value pairs
+        1) itemscope:- To create an item
+        2) itemprop:- To add a property to an item
+    -->
+    <div itemscope>
+      <p>My name is <span itemprop="name">Elizabeth</span>.</p>
+    </div>
+
+    <div itemscope>
+      <p>My name is <span itemprop="name">Daniel</span>.</p>
+    </div>
+  </body>
+</html>
