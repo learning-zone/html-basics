@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Form Elements in HTML5</title>
+  </head>
+  <body>
+        <!-- Datalist Tag -->
+          <p>Enter your favorite browser name:</p>
+            Datalist: <input type="text" list="browsers" name="favorite_browser">
+            <datalist id="browsers">
+                <option value="Firefox">
+                <option value="Chrome">    
+                <option value="Internet Explorer">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+         </div>
+      
+        <!-- 
+            The <keygen> element generates an encryption key for passing encrypted data to a server. 
+            Note:- keygen is Deprecated
+        -->
+          <p>Encryption: <keygen name="key"></p>
+
+        <!-- Output Tag --> 
+        <p>Output Tag: <form oninput="result.value = parseInt(first.value) + parseInt(second.value)">
+          <input name="first" type="number" value="0"> +
+          <input name="second" type="number" value="0"> =
+          <output name="result" for="first second">0</output>
+        </form></p>
+
+        <!-- Search Tag-->
+        <p>Search Tag: <input type="search" name="search"></p>
+              
+        <!-- Email Tag -->
+        <p>Email Tag: <input type="email" name="email" required></p>
+
+        <!-- URL Tag -->
+        <p>URL Tag: <input type="url" name="url" required></p>
+
+        <!-- Tel Tag-->
+        <p>Tel Tag: <input type="tel" name="tel" id="tel" required></p>
+
+        <!-- Number Tag -->
+        <p>Number Tag: <input type="number" min="5" max="18" step="0.5" value="9" name="shoe-size" title="shoe-size"></p>
+
+        <!-- Range Tag -->
+        <p>Range Tag: <input id="skill" type="range" min="1" max="10" value="0"></p>
+
+        <!-- Date Tag -->
+        <p>Date Tag: <input id="dob" name="dob" type="date"></p>
+
+        <!-- Month Tag -->
+        <p>Month Tag: <input id="expiry" name="expiry" type="month" required></p>
+
+        <!-- Week Tag-->
+        <p>Week Tag: <input id="vacation" name="vacation" type="week"></p>
+
+        <!-- Time Tag -->
+        <p>Time Tag: <input id="exit-time" name="exit-time" type="time"></p>
+
+        <!-- Color Tag -->
+        <p>Color Tag: <input id="color" name="color" type="color"></p>
+
+        <!-- Autocomplete -->
+        <p>Autocomplete: <input type="text" autocomplete="off"></p>
+
+        <!-- Autofocus -->
+        <p>Autofocus: <input type="text" autofocus></p>
+
+        <!-- Pattern Matching -->
+        <p>Pattern Matching: <input type="text" pattern="[A-Z]*"></p>
+
+        <!-- Readonly -->
+        <p>Readonly: <input type="text" value="This text is Read Only" readonly></p>
+
+    </body>
+</html>
