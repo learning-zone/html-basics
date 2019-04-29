@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 WebSocket API</title>
+    <script>
+      /**
+        The WebSocket API is an advanced technology that makes it possible to open 
+        a two-way interactive communication session between the user's browser and 
+        a server. With this API, you can send messages to a server and receive event-driven 
+        responses without having to poll the server for a reply.
+      **/
+
+      // Create WebSocket connection.
+      const socket = new WebSocket('ws://localhost:8080/');
+
+      // Connection opened
+      socket.addEventListener('open', function(event) {
+        socket.send('Hello Server!');
+      });
+
+      // Listen for messages
+      socket.addEventListener('message', function(event) {
+        console.log('Message from server ', event.data);
+      });
+    </script>
+  </head>
+  <body>
+    <p>HTML5 WebSocket API Example</p>
+  </body>
+</html>
