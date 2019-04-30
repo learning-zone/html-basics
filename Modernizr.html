@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>Modernizr in HTML 5</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  </head>
+  <body>
+    <p>Modernizr in HTML 5</p>
+    <script>
+      /**
+         Modernizr tests which native CSS3 and HTML5 features are available in the current UA 
+         and makes the results available to you in two ways: as properties on a global Modernizr 
+         object, and as classes on the <html> element. This information allows you to progressively 
+         enhance your pages with a granular level of control over the experience.
+
+         https://modernizr.com/docs/#what-is-modernizr
+
+      **/
+      // Detects support for the <canvas> element for 2D drawing.
+      if (!Modernizr.canvas) {
+        console.log('This browser does not supports HTML5 canvas!');
+      }
+
+      // Detects support for the Application Cache
+      if (!Modernizr.applicationcache) {
+        console.log('This browser does not supports Application Cache');
+      }
+
+      // Detect support for the Battery API
+      if (!Modernizr.batteryapi) {
+        console.log('This browser does not supports Battery API');
+      }
+
+      // Detects support for the contenteditable attribute of elements
+      if (!Modernizr.contenteditable) {
+        console.log('This browser does not supports Contenteditable');
+      }
+    </script>
+  </body>
+</html>
