@@ -5,14 +5,14 @@
   <dt>Colors, Styles, and Shadows</dt>
   <dd>
 
-    |  Property    |	Description                                                                   |
-    |:-------------|:-------------------------------------------------------------------------------|
-    |fillStyle	   | Sets or returns the color, gradient, or pattern used to fill the drawing       |
-    |strokeStyle   | Sets or returns the color, gradient, or pattern used for strokes               |
-    |shadowColor   | Sets or returns the color to use for shadows                                   |
-    |shadowBlur	   | Sets or returns the blur level for shadows                                     |
-    |shadowOffsetX | Sets or returns the horizontal distance of the shadow from the shape           |
-    |shadowOffsetY | Sets or returns the vertical distance of the shadow from the shape             |
+|  Property    |	Description                                                                 |
+|:-------------|:-------------------------------------------------------------------------------|
+|fillStyle	   | Sets or returns the color, gradient, or pattern used to fill the drawing       |
+|strokeStyle   | Sets or returns the color, gradient, or pattern used for strokes               |
+|shadowColor   | Sets or returns the color to use for shadows                                   |
+|shadowBlur	   | Sets or returns the blur level for shadows                                     |
+|shadowOffsetX | Sets or returns the horizontal distance of the shadow from the shape           |
+|shadowOffsetY | Sets or returns the vertical distance of the shadow from the shape             |
 
   </dd>
 
