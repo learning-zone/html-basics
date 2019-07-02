@@ -1,6 +1,5 @@
 <dl>
-  <dt>HTML Canvas Reference</dt>
-  
+  <dt>HTML Canvas Reference<br/></dt>
   <dd><code>canvas</code> is an HTML element which can be used to draw graphics via JavaScript. This can, for instance, be used to draw graphs, combine photos, or create animations.</dd>
 
   <dt>Colors, Styles, and Shadows</dt>
