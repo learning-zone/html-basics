@@ -83,4 +83,20 @@
 |measureText()	|Returns an object that contains the width of the specified text   |
 
   </dd>
+
+ <dt>HTML Layout Engines</dt>
+ <dd>
+
+
+|Engine	      |Status	        |Embedded in                                                                           |
+|:------------|:--------------|:-------------------------------------------------------------------------------------|
+|WebKit	      |Active	        |Safari browser, plus all browsers hosted on the iOS App Store                         |
+|Blink	      |Active	        |Google Chrome and all other Chromium-based browsers like Opera and Microsoft Edge     |
+|Gecko	      |Active	        |Firefox browser and Thunderbird email client, plus forks like SeaMonkey and Waterfox  |
+|KHTML	      |Discontinued	  |Konqueror browser                                                                     |
+|Presto	      |Discontinued	  |formerly in the Opera browser                                                         |
+|EdgeHTML	    |Discontinued	  |formerly in the Microsoft Edge browser                                                |
+|Trident	    |Discontinued	  |Internet Explorer browser and Microsoft Outlook email client                          |
+
+ </dd>
 </dl>
