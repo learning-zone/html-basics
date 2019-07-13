@@ -17,7 +17,6 @@
 
 * it controls whether the browsers uses "standards" or "quirks" mode to render the document.
 
----
 
 #### Q. What happens when DOCTYPE is not given?
 * The web page is rendered in quirks mode. 
@@ -25,7 +24,6 @@
     
     In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
 
----
 
 #### Q. What's the difference between standards mode and quirks mode?
 
@@ -33,27 +31,21 @@
 
 * quirks mode in browser allows u to render page for as old browsers. This is for backward compatibility.
 
----
 
 #### Q. What's the difference between HTML and XHTML?
 
 The Extensible Hypertext Markup Language, or XHTML, has two important notes for front end developers. 1) It needs to be well formed, meaning all elements need to be closed and nested correctly or you will return errors. 2) Since it is more strict than HTML is requires less pre-processing by the browser, which may improve your sites performance.
 
----
 
 #### Q. Why html5 doctype does not have a DTD definition?
     
 * HTML5 is no longer based on SGML (Standard Generalized Markup Language) which actually requires a DTD for parsing/serializing, so we don't require a DTD anymore.
   
 
----
-
 #### Q. What does the lang attribute in html do?
     
 * Helps in styling pages bu using them in css :lang() pseudo class Spelling and grammar checkers Languade detection by search engines
 
-
----
 
 #### Q. What is desktop first and mobile first design approach
 * Desktop first : 
@@ -64,7 +56,6 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
     
     In desktop first approach the media queries will be written with respect to max-width whereas in mobile first approach media queries will be written with respect to min-width
 
----
 
 #### Q. How do you serve a page with content in multiple languages?
 
@@ -74,7 +65,6 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 
 * In the back end, the HTML markup will contain `i18n` placeholders and content for the specific language stored in YML or JSON formats. The server then dynamically generates the HTML page with content in that particular language, usually with the help of a back end framework.
 
----
 
 #### Q. What kind of things must you be wary of when design or developing for multilingual sites?
 
@@ -94,12 +84,10 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 
 * Language reading ```direction``` In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
 
----
 
 #### Q. What are ```data-``` attributes good for?
 * The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
 
----
 
 #### Q. Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 
@@ -117,7 +105,6 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 
 * new data storage
 
----
 
 #### Q. Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.
 
@@ -127,7 +114,6 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 
 * ```localStorage```: Like cookie, where data can be saved and retrieved after browser sessions, but stored in memory like sessionStorage. Data is stored as plain key value pairs and can be stored as Json objects.
 
----
 
 #### Q. Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```.
 
@@ -140,7 +126,6 @@ Delays script execution until the HTML parser has finished. A positive effect of
 * Asynchronous Execution: script async
 HTML parsing may continue and the script will be executed as soon as it’s ready.    
 
----
 
 #### Q. Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
 **Placing `<link>`s in the `<head>`**
@@ -154,13 +139,10 @@ Putting `<link>`s in the head is part of proper specification in building an opt
 An exception for positioning of `<script>`s at the bottom is when your script contains `document.write()`, but these days it's not a good practice to use `document.write()`. Also, placing `<script>`s at the bottom means that the browser cannot start downloading the scripts until the entire document is parsed. This ensures your code that needs to manipulate DOM elements will not throw and error and halt the entire script. If you need to put `<script>` in the `<head>`, use the `defer` attribute, which will achieve the same effect of downloading and running the script only after the HTML is parsed.
 
 
----
-
 #### Q. What is progressive rendering?
 
 It is rendering the data as it’s being downloaded. This is particularly useful on documents that have tons of text. You can see it on a page that has a lot of text – and where the scrollbar will get shorter in length as more data comes in – increasing the vertical size of the document – yet, it would display the downloaded text immediately. As more data came down the pipe – the page would get longer. This didn’t rely on the closing body or html tag – and it certainly wouldn’t render the entire page on the server – then download – which is a standard complaint about modern frameworks. But there is a technique called “Flushing the Buffer” that can be implemented on the server. I don’t know that much about the technique, but found a few resources discussing it.
 
----
 
 #### Q. What is Critical Rendering Path
 
@@ -171,7 +153,6 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 * Generating the Layout
 * Painting
 
----
 
 #### Q. SSR VS CSR
 
@@ -184,27 +165,21 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 * for SSR, the user can start viewing the page while all of that is happening. For the CSR world, you need to wait for all of the above to happen and then have the virtual dom moved to the browser dom for the page to be viewable.
 
 
----
-
 #### Q. What is the difference between a ```<span>``` and a ```<div>```?
 * ```<div>``` is a block level element which means it will render it on it's own line with a width of a 100% of the parent element.
 * ```<span>``` is an inline element which means it will render on the same line as the previous element, if it is also an inline element, and it's width will be determined by it's content.
 
 
----
-
 #### Q. Name 5 common block-level and inline HTML elements.
 * block elements ```<h1>, <p>, <ul>, <ol>, <li>```,
 * inline elements ```<span>, <a>, <strong>, <i>, <img>```
 
----
 
 #### Q. What are semantic and non-semantic elements?
 * A semantic element clearly describes its meaning to both the browser and the developer.
   
 * non-semantic elements: ```<div>``` and ```<span>``` Tells nothing about its content. semantic elements: ```<form>, <table>, and <article>``` Clearly defines its content.
 
----
 
 #### Q. What is the purpose of ```main``` element?
 
@@ -212,7 +187,6 @@ The HTML ```<main>``` element represents the dominant content of the <body> of a
 
 ```<main>``` doesn't contribute to the document's outline; that is, unlike elements such as ```<body>```, headings such as ```<h2>```, and such, ```<main>``` doesn't affect the DOM's concept of the structure of the page. It's strictly informative.
 
----
 
 #### Q. Why to use HTML5 semantic tags?
 
@@ -226,7 +200,6 @@ As their name says, this is for semantic purposes only. It's for improving the a
 <nav class="some-meaningless-class"><ul><li><a>...</nav>
 ```
 
----
 
 #### Q. Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
 
@@ -239,8 +212,6 @@ As their name says, this is for semantic purposes only. It's for improving the a
 * ```<footer>``` is used to hold information that should appear at the end of a section of content and contain additional information about the section. Author’s name, copyright information, and related links are typical examples of such content.
 
 
----
-
 #### Q. When should you use ```section```, ```div``` or ```article```?
 
 * ```<section>```, group of content inside is related to a single theme, and should appear as an entry in an outline of the page. It’s a chunk of related content, like a subsection of a long article, a major part of the page (eg the news section on the homepage), or a page in a webapp’s tabbed interface. A section normally has a heading (title) and maybe a footer too.
@@ -249,7 +220,6 @@ As their name says, this is for semantic purposes only. It's for improving the a
 
 * ```<div>```, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
 
----
 
 #### Q. What is Character Encoding?
 
@@ -259,7 +229,6 @@ To display an HTML page correctly, a web browser must know which character set (
 <meta charset="UTF-8">
 ```
 
----
 
 #### Q. What is the purpose of meta tags?
 
@@ -281,7 +250,6 @@ To display an HTML page correctly, a web browser must know which character set (
 </html>
 ```
 
----
 
 #### Q. What does async and defer refer in script tag ? Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```
 * Async: Downloads the script file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading.
@@ -291,12 +259,9 @@ To display an HTML page correctly, a web browser must know which character set (
 * the async attribute is used to indicate to the browser that the script file can be executed asynchronously. The HTML parser does not need to pause at the point it reaches the script tag to fetch and execute, the execution can happen whenever the script becomes ready after being fetched in parallel with the document parsing.
 
 * The defer attribute tells the browser to only execute the script file once the HTML document has been fully parsed.     
-   
 
----
 
 #### Q. If you have 5 different stylesheets, how would you best integrate them into the site?
-
 
 Break them up onto to different CDN servers to leverage domain sharding.
 
@@ -305,21 +270,17 @@ Employ the “new old” technique of adding “above the fold” css inline in 
 Using SASS I would break up my files into related chunks – all of which are concatenated and compressed using compass, sass with gulp or grunt in your build process.
 
 
----
-
 #### Q. Can you describe the difference between progressive enhancement and graceful degradation?
 
 * Graceful degradation is when you initially serve the best possible user experience, with all modern functionality, but use feature detection to “gracefully degrade” parts of your application with a fallback or polyfill.
 
 * Progressive enhancement ensures a page works at the lowest expected abilities of browsers. So if you have a JavaScript web application that enhances a persons ability to send information to a database with features like ajax – at the very least you need to provide the ability for a person to send that same information without JavaScript enabled. In this case a simple form with full-page refresh will do what you need.
 
----
 
 #### Q. How would you optimize a website's assets/resources?
 
 Concatenate and compress CSS, JavaScript and HTML files wherever possible, configure your server to deliver a Gzip files, cache resources, set longer expirations dates on http headers of resources you don’t expect to change often – such as a logo. Images can be some of the heaviest files we deliver, so compress wisely. Soon the picture element will be implemented across browsers, so we can optimize the delivery of image content. Also in the near future consider using WebP format for images – it is quite smaller in size than JPEG and PNG files. Finally, use a CDN or other domains to host your resources and leverage domain sharding.
 
----
 
 #### Q. What is the purpose of cache busting and how can you achieve it?
 
@@ -337,25 +298,24 @@ A common technique to force the browser to re-download the file is to append a q
 
 The browser considers it a different file but prevents the need to change the file name.    
 
----
 
 #### Q. Name 3 ways to decrease page load (perceived or actual load time).
 
-1) LocalStorage 2) Caching resources 3) dns-prefetch (sample below) 4) Keep resources on a CDN
+1. LocalStorage 
+1. Caching resources 
+1. dns-prefetch (sample below) 
+1. Keep resources on a CDN
 
----
 
 #### Q. Explain what ARIA and screenreaders are, and how to make a website accessible.
 
 Screen readers are software programs that  provide assistive technologies that allow people with disabilities (such as no sight, sound or mouse-ing ability) to use web applications. You can make your sites more accessible by following ARIA standards such as semantic HTML, alt attributes and using [role=button] in the expected ways
 
----
 
 #### Q. What is the purpose of the ```alt``` attribute on images?
 
 The ```alt``` attribute provides alternative information for an image if a user cannot view it. The ```alt``` attribute should be used to describe any images except those which only serve a decorative purposes, in which case it should be left empty.
 
----
 
 #### Q. Explain some of the pros and cons for CSS animations versus JavaScript animations.
 
@@ -371,13 +331,11 @@ Regarding optimization and responsiveness the debate bounces back and forth but,
 
 * CSS animations being declarative are not programmable therefore limited in capability. 
 
----
 
 #### Q. What does CORS stand for and what issue does it address?
 
 Cross Origin Resource Sharing. To address the fact that browsers restrict cross-origin HTTP requests initiated from within scripts. CORS gives web servers cross-domain access controls, which enable secure cross-domain data transfers.
 
----
 
 #### Q.  Ways to improve website performance
 
@@ -469,7 +427,6 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 
 * Avoid Empty Image src
 
----
 
 #### Q. How does the browser rendering engine work?
 
@@ -486,8 +443,6 @@ In order to render content the browser has to go through a series of steps:
 * Paint.
        
 
----
-
 #### Q. What is the DOM? How does the DOM work? Explain in as much detail as possible.
 
 The DOM (Document Object Model) is a cross-platform API that treats HTML and XML documents as a tree structure consisting of nodes. These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
@@ -501,8 +456,6 @@ The DOM (Document Object Model) is a cross-platform API that treats HTML and XML
 
 * Setting the innerHTML property to a new value runs the string through the HTML parser, offering an easy way to append dynamic HTML content to a node.
 
-
----
 
 #### Q. Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc
 * Chrome: 
