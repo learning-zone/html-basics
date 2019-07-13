@@ -1,7 +1,7 @@
 # HTML Questions
 
 1. What are the semantic tags available in html5?
-1. What is **Web-workers** and how it works?
+1. What is **Web-Workers** and how it works?
 1. What are the meta tags? explain its features?
 1. How to make page responsive?
 1. Difference between <code>span</code> tag and <code>div</code> tag?
