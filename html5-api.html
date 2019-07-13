@@ -11,24 +11,13 @@
         //  Time API
         // -----------
            var time = performance.now();
-           document.getElementById('time').innerHTML = time;
-
-        // ---------------
-        //  Vibration API
-        // ---------------
-            navigator.vibrate(2000); // Vibrate once for 2 seconds
-        
-        // --------------------
-        //  Battery Status API
-        // --------------------
-            var percentageLevel = navigator.battery.level * 100; // Retrieves the percentage of the current level of the device's battery
-            console.log("Battery Percentage: " +percentageLevel);
+           document.getElementById('time').innerHTML = time + ' ms';
 
         // -------------------------
         //  Network Information API
         // -------------------------
             
-            console.log('Network type: ' + navigator.connection.type);
+            console.log('Network Type: ' + navigator.connection.type);
 
             console.log('Effective bandwidth estimate ( downlink ): ' + navigator.connection.downlink + 'Mb/s');
 
@@ -69,5 +58,16 @@
                     }
                 }
             }
+
+        // ---------------
+        //  Vibration API
+        // ---------------
+        navigator.vibrate(2000); // Vibrate once for 2 seconds
+        
+        // --------------------
+        //  Battery Status API
+        // --------------------
+            var percentageLevel = navigator.battery.level * 100; // Retrieves the percentage of the current level of the device's battery
+            console.log("Battery Percentage: " +percentageLevel);
   </script>
 </html>
