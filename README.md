@@ -22,5 +22,5 @@
 1. What are Waves in HTML?
 1. How you can Use Modernizr in HTML 5?
 1. What is the use of WebSocket API?
-1. What does enctype='multipart/form-data' mean?
+1. What does **enctype='multipart/form-data'** mean?
 
