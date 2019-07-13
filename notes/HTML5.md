@@ -1,5 +1,5 @@
 
-## HTML5 Notes 
+## HTML5 Notes
 
 
 #### Q. What does a DOCTYPE do?
@@ -188,19 +188,6 @@ The HTML ```<main>``` element represents the dominant content of the <body> of a
 ```<main>``` doesn't contribute to the document's outline; that is, unlike elements such as ```<body>```, headings such as ```<h2>```, and such, ```<main>``` doesn't affect the DOM's concept of the structure of the page. It's strictly informative.
 
 
-#### Q. Why to use HTML5 semantic tags?
-
-As their name says, this is for semantic purposes only. It's for improving the automated processing of documents. Automated processing happens more often than you realize - each website ranking from search engines is derived from automated processing of all the website out there.
-
-```css
-// machine: okay, this structure looks like it might be a navigation element?
-<div class="some-meaningless-class"><ul><li><a href="internal_link">...</div>
-
-// machine: ah, a navigation element!
-<nav class="some-meaningless-class"><ul><li><a>...</nav>
-```
-
-
 #### Q. Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
 
 * ```<header>``` is used to contain introductory and navigational information about a section of the page. This can include the section heading, the author’s name, time and date of publication, table of contents, or other navigational information.
@@ -303,7 +290,7 @@ The browser considers it a different file but prevents the need to change the fi
 
 1. LocalStorage 
 1. Caching resources 
-1. dns-prefetch (sample below) 
+1. DNS-prefetch (sample below) 
 1. Keep resources on a CDN
 
 
