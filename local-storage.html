@@ -1,15 +1,26 @@
 <!DOCTYPE HTML>
 <html>
    <head>
-         <title>HTML5 Local-Storage</title>
+         <title>HTML5 localStorage</title>
    </head>
    <body>
       <script type="text/javascript">
                
-        if(localStorage){ // Check if the localStorage object exists
+        if(window.localStorage){ // Check if the localStorage object exists
         
+            // Insert in localStorage     
             localStorage.setItem("first_name", "Pradeep");
+
+            // Retrive item
             document.write("Reading from browser localStorage: Hi, " + localStorage.getItem("first_name"));
+
+            // Remove items
+            localStorage.removeItem('first_name');
+
+            // Clear all items
+            localStorage.clear();
+
+            console.log('After Removing: '+ localStorage.getItem("first_name"));
         } else {
             alert("Sorry, your browser do not support localStorage.");
         }
