@@ -114,6 +114,15 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 
 * ```localStorage```: Like cookie, where data can be saved and retrieved after browser sessions, but stored in memory like sessionStorage. Data is stored as plain key value pairs and can be stored as Json objects.
 
+|                                        | `cookie`                                                 | `localStorage` | `sessionStorage` |
+| -------------------------------------- | -------------------------------------------------------- | -------------- | ---------------- |
+| Initiator                              | Client or server. Server can use `Set-Cookie` header     | Client         | Client           |
+| Expiry                                 | Manually set                                             | Forever        | On tab close     |
+| Persistent across browser sessions     | Depends on whether expiration is set                     | Yes            | No               |
+| Sent to server with every HTTP request | Cookies are automatically being sent via `Cookie` header | No             | No               |
+| Capacity (per domain)                  | 4kb                                                      | 5MB            | 5MB              |
+| Accessibility                          | Any window                                               | Any window     | Same tab         |
+
 
 #### Q. Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```.
 
