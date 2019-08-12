@@ -35,7 +35,7 @@ Example:
 ```
 Output
 ```
-Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'temp3230' exceeded the quota.
+Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'key3230' exceeded the quota.
 ```
 #### Q. What does a DOCTYPE do?
 
