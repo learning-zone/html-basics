@@ -4,6 +4,39 @@
 #### Q. Does  localStorage throw error after reaches maximum limits?
 Yes
 
+Example:
+```html
+<!DOCTYPE HTML>
+<html>
+   <head>
+         <title>HTML5 localStorage</title>
+   </head>
+   <body>
+      <script type="text/javascript">
+        try{
+            if(window.localStorage){ // Check if the localStorage object exists
+            
+                var result = "";
+                var characters  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                var charactersLength = characters.length;
+                for(var i = 0; i < 10000; i++){
+                    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+                    localStorage.setItem("key"+i, result);
+                }  
+            } else {
+                alert("Sorry, your browser do not support localStorage.");
+            }
+        } catch(e) {
+            console.log('Exception: '+e);
+        }
+      </script>
+   </body>
+</html>
+```
+Output
+```
+Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'temp3230' exceeded the quota.
+```
 #### Q. What does a DOCTYPE do?
 
 * DOCTYPE is an abbreviation for ```DOCument TYPE```.  
