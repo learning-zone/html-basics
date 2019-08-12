@@ -1,6 +1,8 @@
 
 ## HTML5 Notes
 
+#### Q. Does  localStorage throw error after reaches maximum limits?
+Yes
 
 #### Q. What does a DOCTYPE do?
 
