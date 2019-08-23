@@ -69,7 +69,9 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting
 
 #### Q. What's the difference between HTML and XHTML?
 
-The Extensible Hypertext Markup Language, or XHTML, has two important notes for front end developers. 1) It needs to be well formed, meaning all elements need to be closed and nested correctly or you will return errors. 2) Since it is more strict than HTML is requires less pre-processing by the browser, which may improve your sites performance.
+The Extensible Hypertext Markup Language, or XHTML, has two important notes for front end developers.   
+1) It needs to be well formed, meaning all elements need to be closed and nested correctly or you will return errors.   
+2) Since it is more strict than HTML is requires less pre-processing by the browser, which may improve your sites performance.
 
 
 #### Q. Why html5 doctype does not have a DTD definition?
