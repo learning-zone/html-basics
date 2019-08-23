@@ -190,7 +190,7 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 * Painting
 
 
-#### Q. SSR VS CSR
+#### Q. What are the Benefits of Server Side Rendering Over Client Side Rendering?
 
 * We are using server side rendering for two reasons:
     * performance benefit for our customers
