@@ -438,9 +438,6 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
     * Layout rendering ```engine``` Webkit. 
     * JavaScript ```engine``` JavascriptCore i.e Nitro
 
-
----
-
 #### Q. Why html5 doctype does not have a DTD definition?
     
 * HTML5 is no longer based on SGML (Standard Generalized Markup Language) which actually requires a DTD for parsing/serializing, so we don't require a DTD anymore.
