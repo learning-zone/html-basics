@@ -56,13 +56,9 @@ The DOM (Document Object Model) is a cross-platform API that treats HTML and XML
 In order to render content the browser has to go through a series of steps:
 
 * Document Object Model(DOM)
-    
 * CSS object model(CSSOM)
-    
 * Render Tree
-    
 * Layout
-    
 * Paint.
 
 #### Q. What does a DOCTYPE do?
@@ -91,7 +87,6 @@ In order to render content the browser has to go through a series of steps:
 #### Q. What's the difference between standards mode and quirks mode?
 
 * Quirks mode was to support websites built before standards became widely implemented.
-
 * Quirks mode in browser allows to render page for old browsers. This is for backward compatibility.
 
 
@@ -100,58 +95,6 @@ In order to render content the browser has to go through a series of steps:
 The Extensible Hypertext Markup Language, or XHTML, has two important notes for front end developers.   
 1) It needs to be well formed, meaning all elements need to be closed and nested correctly or you will return errors.   
 2) Since it is more strict than HTML is requires less pre-processing by the browser, which may improve your sites performance.
-
-
-#### Q. Why html5 doctype does not have a DTD definition?
-    
-* HTML5 is no longer based on SGML (Standard Generalized Markup Language) which actually requires a DTD for parsing/serializing, so we don't require a DTD anymore.
-  
-
-#### Q. What does the lang attribute in html do?
-    
-* Helps in styling pages by using them in css :lang() pseudo class Spelling and grammar checkers Languade detection by search engines
-
-
-#### Q. What is desktop first and mobile first design approach
-* Desktop first : 
-        General selectors and styles designed to make the site look good on DESKTOP screens defined globally. But they affect all devices, and must be overridden by max-width media queries targeting minimum screen size
-
-* Mobile First : 
-        General selectors and styles designed to make the site look good on small MOBILE screens go here. But they affect all devices, and must be overridden by min-width media queries targeting maximum scrren size
-    
-    In desktop first approach the media queries will be written with respect to max-width whereas in mobile first approach media queries will be written with respect to min-width
-
-
-#### Q. How do you serve a page with content in multiple languages?
-
-* The question is a little vague, I will assume that it is asking about the most common case, which is how to serve a page with content available in multiple languages, but the content within the page should be displayed only in one consistent language.
-
-* When an HTTP request is made to a server, the requesting user agent usually sends information about language preferences, such as in the `Accept-Language` header. The server can then use this information to return a version of the document in the appropriate language if such an alternative is available. The returned HTML document should also declare the `lang` attribute in the `<html>` tag, such as `<html lang="en">...</html>`.
-
-* In the back end, the HTML markup will contain `i18n` placeholders and content for the specific language stored in YML or JSON formats. The server then dynamically generates the HTML page with content in that particular language, usually with the help of a back end framework.
-
-
-#### Q. What kind of things must you be wary of when design or developing for multilingual sites?
-
-* Use `lang` attribute in your HTML.
-    
-* Directing users to their native ```language``` Allow a user to change his country/language easily without hassle.
-    
-* Text in images is not a scalable approach Placing text in an image is still a popular way to get good-looking, non-system fonts to display on any computer. However, to translate image text, each string of text will need to have a separate image created for each language. Anything more than a handful of replacements like this can quickly get out of control.
-    
-* Restrictive words/sentence ```length``` Some content can be longer when written in another language. Be wary of layout or overflow issues in the design. It's best to avoid designing where the amount of text would make or break a design. Character counts come into play with things like headlines, labels, and buttons. They are less of an issue with free-flowing text such as body text or comments.
-    
-* Be mindful of how colors are ```perceived``` Colors are perceived differently across languages and cultures. The design should use color appropriately.
-    
-* Formatting dates and ```currencies``` Calendar dates are sometimes presented in different ways. Eg. "May 31, 2012" in the U.S. vs. "31 May 2012" in parts of Europe.
-
-* Do not concatenate translated ```strings``` Do not do anything like `"The date today is " + date`. It will break in languages with different word order. Use a template string with parameters substitution for each language instead. For example, look at the following two sentences in English and Chinese respectively: `I will travel on {% date %}` and `{% date %} 我会出发`. Note that the position of the variable is different due to grammar rules of the language.
-
-* Language reading ```direction``` In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
-
-
-#### Q. What are ```data-``` attributes good for?
-* The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
 
 
 #### Q. Consider HTML5 as an open web platform. What are the building blocks of HTML5?
@@ -497,6 +440,58 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 
 
 ---
+
+#### Q. Why html5 doctype does not have a DTD definition?
+    
+* HTML5 is no longer based on SGML (Standard Generalized Markup Language) which actually requires a DTD for parsing/serializing, so we don't require a DTD anymore.
+  
+
+#### Q. What does the lang attribute in html do?
+    
+* Helps in styling pages by using them in css :lang() pseudo class Spelling and grammar checkers Languade detection by search engines
+
+
+#### Q. What is desktop first and mobile first design approach
+* Desktop first : 
+        General selectors and styles designed to make the site look good on DESKTOP screens defined globally. But they affect all devices, and must be overridden by max-width media queries targeting minimum screen size
+
+* Mobile First : 
+        General selectors and styles designed to make the site look good on small MOBILE screens go here. But they affect all devices, and must be overridden by min-width media queries targeting maximum scrren size
+    
+    In desktop first approach the media queries will be written with respect to max-width whereas in mobile first approach media queries will be written with respect to min-width
+
+
+#### Q. How do you serve a page with content in multiple languages?
+
+* The question is a little vague, I will assume that it is asking about the most common case, which is how to serve a page with content available in multiple languages, but the content within the page should be displayed only in one consistent language.
+
+* When an HTTP request is made to a server, the requesting user agent usually sends information about language preferences, such as in the `Accept-Language` header. The server can then use this information to return a version of the document in the appropriate language if such an alternative is available. The returned HTML document should also declare the `lang` attribute in the `<html>` tag, such as `<html lang="en">...</html>`.
+
+* In the back end, the HTML markup will contain `i18n` placeholders and content for the specific language stored in YML or JSON formats. The server then dynamically generates the HTML page with content in that particular language, usually with the help of a back end framework.
+
+
+#### Q. What kind of things must you be wary of when design or developing for multilingual sites?
+
+* Use `lang` attribute in your HTML.
+    
+* Directing users to their native ```language``` Allow a user to change his country/language easily without hassle.
+    
+* Text in images is not a scalable approach Placing text in an image is still a popular way to get good-looking, non-system fonts to display on any computer. However, to translate image text, each string of text will need to have a separate image created for each language. Anything more than a handful of replacements like this can quickly get out of control.
+    
+* Restrictive words/sentence ```length``` Some content can be longer when written in another language. Be wary of layout or overflow issues in the design. It's best to avoid designing where the amount of text would make or break a design. Character counts come into play with things like headlines, labels, and buttons. They are less of an issue with free-flowing text such as body text or comments.
+    
+* Be mindful of how colors are ```perceived``` Colors are perceived differently across languages and cultures. The design should use color appropriately.
+    
+* Formatting dates and ```currencies``` Calendar dates are sometimes presented in different ways. Eg. "May 31, 2012" in the U.S. vs. "31 May 2012" in parts of Europe.
+
+* Do not concatenate translated ```strings``` Do not do anything like `"The date today is " + date`. It will break in languages with different word order. Use a template string with parameters substitution for each language instead. For example, look at the following two sentences in English and Chinese respectively: `I will travel on {% date %}` and `{% date %} 我会出发`. Note that the position of the variable is different due to grammar rules of the language.
+
+* Language reading ```direction``` In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
+
+
+#### Q. What are ```data-``` attributes good for?
+* The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
+
 
 <dl>
   <dt>HTML Canvas Reference</dt>
