@@ -64,7 +64,7 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting
 
 * Quirks mode was to support websites built before standards became widely implemented.
 
-* quirks mode in browser allows u to render page for as old browsers. This is for backward compatibility.
+* Quirks mode in browser allows to render page for old browsers. This is for backward compatibility.
 
 
 #### Q. What's the difference between HTML and XHTML?
