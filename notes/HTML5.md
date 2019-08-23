@@ -55,7 +55,7 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting
 
 #### Q. What happens when DOCTYPE is not given?
 * The web page is rendered in quirks mode. 
-    The web browsers engines use quirks mode to support older browsers which does not follow the W3C spec.
+    The web browsers engines use quirks mode to support older browsers which does not follow the W3C specifications.
     
     In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
 
