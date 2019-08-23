@@ -81,7 +81,7 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 
 #### Q. What does the lang attribute in html do?
     
-* Helps in styling pages bu using them in css :lang() pseudo class Spelling and grammar checkers Languade detection by search engines
+* Helps in styling pages by using them in css :lang() pseudo class Spelling and grammar checkers Languade detection by search engines
 
 
 #### Q. What is desktop first and mobile first design approach
