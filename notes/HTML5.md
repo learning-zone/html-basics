@@ -163,18 +163,6 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 
 _Note: If the user decides to clear browsing data via whatever mechanism provided by the browser, this will clear out any `cookie`, `localStorage`, or `sessionStorage` stored. It's important to keep this in mind when designing for local persistance, especially when comparing to alternatives such as server side storing in a database or similar (which of course will persist despite user actions)._
 
-#### Q. Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```.
-
-* Normal Execution: script:
-Parsing of the HTML code pauses while the script is executing. For slow servers and heavy scripts this means that displaying the webpage will be delayed.
-
-* Deferred Execution: script defer
-Delays script execution until the HTML parser has finished. A positive effect of this attribute is that the DOM will be available for your script. However, since not every browser supports defer yet, can’t rely on it.
-
-* Asynchronous Execution: script async
-HTML parsing may continue and the script will be executed as soon as it’s ready.    
-
-
 #### Q. Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
 **Placing `<link>`s in the `<head>`**
 
