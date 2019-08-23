@@ -37,6 +37,34 @@ Output
 ```
 Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'key3230' exceeded the quota.
 ```
+
+#### Q. What is the DOM? How does the DOM work? 
+
+The DOM (Document Object Model) is a cross-platform API that treats HTML and XML documents as a tree structure consisting of nodes. These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
+
+
+* The DOM was designed to be independent of any particular programming language, making the structural representation of the document available from a single, consistent API.
+
+* The DOM is constructed progressively in the browser as a page loads, which is why scripts are often placed at the bottom of a page, in the <head> with a defer attribute, or inside a DOMContentLoaded event listener. Scripts that manipulate DOM nodes should be run after the DOM has been constructed to avoid errors.
+
+* document.getElementById() and document.querySelector() are common functions for selecting DOM nodes.
+
+* Setting the innerHTML property to a new value runs the string through the HTML parser, offering an easy way to append dynamic HTML content to a node.
+
+#### Q. How does the browser rendering engine work?
+
+In order to render content the browser has to go through a series of steps:
+
+* Document Object Model(DOM)
+    
+* CSS object model(CSSOM)
+    
+* Render Tree
+    
+* Layout
+    
+* Paint.
+
 #### Q. What does a DOCTYPE do?
 
 * DOCTYPE is an abbreviation for ```DOCument TYPE```.  
@@ -449,36 +477,6 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 * Make favicon.ico Small and Cacheable
 
 * Avoid Empty Image src
-
-
-#### Q. How does the browser rendering engine work?
-
-In order to render content the browser has to go through a series of steps:
-
-* Document Object Model(DOM)
-    
-* CSS object model(CSSOM)
-    
-* Render Tree
-    
-* Layout
-    
-* Paint.
-       
-
-#### Q. What is the DOM? How does the DOM work? Explain in as much detail as possible.
-
-The DOM (Document Object Model) is a cross-platform API that treats HTML and XML documents as a tree structure consisting of nodes. These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
-
-
-* The DOM was designed to be independent of any particular programming language, making the structural representation of the document available from a single, consistent API.
-
-* The DOM is constructed progressively in the browser as a page loads, which is why scripts are often placed at the bottom of a page, in the <head> with a defer attribute, or inside a DOMContentLoaded event listener. Scripts that manipulate DOM nodes should be run after the DOM has been constructed to avoid errors.
-
-* document.getElementById() and document.querySelector() are common functions for selecting DOM nodes.
-
-* Setting the innerHTML property to a new value runs the string through the HTML parser, offering an easy way to append dynamic HTML content to a node.
-
 
 #### Q. Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc
 * Chrome: 
