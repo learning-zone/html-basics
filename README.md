@@ -1,5 +1,5 @@
 
-## HTML5 Notes
+## HTML5 Interview Questions and Answers
 
 #### Q. Does  localStorage throw error after reaches maximum limits?
 Yes
