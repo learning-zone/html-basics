@@ -1,5 +1,7 @@
 ## HTML5 Interview Questions
 
+> Click :star2: if you like the project. Pull Request are highly appreciated. 
+
 1. What are the semantic tags available in html5?
 1. What is **Web-Workers** and how it works?
 1. What are the meta tags? explain its features?
