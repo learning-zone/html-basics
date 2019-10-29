@@ -3,48 +3,10 @@
 
 *Click <img src="https://github.com/learning-zone/html-interview-questions/blob/master/assets/star.png" width="18" height="18" align="absmiddle" title="Star" /> if you like the project. Pull Request are highly appreciated.*
 
-|Sl.No|HTML5 Questions|
-|-----|----------------|
-|01. |[Does  localStorage throw error after reaches maximum limits?](#q-does-localstorage-throw-error-after-reaches-maximum-limits)|
-|02. |[What is the DOM? How does the DOM work?](#q-what-is-the-dom-how-does-the-dom-work)|
-|03. |[How does the browser rendering engine work?](#q-how-does-the-browser-rendering-engine-work)|
-|04. |[What does a DOCTYPE do?](#q-what-does-a-doctype-do)|
-|05. |[What happens when DOCTYPE is not given?](#q-what-happens-when-doctype-is-not-given)|
-|06. |[What is the difference between standards mode and quirks mode?](#q-what-is-the-difference-between-standards-mode-and-quirks-mode)|
-|07. |[What is the difference between HTML and XHTML?](#q-what-is-the-difference-between-html-and-xhtml)|
-|08. |[Consider HTML5 as an open web platform. What are the building blocks of HTML5?](#q-consider-html5-as-an-open-web-platform-what-are-the-building-blocks-of-html5)|
-|09. |[Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.](#q-describe-the-difference-between-a-cookie--sessionstorage-and-localstorage)|
-|10. |[Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?](#q-why-is-it-generally-a-good-idea-to-position-css-link-s-between-head-head-and-js-script-s-just-before-body-do-you-know-any-exceptions)|
-|11. |[What is progressive rendering?](#q-what-is-progressive-rendering)|
-|12. |[What is Critical Rendering Path](#q-what-is-critical-rendering-path)
-|13. |[What are the Benefits of Server Side Rendering Over Client Side Rendering?](#q-what-are-the-benefits-of-server-side-rendering-over-client-side-rendering)|
-|14. |[What is the difference between a ```<span>``` and a ```<div>```?](#q-what-is-the-difference-between-a-span-and-a-div-)|
-|15. |[Name 5 common block-level and inline HTML elements.](#q-name-5-common-block-level-and-inline-html-elements)
-|16. |[What are semantic and non-semantic elements?](#q-what-are-semantic-and-non-semantic-elements)|
-|17. |[What is the purpose of ```main``` element?](#q-what-is-the-purpose-of-main-element)|
-|18. |[Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?](#q-define-semantic-markup-what-are-the-semantic-meanings-for-section-article-aside-nav-header-footer-and-when-how-should-each-be-used-in-structuring-html-markup)|
-|19. |[When should you use ```section```, ```div``` or ```article```?](#q-when-should-you-use-section-div-or-article)|
-|20. |[What is Character Encoding?](#q-what-is-character-encoding)|
-|21. |[What is the purpose of meta tags?](#q-what-is-the-purpose-of-meta-tags)|
-|22. |[What does async and defer refer in script tag ? Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```](#q-what-does-async-and-defer-refer-in-script-tag-describe-the-difference-between-script--script-async-and-script-defer)|
-|23. |[If you have 5 different stylesheets, how would you best integrate them into the site?](#q-if-you-have-5-different-stylesheets-how-would-you-best-integrate-them-into-the-site)|
-|24. |[Can you describe the difference between progressive enhancement and graceful degradation?](#q-can-you-describe-the-difference-between-progressive-enhancement-and-graceful-degradation)|
-|25. |[How would you optimize a website's assets/resources?](#q-how-would-you-optimize-a-website-s-assets-resources)|
-|26. |[What is the purpose of cache busting and how can you achieve it?](#q-what-is-the-purpose-of-cache-busting-and-how-can-you-achieve-it)|
-|27. |[Name 3 ways to decrease page load (perceived or actual load time).](#q-name-3-ways-to-decrease-page-load-perceived-or-actual-load-time)|
-|28. |[Explain what ARIA and screenreaders are, and how to make a website accessible.](#q-explain-what-aria-and-screenreaders-are-and-how-to-make-a-website-accessible)
-|29. |[What is the purpose of the ```alt``` attribute on images?](#q-what-is-the-purpose-of-the-alt-attribute-on-images)|
-|30. |[Explain some of the pros and cons for CSS animations versus JavaScript animations.](#q-explain-some-of-the-pros-and-cons-for-css-animations-versus-javascript-animations)
-|31. |[What does CORS stand for and what issue does it address?](#q-what-does-cors-stand-for-and-what-issue-does-it-address)|
-|32. |[ Ways to improve website performance](#q-ways-to-improve-website-performance)
-|33. |[Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc](#q-comparision-of-browsers-like-chrome-firefox-internet-explorer-safari-etc)
-|34. |[Why html5 doctype does not have a DTD definition?](#q-why-html5-doctype-does-not-have-a-dtd-definition)|
-|35. |[What does the lang attribute in html do?](#q-what-does-the-lang-attribute-in-html-do)|
-|36. |[What is desktop first and mobile first design approach](#q-what-is-desktop-first-and-mobile-first-design-approach)
-|37. |[How do you serve a page with content in multiple languages?](#q-how-do-you-serve-a-page-with-content-in-multiple-languages)|
-|38. |[What kind of things must you be wary of when design or developing for multilingual sites?](#q-what-kind-of-things-must-you-be-wary-of-when-design-or-developing-for-multilingual-sites)|
-|39. |[What are ```data-``` attributes good for?](#q-what-are-data-attributes-good-for)|
-|40. |[Explain the difference between layout, painting and compositing.](#q-explain-the-difference-between-layout-painting-and-compositing)|
+### Table of Contents
+
+* [HTML5 Events List](html5-events.md)
+
 
 #### Q. Does  localStorage throw error after reaches maximum limits?
 Yes
