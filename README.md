@@ -10,8 +10,8 @@
 |03. |[How does the browser rendering engine work?](#q-how-does-the-browser-rendering-engine-work)|
 |04. |[What does a DOCTYPE do?](#q-what-does-a-doctype-do)|
 |05. |[What happens when DOCTYPE is not given?](#q-what-happens-when-doctype-is-not-given)|
-|06. |[What's the difference between standards mode and quirks mode?](#q-what-s-the-difference-between-standards-mode-and-quirks-mode)|
-|07. |[What's the difference between HTML and XHTML?](#q-what-s-the-difference-between-html-and-xhtml)|
+|06. |[What is the difference between standards mode and quirks mode?](#q-what-is-the-difference-between-standards-mode-and-quirks-mode)|
+|07. |[What is the difference between HTML and XHTML?](#q-what-is-the-difference-between-html-and-xhtml)|
 |08. |[Consider HTML5 as an open web platform. What are the building blocks of HTML5?](#q-consider-html5-as-an-open-web-platform-what-are-the-building-blocks-of-html5)|
 |09. |[Describe the difference between a `cookie`, `sessionStorage` and `localStorage`.](#q-describe-the-difference-between-a-cookie--sessionstorage-and-localstorage)|
 |10. |[Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?](#q-why-is-it-generally-a-good-idea-to-position-css-link-s-between-head-head-and-js-script-s-just-before-body-do-you-know-any-exceptions)|
@@ -129,13 +129,13 @@ In order to render content the browser has to go through a series of steps:
     In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
 
 
-#### Q. What's the difference between standards mode and quirks mode?
+#### Q. What is the difference between standards mode and quirks mode?
 
 * Quirks mode was to support websites built before standards became widely implemented.
 * Quirks mode in browser allows to render page for old browsers. This is for backward compatibility.
 
 
-#### Q. What's the difference between HTML and XHTML?
+#### Q. What is the difference between HTML and XHTML?
 
 The Extensible Hypertext Markup Language, or XHTML, has two important notes for front end developers.   
 1) It needs to be well formed, meaning all elements need to be closed and nested correctly or you will return errors.   
