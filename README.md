@@ -597,7 +597,7 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 #### Q. How to make page responsive?
 #### Q. Difference between `span` tag and `div` tag?
 #### Q. How Geo-location API works in html5?
-#### Q. Difference between SVG and Canvas.
+#### Q. What is difference between SVG and Canvas?
 #### Q. Specify browser engine and its usage.
 #### Q. Explain Drag and Drop tag in html5.
 #### Q. Why to use IndexedDB instead of WebSQL in HTML 5?
