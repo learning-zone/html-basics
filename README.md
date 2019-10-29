@@ -80,7 +80,8 @@ Example:
 ```
 Output
 ```
-Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': Setting the value of 'key3230' exceeded the quota.
+Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': 
+           Setting the value of 'key3230' exceeded the quota.
 ```
 
 #### Q. What is the DOM? How does the DOM work? 
