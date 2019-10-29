@@ -507,7 +507,7 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 * **Compositing**: Since the parts of the page were drawn into potentially multiple layers they need to be drawn to the screen in the correct order so that the page renders correctly. This is especially important for elements that overlap another, since a mistake could result in one element appearing over the top of another incorrectly.
 
 
-#### Explain about HTML Canvas? 
+#### Q. Explain about HTML Canvas? 
 **canvas** is an HTML element which can be used to draw graphics via JavaScript. This can, for instance, be used to draw graphs, combine photos, or create animations.
 
 **Colors, Styles, and Shadows**
