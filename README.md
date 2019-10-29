@@ -45,6 +45,9 @@ Output
 Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': 
            Setting the value of 'key3230' exceeded the quota.
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is the DOM? How does the DOM work? 
 
@@ -68,6 +71,9 @@ In order to render content the browser has to go through a series of steps:
 * Render Tree
 * Layout
 * Paint.
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What does a DOCTYPE do?
 
@@ -90,7 +96,9 @@ In order to render content the browser has to go through a series of steps:
     The web browsers engines use quirks mode to support older browsers which does not follow the W3C specifications.
     
     In quirks mode CSS class and id names are case insensitive. In standards mode they are case sensitive.
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is the difference between standards mode and quirks mode?
 
@@ -108,17 +116,11 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 #### Q. Consider HTML5 as an open web platform. What are the building blocks of HTML5?
 
 * more semantic text markup
-
 * new form elements
-
 * new video and audio elements
-
 * javascript API
-
 * canvas and SVG
-
 * geolocation API
-
 * new data storage
 
 
@@ -140,7 +142,10 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 | Accessibility                          | Any window                                               | Any window     | Same tab         |
 
 
-_Note: If the user decides to clear browsing data via whatever mechanism provided by the browser, this will clear out any `cookie`, `localStorage`, or `sessionStorage` stored. It's important to keep this in mind when designing for local persistance, especially when comparing to alternatives such as server side storing in a database or similar (which of course will persist despite user actions)._
+*Note: If the user decides to clear browsing data via whatever mechanism provided by the browser, this will clear out any `cookie`, `localStorage`, or `sessionStorage` stored. It's important to keep this in mind when designing for local persistance, especially when comparing to alternatives such as server side storing in a database or similar (which of course will persist despite user actions).*
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Why is it generally a good idea to position CSS <link>s between <head></head> and JS <script>s just before </body>? Do you know any exceptions?
 **Placing `<link>`s in the `<head>`**
@@ -152,7 +157,9 @@ Putting `<link>`s in the head is part of proper specification in building an opt
 `<script>`s block HTML parsing while they are being downloaded and executed. Placing the scripts at the bottom will allow the HTML to be parsed and displayed to the user first.
 
 An exception for positioning of `<script>`s at the bottom is when your script contains `document.write()`, but these days it's not a good practice to use `document.write()`. Also, placing `<script>`s at the bottom means that the browser cannot start downloading the scripts until the entire document is parsed. This ensures your code that needs to manipulate DOM elements will not throw and error and halt the entire script. If you need to put `<script>` in the `<head>`, use the `defer` attribute, which will achieve the same effect of downloading and running the script only after the HTML is parsed.
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is progressive rendering?
 
@@ -167,7 +174,9 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 * Creating the Render Tree
 * Generating the Layout
 * Painting
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What are the Benefits of Server Side Rendering Over Client Side Rendering?
 
@@ -188,7 +197,9 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 #### Q. Name 5 common block-level and inline HTML elements.
 * block elements ```<h1>, <p>, <ul>, <ol>, <li>```,
 * inline elements ```<span>, <a>, <strong>, <i>, <img>```
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What are semantic and non-semantic elements?
 * A semantic element clearly describes its meaning to both the browser and the developer.
@@ -201,7 +212,9 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 The HTML ```<main>``` element represents the dominant content of the <body> of a document, portion of a document or application. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application. One important facet of ```<main>``` is that it can only be used once per page.
 
 ```<main>``` doesn't contribute to the document's outline; that is, unlike elements such as ```<body>```, headings such as ```<h2>```, and such, ```<main>``` doesn't affect the DOM's concept of the structure of the page. It's strictly informative.
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
 
@@ -221,7 +234,9 @@ The HTML ```<main>``` element represents the dominant content of the <body> of a
 * ```<article>```, represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
 
 * ```<div>```, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is Character Encoding?
 
@@ -230,8 +245,6 @@ To display an HTML page correctly, a web browser must know which character set (
 ```css
 <meta charset="UTF-8">
 ```
-
-
 #### Q. What is the purpose of meta tags?
 
 * Meta tags always go inside head tag of the HTML page
@@ -251,7 +264,9 @@ To display an HTML page correctly, a web browser must know which character set (
 </body>
 </html>
 ```
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What does async and defer refer in script tag ? Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```
 * Async: Downloads the script file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading.
@@ -270,7 +285,9 @@ Break them up onto to different CDN servers to leverage domain sharding.
 Employ the “new old” technique of adding “above the fold” css inline in the head of your document – reducing http requests and improve perceived performance.
 
 Using SASS I would break up my files into related chunks – all of which are concatenated and compressed using compass, sass with gulp or grunt in your build process.
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Can you describe the difference between progressive enhancement and graceful degradation?
 
@@ -282,7 +299,9 @@ Using SASS I would break up my files into related chunks – all of which are co
 #### Q. How would you optimize a website's assets/resources?
 
 Concatenate and compress CSS, JavaScript and HTML files wherever possible, configure your server to deliver a Gzip files, cache resources, set longer expirations dates on http headers of resources you don’t expect to change often – such as a logo. Images can be some of the heaviest files we deliver, so compress wisely. Soon the picture element will be implemented across browsers, so we can optimize the delivery of image content. Also in the near future consider using WebP format for images – it is quite smaller in size than JPEG and PNG files. Finally, use a CDN or other domains to host your resources and leverage domain sharding.
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is the purpose of cache busting and how can you achieve it?
 
@@ -299,7 +318,9 @@ A common technique to force the browser to re-download the file is to append a q
 ```
 
 The browser considers it a different file but prevents the need to change the file name.    
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Name 3 ways to decrease page load (perceived or actual load time).
 
@@ -332,7 +353,9 @@ Regarding optimization and responsiveness the debate bounces back and forth but,
 * Applying multiple animation types on an element is harder with CSS since all transforming power is in one property transform
 
 * CSS animations being declarative are not programmable therefore limited in capability. 
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What does CORS stand for and what issue does it address?
 
@@ -400,34 +423,23 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
     * HTTP cookies are used for a variety of reasons such as authentication and personalization. Information about cookies is exchanged in the HTTP headers between web servers and browsers. It's important to keep the size of cookies as low as possible to minimize the impact on the user's response time.
 
 * Reduce DNS Lookups
-
 * Minify JavaScript and CSS
-
 * Avoid Redirects
-
 * Remove Duplicate Scripts
-
 * Configure Etags
-
 * Make Ajax Cacheable
-
 * Post-load Components
-
 * Preload Components
-
 * Reduce the Number of DOM Elements
-
 * Minimize the Number of iframes
-
 * Minimize DOM Access
-
 * Optimize CSS Sprites
-
 * Don't Scale Images in HTML
-
 * Make favicon.ico Small and Cacheable
-
 * Avoid Empty Image src
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc
 * Chrome: 
@@ -464,7 +476,9 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
         General selectors and styles designed to make the site look good on small MOBILE screens go here. But they affect all devices, and must be overridden by min-width media queries targeting maximum scrren size
     
     In desktop first approach the media queries will be written with respect to max-width whereas in mobile first approach media queries will be written with respect to min-width
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. How do you serve a page with content in multiple languages?
 
@@ -473,7 +487,9 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 * When an HTTP request is made to a server, the requesting user agent usually sends information about language preferences, such as in the `Accept-Language` header. The server can then use this information to return a version of the document in the appropriate language if such an alternative is available. The returned HTML document should also declare the `lang` attribute in the `<html>` tag, such as `<html lang="en">...</html>`.
 
 * In the back end, the HTML markup will contain `i18n` placeholders and content for the specific language stored in YML or JSON formats. The server then dynamically generates the HTML page with content in that particular language, usually with the help of a back end framework.
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What kind of things must you be wary of when design or developing for multilingual sites?
 
@@ -492,7 +508,9 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 * Do not concatenate translated ```strings``` Do not do anything like `"The date today is " + date`. It will break in languages with different word order. Use a template string with parameters substitution for each language instead. For example, look at the following two sentences in English and Chinese respectively: `I will travel on {% date %}` and `{% date %} 我会出发`. Note that the position of the variable is different due to grammar rules of the language.
 
 * Language reading ```direction``` In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What are ```data-``` attributes good for?
 * The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
@@ -505,7 +523,9 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 * **Layout**: Once the browser knows which rules apply to an element it can begin to calculate how much space it takes up and where it is on screen. The web’s layout model means that one element can affect others, for example the width of the <body> element typically affects its children’s widths and so on all the way up and down the tree, so the process can be quite involved for the browser.
 * **Paint**: Painting is the process of filling in pixels. It involves drawing out text, colors, images, borders, and shadows, essentially every visual part of the elements. The drawing is typically done onto multiple surfaces, often called layers.
 * **Compositing**: Since the parts of the page were drawn into potentially multiple layers they need to be drawn to the screen in the correct order so that the page renders correctly. This is especially important for elements that overlap another, since a mistake could result in one element appearing over the top of another incorrectly.
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Explain about HTML Canvas? 
 **canvas** is an HTML element which can be used to draw graphics via JavaScript. This can, for instance, be used to draw graphs, combine photos, or create animations.
@@ -578,7 +598,9 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 |fillText()	    |Draws "filled" text on the canvas                                 |
 |strokeText()	|Draws text on the canvas (no fill)                                |
 |measureText()	|Returns an object that contains the width of the specified text   |
-
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Explain about HTML Layout Engines used by browsers?
 
@@ -591,6 +613,10 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 |Presto	      |Discontinued	  |formerly in the Opera browser                                                         |
 |EdgeHTML	  |Discontinued	  |formerly in the Microsoft Edge browser                                                |
 |Trident	  |Discontinued	  |Internet Explorer browser and Microsoft Outlook email client                          |
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What are the semantic tags available in html5?
 #### Q. What are the meta tags? explain its features?
