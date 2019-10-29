@@ -592,3 +592,26 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 |EdgeHTML	  |Discontinued	  |formerly in the Microsoft Edge browser                                                |
 |Trident	  |Discontinued	  |Internet Explorer browser and Microsoft Outlook email client                          |
 
+#### Q. What are the semantic tags available in html5?
+#### Q. What is **Web-Workers** and how it works?
+#### Q. What are the meta tags? explain its features?
+#### Q. How to make page responsive?
+#### Q. Difference between <code>span</code> tag and <code>div</code> tag?
+#### Q. How **Geo-location API** works in html5?
+#### Q. Difference between SVG and Canvas.
+#### Q. Specify browser engine and its usage.
+#### Q. What is the difference between **sessionStorage**, **localStorage** and **cookies**?
+#### Q. Explain Drag and Drop tag in html5.
+#### Q. Why to use IndexedDB instead of Web SQL in HTML 5?
+#### Q. What are the Server-Sent Events (SSE)?
+#### Q. Explain Application Cache.
+#### Q. Explain Microdata in HTML5.
+#### Q. List some of the formatting elements in HTML5.
+#### Q. List the API’s available in HTML5.
+#### Q. What is a manifest file in HTML?
+#### Q. What are different new form element types provided by HTML5?
+#### Q. What are the HTML tags which deprecate in HTML5?
+#### Q. What are Waves in HTML?
+#### Q. How you can Use Modernizr in HTML 5?
+#### Q. What is the use of WebSocket API?
+#### Q. What does **enctype='multipart/form-data'** mean?
