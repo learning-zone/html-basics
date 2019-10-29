@@ -600,7 +600,6 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 #### Q. How **Geo-location API** works in html5?
 #### Q. Difference between SVG and Canvas.
 #### Q. Specify browser engine and its usage.
-#### Q. What is the difference between **sessionStorage**, **localStorage** and **cookies**?
 #### Q. Explain Drag and Drop tag in html5.
 #### Q. Why to use IndexedDB instead of Web SQL in HTML 5?
 #### Q. What are the Server-Sent Events (SSE)?
