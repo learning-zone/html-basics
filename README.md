@@ -623,7 +623,7 @@ HTML5 offers new semantic elements to define different parts of a web page:
 * `<summary>`
 * `<time>`
 
-Example:
+Syntax:
 ```html
 <header></header>
 <section>
