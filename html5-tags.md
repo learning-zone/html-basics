@@ -29,7 +29,6 @@
 |Tag	            |Description                                          |
 |-------------------|-----------------------------------------------------|
 |`<base>`	        |Defines the base URL for all linked objects on a page.|
-|`<basefont>`	    |Obsolete Specifies the base font for a page.|
 |`<link>`	        |Defines the relationship between the current document and an external resource.||
 |`<meta>`	        |Provides structured metadata about the document content.|
 |`<style>`	        |Inserts style information (commonly CSS) into the head of a document.|
@@ -68,13 +67,11 @@
 |`<bdo>`	      |Overrides the current text direction.|
 |`<big>`	      |displays text in a large size.|
 |`<blockquote>`	  |Defines a long quotation.|
-|`<center>`	      |Obsolete Align contents in the center of the enclosing block.|
 |`<cite>`	      |Indicates a citation or reference to another source.|
 |`<code>`	      |Specifies text as computer code.|
 |`<del>`	      |Specifies a block of deleted text.|
 |`<dfn>`	      |Specifies a definition.|
 |`<em>`	          |Specifies emphasized text.|
-|`<font>`	      |Obsolete Defines font, color, and size for text.|
 |`<i>`	          |Displays text in an italic style.|
 |`<ins>`	      |Defines a block of text that has been inserted into a document.|
 |`<kbd>`	      |Specifies text as keyboard input.|
@@ -86,15 +83,12 @@
 |`<rp>` 	      |Provides fall-back parenthesis for browsers that that don't support ruby annotations.|
 |`<rt>` 	      |Defines the pronunciation of character presented in a ruby annotations.|
 |`<ruby>` 	      |Represents a ruby annotation.|
-|`<s>`	          |Obsolete Displays text in strikethrough style.|
 |`<samp>`	      |Specifies text as sample output from a computer program.|
 |`<small>`	      |Displays text in a smaller size.|
-|`<strike>`	      |Obsolete Displays text in strikethrough style.|
 |`<strong>`	      |Indicate strongly emphasized text.|
 |`<sub>`	      |Defines subscripted text.|
 |`<sup>`	      |Defines superscripted text.|
 |`<tt>`	          |Displays text in a teletype style.|
-|`<u>`	          |Obsolete Displays text with an underline.|
 |`<var>`	      |Defines a variable.|
 |`<wbr>` 	      |Represents a line break opportunity.|
 
@@ -105,7 +99,6 @@
 |Tag	         |Description                                            |
 |----------------|-------------------------------------------------------|
 |`<dd>`	         |Specifies a definition for a term in a definition list.|
-|`<dir>`	     |Obsolete Defines a directory list.|
 |`<dl>`	         |Defines a definition list.|
 |`<dt>`	         |Defines a term (an item) in a definition list.|
 |`<li>`	         |Defines a list item.|
@@ -143,7 +136,6 @@
 
 |Tag	          |Description                                                                                   |
 |-----------------|----------------------------------------------------------------------------------------------|
-|`<applet>`	      |Obsolete Embeds a Java applet (mini Java applications) on the page. Use the <object>` element instead.|
 |`<area>`	      |Defines a specific area within an image map.|
 |`<audio>` 	      |Embeds a sound, or an audio stream in an HTML document.|
 |`<canvas>` 	  |Defines a region in the document, which can be used to draw graphics on the fly via scripting (usually JavaScript).|
