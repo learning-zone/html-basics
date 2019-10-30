@@ -813,6 +813,18 @@ Example: [HTML5 canvas](canvas.html)
 |Better scalability. Can be printed with high quality at any resolution. Pixelation does not occur	|Poor scalability. Not suitable for printing on higher resolution. Pixelation may occur |
 
 #### Q. Explain Drag and Drop tag in html5.
+HTML5 drag-and-drop uses the `DOM event model` and `drag events` inherited from `mouse events`. A typical drag operation begins when a user selects a draggable element, drags the element to a droppable element, and then releases the dragged element.
+
+|Event	        |Description                                                            |
+|---------------|-----------------------------------------------------------------------|
+|Drag	        |It fires every time when the mouse is moved while the object is being dragged.|
+|Dragstart	    |It is a very initial stage. It fires when the user starts dragging object.|
+|Dragenter	    |It fires when the user moves his/her mouse cursur over the target element.|
+|Dragover	    |This event is fired when the mouse moves over an element.|
+|Dragleave	    |This event is fired when the mouse leaves an element.|
+|Drop	        |Drop It fires at the end of the drag operation.|
+|Dragend	    |It fires when user releases the mouse button to complete the drag operation.|
+
 #### Q. Why to use IndexedDB instead of WebSQL in HTML 5?
 #### Q. Explain Application Cache.
 #### Q. Explain Microdata in HTML5.
