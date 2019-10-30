@@ -87,10 +87,20 @@ The web page is rendered in quirks mode. The web browsers engines use quirks mod
 </div>
 
 #### Q. What is the difference between standards mode and quirks mode?
+In **Quirks mode**, layout emulates nonstandard behavior in Navigator 4 and Internet Explorer 5. This is essential in order to support websites that were built before the widespread adoption of web standards. In **Standards mode**, the behavior is the behavior described by the HTML and CSS specifications. 
 
-* Quirks mode was to support websites built before standards became widely implemented.
-* Quirks mode in browser allows to render page for old browsers. This is for backward compatibility.
-
+For HTML documents, browsers use a DOCTYPE in the beginning of the document to decide whether to handle it in quirks mode or standards mode. 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset=UTF-8>
+    <title>Hello World!</title>
+  </head>
+  <body>
+  </body>
+</html>
+```
 
 #### Q. What is the difference between HTML and XHTML?
 
