@@ -636,6 +636,7 @@ Syntax:
 </section>
 <footer></footer>
 ```
+Example: [HTML5 Semantic Tags](semantic-tags.html)
 
 #### Q. What are the meta tags? explain its features?
 #### Q. How to make page responsive?
