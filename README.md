@@ -855,14 +855,14 @@ Example
 #### Q. Why to use IndexedDB instead of WebSQL in HTML5?
 **WebSQL** is an API that is only supported in Chrome and Safari (and Android and iOS by extension). It provides an asynchronous, transactional interface to SQLite. Since 2010, it has been deprecated in favor of IndexedDB.
 
-* **Advantages**  
+**Advantages**  
 * Supported on major mobile browsers (Android Browser, Mobile Safari, Opera Mobile) as well as several desktop browsers (Chrome, Safari, Opera).
 * Good performance generally, being an asynchronous API. Database interaction won't lock up the user interface. (Synchronous API is also available for WebWorkers.)
 * Good search performance, since data can be indexed according to search keys.
 * Robust, since it supports a transactional database model.
 * Easier to maintain integrity of data, due to rigid data structure.
 
-* **Disadvantages**  
+**Disadvantages**  
 * Deprecated. Will not be supported on IE or Firefox, and will probably be phased out from the other browsers at some stage.
 * Steep learning curve, requiring knowledge of relational databases and SQL.
 * Suffers from object-relational impedance mismatch.
@@ -870,7 +870,7 @@ Example
 
 **IndexedDB** is the successor to both LocalStorage and WebSQL, designed to replace them as the “one true” browser database. It exposes an asynchronous API that supposedly avoids blocking the DOM, but as we’ll see below, it doesn’t necessarily live up to the hype. Browser support is extremely spotty, with only Chrome and Firefox having fully usable implementations.
 
-* **Advantages** 
+**Advantages** 
 * Good performance generally, being an asynchronous API. Database interaction won't lock up the user interface. (Synchronous API is also available for WebWorkers.)
 * Good search performance, since data can be indexed according to search keys.
 * Supports versioning.
@@ -878,7 +878,7 @@ Example
 * Fairly easy learning curve, due to a simple data model.
 * Decent browser support: Chrome, Firefox, mobile FF, IE10.
 
-* **Disadvantages**
+**Disadvantages**
 * Very complex API resulting in large amounts of nested callbacks.
 
 #### Q. Explain Application Cache.
