@@ -232,22 +232,60 @@ To display an HTML page correctly, a web browser must know which character set (
 <meta charset="UTF-8">
 ```
 #### Q. What is the purpose of meta tags?
+The META elements can be used to include name/value pairs describing properties of the HTML document, such as author, expiry date, a list of keywords, document author etc.
 
-* Meta tags always go inside head tag of the HTML page
-* Meta tags is always passed as name/value pairs
-* Meta tags are not displayed on the page but intended for the browser
-* Meta tags can contain information about character encoding, description, title of the document etc
-
-```css
+```html
 <!DOCTYPE html>
 <html>
-<head>
-  <meta name="description" content="I am a web page with description"> 
-  <title>Home Page</title>
-</head>
-<body>
-  
-</body>
+  <head>
+        <!--Recommended Meta Tags-->
+        <meta charset="utf-8">
+        <meta name="language" content="english"> 
+        <meta http-equiv="content-type" content="text/html">
+        <meta name="author" content="Author Name">
+        <meta name="designer" content="Designer Name">
+        <meta name="publisher" content="Publisher Name">
+        <meta name="no-email-collection" content="name@email.com">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+        <!--Search Engine Optimization Meta Tags-->
+        <meta name="description" content="Project Description">
+        <meta name="keywords" content="Software Engineer,Product Manager,Project Manager,Data Scientist,Computer Scientist">
+        <meta name="robots" content="index,follow">
+        <meta name="revisit-after" content="7 days">
+        <meta name="distribution" content="web">
+        <meta name="robots" content="noodp">
+        
+        <!--Optional Meta Tags-->
+        <meta name="distribution" content="web">
+        <meta name="web_author" content="">
+        <meta name="rating" content="general">
+        <meta name="rating" content="">
+        <meta name="subject" content="Personal">
+        <meta name="title" content=" - Official Website.">
+        <meta name="copyright" content="Copyright 2020">
+        <meta name="reply-to" content="">
+        <meta name="abstract" content="">
+        <meta name="city" content="Bangalore">
+        <meta name="country" content="INDIA">
+        <meta name="distribution" content="">
+        <meta name="classification" content="">
+    
+        <!--Meta Tags for HTML pages on Mobile-->
+        <meta name="format-detection" content="telephone=yes"/>
+        <meta name="HandheldFriendly" content="true"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        
+        <!--http-equiv Tags-->
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta http-equiv="Content-Script-Type" content="text/javascript">
+      
+    <title>HTML5 Meta Tags</title>
+  </head>
+  <body>
+       ...
+  </body>
 </html>
 ```
 <div align="right">
@@ -638,7 +676,6 @@ Syntax:
 ```
 Example: [HTML5 Semantic Tags](semantic-tags.html)
 
-#### Q. What are the meta tags? explain its features?
 #### Q. How to make page responsive?
 #### Q. Difference between `span` tag and `div` tag?
 #### Q. How Geo-location API works in html5?
