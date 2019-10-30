@@ -901,6 +901,23 @@ Example: [HTML5 Application Cache](application-cache.html)
 *Note: Using the application caching feature described here is at this point highly discouraged; it’s in the process of being removed from the Web platform. Use **Service Workers** instead. In fact as of Firefox 44, when AppCache is used to provide offline support for a page a warning message is now displayed in the console advising developers to use Service workers instead (bug 1204581).*
 
 #### Q. Explain Microdata in HTML5.
+Microdata is a standardized way to provide additional semantics in web pages. Search engines benefit greatly from direct access to this structured data because it allows search engines to understand the information on web pages and provide more 
+relevant results to users.
+
+At a high level, microdata consists of a group of name-value pairs
+* **itemscope**:- To create an item
+* **itemprop**:- To add a property to an item
+
+Example
+```html
+<div itemscope>
+    <p>My name is <span itemprop="name">Elizabeth</span>.</p>
+</div>
+
+<div itemscope>
+    <p>My name is <span itemprop="name">Daniel</span>.</p>
+</div>
+```
 #### Q. List some of the formatting elements in HTML5.
 #### Q. List the API available in HTML5.
 #### Q. What is a manifest file in HTML?
