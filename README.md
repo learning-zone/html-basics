@@ -753,10 +753,52 @@ There are following advantages of using SVG over other image formats like JPEG, 
 * SVG content can be animated using the built-in animation elements.
 * SVG images can contain hyperlinks to other documents.
 
+Example  
+```html
+<!DOCTYPE html>
+<html>
+   <head>
+      <style>
+         #svgelem {
+            position: relative;
+            left: 50%;
+            -webkit-transform: translateX(-20%);
+            -ms-transform: translateX(-20%);
+            transform: translateX(-20%);
+         }
+      </style>
+      <title>HTML5 SVG</title>
+   </head>
+   <body>
+      <h2 align="center">HTML5 SVG Circle</h2>
+      <svg id="svgelem" height="200" xmlns="http://www.w3.org/2000/svg">
+         <circle id="bluecircle" cx="60" cy="60" r="50" fill="blue" />
+      </svg>
+   </body>
+</html>
+```
 **Canvas**:  Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap with an “immediate mode” graphics application programming interface (API) for drawing on it. The <canvas> element is only a container for graphics. In order to draw the graphics, you are supposed to use a script. Canvas has several strategies when it comes to drawing paths, boxes, circles, text & adding images.
 
+Example
+```html
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>HTML5 Canvas Tag</title>
+   </head>
+   <body>
+      <canvas id="newCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+      <script>
+         var c = document.getElementById('newCanvas');
+         var ctx = c.getContext('2d');
+         ctx.fillStyle = '#7cce2b';
+         ctx.fillRect(0,0,300,100);
+      </script>
+   </body>
+</html>
+```
 **Differences between SVG and Canvas**   
- 
+
 |SVG	                |Canvas                                         |
 |-----------------------|-----------------------------------------------|
 |Vector based (composed of shapes)	|Raster based (composed of pixel)
