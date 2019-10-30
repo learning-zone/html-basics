@@ -852,8 +852,8 @@ Example
 </body>
 </html>
 ```
+#### Q. Why to use IndexedDB instead of WebSQL in HTML5?
 
-#### Q. Why to use IndexedDB instead of WebSQL in HTML 5?
 #### Q. Explain Application Cache.
 #### Q. Explain Microdata in HTML5.
 #### Q. List some of the formatting elements in HTML5.
