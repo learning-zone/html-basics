@@ -812,7 +812,7 @@ Example: [HTML5 canvas](canvas.html)
 |Give better performance with smaller number of objects or larger surface, or both	|Give better performance with larger number of objects or smaller surface, or both|
 |Better scalability. Can be printed with high quality at any resolution. Pixelation does not occur	|Poor scalability. Not suitable for printing on higher resolution. Pixelation may occur |
 
-#### Q. Explain Drag and Drop tag in html5.
+#### Q. Explain Drag and Drop in HTML5.
 HTML5 drag-and-drop uses the `DOM event model` and `drag events` inherited from `mouse events`. A typical drag operation begins when a user selects a draggable element, drags the element to a droppable element, and then releases the dragged element.
 
 |Event	        |Description                                                            |
