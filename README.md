@@ -720,6 +720,17 @@ The primary difference between a div and a span is their default behavior. By de
 ```
 
 #### Q. How Geo-location API works in html5?
+The Geolocation API allows the user to provide their location to web applications if they so desire. For privacy reasons, the user is asked for permission to report location information.
+
+The Geolocation API is published through the `navigator.geolocation` object.
+```javascript
+if ("geolocation" in navigator) {
+  /* geolocation is available */
+} else {
+  /* geolocation IS NOT available */
+}
+```
+
 #### Q. What is difference between SVG and Canvas?
 #### Q. Specify browser engine and its usage.
 #### Q. Explain Drag and Drop tag in html5.
