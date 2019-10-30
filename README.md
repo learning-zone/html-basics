@@ -605,6 +605,38 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 </div>
 
 #### Q. What are the semantic tags available in html5?
+HTML5 semantic tags define the function and the category of your text, simplifying the work for browsers and search engines, as well as developers.
+
+HTML5 offers new semantic elements to define different parts of a web page:
+
+* `<article>`
+* `<aside>`
+* `<details>`
+* `<figcaption>`
+* `<figure>`
+* `<footer>`
+* `<header>`
+* `<main>`
+* `<mark>`
+* `<nav>`
+* `<section>`
+* `<summary>`
+* `<time>`
+
+Example:
+```html
+<header></header>
+<section>
+	<article>
+		<figure>
+			<img>
+			<figcaption></figcaption>
+		</figure>
+	</article>
+</section>
+<footer></footer>
+```
+
 #### Q. What are the meta tags? explain its features?
 #### Q. How to make page responsive?
 #### Q. Difference between `span` tag and `div` tag?
