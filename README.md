@@ -812,7 +812,6 @@ Example: [HTML5 canvas](canvas.html)
 |Give better performance with smaller number of objects or larger surface, or both	|Give better performance with larger number of objects or smaller surface, or both|
 |Better scalability. Can be printed with high quality at any resolution. Pixelation does not occur	|Poor scalability. Not suitable for printing on higher resolution. Pixelation may occur |
 
-#### Q. Specify browser engine and its usage.
 #### Q. Explain Drag and Drop tag in html5.
 #### Q. Why to use IndexedDB instead of WebSQL in HTML 5?
 #### Q. Explain Application Cache.
