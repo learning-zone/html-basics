@@ -23,3 +23,15 @@
 |`<section>` 	    |Defines a section of a document, such as header, footer etc.|
 |`<span>`	        |Defines an inline styleless section in a document.|
 |`<summary>` 	    |Defines a summary for the `<details>` element.|
+
+#### Metadata Tags
+
+|Tag	            |Description                                          |
+|-------------------|-----------------------------------------------------|
+|`<base>`	        |Defines the base URL for all linked objects on a page.|
+|`<basefont>`	    |Obsolete Specifies the base font for a page.|
+|`<link>`	        |Defines the relationship between the current document and an external resource.||
+|`<meta>`	        |Provides structured metadata about the document content.|
+|`<style>`	        |Inserts style information (commonly CSS) into the head of a document.|
+|`<title>`	        |Defines a title for the document.|
+
