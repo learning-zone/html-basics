@@ -933,13 +933,11 @@ Example
 |`<bdo>`	      |Overrides the current text direction.|
 |`<big>`	      |displays text in a large size.|
 |`<blockquote>`	  |Defines a long quotation.|
-|`<center>`	      |Obsolete Align contents in the center of the enclosing block.|
 |`<cite>`	      |Indicates a citation or reference to another source.|
 |`<code>`	      |Specifies text as computer code.|
 |`<del>`	      |Specifies a block of deleted text.|
 |`<dfn>`	      |Specifies a definition.|
 |`<em>`	          |Specifies emphasized text.|
-|`<font>`	      |Obsolete Defines font, color, and size for text.|
 |`<i>`	          |Displays text in an italic style.|
 |`<ins>`	      |Defines a block of text that has been inserted into a document.|
 |`<kbd>`	      |Specifies text as keyboard input.|
@@ -951,15 +949,12 @@ Example
 |`<rp>` 	      |Provides fall-back parenthesis for browsers that that don't support ruby annotations.|
 |`<rt>` 	      |Defines the pronunciation of character presented in a ruby annotations.|
 |`<ruby>` 	      |Represents a ruby annotation.|
-|`<s>`	          |Obsolete Displays text in strikethrough style.|
 |`<samp>`	      |Specifies text as sample output from a computer program.|
 |`<small>`	      |Displays text in a smaller size.|
-|`<strike>`	      |Obsolete Displays text in strikethrough style.|
 |`<strong>`	      |Indicate strongly emphasized text.|
 |`<sub>`	      |Defines subscripted text.|
 |`<sup>`	      |Defines superscripted text.|
 |`<tt>`	          |Displays text in a teletype style.|
-|`<u>`	          |Obsolete Displays text with an underline.|
 |`<var>`	      |Defines a variable.|
 |`<wbr>` 	      |Represents a line break opportunity.|
 
