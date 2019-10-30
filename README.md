@@ -922,6 +922,47 @@ Example
 </div>
 ```
 #### Q. List some of the formatting elements in HTML5.
+
+|Tag	          |Description                                            |
+|-----------------|-------------------------------------------------------|
+|`<abbr>`	      |Defines an abbreviated form of a longer word or phrase.|
+|`<acronym>`      |Defines an acronym.|
+|`<address>`	  |Specifies the author's contact information.|
+|`<b>`	          |Displays text in a bold style.|
+|`<bdi>` 	      |Represents text that is isolated from its surrounding for the purposes of bidirectional text formatting.|
+|`<bdo>`	      |Overrides the current text direction.|
+|`<big>`	      |displays text in a large size.|
+|`<blockquote>`	  |Defines a long quotation.|
+|`<center>`	      |Obsolete Align contents in the center of the enclosing block.|
+|`<cite>`	      |Indicates a citation or reference to another source.|
+|`<code>`	      |Specifies text as computer code.|
+|`<del>`	      |Specifies a block of deleted text.|
+|`<dfn>`	      |Specifies a definition.|
+|`<em>`	          |Specifies emphasized text.|
+|`<font>`	      |Obsolete Defines font, color, and size for text.|
+|`<i>`	          |Displays text in an italic style.|
+|`<ins>`	      |Defines a block of text that has been inserted into a document.|
+|`<kbd>`	      |Specifies text as keyboard input.|
+|`<mark>` 	      |Represents text highlighted for reference purposes.|
+|`<output>` 	  |Represents the result of a calculation.|
+|`<pre>`	      |Defines a block of preformatted text.|
+|`<progress>` 	  |Represents the completion progress of a task.|
+|`<q>`	          |Defines a short inline quotation.|
+|`<rp>` 	      |Provides fall-back parenthesis for browsers that that don't support ruby annotations.|
+|`<rt>` 	      |Defines the pronunciation of character presented in a ruby annotations.|
+|`<ruby>` 	      |Represents a ruby annotation.|
+|`<s>`	          |Obsolete Displays text in strikethrough style.|
+|`<samp>`	      |Specifies text as sample output from a computer program.|
+|`<small>`	      |Displays text in a smaller size.|
+|`<strike>`	      |Obsolete Displays text in strikethrough style.|
+|`<strong>`	      |Indicate strongly emphasized text.|
+|`<sub>`	      |Defines subscripted text.|
+|`<sup>`	      |Defines superscripted text.|
+|`<tt>`	          |Displays text in a teletype style.|
+|`<u>`	          |Obsolete Displays text with an underline.|
+|`<var>`	      |Defines a variable.|
+|`<wbr>` 	      |Represents a line break opportunity.|
+
 #### Q. List the API available in HTML5.
 #### Q. What is a manifest file in HTML?
 #### Q. What are different new form element types provided by HTML5?
