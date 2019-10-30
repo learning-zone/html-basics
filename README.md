@@ -743,6 +743,29 @@ if ("geolocation" in navigator) {
 Example: [HTML5 Geolocation API](geolocation.html)
 
 #### Q. What is difference between SVG and Canvas?
+**SVG**:  The Scalable Vector Graphics (SVG) is an XML-based image format that is used to define two-dimensional vector based graphics for the web. Unlike raster image (e.g. .jpg, .gif, .png, etc.), a vector image can be scaled up or down to any extent without losing the image quality.
+
+There are following advantages of using SVG over other image formats like JPEG, GIF, PNG, etc.
+
+* SVG images can be searched, indexed, scripted, and compressed.
+* SVG images can be created and modified using JavaScript in real time.
+* SVG images can be printed with high quality at any resolution.
+* SVG content can be animated using the built-in animation elements.
+* SVG images can contain hyperlinks to other documents.
+
+**Canvas**:  Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap with an “immediate mode” graphics application programming interface (API) for drawing on it. The <canvas> element is only a container for graphics. In order to draw the graphics, you are supposed to use a script. Canvas has several strategies when it comes to drawing paths, boxes, circles, text & adding images.
+
+**Differences between SVG and Canvas**   
+ 
+|SVG	                |Canvas                                         |
+|-----------------------|-----------------------------------------------|
+|Vector based (composed of shapes)	|Raster based (composed of pixel)
+|Multiple graphical elements, which become the part of the page's DOM tree|	Single element similar to <img> in behavior. Canvas diagram can be saved to PNG or JPG format|
+|Modified through script and CSS	|Modified through script only
+|Good text rendering capabilities	|Poor text rendering capabilities
+|Give better performance with smaller number of objects or larger surface, or both	|Give better performance with larger number of objects or smaller surface, or both|
+|Better scalability. Can be printed with high quality at any resolution. Pixelation does not occur	|Poor scalability. Not suitable for printing on higher resolution. Pixelation may occur |
+
 #### Q. Specify browser engine and its usage.
 #### Q. Explain Drag and Drop tag in html5.
 #### Q. Why to use IndexedDB instead of WebSQL in HTML 5?
