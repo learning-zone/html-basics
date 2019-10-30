@@ -730,6 +730,7 @@ if ("geolocation" in navigator) {
   /* geolocation IS NOT available */
 }
 ```
+Example: [HTML5 Geolocation API](geolocation.html)
 
 #### Q. What is difference between SVG and Canvas?
 #### Q. Specify browser engine and its usage.
