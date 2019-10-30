@@ -677,6 +677,42 @@ Syntax:
 Example: [HTML5 Semantic Tags](semantic-tags.html)
 
 #### Q. How to make page responsive?
+Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones).
+
+* **Setting the viewport**  
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+* **Responsive Images**  
+If the CSS width property is set to 100%, the image will be responsive and scale up and down
+```html
+<img src="img.png" style="width:100%;">
+```
+* **Show Different Images Depending on Browser Width**  
+The HTML `<picture>` element allows you to define different images for different browser window sizes.
+```html
+<picture>
+  <source srcset="img_small.jpg" media="(max-width: 600px)">
+  <source srcset="img_large.jpg" media="(max-width: 1500px)">
+  <source srcset="img.jpg">
+  <img src="img_small.jpg" alt="Image">
+</picture>
+```
+* **Responsive Text Size**  
+The text size can be set with a "vw" unit, which means the "viewport width". That way the text size will follow the size of the browser window.
+```html
+<h1 style="font-size:10vw">Hello World</h1>
+```
+* **Media Queries**  
+Using media queries you can define completely different styles for different browser sizes.
+```css
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+```
 #### Q. Difference between `span` tag and `div` tag?
 #### Q. How Geo-location API works in html5?
 #### Q. What is difference between SVG and Canvas?
