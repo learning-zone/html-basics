@@ -713,7 +713,12 @@ Using media queries you can define completely different styles for different bro
   }
 }
 ```
-#### Q. Difference between `span` tag and `div` tag?
+#### Q. What is difference between `span` tag and `div` tag?
+The primary difference between a div and a span is their default behavior. By default, a `<div>` is a **block-level-element** and a `<span>` is an **inline element**. 
+```html
+<div>Demo Text, with <span>some other</span> text.</div>
+```
+
 #### Q. How Geo-location API works in html5?
 #### Q. What is difference between SVG and Canvas?
 #### Q. Specify browser engine and its usage.
