@@ -922,6 +922,73 @@ Example
 </div>
 ```
 #### Q. List the API available in HTML5.
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 API</title>
+  </head>
+  <body>
+    <p>System Time: <span id="time"></span></p>
+  </body>
+  <script type="text/javascript">
+        // -----------
+        //  Time API
+        // -----------
+           var time = performance.now();
+           document.getElementById('time').innerHTML = time + ' ms';
+        // -------------------------
+        //  Network Information API
+        // -------------------------
+            
+            console.log('Network Type: ' + navigator.connection.type);
+            console.log('Effective bandwidth estimate ( downlink ): ' + navigator.connection.downlink + 'Mb/s');
+            console.log('Effective round-trip time estimate ( rtt ): ' + navigator.connection.rtt + 'ms');
+ 
+            console.log('Upper bound on the downlink speed of the first network hop ( downlinkMax ): ' + navigator.connection.downlinkMax + 'Mb/s');
+            console.log('Effective connection type: ' + navigator.connection.effectiveType);
+            
+            console.log('True if the user has requested a reduced data usage mode from the user agent ( saveData ): ' + navigator.connection.saveData);
+        
+        // ---------------------
+        //  Page Visibility API
+        // ---------------------
+        /**
+           The Page Visibility API is especially useful for saving resources and improving performance 
+           by letting a page avoid performing unnecessary tasks when the document isn't visible.
+        **/
+           console.log('Page Visibility: '+document.hidden); //document.hidden retuns true if page is not visible.
+        // ------------------
+        //  Fullscreen API
+        // ------------------
+            // Example
+            document.addEventListener("keypress", function(e) {
+                if (e.keyCode === 13) { // Enter Key
+                    toggleFullScreen();
+                }
+            }, false);
+            function toggleFullScreen() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    if (document.exitFullscreen) {
+                    document.exitFullscreen(); 
+                    }
+                }
+            }
+        // ---------------
+        //  Vibration API
+        // ---------------
+        navigator.vibrate(2000); // Vibrate once for 2 seconds
+        
+        // --------------------
+        //  Battery Status API
+        // --------------------
+            var percentageLevel = navigator.battery.level * 100; // Retrieves the percentage of the current level of the device's battery
+            console.log("Battery Percentage: " +percentageLevel);
+  </script>
+</html>
+```
 #### Q. What is a manifest file in HTML?
 #### Q. What are different new form element types provided by HTML5?
 #### Q. What are the HTML tags which deprecate in HTML5?
