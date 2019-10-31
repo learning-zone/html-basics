@@ -1035,8 +1035,6 @@ Example:
 
 <input type="search" value="[Any search text]">
 
-<!-- Note: In WebKit-based web browsers (Google Chrome, Safari) you can add the non-standard results attribute to get a looking glass icon to click to see the latest searches, and the attribute autosave to keep them across page loads. -->
-
 <input type="tel" value="[Any numeric value]">
 
 <!-- Note: Most web browsers seem to let through any value at this time. -->
