@@ -995,6 +995,64 @@ function toggleFullScreen() {
 Example: [HTML5 API](html5-api.html)
 
 #### Q. What are different new form element types provided by HTML5?
+
+|Sl.No| Element     | Description   |
+|-----|-------------|---------------------------|
+| 01. |color        |Gives the end user a native color picker to choose a color.|
+| 02. |date         |Offers a datepicker.|
+| 03. |datetime     |An element to choose both date and time.|
+| 04. |datetime-local |An element to choose both date and time, with local settings support.|
+| 05. |email        |A field for entering e-mail address(es).|
+| 06. |month       |Choose a full month.|
+| 07. |number       |Picking a number.|
+| 08. |range        |Offers a slider to set to a certain value/position.|
+| 09. |search       |A field for search queries.|
+| 10. |tel          |Choosing a telephone number.|
+| 11. |time         |Input a certain time.|
+| 12. |url          |Entering a URL.|
+| 13. |week         |Picking a specific week.|
+
+
+Example:
+```html
+<input type="color" value="#b97a57">
+
+<input type="date" value="2011-06-08">
+
+<input type="datetime" value="2011-06-09T20:35:34.32">
+
+<input type="datetime-local" value="2011-06-09T22:41">
+
+<input type="email" value="robert@robertnyman.com">
+
+<input type="month" value="2011-06">
+
+<input type="number" value="4">
+
+<input type="range" value="15">
+
+<!-- Note: If not set, default attribute values are min="0", max="100", step="1". -->
+
+<input type="search" value="[Any search text]">
+
+<!-- Note: In WebKit-based web browsers (Google Chrome, Safari) you can add the non-standard results attribute to get a looking glass icon to click to see the latest searches, and the attribute autosave to keep them across page loads. -->
+
+<input type="tel" value="[Any numeric value]">
+
+<!-- Note: Most web browsers seem to let through any value at this time. -->
+
+<input type="time" value="22:38">
+
+<input type="url" value="http://robertnyman.com">
+
+<!-- Note: requires a protocol like http://, ftp:// etc in the beginning. -->
+
+
+<input type="week" value="2011-W24">
+```
+
+
+
 #### Q. What are the HTML tags which deprecate in HTML5?
 #### Q. What are Waves in HTML?
 #### Q. How you can Use Modernizr in HTML 5?
