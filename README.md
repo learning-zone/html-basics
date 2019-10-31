@@ -966,7 +966,12 @@ The Battery Status API exposes four properties (`charging`, `chargingTime`, `dis
 var percentageLevel = navigator.battery.level * 100;
 ```
 
-
+**Page Visibility API**  
+The Page Visibility API enables us to determine the current visibility state of the page. The Page Visibility API is especially useful for saving resources and improving performance by letting a page avoid performing unnecessary tasks when the document isn't visible.
+```javascript
+//document.hidden retuns true if page is not visible.
+console.log('Page Visibility: '+document.hidden); 
+```
 
 Example: [HTML5 API](html5-api.html)
 
