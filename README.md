@@ -261,7 +261,7 @@ The META elements can be used to include name/value pairs describing properties 
 
         <!--Search Engine Optimization Meta Tags-->
         <meta name="description" content="Project Description">
-        <meta name="keywords" content="Software Engineer,Product Manager,Project Manager,Data Scientist,Computer Scientist">
+        <meta name="keywords" content="Software Engineer,Product Manager,Project Manager,Data Scientist">
         <meta name="robots" content="index,follow">
         <meta name="revisit-after" content="7 days">
         <meta name="distribution" content="web">
