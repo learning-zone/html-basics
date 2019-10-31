@@ -1161,5 +1161,19 @@ The **WebSocket API** is an advanced technology that makes it possible to open a
 | 02. |CloseEvent  |The event sent by the WebSocket object when the connection closes.   |
 | 03. |MessageEvent|The event sent by the WebSocket object when a message is received from the server.|   
  
+Example
+```javascript
+ // Create WebSocket connection.
+const socket = new WebSocket('ws://localhost:8080/');
 
+// Connection opened
+socket.addEventListener('open', function(event) {
+    socket.send('Hello Server!');
+});
+
+// Listen for messages
+socket.addEventListener('message', function(event) {
+    console.log('Message from server ', event.data);
+});
+```
 #### Q. What does `enctype='multipart/form-data'` mean?
