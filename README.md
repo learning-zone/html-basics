@@ -1127,7 +1127,28 @@ The following elements are not available in HTML5 anymore and their function is 
 |valign	              |col, colgroup, tbody, td, tfoot, th, thead and tr|
 |width	              |hr, table, td, th, col, colgroup and pre.|
 
-#### Q. What are Waves in HTML?
-#### Q. How you can Use Modernizr in HTML 5?
+#### Q. How you can Use Modernizr in HTML5?
+Modernizr is a JavaScript library that detects which HTML5 and CSS3 features visitor’s browser supports. In detecting feature support, it allows developers to test for some of the new technologies and then provide fallbacks for browsers that do not support them. This is called **feature detection** and is much more efficient than browser sniffing.
+
+**Using Modernizr with CSS**  
+By default, Modernizr sets classes for all of your tests on the root element (`<html>` for websites). This means adding the class for each feature when it is supported, and adding it with a no- prefix when it is not (e.g. `.feature` or `.no-feature`).
+```css
+.no-cssgradients .header {
+  background: url("images/glossybutton.png");
+}
+
+.cssgradients .header {
+  background-image: linear-gradient(cornflowerblue, rebeccapurple);
+}
+```
+**Using Modernizr with JavaScript**  
+Modernizr keeps track of the results of all of it's feature detections via the `Modernizr` object. 
+```javascript
+if (Modernizr.canvas) {
+    alert("This browser supports HTML5 canvas!");
+  } else {
+    alert("no canvas :(");
+  }
+```
 #### Q. What is the use of WebSocket API?
 #### Q. What does `enctype='multipart/form-data'` mean?
