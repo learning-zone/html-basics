@@ -922,8 +922,7 @@ Example
 </div>
 ```
 #### Q. List the API available in HTML5.
-* **High Resolution Time API**     
-
+**High Resolution Time API**     
 The High Resolution Time API provides the current time in sub-millisecond resolution and such that it is not subject to system clock skew or adjustments.
 
 It exposes only one method, that belongs to the `window.performance` object, called `now()`. It returns a `DOMHighResTimeStamp` representing the current time in milliseconds. The timestamp is very accurate, with precision to a thousandth of a millisecond, allowing for accurate tests of the performance of our code.
@@ -931,8 +930,7 @@ It exposes only one method, that belongs to the `window.performance` object, cal
 var time = performance.now();
 ```
 
-* **User Timing API**  
-
+**User Timing API**  
 It allows us to accurately measure and report the performance of a section of JavaScript code. It deals with two main concepts: mark and measure. The former represents an instant (timestamp), while the latter represents the time elapsed between two marks.
 ```javascript
 performance.mark("startFoo");
