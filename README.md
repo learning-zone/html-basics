@@ -1048,10 +1048,7 @@ Example:
 
 <input type="week" value="2011-W24">
 ```
-
-
-
-#### Q. What are the HTML tags which deprecate in HTML5?
+#### Q. What are the HTML tags which deprecated in HTML5?
 #### Q. What are Waves in HTML?
 #### Q. How you can Use Modernizr in HTML 5?
 #### Q. What is the use of WebSocket API?
