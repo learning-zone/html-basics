@@ -1146,9 +1146,9 @@ Modernizr keeps track of the results of all of it's feature detections via the `
 ```javascript
 if (Modernizr.canvas) {
     alert("This browser supports HTML5 canvas!");
-  } else {
+} else {
     alert("no canvas :(");
-  }
+}
 ```
 #### Q. What is the use of WebSocket API?
 #### Q. What does `enctype='multipart/form-data'` mean?
