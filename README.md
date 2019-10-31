@@ -1049,6 +1049,85 @@ Example:
 <input type="week" value="2011-W24">
 ```
 #### Q. What are the HTML tags which deprecated in HTML5?
+**Deprecated Tags**  
+The following elements are not available in HTML5 anymore and their function is better handled by CSS.
+
+|Sl.No|Tags (Elements)  |	Description        |
+|-----|-----------------|----------------------|
+| 01. |`<acronym>`	    |Defines an acronym|
+| 02. |`<applet>`	    |Defines an applet|
+| 03. |`<basefont>`	    |Defines an base font for the page.|
+| 04. |`<big>`	        |Defines big text|
+| 05. |`<center>`	    |Defines centered text|
+| 06. |`<dir>`	        |Defines a directory list|
+| 07. |`<font>`	        |Defines text font, size, and color|
+| 08. |`<frame>`	    |Defines a frame|
+| 08. |`<frameset>`	    |Defines a set of frames|
+| 10. |`<isindex>`	    |Defines a single-line input field|
+| 11. |`<noframes>`	    |Defines a noframe section|
+| 12. |`<s>`	        |Defines strikethrough text|
+| 13. |`<strike>`	    |Defines strikethrough text|
+| 14. |`<tt>`	        |Defines teletype text|
+| 15. |`<u>`	        |Defines underlined text|
+
+
+**Deprecated Attributes**  
+
+|Removed Attributes	  |From the Elements     |
+|---------------------|----------------------|
+|rev	              |link, a|
+|charset	          |link and a|
+|shape	              |a|
+|coords	              |a|
+|longdesc	          |img and iframe.|
+|target	              |link|
+|nohref	              |area|
+|profile	          |head|
+|version	          |html|
+|name	              |img|
+|scheme	              |meta|
+|archive	          |object|
+|classid	          |object|
+|codebase	          |object|
+|codetype	          |object|
+|declare	          |object|
+|standby	          |object|
+|valuetype	          |param|
+|type	              |param|
+|axis	              |td and t|
+|abbr	              |td and t|
+|scope	              |td|
+|align	              |caption, iframe, img, input, object, legend, table, hr, div, h1, h2, h3, h4, h5, h6, p, col, colgroup, tbody, td, tfoot, th, thead and tr.|
+|alink	              |body|
+|link	              |body|
+|vlink	              |body|
+|text	              |body|
+|background	          |body|
+|bgcolor	          |table, tr, td, th and body.|
+|border	              |table and object.|
+|cellpadding	      |table|
+|cellspacing	      |table|
+|char	              |col, colgroup, tbody, td, tfoot, th, thead and tr.|
+|charoff 	          |col, colgroup, tbody, td, tfoot, th, thead and tr.|
+|clear	              |br|
+|compact	          |dl, menu, ol and ul.|
+|frame	              |table|
+|compact	          |dl, menu, ol and ul.|
+|frame	              |table|
+|frameborder	      |iframe|
+|hspace	              |img and object.|
+|vspace	              |img and object.|
+|marginheight	      |iframe|
+|marginwidth	      |iframe|
+|noshade	          |hr|
+|nowrap	              |td and th|
+|rules	              |table|
+|scrolling	          |iframe|
+|size	              |hr|
+|type	              |li, ol and ul.|
+|valign	              |col, colgroup, tbody, td, tfoot, th, thead and tr|
+|width	              |hr, table, td, th, col, colgroup and pre.|
+
 #### Q. What are Waves in HTML?
 #### Q. How you can Use Modernizr in HTML 5?
 #### Q. What is the use of WebSocket API?
