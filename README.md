@@ -882,8 +882,7 @@ Example
 **Disadvantages**
 * Very complex API resulting in large amounts of nested callbacks.
 
-#### Q. Explain Application Cache in HTML5.
-#### Q. What is a manifest file in HTML?
+#### Q. Explain Application Cache in HTML5. OR What is a manifest file in HTML?
 HTML5 provides an application caching mechanism that lets web-based applications run offline. Developers can use the Application Cache (AppCache) interface to specify resources that the browser should cache and make available to offline users. Applications that are cached load and work correctly even if users click the refresh button when they are offline.
 
 Using an application cache gives an application the following benefits:
