@@ -1179,13 +1179,31 @@ socket.addEventListener('message', function(event) {
 #### Q. What does `enctype='multipart/form-data'` mean?
 The enctype attribute specifies how the form-data should be encoded when submitting it to the server.
 
-Example
+Example: 01
 ```html
 <form action="fileupload.php" method="post" enctype="multipart/form-data"> 
     <p>Please select the file you would like to upload.</p> 
     <input type="file" name="upload"> 
     <br> 
     <input type="submit" value="Upload File">
+</form>
+```
+
+Example: 02
+```html
+<form action="/urlencoded?firstname=sid&lastname=sloth" method="POST" enctype="application/x-www-form-urlencoded">
+    <input type="text" name="username" value="sidthesloth"/>
+    <input type="text" name="password" value="slothsecret"/>
+    <input type="submit" value="Submit" />
+</form>
+```
+
+Example: 03
+```html
+<form action="action.php" method="get" enctype="text/plain">
+Name: <input type="text" name="name" />
+Phone: <input type="number" name="phone" />
+<input type="submit" value="Submit" />
 </form>
 ```
 
