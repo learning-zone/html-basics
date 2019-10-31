@@ -940,7 +940,17 @@ performance.mark("endFoo");
 
 performance.measure("durationFoo", "startFoo", "endFoo");
 ```
+**Network Information API**  
+This API belongs to the connection property of the `window.navigator` object. It exposes two read-only properties: `bandwidth` and `metered`. The former is a number representing an estimation of the current bandwidth, while the latter is a Boolean whose value is true if the user’s connection is subject to limitation and bandwidth usage, and false otherwise.
 
+|Sl.No| API                            | Description
+|-----|--------------------------------|--------------------------------------------------------------------|
+| 01. |navigator.connection.type       |Network Type                               |
+| 02. |navigator.connection.downlink   |Effective bandwidth estimate ( downlink )                               |
+| 03. |navigator.connection.rtt        |Effective round-trip time estimate ( rtt )                                |
+| 04. |navigator.connection.downlinkMax|Upper bound on the downlink speed of the first network hop ( downlinkMax )|           
+| 05. |navigator.connection.effectiveType|Effective connection type  |
+| 06. |navigator.connection.saveData   |True if the user has requested a reduced data usage mode from the user agent ( saveData )|                              
 
 Example: [HTML5 API](html5-api.html)
 
