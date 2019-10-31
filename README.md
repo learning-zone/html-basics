@@ -1191,9 +1191,9 @@ Example: 01
 
 Example: 02
 ```html
-<form action="/urlencoded?firstname=sid&lastname=sloth" method="POST" enctype="application/x-www-form-urlencoded">
-    <input type="text" name="username" value="sidthesloth"/>
-    <input type="text" name="password" value="slothsecret"/>
+<form action="/urlencoded?token=A87412B" method="POST" enctype="application/x-www-form-urlencoded">
+    <input type="text" name="username" value=""/>
+    <input type="text" name="password" value=""/>
     <input type="submit" value="Submit" />
 </form>
 ```
@@ -1201,9 +1201,9 @@ Example: 02
 Example: 03
 ```html
 <form action="action.php" method="get" enctype="text/plain">
-Name: <input type="text" name="name" />
-Phone: <input type="number" name="phone" />
-<input type="submit" value="Submit" />
+    Name: <input type="text" name="name" />
+    Phone: <input type="number" name="phone" />
+    <input type="submit" value="Submit" />
 </form>
 ```
 
