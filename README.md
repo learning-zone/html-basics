@@ -972,6 +972,26 @@ The Page Visibility API enables us to determine the current visibility state of 
 //document.hidden retuns true if page is not visible.
 console.log('Page Visibility: '+document.hidden); 
 ```
+**Fullscreen API**  
+The Fullscreen API provides a way to request fullscreen display from the user, and exit this mode when desired. This API exposes two methods, `requestFullscreen()` and `exitFullscreen()`, allowing us to request an element to become fullscreen and to exit fullscreen.
+```javascript
+document.addEventListener("keypress", function(e) {
+    if (e.keyCode === 13) { // Enter Key
+        toggleFullScreen();
+    }
+}, false);
+
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
+        document.exitFullscreen(); 
+        }
+    }
+}
+```
+
 
 Example: [HTML5 API](html5-api.html)
 
