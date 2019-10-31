@@ -950,7 +950,17 @@ This API belongs to the connection property of the `window.navigator` object. It
 | 03. |navigator.connection.rtt        |Effective round-trip time estimate ( rtt )                                |
 | 04. |navigator.connection.downlinkMax|Upper bound on the downlink speed of the first network hop ( downlinkMax )|           
 | 05. |navigator.connection.effectiveType|Effective connection type  |
-| 06. |navigator.connection.saveData   |True if the user has requested a reduced data usage mode from the user agent ( saveData )|                              
+| 06. |navigator.connection.saveData   |True if the user has requested a reduced data usage mode from the user agent ( saveData )|        
+
+**Vibration API**  
+It exposes only one method, `vibrate()`, that belongs to the `window.navigator` object. This method accepts one parameter specifying the duration of the vibration in milliseconds. The parameter can be either an integer or an array of integers. In the second case, it’s interpreted as alternating vibration times and pauses.
+```javascript
+// Vibrate once for 2 seconds
+navigator.vibrate(2000);
+```
+
+**Battery Status API**  
+
 
 Example: [HTML5 API](html5-api.html)
 
