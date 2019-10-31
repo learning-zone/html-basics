@@ -930,7 +930,16 @@ It exposes only one method, that belongs to the `window.performance` object, cal
 var time = performance.now();
 ```
 
+* **User Timing API**  
+It allows us to accurately measure and report the performance of a section of JavaScript code. It deals with two main concepts: mark and measure. The former represents an instant (timestamp), while the latter represents the time elapsed between two marks.
+```javascript
+performance.mark("startFoo");
+// A time consuming function
+foo();
+performance.mark("endFoo");
 
+performance.measure("durationFoo", "startFoo", "endFoo");
+```
 
 
 Example: [HTML5 API](html5-api.html)
