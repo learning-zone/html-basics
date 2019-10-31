@@ -1200,7 +1200,7 @@ Example: 02
 
 Example: 03
 ```html
-<form action="action.php" method="get" enctype="text/plain">
+<form action="action.do" method="get" enctype="text/plain">
     Name: <input type="text" name="name" />
     Phone: <input type="number" name="phone" />
     <input type="submit" value="Submit" />
