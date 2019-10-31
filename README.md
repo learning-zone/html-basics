@@ -960,6 +960,12 @@ navigator.vibrate(2000);
 ```
 
 **Battery Status API**  
+The Battery Status API exposes four properties (`charging`, `chargingTime`, `discharingTime`, and `level`) and four events. The properties specify if the battery is in charge, the seconds remaining until the battery is fully charged, the seconds remaining until the battery is fully discharged, and the current level of the battery. These properties belongs to the `battery` property of the `window.navigator` object.
+```javascript
+// Retrieves the percentage of the current level of the device's battery
+var percentageLevel = navigator.battery.level * 100;
+```
+
 
 
 Example: [HTML5 API](html5-api.html)
