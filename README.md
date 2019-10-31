@@ -1193,4 +1193,4 @@ Example
 |-----|-------------------------|-----------------------------------|
 | 01. |application/x-www-form-urlencoded  |	Default. All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)|
 | 02. |multipart/form-data	    |No characters are encoded. This value is required when you are using forms that have a file upload control |
-| 03.  |text/plain	Spaces are converted to "+" symbols, but no special characters are encoded|
+| 03.  |text/plain	|Spaces are converted to "+" symbols, but no special characters are encoded|
