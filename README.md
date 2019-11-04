@@ -9,7 +9,7 @@
 * [HTML5 Tags](html5-tags.md)
 
 
-#### Q. Does  localStorage throw error after reaches maximum limits?
+#### Q. Does localStorage throw error after reaches maximum limits?
 Yes
 
 Example:
