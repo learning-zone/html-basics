@@ -687,6 +687,8 @@ Syntax:
 ```
 Example: [HTML5 Semantic Tags](semantic-tags.html)
 
+[Live Example](https://learning-zone.github.io/css-interview-questions/html5-semantic-tags/index.html) 
+
 #### Q. How to make page responsive?
 Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones).
 
