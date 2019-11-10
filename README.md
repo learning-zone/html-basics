@@ -689,6 +689,14 @@ Example: [HTML5 Semantic Tags](semantic-tags.html)
 
 [Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/index.html) 
 
+#### Q. Why you would like to use semantic tag. Why Semantic HTML is Important?
+* Search Engine Optimization, accessibility, repurposing, light code. 
+* Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly.
+* Search engine needs to understand page content to rank and semantic tag helps.
+* semantic code aids accessibility. Specially, many people whose eyes are not good rely on speech browsers to read pages to them. These programs cannot interpret pages very well unless they are clearly explained.
+* Help Search engines to better understand pages. Search engine need to understand what your content is about when rank you properly on search engines. Semantic code tends to improve your placement on search engines, as it is easier for the "search engine spiders" to understand.
+* It’s easier to read and edit, which saves time and money during maintenance.
+
 #### Q. How to make page responsive?
 Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones).
 
