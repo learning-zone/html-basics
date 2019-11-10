@@ -687,8 +687,6 @@ Syntax:
 ```
 Example: [HTML5 Semantic Tags](semantic-tags.html)
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/index.html) 
-
 #### Q. Why you would like to use semantic tag. Why Semantic HTML is Important?
 * Search Engine Optimization, accessibility, repurposing, light code. 
 * Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly.
