@@ -737,6 +737,28 @@ The primary difference between a div and a span is their default behavior. By de
 ```html
 <div>Demo Text, with <span>some other</span> text.</div>
 ```
+#### Q. What are optional closing tag? 
+`<p>, <li>, <td>, <tr>, <th>, <html>, <body>`, etc. don't have to provide end tag. Whenever browser hits a new tag it automatically ends the previous tag. 
+
+#### Q. What is a self closing tag?
+In HTML5 it is not strictly necessary to close certain HTML tags. The tags that aren’t required to have specific closing tags are called “self closing” tags.
+
+An example of a self closing tag is something like a line break (`<br />`) or the meta tag (`<meta>`). This means that the following are both acceptable:
+
+```html
+<meta charset="UTF-8">
+...
+<meta charset="UTF-8" />
+```
+#### Q. Does the following trigger http request at the time of page load?
+```html
+<img src="mypic.jpg" style="visibility: hidden" alt="My photo">
+
+<div style="display: none;">
+    <img src="mypic.jpg" alt="My photo">
+</div>
+```
+* Yes
 
 #### Q. How Geo-location API works in html5?
 The Geolocation API allows the user to provide their location to web applications if they so desire. For privacy reasons, the user is asked for permission to report location information.
