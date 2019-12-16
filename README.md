@@ -368,9 +368,9 @@ The browser considers it a different file but prevents the need to change the fi
 Screen readers are software programs that  provide assistive technologies that allow people with disabilities (such as no sight, sound or mouse-ing ability) to use web applications. You can make your sites more accessible by following ARIA standards such as semantic HTML, alt attributes and using [role=button] in the expected ways
 
 
-#### Q. What is the purpose of the ```alt``` attribute on images?
+#### Q. What is the purpose of the `alt` attribute on images?
 
-The ```alt``` attribute provides alternative information for an image if a user cannot view it. The ```alt``` attribute should be used to describe any images except those which only serve a decorative purposes, in which case it should be left empty.
+The `alt` attribute provides alternative information for an image if a user cannot view it. The `alt` attribute should be used to describe any images except those which only serve a decorative purposes, in which case it should be left empty.
 
 
 #### Q. Explain some of the pros and cons for CSS animations versus JavaScript animations.
@@ -476,20 +476,20 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 
 #### Q. Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc
 * Chrome: 
-    * Layout rendering ```engine``` Webkit. 
-    * JavaScript ```engine``` V8
+    * Layout rendering `engine` Webkit. 
+    * JavaScript `engine` V8
 
 * Firefox: 
-    * Layout rendering ```engine``` Gecko. 
-    * JavaScript ```engine``` Spider monkey
+    * Layout rendering `engine` Gecko. 
+    * JavaScript `engine` Spider monkey
         
 * Internet explorer: 
-    * Layout rendering engine``` Trident. 
-    * JavaScript ```engine``` Chakra
+    * Layout rendering engine` Trident. 
+    * JavaScript `engine` Chakra
         
 * Safari:
-    * Layout rendering ```engine``` Webkit. 
-    * JavaScript ```engine``` JavascriptCore i.e Nitro
+    * Layout rendering `engine` Webkit. 
+    * JavaScript `engine` JavascriptCore i.e Nitro
 
 #### Q. Why html5 doctype does not have a DTD definition?
     
@@ -528,24 +528,24 @@ Cross Origin Resource Sharing. To address the fact that browsers restrict cross-
 
 * Use `lang` attribute in your HTML.
     
-* Directing users to their native ```language``` Allow a user to change his country/language easily without hassle.
+* Directing users to their native `language` Allow a user to change his country/language easily without hassle.
     
 * Text in images is not a scalable approach Placing text in an image is still a popular way to get good-looking, non-system fonts to display on any computer. However, to translate image text, each string of text will need to have a separate image created for each language. Anything more than a handful of replacements like this can quickly get out of control.
     
-* Restrictive words/sentence ```length``` Some content can be longer when written in another language. Be wary of layout or overflow issues in the design. It's best to avoid designing where the amount of text would make or break a design. Character counts come into play with things like headlines, labels, and buttons. They are less of an issue with free-flowing text such as body text or comments.
+* Restrictive words/sentence `length` Some content can be longer when written in another language. Be wary of layout or overflow issues in the design. It's best to avoid designing where the amount of text would make or break a design. Character counts come into play with things like headlines, labels, and buttons. They are less of an issue with free-flowing text such as body text or comments.
     
-* Be mindful of how colors are ```perceived``` Colors are perceived differently across languages and cultures. The design should use color appropriately.
+* Be mindful of how colors are `perceived` Colors are perceived differently across languages and cultures. The design should use color appropriately.
     
-* Formatting dates and ```currencies``` Calendar dates are sometimes presented in different ways. Eg. "May 31, 2012" in the U.S. vs. "31 May 2012" in parts of Europe.
+* Formatting dates and `currencies` Calendar dates are sometimes presented in different ways. Eg. "May 31, 2012" in the U.S. vs. "31 May 2012" in parts of Europe.
 
-* Do not concatenate translated ```strings``` Do not do anything like `"The date today is " + date`. It will break in languages with different word order. Use a template string with parameters substitution for each language instead. For example, look at the following two sentences in English and Chinese respectively: `I will travel on {% date %}` and `{% date %} 我会出发`. Note that the position of the variable is different due to grammar rules of the language.
+* Do not concatenate translated `strings` Do not do anything like `"The date today is " + date`. It will break in languages with different word order. Use a template string with parameters substitution for each language instead. For example, look at the following two sentences in English and Chinese respectively: `I will travel on {% date %}` and `{% date %} 我会出发`. Note that the position of the variable is different due to grammar rules of the language.
 
-* Language reading ```direction``` In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
+* Language reading `direction` In English, we read from left-to-right, top-to-bottom, in traditional Japanese, text is read up-to-down, right-to-left.
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What are ```data-``` attributes good for?
+#### Q. What are `data-` attributes good for?
 * The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
 
 #### Q. Explain the difference between layout, painting and compositing.
