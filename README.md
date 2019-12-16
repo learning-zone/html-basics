@@ -70,7 +70,7 @@ In order to render content the browser has to go through a series of steps:
 * Layout
 * Paint
 
-![Browser Rendering Engine](https://github.com/learning-zone/html-interview-questions/blob/assets/layers.png)
+![Browser Rendering Engine](https://github.com/learning-zone/html-interview-questions/blob/master/assets/layers.png)
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
