@@ -741,6 +741,9 @@ if ("geolocation" in navigator) {
 }
 ```
 Example: [HTML5 Geolocation API](geolocation.html)
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What is difference between SVG and Canvas?
 **SVG**:  The Scalable Vector Graphics (SVG) is an XML-based image format that is used to define two-dimensional vector based graphics for the web. Unlike raster image (e.g. .jpg, .gif, .png, etc.), a vector image can be scaled up or down to any extent without losing the image quality.
