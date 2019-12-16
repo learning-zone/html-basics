@@ -355,7 +355,7 @@ The browser considers it a different file but prevents the need to change the fi
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Name 3 ways to decrease page load (perceived or actual load time).
+#### Q. Name 3 ways to decrease page load?
 
 1. LocalStorage 
 1. Caching resources 
