@@ -190,6 +190,7 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 #### Q. What is the purpose of `main` element?
 The HTML `<main>` element represents the dominant content of the <body> of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application.
 
+*Note: A document mustn't have more than one `<main>` element that doesn't have the hidden attribute specified.*
 ```html
 <main role="main">
     <p>Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent except Australia.</p>
