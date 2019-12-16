@@ -1148,6 +1148,10 @@ The following elements are not available in HTML5 anymore and their function is 
 |valign	              |col, colgroup, tbody, td, tfoot, th, thead and tr|
 |width	              |hr, table, td, th, col, colgroup and pre.|
 
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. How you can Use Modernizr in HTML5?
 Modernizr is a JavaScript library that detects which HTML5 and CSS3 features visitor’s browser supports. In detecting feature support, it allows developers to test for some of the new technologies and then provide fallbacks for browsers that do not support them. This is called **feature detection** and is much more efficient than browser sniffing.
 
@@ -1197,6 +1201,10 @@ socket.addEventListener('message', function(event) {
     console.log('Message from server ', event.data);
 });
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What does `enctype='multipart/form-data'` mean?
 The enctype attribute specifies how the form-data should be encoded when submitting it to the server.
 
@@ -1233,3 +1241,7 @@ Example: 03
 | 01. |application/x-www-form-urlencoded  |	Default. All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)|
 | 02. |multipart/form-data	    |No characters are encoded. This value is required when you are using forms that have a file upload control |
 | 03.  |text/plain	            |Spaces are converted to "+" symbols, but no special characters are encoded|
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
