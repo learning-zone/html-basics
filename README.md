@@ -697,6 +697,10 @@ Using media queries you can define completely different styles for different bro
   }
 }
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What is difference between `span` tag and `div` tag?
 The primary difference between a div and a span is their default behavior. By default, a `<div>` is a **block-level-element** and a `<span>` is an **inline element**. 
 ```html
