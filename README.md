@@ -472,15 +472,9 @@ Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain comm
     * Layout rendering engine **Webkit**. 
     * JavaScript engine JavascriptCore i.e **Nitro**
 
-#### Q. Why html5 doctype does not have a DTD definition?
-    
-* HTML5 is no longer based on SGML (Standard Generalized Markup Language) which actually requires a DTD for parsing/serializing, so we don't require a DTD anymore.
-  
 
 #### Q. What does the lang attribute in html do?
-    
 * Helps in styling pages by using them in css :lang() pseudo class Spelling and grammar checkers Languade detection by search engines
-
 
 #### Q. What is desktop first and mobile first design approach
 * Desktop first : 
@@ -490,17 +484,6 @@ Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain comm
         General selectors and styles designed to make the site look good on small MOBILE screens go here. But they affect all devices, and must be overridden by min-width media queries targeting maximum scrren size
     
     In desktop first approach the media queries will be written with respect to max-width whereas in mobile first approach media queries will be written with respect to min-width
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
-#### Q. How do you serve a page with content in multiple languages?
-
-* The question is a little vague, I will assume that it is asking about the most common case, which is how to serve a page with content available in multiple languages, but the content within the page should be displayed only in one consistent language.
-
-* When an HTTP request is made to a server, the requesting user agent usually sends information about language preferences, such as in the `Accept-Language` header. The server can then use this information to return a version of the document in the appropriate language if such an alternative is available. The returned HTML document should also declare the `lang` attribute in the `<html>` tag, such as `<html lang="en">...</html>`.
-
-* In the back end, the HTML markup will contain `i18n` placeholders and content for the specific language stored in YML or JSON formats. The server then dynamically generates the HTML page with content in that particular language, usually with the help of a back end framework.
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
