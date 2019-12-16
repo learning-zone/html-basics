@@ -292,14 +292,14 @@ The META elements can be used to include name/value pairs describing properties 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What does async and defer refer in script tag ? Describe the difference between ```<script>```, ```<script async>``` and ```<script defer>```
-* Async: Downloads the script file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading.
+#### Q. What does async and defer refer in script tag? Describe the difference between `<script>`, `<script async>` and `<script defer>`
+* **Async**: Downloads the script file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading.
 
-* Defer: Defer downloads the script file during HTML parsing and will only execute it after the HTML parser has completed. Not all browsers support this.
+* **Defer**: Defer downloads the script file during HTML parsing and will only execute it after the HTML parser has completed. Not all browsers support this.
     
-* the async attribute is used to indicate to the browser that the script file can be executed asynchronously. The HTML parser does not need to pause at the point it reaches the script tag to fetch and execute, the execution can happen whenever the script becomes ready after being fetched in parallel with the document parsing.
+The async attribute is used to indicate to the browser that the script file can be executed asynchronously. The HTML parser does not need to pause at the point it reaches the script tag to fetch and execute, the execution can happen whenever the script becomes ready after being fetched in parallel with the document parsing.
 
-* The defer attribute tells the browser to only execute the script file once the HTML document has been fully parsed.     
+The defer attribute tells the browser to only execute the script file once the HTML document has been fully parsed.     
 
 
 #### Q. If you have 5 different stylesheets, how would you best integrate them into the site?
