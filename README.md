@@ -391,9 +391,7 @@ Regarding optimization and responsiveness the debate bounces back and forth but,
 </div>
 
 #### Q. What does CORS stand for and what issue does it address?
-
-Cross Origin Resource Sharing. To address the fact that browsers restrict cross-origin HTTP requests initiated from within scripts. CORS gives web servers cross-domain access controls, which enable secure cross-domain data transfers.
-
+Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain communication from the browser. By building on top of the XMLHttpRequest object, CORS allows developers to work with the same idioms as same-domain requests. CORS gives web servers cross-domain access controls, which enable secure cross-domain data transfers.
 
 #### Q.  Ways to improve website performance
 
