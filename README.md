@@ -322,7 +322,16 @@ Using SASS I would break up my files into related chunks – all of which are co
 
 #### Q. How would you optimize a website's assets/resources?
 
-Concatenate and compress CSS, JavaScript and HTML files wherever possible, configure your server to deliver a Gzip files, cache resources, set longer expirations dates on http headers of resources you don’t expect to change often – such as a logo. Images can be some of the heaviest files we deliver, so compress wisely. Soon the picture element will be implemented across browsers, so we can optimize the delivery of image content. Also in the near future consider using WebP format for images – it is quite smaller in size than JPEG and PNG files. Finally, use a CDN or other domains to host your resources and leverage domain sharding.
+* Concatenate and compress CSS, JavaScript and HTML files wherever possible
+
+* configure your server to deliver a Gzip files, cache resources, set longer expirations dates on http headers of resources you don’t expect to change often – such as a logo. 
+
+* Images can be some of the heaviest files we deliver, so compress wisely. Soon the picture element will be implemented across browsers, so we can optimize the delivery of image content. 
+
+* Consider using WebP format for images – it is quite smaller in size than JPEG and PNG files.
+
+* Finally, use a CDN or other domains to host your resources and leverage domain sharding.
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
