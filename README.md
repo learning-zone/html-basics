@@ -455,22 +455,22 @@ Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain comm
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Comparision of browsers like Chrome, Firefox, Internet explorer, Safari etc
+#### Q. Comparison of browsers engines like Chrome, Firefox, Internet explorer, Safari?
 * Chrome: 
-    * Layout rendering `engine` Webkit. 
-    * JavaScript `engine` V8
+    * Layout rendering engine **Webkit**. 
+    * JavaScript engine **V8**
 
 * Firefox: 
-    * Layout rendering `engine` Gecko. 
-    * JavaScript `engine` Spider monkey
+    * Layout rendering engine **Gecko**. 
+    * JavaScript engine **Spider monkey**
         
 * Internet explorer: 
-    * Layout rendering engine` Trident. 
-    * JavaScript `engine` Chakra
+    * Layout rendering engine **Trident**. 
+    * JavaScript  engine **Chakra**
         
 * Safari:
-    * Layout rendering `engine` Webkit. 
-    * JavaScript `engine` JavascriptCore i.e Nitro
+    * Layout rendering engine **Webkit**. 
+    * JavaScript engine JavascriptCore i.e **Nitro**
 
 #### Q. Why html5 doctype does not have a DTD definition?
     
