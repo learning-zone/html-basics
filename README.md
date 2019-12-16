@@ -931,6 +931,10 @@ Example
     <p>My name is <span itemprop="name">Daniel</span>.</p>
 </div>
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. List the API available in HTML5.
 **High Resolution Time API**     
 The High Resolution Time API provides the current time in sub-millisecond resolution and such that it is not subject to system clock skew or adjustments.
@@ -1002,6 +1006,9 @@ function toggleFullScreen() {
 }
 ```
 Example: [HTML5 API](html5-api.html)
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. What are different new form element types provided by HTML5?
 
