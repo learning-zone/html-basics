@@ -193,7 +193,8 @@ The HTML `<main>` element represents the dominant content of the <body> of a doc
 *Note: A document mustn't have more than one `<main>` element that doesn't have the hidden attribute specified.*
 ```html
 <main role="main">
-    <p>Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent except Australia.</p>
+    <p>Geckos are a group of usually small, usually nocturnal lizards. 
+       They are found on every continent except Australia.</p>
     <p>Many species of gecko have adhesive toe pads which enable them to climb walls and even windows.</p>
 </main>
 ```
