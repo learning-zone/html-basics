@@ -1033,15 +1033,15 @@ Example:
 ```html
 <input type="color" value="#b97a57">
 
-<input type="date" value="2011-06-08">
+<input type="date" value="2020-06-08">
 
-<input type="datetime" value="2011-06-09T20:35:34.32">
+<input type="datetime" value="2020-06-09T20:35:34.32">
 
-<input type="datetime-local" value="2011-06-09T22:41">
+<input type="datetime-local" value="2020-06-09T22:41">
 
 <input type="email" value="robert@robertnyman.com">
 
-<input type="month" value="2011-06">
+<input type="month" value="2020-06">
 
 <input type="number" value="4">
 
@@ -1057,13 +1057,17 @@ Example:
 
 <input type="time" value="22:38">
 
-<input type="url" value="http://robertnyman.com">
+<input type="url" value="https://www.google.com/">
 
 <!-- Note: requires a protocol like http://, ftp:// etc in the beginning. -->
 
 
-<input type="week" value="2011-W24">
+<input type="week" value="2020-W24">
 ```
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. What are the HTML tags which deprecated in HTML5?
 **Deprecated Tags**  
 The following elements are not available in HTML5 anymore and their function is better handled by CSS.
