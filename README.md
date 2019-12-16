@@ -169,14 +169,14 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 * for SSR, the user can start viewing the page while all of that is happening. For the CSR world, you need to wait for all of the above to happen and then have the virtual dom moved to the browser dom for the page to be viewable.
 
 
-#### Q. What is the difference between a ```<span>``` and a ```<div>```?
-* ```<div>``` is a block level element which means it will render it on it's own line with a width of a 100% of the parent element.
-* ```<span>``` is an inline element which means it will render on the same line as the previous element, if it is also an inline element, and it's width will be determined by it's content.
+#### Q. What is the difference between a `<span>` and a `<div>`?
+* `<div>` is a block level element which means it will render it on it's own line with a width of a 100% of the parent element.
+* `<span>` is an inline element which means it will render on the same line as the previous element, if it is also an inline element, and it's width will be determined by it's content.
 
 
 #### Q. Name 5 common block-level and inline HTML elements.
-* block elements ```<h1>, <p>, <ul>, <ol>, <li>```,
-* inline elements ```<span>, <a>, <strong>, <i>, <img>```
+* block elements `<h1>, <p>, <ul>, <ol>, <li>`,
+* inline elements `<span>, <a>, <strong>, <i>, <img>`
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
@@ -184,36 +184,36 @@ It is rendering the data as it’s being downloaded. This is particularly useful
 #### Q. What are semantic and non-semantic elements?
 * A semantic element clearly describes its meaning to both the browser and the developer.
   
-* non-semantic elements: ```<div>``` and ```<span>``` Tells nothing about its content. semantic elements: ```<form>, <table>, and <article>``` Clearly defines its content.
+* non-semantic elements: `<div>` and `<span>` Tells nothing about its content. semantic elements: `<form>, <table>, and <article>` Clearly defines its content.
 
 
-#### Q. What is the purpose of ```main``` element?
+#### Q. What is the purpose of `main` element?
 
-The HTML ```<main>``` element represents the dominant content of the <body> of a document, portion of a document or application. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application. One important facet of ```<main>``` is that it can only be used once per page.
+The HTML `<main>` element represents the dominant content of the <body> of a document, portion of a document or application. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application. One important facet of `<main>` is that it can only be used once per page.
 
-```<main>``` doesn't contribute to the document's outline; that is, unlike elements such as ```<body>```, headings such as ```<h2>```, and such, ```<main>``` doesn't affect the DOM's concept of the structure of the page. It's strictly informative.
+`<main>` doesn't contribute to the document's outline; that is, unlike elements such as `<body>`, headings such as `<h2>`, and such, `<main>` doesn't affect the DOM's concept of the structure of the page. It's strictly informative.
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Define semantic markup. What are the semantic meanings for ```<section>, <article>, <aside>, <nav>, <header>, <footer>``` and when/how should each be used in structuring html markup?
+#### Q. Define semantic markup. What are the semantic meanings for `<section>, <article>, <aside>, <nav>, <header>, <footer>` and when/how should each be used in structuring html markup?
 
-* ```<header>``` is used to contain introductory and navigational information about a section of the page. This can include the section heading, the author’s name, time and date of publication, table of contents, or other navigational information.
+* `<header>` is used to contain introductory and navigational information about a section of the page. This can include the section heading, the author’s name, time and date of publication, table of contents, or other navigational information.
 
-* ```<article>``` is meant to house a self-contained composition that can logically be independently recreated outside of the page without losing it’s meaining. Individual blog posts or news stories are good examples.
+* `<article>` is meant to house a self-contained composition that can logically be independently recreated outside of the page without losing it’s meaining. Individual blog posts or news stories are good examples.
 
-* ```<section>``` is a flexible container for holding content that shares a common informational theme or purpose.
+* `<section>` is a flexible container for holding content that shares a common informational theme or purpose.
 
-* ```<footer>``` is used to hold information that should appear at the end of a section of content and contain additional information about the section. Author’s name, copyright information, and related links are typical examples of such content.
+* `<footer>` is used to hold information that should appear at the end of a section of content and contain additional information about the section. Author’s name, copyright information, and related links are typical examples of such content.
 
 
-#### Q. When should you use ```section```, ```div``` or ```article```?
+#### Q. When should you use `section`, `div` or `article`?
 
-* ```<section>```, group of content inside is related to a single theme, and should appear as an entry in an outline of the page. It’s a chunk of related content, like a subsection of a long article, a major part of the page (eg the news section on the homepage), or a page in a webapp’s tabbed interface. A section normally has a heading (title) and maybe a footer too.
+* `<section>`, group of content inside is related to a single theme, and should appear as an entry in an outline of the page. It’s a chunk of related content, like a subsection of a long article, a major part of the page (eg the news section on the homepage), or a page in a webapp’s tabbed interface. A section normally has a heading (title) and maybe a footer too.
 
-* ```<article>```, represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
+* `<article>`, represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
 
-* ```<div>```, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
+* `<div>`, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
