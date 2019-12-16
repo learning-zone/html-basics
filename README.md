@@ -68,7 +68,9 @@ In order to render content the browser has to go through a series of steps:
 * CSS object model(CSSOM)
 * Render Tree
 * Layout
-* Paint.
+* Paint
+
+![Browser Rendering Engine](https://github.com/learning-zone/html-interview-questions/blob/assets/layers.png)
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
