@@ -648,6 +648,9 @@ Syntax:
 <footer></footer>
 ```
 Example: [HTML5 Semantic Tags](semantic-tags.html)
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
 
 #### Q. Why you would like to use semantic tag. Why Semantic HTML is Important?
 * Search Engine Optimization, accessibility, repurposing, light code. 
