@@ -319,23 +319,6 @@ Using SASS I would break up my files into related chunks – all of which are co
 
 * Progressive enhancement ensures a page works at the lowest expected abilities of browsers. So if you have a JavaScript web application that enhances a persons ability to send information to a database with features like ajax – at the very least you need to provide the ability for a person to send that same information without JavaScript enabled. In this case a simple form with full-page refresh will do what you need.
 
-
-#### Q. How would you optimize a website's assets/resources?
-
-* Concatenate and compress CSS, JavaScript and HTML files wherever possible
-
-* configure your server to deliver a Gzip files, cache resources, set longer expirations dates on http headers of resources you don’t expect to change often – such as a logo. 
-
-* Images can be some of the heaviest files we deliver, so compress wisely. Soon the picture element will be implemented across browsers, so we can optimize the delivery of image content. 
-
-* Consider using WebP format for images – it is quite smaller in size than JPEG and PNG files.
-
-* Finally, use a CDN or other domains to host your resources and leverage domain sharding.
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 #### Q. What is the purpose of cache busting and how can you achieve it?
 
 Browsers have a cache to temporarily store files on websites so they don't need to be re-downloaded again when switching between pages or reloading the same page. The server is set up to send headers that tell the browser to store the file for a given amount of time. This greatly increases website speed and preserves bandwidth.
