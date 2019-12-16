@@ -57,8 +57,6 @@ The DOM (Document Object Model) is a cross-platform API that treats HTML and XML
 
 * The DOM was designed to be independent of any particular programming language, making the structural representation of the document available from a single, consistent API.
 
-* The DOM is constructed progressively in the browser as a page loads, which is why scripts are often placed at the bottom of a page, in the <head> with a defer attribute, or inside a DOMContentLoaded event listener. Scripts that manipulate DOM nodes should be run after the DOM has been constructed to avoid errors.
-
 * document.getElementById() and document.querySelector() are common functions for selecting DOM nodes.
 
 * Setting the innerHTML property to a new value runs the string through the HTML parser, offering an easy way to append dynamic HTML content to a node.
