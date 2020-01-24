@@ -146,7 +146,7 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 #### Q. What is progressive rendering?
 *TODO*
 
-#### Q. What is Critical Rendering Path
+#### Q. What is Critical Rendering Path?
 * Constructing the DOM Tree
 * Constructing the CSSOM Tree
 * Running JavaScript - parser blocking resource
