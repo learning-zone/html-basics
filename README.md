@@ -144,8 +144,7 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 </div>
 
 #### Q. What is progressive rendering?
-It is rendering the data as it’s being downloaded. This is particularly useful on documents that have tons of text. You can see it on a page that has a lot of text – and where the scrollbar will get shorter in length as more data comes in – increasing the vertical size of the document – yet, it would display the downloaded text immediately. As more data came down the pipe – the page would get longer. This didn’t rely on the closing body or html tag – and it certainly wouldn’t render the entire page on the server – then download – which is a standard complaint about modern frameworks. But there is a technique called “Flushing the Buffer” that can be implemented on the server. I don’t know that much about the technique, but found a few resources discussing it.
-
+*TODO*
 
 #### Q. What is Critical Rendering Path
 * Constructing the DOM Tree
