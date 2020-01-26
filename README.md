@@ -5,8 +5,8 @@
 
 ### Table of Contents
 
-* [HTML5 Events List](html5-events.md)
-* [HTML5 Tags](html5-tags.md)
+* *[HTML5 Events List](html5-events.md)*
+* *[HTML5 Tags](html5-tags.md)*
 
 
 #### Q. Does localStorage throw error after reaches maximum limits?
