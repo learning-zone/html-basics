@@ -227,7 +227,7 @@ The HTML `<main>` element represents the dominant content of the <body> of a doc
 #### Q. What is Character Encoding?
 Character encoding is a method of converting bytes into characters. To validate or display an HTML document properly, a program must choose a proper character encoding. This is specified in the tag:
 
-```css
+```html
 <meta charset="UTF-8"/>
 ```
 * **UTF-8**: A Unicode Translation Format that comes in 8-bit units that is, it comes in bytes. A character in UTF8 can be from 1 to 4 bytes long, making UTF8 variable width.
