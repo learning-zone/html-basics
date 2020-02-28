@@ -102,7 +102,7 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 </html>
 ```
 
-#### Q. What is the difference between HTML and XHTML?
+#### Q. What is difference between HTML and XHTML?
 
 The Extensible Hypertext Markup Language, or XHTML, has two important notes for front end developers.   
 1) It needs to be well formed, meaning all elements need to be closed and nested correctly or you will return errors.   
