@@ -109,7 +109,7 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 2) Since it is more strict than HTML is requires less pre-processing by the browser, which may improve your sites performance.
 
 
-#### Q. Consider HTML5 as an open web platform. What are the building blocks of HTML5?
+#### Q. What are the building blocks of HTML5?
 
 * more semantic text markup
 * new form elements
