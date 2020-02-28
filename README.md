@@ -260,7 +260,6 @@ The META elements can be used to include name/value pairs describing properties 
         <!--Optional Meta Tags-->
         <meta name="distribution" content="web">
         <meta name="web_author" content="">
-        <meta name="rating" content="general">
         <meta name="rating" content="">
         <meta name="subject" content="Personal">
         <meta name="title" content=" - Official Website.">
