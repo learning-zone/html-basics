@@ -229,8 +229,11 @@ The HTML `<main>` element represents the dominant content of the <body> of a doc
 To display an HTML page correctly, a web browser must know which character set (character encoding) to use. This is specified in the tag:
 
 ```css
-<meta charset="UTF-8">
+<meta charset="UTF-8"/>
 ```
+* **UTF-8**: A Unicode Translation Format that comes in 8-bit units that is, it comes in bytes. A character in UTF8 can be from 1 to 4 bytes long, making UTF8 variable width.
+
+
 #### Q. What is the purpose of meta tags?
 The META elements can be used to include name/value pairs describing properties of the HTML document, such as author, expiry date, a list of keywords, document author etc.
 
