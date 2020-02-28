@@ -189,7 +189,6 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 #### Q. What is the purpose of `main` element?
 The HTML `<main>` element represents the dominant content of the <body> of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application.
 
-*Note: A document mustn't have more than one `<main>` element that doesn't have the hidden attribute specified.*
 ```html
 <main role="main">
     <p>Geckos are a group of usually small, usually nocturnal lizards. 
@@ -197,6 +196,8 @@ The HTML `<main>` element represents the dominant content of the <body> of a doc
     <p>Many species of gecko have adhesive toe pads which enable them to climb walls and even windows.</p>
 </main>
 ```
+*Note: A document mustn't have more than one `<main>` element that doesn't have the hidden attribute specified.*
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
