@@ -182,10 +182,9 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
 </div>
 
 #### Q. What are semantic and non-semantic elements?
-* A semantic element clearly describes its meaning to both the browser and the developer.
+* **Semantic elements**: clearly describes its meaning to both the browser and the developer. For example: `<form>`, `<table>`,  `<article>`, `<aside>`, `<details>`, `<figcaption>`, `<figure>`, `<footer>`, `<header>`, `<main>`, `<mark>`, `<nav>`, `<section>`, `<summary>`, `<time>` clearly defines its content.
   
-* non-semantic elements: `<div>` and `<span>` Tells nothing about its content. semantic elements: `<form>, <table>, and <article>` Clearly defines its content.
-
+* **Non-semantic elements**: `<div>` and `<span>` tells nothing about its content. semantic elements.
 
 #### Q. What is the purpose of `main` element?
 The HTML `<main>` element represents the dominant content of the <body> of a document. The main content area consists of content that is directly related to or expands upon the central topic of a document, or the central functionality of an application.
