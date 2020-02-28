@@ -158,7 +158,7 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What are the Benefits of Server Side Rendering Over Client Side Rendering?
+#### Q. What are the Benefits of Server Side Rendering (SSR) Over Client Side Rendering (CSR)?
 
 * We are using server side rendering for two reasons:
     * performance benefit for our customers
