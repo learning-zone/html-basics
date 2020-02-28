@@ -80,7 +80,7 @@
 |`<pre>`	      |Defines a block of preformatted text.|
 |`<progress>` 	  |Represents the completion progress of a task.|
 |`<q>`	          |Defines a short inline quotation.|
-|`<rp>` 	      |Provides fall-back parenthesis for browsers that that don't support ruby annotations.|
+|`<rp>` 	      |Provides fall-back parenthesis for browsers that don't support ruby annotations.|
 |`<rt>` 	      |Defines the pronunciation of character presented in a ruby annotations.|
 |`<ruby>` 	      |Represents a ruby annotation.|
 |`<samp>`	      |Specifies text as sample output from a computer program.|
