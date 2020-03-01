@@ -652,7 +652,7 @@ Example: [HTML5 Semantic Tags](semantic-tags.html)
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Why you would like to use semantic tag. Why Semantic HTML is Important?
+#### Q. Why you would like to use semantic tag?
 * Search Engine Optimization, accessibility, repurposing, light code. 
 * Many visually impaired person rely on browser speech and semantic tag helps to interpret page content clearly.
 * Search engine needs to understand page content to rank and semantic tag helps.
