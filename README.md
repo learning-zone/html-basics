@@ -1242,6 +1242,9 @@ Example: 03
 | 02. |multipart/form-data	    |No characters are encoded. This value is required when you are using forms that have a file upload control |
 | 03.  |text/plain	            |Spaces are converted to "+" symbols, but no special characters are encoded|
 
+#### Q. What are the new form elements in html5?
+*TODO*
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
