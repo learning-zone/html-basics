@@ -81,6 +81,8 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
 
 <p>Pollution Level: <meter low="60" high="80" max="100" value="85">Very High</meter></p>
 ```
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/meter.html) 
+
 **3.) Output Tag**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript). 
 ```html
 <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
