@@ -225,9 +225,6 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. What is progressive rendering?
-*TODO*
-
 #### Q. What is Critical Rendering Path?
 * Constructing the DOM Tree
 * Constructing the CSSOM Tree
@@ -1298,6 +1295,9 @@ Example: 03
 | 02. |multipart/form-data	    |No characters are encoded. This value is required when you are using forms that have a file upload control |
 | 03.  |text/plain	            |Spaces are converted to "+" symbols, but no special characters are encoded|
 
+
+#### Q. What is progressive rendering?
+*TODO*
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
