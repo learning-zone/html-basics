@@ -379,14 +379,6 @@ The async attribute is used to indicate to the browser that the script file can 
 
 The defer attribute tells the browser to only execute the script file once the HTML document has been fully parsed.     
 
-
-#### Q. If you have 5 different stylesheets, how would you best integrate them into the site?
-
-Break them up onto to different CDN servers to leverage domain sharding.
-
-Employ the “new old” technique of adding “above the fold” css inline in the head of your document – reducing http requests and improve perceived performance.
-
-Using SASS I would break up my files into related chunks – all of which are concatenated and compressed using compass, sass with gulp or grunt in your build process.
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
@@ -398,7 +390,6 @@ Using SASS I would break up my files into related chunks – all of which are co
 * Progressive enhancement ensures a page works at the lowest expected abilities of browsers. So if you have a JavaScript web application that enhances a persons ability to send information to a database with features like ajax – at the very least you need to provide the ability for a person to send that same information without JavaScript enabled. In this case a simple form with full-page refresh will do what you need.
 
 #### Q. What is the purpose of cache busting and how can you achieve it?
-
 Browsers have a cache to temporarily store files on websites so they don't need to be re-downloaded again when switching between pages or reloading the same page. The server is set up to send headers that tell the browser to store the file for a given amount of time. This greatly increases website speed and preserves bandwidth.
 
 However, it can cause problems when the website has been changed by developers because the user's cache still references old files. This can either leave them with old functionality or break a website if the cached CSS and JavaScript files are referencing elements that no longer exist, have moved or have been renamed.
