@@ -90,12 +90,26 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
 
 **4.) progress**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
 ```html
- <p>Now destroying the world. <br />
-  <p>
-     progress: 
-     <progress value = "25"
-               max = "100"></progress>
-  </p>
+ 
+<p>Progress: <progress id="bar" value="0" max="100"><span>0</span>%</progress></p>
+
+<script type="text/javascript">
+    var i = 0;
+    var progressBar = document.getElementById("bar");
+    
+    function countNumbers() {
+      if(i < 100) {
+        i = i + 1;
+        progressBar.value = i;
+        // For browsers that don't support progress tag
+        progressBar.getElementsByTagName("span")[0].textContent = i;
+      }
+
+      // Wait for sometime before running this script again
+      setTimeout("countNumbers()", 100);
+    }
+    countNumbers();
+</script>
 ```
 #### Q. What is the DOM? How does the DOM work? 
 
