@@ -556,7 +556,7 @@ Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain comm
 #### Q. What are `data-` attributes good for?
 * The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
 
-#### Q. Explain the difference between layout, painting and compositing.
+#### Q. Explain the difference between layout, painting and compositing?
 ![alt text](https://github.com/learning-zone/HTML/blob/master/lib/img/frame-full.jpg)
 
 * **JavaScript**: Typically JavaScript is used to handle work that will result in visual changes, whether it’s jQuery’s animate function, sorting a data set, or adding DOM elements to the page. It doesn’t have to be JavaScript that triggers a visual change, though: CSS Animations, Transitions, and the Web Animations API are also commonly used.
