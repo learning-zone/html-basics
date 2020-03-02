@@ -329,8 +329,9 @@ Cache busting is the process of forcing the browser to download the new files. T
 
 A common technique to force the browser to re-download the file is to append a query string to the end of the file.
 
-```css
-    src="js/script.js" => src="js/script.js?v=2"
+```html
+    <!-- src="js/script.js" => src="js/script.js?v=2" -->
+    <script src="/script.js?v=2"></script>
 ```
 
 The browser considers it a different file but prevents the need to change the file name.    
