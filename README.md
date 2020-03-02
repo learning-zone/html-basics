@@ -351,12 +351,9 @@ The browser considers it a different file but prevents the need to change the fi
 Screen readers are software programs that  provide assistive technologies that allow people with disabilities (such as no sight, sound or mouse-ing ability) to use web applications. You can make your sites more accessible by following ARIA standards such as semantic HTML, alt attributes and using [role=button] in the expected ways
 
 #### Q. What is the purpose of the `alt` attribute on images?
-
 The `alt` attribute provides alternative information for an image if a user cannot view it. The `alt` attribute should be used to describe any images except those which only serve a decorative purposes, in which case it should be left empty.
 
-
 #### Q. Explain some of the pros and cons for CSS animations versus JavaScript animations.
-
 Regarding optimization and responsiveness the debate bounces back and forth but, the concept is:
 
 * CSS animations allows the browser to choose where the animation processing is done, CPU or the GPU. (Central or Graphics Processing Unit)
