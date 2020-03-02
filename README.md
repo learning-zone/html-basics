@@ -50,6 +50,62 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+#### Q. What are the new form elements in HTML5?
+There are five new form elements in the HTML5 forms specification: `datalist`, `output`, `keygen`, `progress`, and `meter`. 
+
+**1.) datalist**: allows you to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse. 
+```html
+<label for = "txtList">Your name
+    <input type = "text"
+            list = "names" 
+            id = "txtList"/>
+    <datalist id = "names">
+        <option value = "Andy">
+        <option value = "Andrew">
+        <option value = "Androcles">
+    </datalist>
+</label>
+```
+**2.) meter**: indicates a numeric value that falls within a range. The tag supports a number of attributes:    
+value: If you don’t specify a value, the first numeric value inside the `<meter></meter>` pair becomes the value.
+* **max**: The maximum possible value of the item.
+* **min**: The minimum possible value of the item.
+* **high**: If the value can be defined as a range, this is the high end of the range.
+* **low**: If the value can defined as a range, this is the low end of that range.
+* **optimum**: The optimal value of the element. 
+```html
+<p>
+    A 
+    <meter min = "0"
+           max = "10"
+           value = "7"></meter>
+  </p>
+```
+**3.) output**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript). 
+```html
+<output id = "myOutput">
+    This is the original value
+  </output>
+  <button onclick = "changeOutput()">
+    change the output
+  </button>
+```
+When the button is pressed, it will call the changeOutput() JavaScript function, which could look like this:
+```javascript
+function changeOutput(){
+    var myOutput = document.getElementById("myOutput");
+    myOutput.value = "The value has changed";
+  } // end changeOutput
+```
+**4.) progress**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
+```html
+ <p>Now destroying the world. <br />
+  <p>
+     progress: 
+     <progress value = "25"
+               max = "100"></progress>
+  </p>
+```
 #### Q. What is the DOM? How does the DOM work? 
 
 The DOM (Document Object Model) is a cross-platform API that treats HTML documents as a tree structure consisting of nodes. These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
@@ -1238,8 +1294,6 @@ Example: 03
 | 02. |multipart/form-data	    |No characters are encoded. This value is required when you are using forms that have a file upload control |
 | 03.  |text/plain	            |Spaces are converted to "+" symbols, but no special characters are encoded|
 
-#### Q. What are the new form elements in html5?
-*TODO*
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
