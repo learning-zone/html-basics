@@ -55,16 +55,15 @@ There are five new form elements in the HTML5 forms specification: `datalist`, `
 
 **1.) datalist**: allows you to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse. 
 ```html
-<label for = "txtList">Your name
-    <input type = "text"
-            list = "names" 
-            id = "txtList"/>
-    <datalist id = "names">
-        <option value = "Andy">
-        <option value = "Andrew">
-        <option value = "Androcles">
-    </datalist>
-</label>
+<p>Enter your favorite browser name:</p>
+<input type="text" list="browsers" name="favorite_browser">
+<datalist id="browsers">
+    <option value="Firefox">
+    <option value="Chrome">    
+    <option value="Internet Explorer">
+    <option value="Opera">
+    <option value="Safari">
+</datalist>
 ```
 **2.) meter**: indicates a numeric value that falls within a range. The tag supports a number of attributes:    
 value: If you don’t specify a value, the first numeric value inside the `<meter></meter>` pair becomes the value.
