@@ -957,7 +957,7 @@ Syntax:
   ...
 </html>
 ```
-[HTML5 Application Cache](application-cache.html)
+[Live Example](https://learning-zone.github.io/html-interview-questions/application-cache.html) 
 
 *Note: Using the application caching feature described here is at this point highly discouraged; it’s in the process of being removed from the Web platform. Use **Service Workers** instead. In fact as of Firefox 44, when AppCache is used to provide offline support for a page a warning message is now displayed in the console advising developers to use Service workers instead (bug 1204581).*
 
