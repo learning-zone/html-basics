@@ -849,7 +849,7 @@ Example:
    </body>
 </html>
 ```
-[Details Example: HTML5 canvas](canvas.html)  
+[Live Example](https://learning-zone.github.io/html-interview-questions/canvas.html)  
 
 **Differences between SVG and Canvas**   
 
