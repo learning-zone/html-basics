@@ -74,7 +74,9 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
 * **optimum**: The optimal value of the element. 
 ```html
 <p>Disk Usage: <meter value="0.2">20%</meter></p>
+
 <p>Total Score: <meter value="6" min="0" max="10">6 out of 10</meter></p>
+
 <p>Pollution Level: <meter low="60" high="80" max="100" value="85">Very High</meter></p>
 ```
 **3.) output**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript). 
