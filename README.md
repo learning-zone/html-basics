@@ -42,7 +42,7 @@ Example:
 </html>
 ```
 Output
-```
+```javascript
 Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage': 
            Setting the value of 'key3230' exceeded the quota.
 ```
