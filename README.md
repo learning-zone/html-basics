@@ -347,10 +347,8 @@ The browser considers it a different file but prevents the need to change the fi
 1. Keep resources on a CDN
 
 
-#### Q. Explain what ARIA and screenreaders are, and how to make a website accessible.
-
+#### Q. What ARIA and screenreaders are, and how to make a website accessible?
 Screen readers are software programs that  provide assistive technologies that allow people with disabilities (such as no sight, sound or mouse-ing ability) to use web applications. You can make your sites more accessible by following ARIA standards such as semantic HTML, alt attributes and using [role=button] in the expected ways
-
 
 #### Q. What is the purpose of the `alt` attribute on images?
 
