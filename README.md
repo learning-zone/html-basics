@@ -81,20 +81,13 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
 ```
 **3.) output**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript). 
 ```html
-<output id = "myOutput">
-    This is the original value
-  </output>
-  <button onclick = "changeOutput()">
-    change the output
-  </button>
+<form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="range" id="a" value="50"> +
+  <input type="number" id="b" value="100"> =
+  <output name="result" for="a b"></output>
+</form>
 ```
-When the button is pressed, it will call the changeOutput() JavaScript function, which could look like this:
-```javascript
-function changeOutput(){
-    var myOutput = document.getElementById("myOutput");
-    myOutput.value = "The value has changed";
-  } // end changeOutput
-```
+
 **4.) progress**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
 ```html
  <p>Now destroying the world. <br />
