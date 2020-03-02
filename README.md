@@ -399,8 +399,8 @@ However, it can cause problems when the website has been changed by developers b
 A common technique to force the browser to re-download the file is to append a query string to the end of the file.
 
 ```html
-    <!-- src="js/script.js" => src="js/script.js?v=2" -->
-    <script src="/script.js?v=2"></script>
+<!-- src="js/script.js" => src="js/script.js?v=2" -->
+<script src="/script.js?v=2"></script>
 ```
 
 The browser considers it a different file but prevents the need to change the file name.    
