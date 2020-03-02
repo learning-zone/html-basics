@@ -91,6 +91,7 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
   <output name="result" for="a b"></output>
 </form>
 ```
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/output.html) 
 
 **4.) Progress Tag**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
 ```html
