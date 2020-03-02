@@ -776,7 +776,7 @@ Example:
    </body>
 </html>
 ```
-Example: [HTML5 SVG](https://github.com/learning-zone/d3js-interview-questions/blob/master/a.svg.html) 
+[Details Example: HTML5 SVG](https://github.com/learning-zone/d3js-interview-questions/blob/master/a.svg.html) 
 
 **2) Canvas**:  Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap with an “immediate mode” graphics application programming interface (API) for drawing on it. The <canvas> element is only a container for graphics. In order to draw the graphics, you are supposed to use a script. Canvas has several strategies when it comes to drawing paths, boxes, circles, text & adding images.
 
@@ -798,7 +798,7 @@ Example:
    </body>
 </html>
 ```
-Example: [HTML5 canvas](canvas.html)  
+[Details Example: HTML5 canvas](canvas.html)  
 
 **Differences between SVG and Canvas**   
 
