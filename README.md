@@ -668,7 +668,7 @@ If the CSS width property is set to 100%, the image will be responsive and scale
 ```html
 <img src="img.png" style="width:100%;">
 ```
-**3) Show Different Images Depending on Browser Width**  
+**3) Show different Images depending on Browser Width**  
 The HTML `<picture>` element allows you to define different images for different browser window sizes.
 ```html
 <picture>
