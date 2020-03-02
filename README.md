@@ -65,6 +65,8 @@ There are five new form elements in the HTML5 forms specification: `datalist`, `
     <option value="Safari">
 </datalist>
 ```
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/datalist.html)
+
 **2.) Meter Tag**: indicates a numeric value that falls within a range. The tag supports a number of attributes:    
 value: If you don’t specify a value, the first numeric value inside the `<meter></meter>` pair becomes the value.
 * **max**: The maximum possible value of the item.
