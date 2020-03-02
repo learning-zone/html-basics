@@ -866,7 +866,7 @@ Example:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. Explain Drag and Drop in HTML5.
+#### Q. Explain Drag and Drop in HTML5?
 HTML5 drag-and-drop uses the `DOM event model` and `drag events` inherited from `mouse events`. A typical drag operation begins when a user selects a draggable element, drags the element to a droppable element, and then releases the dragged element.
 
 |Event	        |Description                                                            |
@@ -906,6 +906,9 @@ Example
 </body>
 </html>
 ```
+
+[Live Example](https://learning-zone.github.io/html-interview-questions/drag-drop.html) 
+
 #### Q. Why to use IndexedDB instead of WebSQL in HTML5?
 **1.) WebSQL** is an API that is only supported in Chrome and Safari (and Android and iOS by extension). It provides an asynchronous, transactional interface to SQLite. Since 2010, it has been deprecated in favor of IndexedDB.
 
