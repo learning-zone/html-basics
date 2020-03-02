@@ -931,8 +931,8 @@ Example
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. List the API available in HTML5.
-**High Resolution Time API**     
+#### Q. List the API available in HTML5?
+**1.) High Resolution Time API**     
 The High Resolution Time API provides the current time in sub-millisecond resolution and such that it is not subject to system clock skew or adjustments.
 
 It exposes only one method, that belongs to the `window.performance` object, called `now()`. It returns a `DOMHighResTimeStamp` representing the current time in milliseconds. The timestamp is very accurate, with precision to a thousandth of a millisecond, allowing for accurate tests of the performance of our code.
@@ -940,7 +940,7 @@ It exposes only one method, that belongs to the `window.performance` object, cal
 var time = performance.now();
 ```
 
-**User Timing API**  
+**2.) User Timing API**  
 It allows us to accurately measure and report the performance of a section of JavaScript code. It deals with two main concepts: mark and measure. The former represents an instant (timestamp), while the latter represents the time elapsed between two marks.
 ```javascript
 performance.mark("startFoo");
@@ -950,7 +950,7 @@ performance.mark("endFoo");
 
 performance.measure("durationFoo", "startFoo", "endFoo");
 ```
-**Network Information API**  
+**3.) Network Information API**  
 This API belongs to the connection property of the `window.navigator` object. It exposes two read-only properties: `bandwidth` and `metered`. The former is a number representing an estimation of the current bandwidth, while the latter is a Boolean whose value is true if the user’s connection is subject to limitation and bandwidth usage, and false otherwise.
 
 |Sl.No| API                            | Description
@@ -962,27 +962,27 @@ This API belongs to the connection property of the `window.navigator` object. It
 | 05. |navigator.connection.effectiveType|Effective connection type  |
 | 06. |navigator.connection.saveData   |True if the user has requested a reduced data usage mode from the user agent ( saveData )|        
 
-**Vibration API**  
+**4.) Vibration API**  
 It exposes only one method, `vibrate()`, that belongs to the `window.navigator` object. This method accepts one parameter specifying the duration of the vibration in milliseconds. The parameter can be either an integer or an array of integers. In the second case, it’s interpreted as alternating vibration times and pauses.
 ```javascript
 // Vibrate once for 2 seconds
 navigator.vibrate(2000);
 ```
 
-**Battery Status API**  
+**5.) Battery Status API**  
 The Battery Status API exposes four properties (`charging`, `chargingTime`, `discharingTime`, and `level`) and four events. The properties specify if the battery is in charge, the seconds remaining until the battery is fully charged, the seconds remaining until the battery is fully discharged, and the current level of the battery. These properties belongs to the `battery` property of the `window.navigator` object.
 ```javascript
 // Retrieves the percentage of the current level of the device's battery
 var percentageLevel = navigator.battery.level * 100;
 ```
 
-**Page Visibility API**  
+**6.) Page Visibility API**  
 The Page Visibility API enables us to determine the current visibility state of the page. The Page Visibility API is especially useful for saving resources and improving performance by letting a page avoid performing unnecessary tasks when the document isn't visible.
 ```javascript
 //document.hidden retuns true if page is not visible.
 console.log('Page Visibility: '+document.hidden); 
 ```
-**Fullscreen API**  
+**7.) Fullscreen API**  
 The Fullscreen API provides a way to request fullscreen display from the user, and exit this mode when desired. This API exposes two methods, `requestFullscreen()` and `exitFullscreen()`, allowing us to request an element to become fullscreen and to exit fullscreen.
 ```javascript
 document.addEventListener("keypress", function(e) {
