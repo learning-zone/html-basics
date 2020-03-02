@@ -53,7 +53,7 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
 #### Q. What are the new form elements in HTML5?
 There are five new form elements in the HTML5 forms specification: `datalist`, `output`, `keygen`, `progress`, and `meter`. 
 
-**1.) datalist**: allows you to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse. 
+**1.) Datalist Tag**: allows you to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse. 
 ```html
 <p>Enter your favorite browser name:</p>
 <input type="text" list="browsers" name="favorite_browser">
@@ -65,7 +65,7 @@ There are five new form elements in the HTML5 forms specification: `datalist`, `
     <option value="Safari">
 </datalist>
 ```
-**2.) meter**: indicates a numeric value that falls within a range. The tag supports a number of attributes:    
+**2.) Meter Tag**: indicates a numeric value that falls within a range. The tag supports a number of attributes:    
 value: If you don’t specify a value, the first numeric value inside the `<meter></meter>` pair becomes the value.
 * **max**: The maximum possible value of the item.
 * **min**: The minimum possible value of the item.
@@ -79,7 +79,7 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
 
 <p>Pollution Level: <meter low="60" high="80" max="100" value="85">Very High</meter></p>
 ```
-**3.) output**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript). 
+**3.) Output Tag**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript). 
 ```html
 <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
   <input type="range" id="a" value="50"> +
@@ -88,7 +88,7 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
 </form>
 ```
 
-**4.) progress**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
+**4.) Progress Tag**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
 ```html
  
 <p>Progress: <progress id="bar" value="0" max="100"><span>0</span>%</progress></p>
@@ -111,6 +111,16 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
     countNumbers();
 </script>
 ```
+**5.) Keygen Tag**: The `<keygen>` element generates an encryption key for passing encrypted data to a server. When an HTML form is submitted, the browser will generate a key pair and store the private key in the browser's local key storage and send the public key to the server.
+```html
+<form action="process-key.php" method="post">
+    <label>Username: <input type="text" name="username"></label>
+    <label>Encryption: <keygen name="key"></label>
+    <input type="submit" value="Submit">
+</form>
+```
+*Note: This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time.*
+
 #### Q. What is the DOM? How does the DOM work? 
 
 The DOM (Document Object Model) is a cross-platform API that treats HTML documents as a tree structure consisting of nodes. These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
