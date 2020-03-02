@@ -856,7 +856,7 @@ Example
 </html>
 ```
 #### Q. Why to use IndexedDB instead of WebSQL in HTML5?
-**WebSQL** is an API that is only supported in Chrome and Safari (and Android and iOS by extension). It provides an asynchronous, transactional interface to SQLite. Since 2010, it has been deprecated in favor of IndexedDB.
+**1.) WebSQL** is an API that is only supported in Chrome and Safari (and Android and iOS by extension). It provides an asynchronous, transactional interface to SQLite. Since 2010, it has been deprecated in favor of IndexedDB.
 
 **Advantages**  
 * Supported on major mobile browsers (Android Browser, Mobile Safari, Opera Mobile) as well as several desktop browsers (Chrome, Safari, Opera).
@@ -871,7 +871,7 @@ Example
 * Suffers from object-relational impedance mismatch.
 * Diminishes agility, as database schema must be defined upfront, with all records in a table matching the same structure.
 
-**IndexedDB** is the successor to both LocalStorage and WebSQL, designed to replace them as the “one true” browser database. It exposes an asynchronous API that supposedly avoids blocking the DOM, but as we’ll see below, it doesn’t necessarily live up to the hype. Browser support is extremely spotty, with only Chrome and Firefox having fully usable implementations.
+**2.) IndexedDB** is the successor to both LocalStorage and WebSQL, designed to replace them as the “one true” browser database. It exposes an asynchronous API that supposedly avoids blocking the DOM, but as we’ll see below, it doesn’t necessarily live up to the hype. Browser support is extremely spotty, with only Chrome and Firefox having fully usable implementations.
 
 **Advantages** 
 * Good performance generally, being an asynchronous API. Database interaction won't lock up the user interface. (Synchronous API is also available for WebWorkers.)
