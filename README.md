@@ -116,6 +116,8 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
     countNumbers();
 </script>
 ```
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/progress.html) 
+
 **5.) Keygen Tag**: The `<keygen>` element generates an encryption key for passing encrypted data to a server. When an HTML form is submitted, the browser will generate a key pair and store the private key in the browser's local key storage and send the public key to the server.
 ```html
 <form action="process-key.php" method="post">
@@ -124,7 +126,10 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
     <input type="submit" value="Submit">
 </form>
 ```
+
 *Note: This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time.*
+
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/) 
 
 #### Q. What is the DOM? How does the DOM work? 
 
