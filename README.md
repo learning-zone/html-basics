@@ -639,6 +639,9 @@ Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain comm
 |fillText()	    |Draws "filled" text on the canvas                                 |
 |strokeText()	|Draws text on the canvas (no fill)                                |
 |measureText()	|Returns an object that contains the width of the specified text   |
+
+[Live Example](https://learning-zone.github.io/html-interview-questions/canvas.html) 
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
