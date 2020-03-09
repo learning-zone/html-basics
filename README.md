@@ -126,9 +126,9 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
     <input type="submit" value="Submit">
 </form>
 ```
-```diff
--Note: This feature is obsolete.
-```
+
+*Note: This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time.*
+
 [Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/) 
 
 #### Q. What is the DOM? How does the DOM work? 
