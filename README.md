@@ -127,7 +127,7 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
 </form>
 ```
 
-<span style="color:orange;">*Note: This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time.*</span>
+*Note: This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time.*
 
 [Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/) 
 
