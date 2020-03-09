@@ -1296,6 +1296,30 @@ Example: 03
 #### Q. What is progressive rendering?
 *TODO*
 
+#### Q. What is difference between Select and Datalist?
+For the select element, the user is required to select one of the options you've given. For the datalist element, it is suggested that the user select one of the options you've given, but he can actually enter anything he wants in the input.
+
+**Select-Option**  
+```html
+<select name="browser">
+  <option value="firefox">Firefox</option>
+  <option value="ie">IE</option>
+  <option value="chrome">Chrome</option>
+  <option value="opera">Opera</option>
+  <option value="safari">Safari</option>
+</select>
+```
+**Datalist-Option**  
+```html
+<input type="text" list="browsers">
+<datalist id="browsers">
+  <option value="Firefox">
+  <option value="IE">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
+```
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
