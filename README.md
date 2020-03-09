@@ -53,7 +53,7 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
 #### Q. What are the new form elements in HTML5?
 There are five new form elements in the HTML5 forms specification: `<datalist>`, `<output>`, `<keygen>`, `<progress>`, and `<meter>`. 
 
-**1.) Datalist Tag**: allows you to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse. 
+**1.) Datalist Tag**: allows to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse. 
 ```html
 <p>Enter your favorite browser name:</p>
 <input type="text" list="browsers" name="favorite_browser">
