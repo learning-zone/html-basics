@@ -423,7 +423,7 @@ Screen readers are software programs that  provide assistive technologies that a
 #### Q. ***What is the purpose of the `alt` attribute on images?***
 The `alt` attribute provides alternative information for an image if a user cannot view it. The `alt` attribute should be used to describe any images except those which only serve a decorative purposes, in which case it should be left empty.
 
-#### Q. ***Explain some of the pros and cons for CSS animations versus JavaScript animations.
+#### Q. ***Explain some of the pros and cons for CSS animations versus JavaScript animations?***
 Regarding optimization and responsiveness the debate bounces back and forth but, the concept is:
 
 * CSS animations allows the browser to choose where the animation processing is done, CPU or the GPU. (Central or Graphics Processing Unit)
@@ -442,7 +442,7 @@ Regarding optimization and responsiveness the debate bounces back and forth but,
 #### Q. ***What does CORS stand for and what issue does it address?***
 Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain communication from the browser. By building on top of the XMLHttpRequest object, CORS allows developers to work with the same idioms as same-domain requests. CORS gives web servers cross-domain access controls, which enable secure cross-domain data transfers.
 
-#### Q. *** Ways to improve website performance
+#### Q. ***Ways to improve website performance***
 
 * Minimize HTTP Requests
     * Sites are mainly slow because of too many (or too large) HTTP requests. We can eliminate unnecessary request;
@@ -542,7 +542,7 @@ Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain comm
 #### Q. ***What does the lang attribute in html do?***
 * Helps in styling pages by using them in css :lang() pseudo class Spelling and grammar checkers Languade detection by search engines
 
-#### Q. ***What is desktop first and mobile first design approach
+#### Q. ***What is desktop first and mobile first design approach?***
 * Desktop first : 
         General selectors and styles designed to make the site look good on DESKTOP screens defined globally. But they affect all devices, and must be overridden by max-width media queries targeting minimum screen size
 
@@ -962,7 +962,7 @@ Syntax:
 
 *Note: Using the application caching feature described here is at this point highly discouraged; it’s in the process of being removed from the Web platform. Use **Service Workers** instead. In fact as of Firefox 44, when AppCache is used to provide offline support for a page a warning message is now displayed in the console advising developers to use Service workers instead (bug 1204581).*
 
-#### Q. ***Explain Microdata in HTML5.
+#### Q. ***Explain Microdata in HTML5?***
 Microdata is a standardized way to provide additional semantics in web pages. Microdata lets you define your own customized elements and start embedding custom properties in your web pages. At a high level, microdata consists of a group of name-value pairs.
 
 The groups are called **items**, and each name-value pair is a **property**. Items and properties are represented by regular elements. Search engines benefit greatly from direct access to this structured data because it allows search engines to understand the information on web pages and provide more 
