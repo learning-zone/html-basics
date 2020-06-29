@@ -55,6 +55,7 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
 There are five new form elements in the HTML5 forms specification: `<datalist>`, `<output>`, `<keygen>`, `<progress>`, and `<meter>`. 
 
 **1.) Datalist Tag**: allows to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse. 
+
 ```html
 <p>Enter your favorite browser name:</p>
 <input type="text" list="browsers" name="favorite_browser">
@@ -75,6 +76,7 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
 * **high**: If the value can be defined as a range, this is the high end of the range.
 * **low**: If the value can defined as a range, this is the low end of that range.
 * **optimum**: The optimal value of the element. 
+
 ```html
 <p>Disk Usage: <meter value="0.2">20%</meter></p>
 
@@ -82,9 +84,11 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
 
 <p>Pollution Level: <meter low="60" high="80" max="100" value="85">Very High</meter></p>
 ```
+
 [Live Example](html5-semantic-tags/meter.html) 
 
-**3.) Output Tag**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript). 
+**3.) Output Tag**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript).
+
 ```html
 <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
   <input type="range" id="a" value="50"> +
@@ -92,6 +96,7 @@ value: If you don’t specify a value, the first numeric value inside the `<mete
   <output name="result" for="a b"></output>
 </form>
 ```
+
 [Live Example](html5-semantic-tags/output.html) 
 
 **4.) Progress Tag**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
