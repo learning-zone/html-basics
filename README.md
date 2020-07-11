@@ -10,6 +10,8 @@
 
 <br/>
 
+|Sl.No|  Questions                        |
+|----|------------------------------------|
 | 01.|[Does localStorage throw error after reaches maximum limits?](#q-does-localstorage-throw-error-after-reaches-maximum-limits)|
 | 02.|[What are the new form elements in HTML5?](#q-what-are-the-new-form-elements-in-html5)|
 | 03.|[What is the DOM? How does the DOM work?](#q-what-is-the-dom-how-does-the-dom-work)|
