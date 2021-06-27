@@ -1928,14 +1928,37 @@ A canonical tag is a way of telling search engines that a specific URL represent
 One of the most important features of HTML5 is its semantics tags. Semantic tags refers to syntax that makes the HTML more comprehensible by better defining the different sections and layout of web pages. It makes web pages more informative and adaptable, allowing browsers and search engines to better interpret content. For example, instead of using `<div id="header"></div>` you can use a `<header></hrader>` tag.
 
 <p align="center">
-    <img src="assets/images/semantic-tags.png" alt="HTML5 semantic tags" width="400px" />
+    <img src="assets/images/semantic-tags.png" alt="HTML5 semantic tags" width="250px" />
 </p>
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is the difference between an "attribute" and a "property" in HTML?***
+## Q. ***What is the difference between an "attribute" and a "property" in HTML?***
+
+Attributes are defined by HTML. Properties are accessed from DOM (Document Object Model) nodes.
+
+**Example**
+
+```html
+<input id="inputId" type="text" value="Hello World!" />
+```
+
+The **value** property reflects the current text-content inside the input box, whereas the **value** attribute contains the initial text-content of the **value** attribute from the HTML source code
+
+**Difference between HTML attributes and DOM properties:**
+
+|Attribute                               |Property                |
+|----------------------------------------|------------------------|
+|Attributes are defined by HTML.         |Properties are defined by the DOM.|
+|The value of an attribute is constant.  |The value of a property is variable.|
+|These are used to initialize the DOM properties. After initialization, the job is finish.| No such job defined.|
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***How do you set IE compatibility mode?***
 #### Q. ***What is an optional tag?***
 #### Q. ***Have you used different HTML templating languages before?***
