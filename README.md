@@ -1183,7 +1183,7 @@ There are following advantages of using SVG over other image formats like JPEG, 
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/svg.html) 
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/svg.html)
 
 **2.) Canvas**:  Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap with an “immediate mode” graphics application programming interface (API) for drawing on it. The `<canvas>` element is only a container for graphics. In order to draw the graphics, you are supposed to use a script. Canvas has several strategies when it comes to drawing paths, boxes, circles, text & adding images.
 
