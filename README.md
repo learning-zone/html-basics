@@ -1,7 +1,7 @@
 
 # HTML5 Interview Questions
 
-*Click <img src="assets/star.png" width="18" height="18" align="absmiddle" title="Star" /> if you like the project. Pull Request are highly appreciated.*
+*Click <img src="assets/images/star.png" width="18" height="18" align="absmiddle" title="Star" /> if you like the project. Pull Request are highly appreciated.*
 
 ## Table of Contents
 
@@ -136,7 +136,7 @@ There are five new form elements in the HTML5 forms specification: `<datalist>`,
 </datalist>
 ```
 
-[Live Example](html5-semantic-tags/datalist.html)
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/datalist.html)
 
 **2.) Meter Tag**: indicates a numeric value that falls within a range. The tag supports a number of attributes:
 value: If you don\'t specify a value, the first numeric value inside the `<meter></meter>` pair becomes the value.
@@ -155,7 +155,7 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 <p>Pollution Level: <meter low="60" high="80" max="100" value="85">Very High</meter></p>
 ```
 
-[Live Example](html5-semantic-tags/meter.html) 
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/meter.html)
 
 **3.) Output Tag**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript).
 
@@ -167,7 +167,7 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 </form>
 ```
 
-[Live Example](html5-semantic-tags/output.html) 
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/output.html)
 
 **4.) Progress Tag**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
 
@@ -194,7 +194,7 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 </script>
 ```
 
-[Live Example](html5-semantic-tags/progress.html) 
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/progress.html)
 
 **5.) Keygen Tag**: The `<keygen>` element generates an encryption key for passing encrypted data to a server. When an HTML form is submitted, the browser will generate a key pair and store the private key in the browser\'s local key storage and send the public key to the server.
 
@@ -208,7 +208,7 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 
 *Note: This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time.*
 
-[Live Example](html5-semantic-tags/) 
+[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -238,7 +238,7 @@ In order to render content the browser has to go through a series of steps:
 * Layout
 * Paint
 
-<img src="assets/layers.png" alt="Browser Rendering Engine" />
+<img src="assets/images/layers.png" alt="Browser Rendering Engine" />
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -848,6 +848,68 @@ Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain comm
 |strokeText()	|Draws text on the canvas (no fill)                                |
 |measureText()	|Returns an object that contains the width of the specified text   |
 
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Canvas</title>
+  </head>
+  <body>
+    
+    <div><b>Text</b></div>
+    <canvas id="text" width="200" height="100" ></canvas><br/><br/>
+
+
+    <div><b>Straight Line</b></div>
+    <canvas id="line" width="300" height="0" style="border: 1px solid #333;"></canvas><br/><br/>
+
+
+    <div><b>Rectangle</b></div>
+    <canvas id="rectangle" width="300" height="200" style="border: 1px solid #999;"></canvas><br/><br/>
+
+
+    <div><b>Rectangle with Style</b></div>
+    <canvas id="rect">This browser does not support Canvas!</canvas><br/><br/>
+
+
+    <div><b>Circle</b></div>
+    <canvas id="circle">This browser does not support Canvas!</canvas><br/><br/>
+
+
+    <script type="text/javascript">
+      // Text with style
+      var canvas = document.getElementById('text');
+      var context = canvas.getContext('2d');
+      context.font = '20pt Calibri';
+      context.fillStyle = 'blue';
+      context.fillText('Hello World!', 50, 50);
+
+
+      // Straight Line
+      var canvas = document.getElementById("line");
+      var context = canvas.getContext("2d");
+      context.moveTo(50, 150);
+      context.lineTo(250, 50);
+      context.stroke();
+
+
+      // Rectange with style
+      var canvas = document.getElementById("rect");
+      var context = canvas.getContext("2d");
+      context.fillStyle = "#FF0000";
+      context.fillRect(0, 0, 300, 200);
+
+      // Circle
+      var canvas = document.getElementById("circle");
+      var context = canvas.getContext("2d");
+      context.beginPath();
+      context.arc(95, 50, 40, 0, 2 * Math.PI);
+      context.stroke();
+    </script>
+  </body>
+</html>
+```
+
 [Live Example](https://learning-zone.github.io/html-interview-questions/canvas.html) 
 
 <div align="right">
@@ -905,7 +967,7 @@ Syntax:
 <footer></footer>
 ```
 
-*Example:* [HTML5 Semantic Tags](semantic-tags.html)
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/semantic-tags.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1042,7 +1104,7 @@ if ("geolocation" in navigator) {
 }
 ```
 
-*Example:* [HTML5 Geolocation API](geolocation.html)
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/geolocation.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1086,7 +1148,7 @@ There are following advantages of using SVG over other image formats like JPEG, 
 </html>
 ```
 
-[Live Example](a.svg.html)
+[Live Example](https://learning-zone.github.io/html-interview-questions/svg.html) 
 
 **2.) Canvas**:  Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap with an “immediate mode” graphics application programming interface (API) for drawing on it. The `<canvas>` element is only a container for graphics. In order to draw the graphics, you are supposed to use a script. Canvas has several strategies when it comes to drawing paths, boxes, circles, text & adding images.
 
@@ -1110,7 +1172,7 @@ There are following advantages of using SVG over other image formats like JPEG, 
 </html>
 ```
 
-[Live Example](canvas.html)  
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html) 
 
 **Differences between SVG and Canvas**
 
@@ -1170,7 +1232,7 @@ Example
 </html>
 ```
 
-[Live Example](drag-drop.html)
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/drag-drop.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1229,7 +1291,7 @@ Syntax:
 </html>
 ```
 
-[Live Example](application-cache.html) 
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/application-cache.html)
 
 *Note: Using the application caching feature described here is at this point highly discouraged; it\'s in the process of being removed from the Web platform. Use **Service Workers** instead. In fact as of Firefox 44, when AppCache is used to provide offline support for a page a warning message is now displayed in the console advising developers to use Service workers instead (bug 1204581).*
 
@@ -1340,7 +1402,7 @@ function toggleFullScreen() {
 }
 ```
 
-*Example:* [HTML5 API](html5-api.html)
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/html5-api.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
