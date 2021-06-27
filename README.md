@@ -1781,6 +1781,59 @@ Since the APIs are usually co-located with the server, the content is loaded sup
 </div>
 
 #### Q. ***What is an iframe and how it works?***
+
+The `<iframe>` HTML element represents a nested browsing context, embedding another HTML page into the current one. Each embedded browsing context has its own **session history** and **document**. The browsing context that embeds the others is called the parent browsing context. The topmost browsing context — the one with no parent — is usually the browser window, represented by the **Window** object.
+
+**Example**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 iframe</title>
+  </head>
+  <style type="text/css">
+  iframe {
+    border: 1px solid #333;
+    width: 100%;
+  }
+  .output {
+    background: #eee;
+  }
+  </style>
+  <body>
+    <p>The Inline iFrame Example</p>
+    <iframe id="inlineFrameId"
+      title="Inline iFrame Example"
+      width="300"
+      height="200"
+      src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik">
+        Sorry your browser does not support inline frames.
+    </iframe>
+  </body>
+</html>
+```
+
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/iframe.html)
+
+### **The Iframe Tag Attributes**
+
+|Attribute       | Description                |
+|----------------|----------------------------|
+|allow           |indicates what features the iframe is allowed to use (e.g. fullscreen, camera, autoplay)|
+|allowfullscreen |grants or denies permission for the iframe to appear in full-screen mode|
+|height           |sets the height of the iframe (if not specified, the default height is 150 pixels)|
+|loading         |sets lazy loading or eager loading for the iframe|
+|referrerpolicy  |sets what referrer information should be sent in the request for the iframe|
+|src             |the address of the resource included in the iframe|
+|width           |sets the width of the iframe (if not specified, the default width is 300 pixels)|
+
+*Note: Because each browsing context is a complete document environment, every `<iframe>` in a page requires increased memory and other computing resources.*
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***How can you highlight text in HTML?***
 #### Q. ***How Can I Get Indexed Better by Search Engines?***
 #### Q. ***What is the difference between an "attribute" and a "property" in HTML?***
