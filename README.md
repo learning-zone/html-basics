@@ -1464,7 +1464,7 @@ socket.addEventListener('message', function(event) {
 
 ## Q. ***What is difference between SVG and Canvas?***
 
-**1.) SVG**
+### **SVG**
 
 The Scalable Vector Graphics (SVG) is an XML-based image format that is used to define two-dimensional vector based graphics for the web. Unlike raster image (e.g. .jpg, .gif, .png, etc.), a vector image can be scaled up or down to any extent without losing the image quality.
 
@@ -1504,7 +1504,7 @@ There are following advantages of using SVG over other image formats like JPEG, 
 
 [Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/svg.html)
 
-**2.) Canvas**
+### **Canvas**
 
 Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap with an “immediate mode” graphics application programming interface (API) for drawing on it. The `<canvas>` element is only a container for graphics. In order to draw the graphics, you are supposed to use a script. Canvas has several strategies when it comes to drawing paths, boxes, circles, text & adding images.
 
