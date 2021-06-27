@@ -1835,6 +1835,32 @@ The `<iframe>` HTML element represents a nested browsing context, embedding anot
 </div>
 
 #### Q. ***How can you highlight text in HTML?***
+
+The `<mark>` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage\'s relevance or importance in the enclosing context.
+
+**Example**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Highlight text in HTML</title>
+  </head>
+  <body>
+    <p>Search results for "salamander":</p>
+    <hr>
+    <p>Several species of <mark>salamander</mark> inhabit the temperate rainforest of the Pacific Northwest.</p>
+    <p>Most <mark>salamander</mark>s are nocturnal, and hunt for insects, worms, and other small creatures.</p>
+  </body>
+</html>
+```
+
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/mark.html)
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***How Can I Get Indexed Better by Search Engines?***
 #### Q. ***What is the difference between an "attribute" and a "property" in HTML?***
 #### Q. ***How do you set IE compatibility mode?***
