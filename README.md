@@ -1780,7 +1780,7 @@ Since the APIs are usually co-located with the server, the content is loaded sup
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is an iframe and how it works?***
+## Q. ***What is an iframe and how it works?***
 
 The `<iframe>` HTML element represents a nested browsing context, embedding another HTML page into the current one. Each embedded browsing context has its own **session history** and **document**. The browsing context that embeds the others is called the parent browsing context. The topmost browsing context — the one with no parent — is usually the browser window, represented by the **Window** object.
 
@@ -1795,7 +1795,7 @@ The `<iframe>` HTML element represents a nested browsing context, embedding anot
   <style type="text/css">
   iframe {
     border: 1px solid #333;
-    width: 100%;
+    width: 50%;
   }
   .output {
     background: #eee;
