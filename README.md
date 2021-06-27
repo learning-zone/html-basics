@@ -1745,7 +1745,7 @@ Progressive Rendering is the technique of sequentially rendering portions of a w
 
 It implies that once the important material is produced on the server, you may stream it to the client without having to wait for non-critical stuff to be displayed. It combines the advantages of both CSR (Client Side Rendering) and SSR (Server Side Rendering) (Server Side Rendering).
 
-**Client Side Rendering**
+### **Client Side Rendering**
 
 Client Side Rendering (CSR) is a technique in which content is rendered in the browser using JavaScript. Instead of getting all the content from the HTML file itself, the server sends HTML with an empty body and script tags that contain links to JavaScript bundles that the browser will use to render the content.
 
@@ -1758,7 +1758,7 @@ Typical page load behaviour in CSR —
 
 Since the all the content starts loading only after loading the initial JavaScript, it takes a longer time to show any content on the page. If the user is on a slow network, the content is blocked for an even longer time due to lower bandwidth and higher latency.
 
-**Server Side Rendering**
+### **Server Side Rendering**
 
 When rendering on the server side, the HTML is rendered on the server and sent to the client. The content that we need to display on the screen becomes available immediately after the HTML is parsed; hence, primary rendering of content is faster than CSR.
 
