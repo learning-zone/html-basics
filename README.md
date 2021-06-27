@@ -120,9 +120,9 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
 
 ## Q. ***What are the new form elements in HTML5?***
 
-There are five new form elements in the HTML5 forms specification: `<datalist>`, `<output>`, `<keygen>`, `<progress>`, and `<meter>`. 
+There are five new form elements in the HTML5 forms specification: `<datalist>`, `<output>`, `<progress>`, and `<meter>`. 
 
-**1.) Datalist Tag**: allows to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse. 
+**1.) Datalist Tag**: allows to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse.
 
 ```html
 <p>Enter your favorite browser name:</p>
@@ -196,25 +196,11 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 
 [Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/progress.html)
 
-**5.) Keygen Tag**: The `<keygen>` element generates an encryption key for passing encrypted data to a server. When an HTML form is submitted, the browser will generate a key pair and store the private key in the browser\'s local key storage and send the public key to the server.
-
-```html
-<form action="process-key.php" method="post">
-    <label>Username: <input type="text" name="username"></label>
-    <label>Encryption: <keygen name="key"></label>
-    <input type="submit" value="Submit">
-</form>
-```
-
-*Note: This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time.*
-
-[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/)
-
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***What is the DOM? How does the DOM work?*** 
+## Q. ***What is the DOM? How does the DOM work?***
 
 The DOM (Document Object Model) is a cross-platform API that treats HTML documents as a tree structure consisting of nodes. These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document. In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
 
@@ -910,7 +896,7 @@ Cross-Origin Resource Sharing (CORS) is a W3C spec that allows cross-domain comm
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/canvas.html) 
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -966,8 +952,6 @@ Syntax:
 </section>
 <footer></footer>
 ```
-
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/semantic-tags.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1090,7 +1074,7 @@ An example of a self closing tag is something like a line break (`<br />`) or th
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***How Geo-location API works in html5?***
+## Q. ***How geolocation api works in html5?***
 
 The Geolocation API allows the user to provide their location to web applications if they so desire. For privacy reasons, the user is asked for permission to report location information.
 
@@ -1102,6 +1086,57 @@ if ("geolocation" in navigator) {
 } else {
   /* geolocation IS NOT available */
 }
+```
+
+**Example**
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>Geolocation</title>
+    </head>
+   <body>
+    <p><button onclick="geoFindMe()">Show my location</button></p>
+    <div id="out"></div>
+</body>
+
+<script type="text/javascript">
+    /**
+        The Geolocation API allows the user to provide their location to web applications 
+        if they so desire. For privacy reasons, the user is asked for permission to report 
+        location information.
+    **/
+    function geoFindMe() {
+        var output = document.getElementById("out");
+
+        if (!navigator.geolocation){
+            output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+            return;
+        }
+
+        function success(position) {
+            var latitude  = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+
+            var img = new Image();
+            img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+
+            output.appendChild(img);
+        }
+
+        function error() {
+            output.innerHTML = "Unable to retrieve your location";
+        }
+
+        output.innerHTML = "<p>Locating…</p>";
+
+        navigator.geolocation.getCurrentPosition(success, error); //function to get the current position of the device
+    }
+</script>
+</html>
 ```
 
 [Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/geolocation.html)
