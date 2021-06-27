@@ -30,6 +30,8 @@
 
             var img = new Image();
             img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+            img.title = "Google Map"
+            img.alt = "Google Map"
 
             output.appendChild(img);
         }
