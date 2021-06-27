@@ -830,7 +830,9 @@ In order to render content the browser has to go through a series of steps:
 * Layout
 * Paint
 
-<img src="assets/images/layers.png" alt="Browser Rendering Engine" />
+<p align="center">
+    <img src="assets/images/layers.png" alt="Browser Rendering Engine" />
+</p>
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1711,6 +1713,7 @@ Modernizr is a JavaScript library that detects which HTML5 and CSS3 features vis
 **Using Modernizr with CSS**
 
 By default, Modernizr sets classes for all of your tests on the root element (`<html>` for websites). This means adding the class for each feature when it is supported, and adding it with a no- prefix when it is not (e.g. `.feature` or `.no-feature`).
+
 ```css
 .no-cssgradients .header {
   background: url("images/glossybutton.png");
@@ -1720,8 +1723,10 @@ By default, Modernizr sets classes for all of your tests on the root element (`<
   background-image: linear-gradient(cornflowerblue, rebeccapurple);
 }
 ```
+
 **Using Modernizr with JavaScript**  
 Modernizr keeps track of the results of all of it\'s feature detections via the `Modernizr` object. 
+
 ```javascript
 if (Modernizr.canvas) {
     alert("This browser supports HTML5 canvas!");
@@ -1734,7 +1739,47 @@ if (Modernizr.canvas) {
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is progressive rendering?***
+## Q. ***What is progressive rendering?***
+
+Progressive Rendering is the technique of sequentially rendering portions of a webpage in the server and streaming it to the client in parts without waiting for the whole page to rendered.
+
+It implies that once the important material is produced on the server, you may stream it to the client without having to wait for non-critical stuff to be displayed. It combines the advantages of both CSR (Client Side Rendering) and SSR (Server Side Rendering) (Server Side Rendering).
+
+**Client Side Rendering**
+
+Client Side Rendering (CSR) is a technique in which content is rendered in the browser using JavaScript. Instead of getting all the content from the HTML file itself, the server sends HTML with an empty body and script tags that contain links to JavaScript bundles that the browser will use to render the content.
+
+Typical page load behaviour in CSR —
+
+* Browser requests the server for HTML
+* Server sends HTML with script tags in head and no content in body
+* Browser parses the HTML and makes http requests to load the scripts
+* Once the scripts are loaded, the browser parses them and makes API requests and loads all the content asynchronously
+
+Since the all the content starts loading only after loading the initial JavaScript, it takes a longer time to show any content on the page. If the user is on a slow network, the content is blocked for an even longer time due to lower bandwidth and higher latency.
+
+**Server Side Rendering**
+
+When rendering on the server side, the HTML is rendered on the server and sent to the client. The content that we need to display on the screen becomes available immediately after the HTML is parsed; hence, primary rendering of content is faster than CSR.
+
+Typical page load behaviour in SSR —
+
+* Browser requests the server for HTML.
+* Server makes API requests (usually co-located) and renders the content in the server.
+* Once the page is ready, the server sends it to the browser.
+* The browser loads and parses the HTML and paints the content on the screen without waiting for the JavaScript bundle(s) to load.
+* Once the JavaScript bundle(s) are loaded, the browser hydrates interactivity to DOM elements, which is usually attaching event handlers and other interactive behaviours.
+
+Since the APIs are usually co-located with the server, the content is loaded super fast (faster than CSR) and the HTML is sent to the browser. Initial JavaScript load doesn\'t block content load as the HTML sent by the server already has the content.
+
+<p align="center">
+    <img src="assets/images/progressive-rendering.png" alt="Progressive Rendering" width="500px" />
+</p>
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***What is an iframe and how it works?***
 #### Q. ***How can you highlight text in HTML?***
 #### Q. ***How Can I Get Indexed Better by Search Engines?***
