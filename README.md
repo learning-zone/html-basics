@@ -1045,147 +1045,6 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***Explain about HTML Canvas?*** 
-
-**canvas** is an HTML element which can be used to draw graphics via JavaScript. This can, for instance, be used to draw graphs, combine photos, or create animations.
-
-**Colors, Styles, and Shadows**
-
-|  Property    |	Description                                                                 |
-|--------------|--------------------------------------------------------------------------------|
-|fillStyle	   | Sets or returns the color, gradient, or pattern used to fill the drawing       |
-|strokeStyle   | Sets or returns the color, gradient, or pattern used for strokes               |
-|shadowColor   | Sets or returns the color to use for shadows                                   |
-|shadowBlur	   | Sets or returns the blur level for shadows                                     |
-|shadowOffsetX | Sets or returns the horizontal distance of the shadow from the shape           |
-|shadowOffsetY | Sets or returns the vertical distance of the shadow from the shape             |
-
-
-**Line Styles**
-
-|Property	 |  Description                                                   |
-|------------|----------------------------------------------------------------|
-|lineCap	 |Sets or returns the style of the end caps for a line            |
-|lineJoin	 |Sets or returns the type of corner created, when two lines meet |
-|lineWidth	 |Sets or returns the current line width                          |
-|miterLimit	 |Sets or returns the maximum miter length                        |
-
-
-**Rectangles**
-  
-|Method	        |Description                                          |
-|---------------|-----------------------------------------------------|
-|rect()	        |Creates a rectangle                                  |
-|fillRect()	    |Draws a "filled" rectangle                           |
-|strokeRect()	|Draws a rectangle (no fill)                          |
-|clearRect()	|Clears the specified pixels within a given rectangle |
-
-
-**Paths**
-   
-| Method	      |   Description                                                                                 |
-|-----------------|---------------------------------------------------------------------------------------------- |
-|fill()	          |Fills the current drawing (path)                                                               |
-|stroke()	      |Actually draws the path you have defined                                                       |
-|beginPath()	  |Begins a path, or resets the current path                                                      |
-|moveTo()	      |Moves the path to the specified point in the canvas, without creating a line                   |
-|closePath()	  |Creates a path from the current point back to the starting point                               |
-|lineTo()	      |Adds a new point and creates a line to that point from the last specified point in the canvas  |
-|clip()	          |Clips a region of any shape and size from the original canvas                                  |
-|arc()	          |Creates an arc/curve (used to create circles, or parts of circles)                             |
-|arcTo()	      |Creates an arc/curve between two tangents                                                      |
-  
-
-**Transformations**
-   
-|Method	        |Description                                                                |
-|---------------|-------------------------------------------------------------------------- |
-|scale()	    |Scales the current drawing bigger or smaller                               |
-|rotate()	    |Rotates the current drawing                                                |
-|translate()	|Remaps the (0,0) position on the canvas                                    |
-|transform()	|Replaces the current transformation matrix for the drawing                 |
-|setTransform()	|Resets the current transform to the identity matrix. Then runs transform() |
-  
-
-**Text**
-    
-|Property	    |Description                                                       |
-|---------------|----------------------------------------------------------------- |
-|font	        |Sets or returns the current font properties for text content      |
-|textAlign	    |Sets or returns the current alignment for text content            |
-|textBaseline	|Sets or returns the current text baseline used when drawing text  |
-|fillText()	    |Draws "filled" text on the canvas                                 |
-|strokeText()	|Draws text on the canvas (no fill)                                |
-|measureText()	|Returns an object that contains the width of the specified text   |
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>HTML5 Canvas</title>
-  </head>
-  <body>
-    
-    <div><b>Text</b></div>
-    <canvas id="text" width="200" height="100" ></canvas><br/><br/>
-
-
-    <div><b>Straight Line</b></div>
-    <canvas id="line" width="300" height="0" style="border: 1px solid #333;"></canvas><br/><br/>
-
-
-    <div><b>Rectangle</b></div>
-    <canvas id="rectangle" width="300" height="200" style="border: 1px solid #999;"></canvas><br/><br/>
-
-
-    <div><b>Rectangle with Style</b></div>
-    <canvas id="rect">This browser does not support Canvas!</canvas><br/><br/>
-
-
-    <div><b>Circle</b></div>
-    <canvas id="circle">This browser does not support Canvas!</canvas><br/><br/>
-
-
-    <script type="text/javascript">
-      // Text with style
-      var canvas = document.getElementById('text');
-      var context = canvas.getContext('2d');
-      context.font = '20pt Calibri';
-      context.fillStyle = 'blue';
-      context.fillText('Hello World!', 50, 50);
-
-
-      // Straight Line
-      var canvas = document.getElementById("line");
-      var context = canvas.getContext("2d");
-      context.moveTo(50, 150);
-      context.lineTo(250, 50);
-      context.stroke();
-
-
-      // Rectange with style
-      var canvas = document.getElementById("rect");
-      var context = canvas.getContext("2d");
-      context.fillStyle = "#FF0000";
-      context.fillRect(0, 0, 300, 200);
-
-      // Circle
-      var canvas = document.getElementById("circle");
-      var context = canvas.getContext("2d");
-      context.beginPath();
-      context.arc(95, 50, 40, 0, 2 * Math.PI);
-      context.stroke();
-    </script>
-  </body>
-</html>
-```
-
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html)
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
 ## Q. ***Explain about HTML Layout Engines used by browsers?***
 
 |Engine	      |Status	        |Embedded in                                                                           |
@@ -1455,6 +1314,147 @@ socket.addEventListener('message', function(event) {
     console.log('Message from server ', event.data);
 });
 ```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Explain about HTML Canvas?***
+
+**canvas** is an HTML element which can be used to draw graphics via JavaScript. This can, for instance, be used to draw graphs, combine photos, or create animations.
+
+**Colors, Styles, and Shadows**
+
+|  Property    |	Description                                                                 |
+|--------------|--------------------------------------------------------------------------------|
+|fillStyle	   | Sets or returns the color, gradient, or pattern used to fill the drawing       |
+|strokeStyle   | Sets or returns the color, gradient, or pattern used for strokes               |
+|shadowColor   | Sets or returns the color to use for shadows                                   |
+|shadowBlur	   | Sets or returns the blur level for shadows                                     |
+|shadowOffsetX | Sets or returns the horizontal distance of the shadow from the shape           |
+|shadowOffsetY | Sets or returns the vertical distance of the shadow from the shape             |
+
+
+**Line Styles**
+
+|Property	 |  Description                                                   |
+|------------|----------------------------------------------------------------|
+|lineCap	 |Sets or returns the style of the end caps for a line            |
+|lineJoin	 |Sets or returns the type of corner created, when two lines meet |
+|lineWidth	 |Sets or returns the current line width                          |
+|miterLimit	 |Sets or returns the maximum miter length                        |
+
+
+**Rectangles**
+  
+|Method	        |Description                                          |
+|---------------|-----------------------------------------------------|
+|rect()	        |Creates a rectangle                                  |
+|fillRect()	    |Draws a "filled" rectangle                           |
+|strokeRect()	|Draws a rectangle (no fill)                          |
+|clearRect()	|Clears the specified pixels within a given rectangle |
+
+
+**Paths**
+   
+| Method	      |   Description                                                                                 |
+|-----------------|---------------------------------------------------------------------------------------------- |
+|fill()	          |Fills the current drawing (path)                                                               |
+|stroke()	      |Actually draws the path you have defined                                                       |
+|beginPath()	  |Begins a path, or resets the current path                                                      |
+|moveTo()	      |Moves the path to the specified point in the canvas, without creating a line                   |
+|closePath()	  |Creates a path from the current point back to the starting point                               |
+|lineTo()	      |Adds a new point and creates a line to that point from the last specified point in the canvas  |
+|clip()	          |Clips a region of any shape and size from the original canvas                                  |
+|arc()	          |Creates an arc/curve (used to create circles, or parts of circles)                             |
+|arcTo()	      |Creates an arc/curve between two tangents                                                      |
+  
+
+**Transformations**
+   
+|Method	        |Description                                                                |
+|---------------|-------------------------------------------------------------------------- |
+|scale()	    |Scales the current drawing bigger or smaller                               |
+|rotate()	    |Rotates the current drawing                                                |
+|translate()	|Remaps the (0,0) position on the canvas                                    |
+|transform()	|Replaces the current transformation matrix for the drawing                 |
+|setTransform()	|Resets the current transform to the identity matrix. Then runs transform() |
+  
+
+**Text**
+    
+|Property	    |Description                                                       |
+|---------------|----------------------------------------------------------------- |
+|font	        |Sets or returns the current font properties for text content      |
+|textAlign	    |Sets or returns the current alignment for text content            |
+|textBaseline	|Sets or returns the current text baseline used when drawing text  |
+|fillText()	    |Draws "filled" text on the canvas                                 |
+|strokeText()	|Draws text on the canvas (no fill)                                |
+|measureText()	|Returns an object that contains the width of the specified text   |
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Canvas</title>
+  </head>
+  <body>
+    
+    <div><b>Text</b></div>
+    <canvas id="text" width="200" height="100" ></canvas><br/><br/>
+
+
+    <div><b>Straight Line</b></div>
+    <canvas id="line" width="300" height="0" style="border: 1px solid #333;"></canvas><br/><br/>
+
+
+    <div><b>Rectangle</b></div>
+    <canvas id="rectangle" width="300" height="200" style="border: 1px solid #999;"></canvas><br/><br/>
+
+
+    <div><b>Rectangle with Style</b></div>
+    <canvas id="rect">This browser does not support Canvas!</canvas><br/><br/>
+
+
+    <div><b>Circle</b></div>
+    <canvas id="circle">This browser does not support Canvas!</canvas><br/><br/>
+
+
+    <script type="text/javascript">
+      // Text with style
+      var canvas = document.getElementById('text');
+      var context = canvas.getContext('2d');
+      context.font = '20pt Calibri';
+      context.fillStyle = 'blue';
+      context.fillText('Hello World!', 50, 50);
+
+
+      // Straight Line
+      var canvas = document.getElementById("line");
+      var context = canvas.getContext("2d");
+      context.moveTo(50, 150);
+      context.lineTo(250, 50);
+      context.stroke();
+
+
+      // Rectange with style
+      var canvas = document.getElementById("rect");
+      var context = canvas.getContext("2d");
+      context.fillStyle = "#FF0000";
+      context.fillRect(0, 0, 300, 200);
+
+      // Circle
+      var canvas = document.getElementById("circle");
+      var context = canvas.getContext("2d");
+      context.beginPath();
+      context.arc(95, 50, 40, 0, 2 * Math.PI);
+      context.stroke();
+    </script>
+  </body>
+</html>
+```
+
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
