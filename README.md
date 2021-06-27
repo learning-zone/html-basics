@@ -1953,7 +1953,7 @@ The **value** property reflects the current text-content inside the input box, w
 |----------------------------------------|------------------------|
 |Attributes are defined by HTML.         |Properties are defined by the DOM.|
 |The value of an attribute is constant.  |The value of a property is variable.|
-|These are used to initialize the DOM properties. After initialization, the job is finish.| No such job defined.|
+|These are used to initialize the DOM properties.| No such job defined.|
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
