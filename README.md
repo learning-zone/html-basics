@@ -1959,7 +1959,42 @@ The **value** property reflects the current text-content inside the input box, w
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***How do you set IE compatibility mode?***
+## Q. ***How do you set IE compatibility mode?***
+
+**X-UA-Compatible** is a document mode meta tag that allows to choose what version of Internet Explorer the page should be rendered as. It is used by Internet Explorer 8 to specify whether a page should be rendered as IE 7 (compatibility view) or IE 8 (standards view).
+
+```html
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <title>My Web Page</title>
+   </head>
+   <body>
+      <p>Content goes here.</p>
+   </body>
+</html>
+```
+
+Emulating the version tells the browser to use the DOCTYPE to determine how to render content. pages without a DOCTYPE will be rendered in quirks mode. Edge mode tells Windows Internet Explorer to display content in the highest mode available, which actually breaks the "lock-in" paradigm. With Internet Explorer 8, this is equivalent to IE8 mode.
+
+**Setting the Meta Element**
+
+The meta element includes a content attribute that enables you to specify the mode that content is rendered in for the webpage, as the following table shows.
+
+|Value          |Rendering mode                                              |
+|---------------|------------------------------------------------------------|
+|IE=edge        |Display content in the highest mode available               |
+|IE=9           |Use the Windows Internet Explorer 9 standards rendering mode|
+|IE=8           |Use the Internet Explorer 8 standards rendering mode        |
+|IE=7           |Use the Windows Internet Explorer 7 standards rendering mode|
+|IE=5           |Use the Microsoft Internet Explorer 5 standards rendering mode|
+
+*Note: It is recommended that Web developers restrict their use of Edge mode to test pages and other non-production uses because of the possible unexpected results of rendering page content in future versions of Windows Internet Explorer.*
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***What is an optional tag?***
 #### Q. ***Have you used different HTML templating languages before?***
 #### Q. ***How do you change the direction of html text?***
