@@ -2049,7 +2049,37 @@ The typical usage is when you render something on the server side. The usual use
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***How do you change the direction of html text?***
+## Q. ***How do you change the direction of html text?***
+
+The default text direction in HTML is left-to-right. However, when developing web content and applications, we may need to set it to right-to-left, for instance, to cater for languages such as Arabic, Hebrew, Pashto, Persian, Urdu, and Sindhi.
+
+We can set text direction in HTML in one of two ways:
+
+* With the HTML **dir** attribute
+* With the CSS **direction** property
+
+**Example**
+
+```html
+<!-- Syntax -->
+<element dir="ltr|rtl|auto">
+
+<!-- Example -->
+<textarea dir="rtl"></textarea>
+```
+
+**Attribute Values**
+
+|Value          |Description                |
+|---------------|---------------------------|
+|ltr            |Default. Left-to-right text direction|
+|rtl            |Right-to-left text direction|
+|auto           |Let the browser figure out the text direction, based on the content|
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***When is it appropriate to use the small element?***
 #### Q. ***How do you serve a page with content in multiple languages?***
 #### Q. ***What is the difference between `<section>` and `<div>`?***
