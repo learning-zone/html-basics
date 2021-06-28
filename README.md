@@ -2098,9 +2098,9 @@ The `<small>` HTML element represents side-comments and small print, like copyri
     }
   </style>
   <body>
-    <p>MDN Web Docs is a learning platform for Web technologies and the software that powers the Web.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
     <hr>
-    <p><small>The content is licensed under a Creative Commons Attribution-ShareAlike 2.5 Generic License.</small></p>
+    <p><small>The content is licensed under a W3C License.</small></p>
   </body>
 </html>
 ```
