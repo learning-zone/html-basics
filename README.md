@@ -2043,6 +2043,8 @@ The following lists all optional tags.
 
 No, but I heard about html template language like PUG (formerly Jade), ERB, Slim, Handlebars, Jinja, Liquid etc which is HTML preprocessor this mean that it is basically a language that will be converted to native html code.
 
+The typical usage is when you render something on the server side. The usual use-case is when you have to add dynamic content to your website, so when you fetch something from your database, you will have to replace some parts in your original template.
+
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
