@@ -2080,7 +2080,37 @@ We can set text direction in HTML in one of two ways:
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***When is it appropriate to use the small element?***
+## Q. ***When is it appropriate to use the small element?***
+
+The `<small>` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from `small` to `x-small`.
+
+**Example**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Small Element</title>
+  </head>
+  <style>
+    small {
+      font-size: .7em
+    }
+  </style>
+  <body>
+    <p>MDN Web Docs is a learning platform for Web technologies and the software that powers the Web.</p>
+    <hr>
+    <p><small>The content is licensed under a Creative Commons Attribution-ShareAlike 2.5 Generic License.</small></p>
+  </body>
+</html>
+```
+
+[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/small-element.html)
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***How do you serve a page with content in multiple languages?***
 #### Q. ***What is the difference between `<section>` and `<div>`?***
 #### Q. ***Where and why is the rel="noopener" attribute used?*** 
