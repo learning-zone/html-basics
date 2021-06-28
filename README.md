@@ -1995,7 +1995,50 @@ The meta element includes a content attribute that enables you to specify the mo
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is an optional tag?***
+## Q. ***What is an optional tag?***
+
+The following lists all optional tags.
+
+|Tag            |Description  |
+|---------------|-------------|
+|`<area>`       |             |
+|`<base>`       |             |
+|`<body>`       |             |
+|`<br>`         |             |
+|`<caption>`    |             |
+|`<col>`        |             |
+|`<colgroup>`   |             |
+|`<dd>`         |             |
+|`<dt>`         |             |
+|`<embed>`      |             |
+|`<head>`       |             |
+|`<hr>`         |             |
+|`<html>`       |             |
+|`<img>`        |             |
+|`<input>`      |             |
+|`<li>`         |             |
+|`<link>`       |             |
+|`<meta>`       |             |  
+|`<optgroup>`   |             |
+|`<option>`     |             |
+|`<p>`          |             |
+|`<param>`      |             |
+|`<rp>`         |             |
+|`<rt>`         |             |
+|`<source>`     |             |
+|`<tbody>`      |             |
+|`<td>`         |             |
+|`<tfoot>`      |             |
+|`<th>`         |             |
+|`<thead>`      |             |
+|`<tr>`         |             |
+|`<track>`      |             |
+|`<wbr>`        |             |
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***Have you used different HTML templating languages before?***
 #### Q. ***How do you change the direction of html text?***
 #### Q. ***When is it appropriate to use the small element?***
