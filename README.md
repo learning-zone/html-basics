@@ -2216,7 +2216,44 @@ The `<div>` element only represents its child elements and doesn\'t have a speci
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***Where and why is the rel="noopener" attribute used?*** 
+## Q. ***Explain the use of rel="nofollow", rel="noreferrer", rel="noopener" attribute?*** 
+
+**1. rel="nofollow"**
+
+When `rel="nofollow"` tag is used, it instruct the search engines not to pass any PageRank from one page to the other. It does not allow it to pass the authority to the specific website. The main advantage of using this attribute is to control the spam attack.
+
+There may be times, when you do not have control over what people publish on your websites, for example some blog comments and some kind of forum posting.
+
+**Example**
+
+```html
+<a href="https://www.website.com" rel="nofollow">Link to yoursite.com</a>
+```
+
+**2. rel="noreferrer"**
+
+Noreferrer is related to analytics and tracking. The referrer value shows the previous page where a user came from. By using the noreferrer attribute on a link, you are preventing other pages from seeing that traffic came from a click on your link.
+
+**Example**
+
+```html
+<a href="https://www.website.com" rel="noreferrer">Link to yoursite.com</a>
+```
+
+**3. rel="noopener"**
+
+It prevents the new page from being able to access the `window.opener` property and will make it run in a separate process. noopener tag works as a security fix which prevents malicious links to take control over an opened tab.
+
+**Example**
+
+```html
+<a href="https://www.website.com" target="_blank" rel="noopener">Link to yoursite.com</a>
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***Can a web page contain multiple `<header>` elements? What about `<footer>` elements?***
 #### Q. ***What are Web Workers?***
 #### Q. ***Discuss the differences between an HTML specification and a browser\'s implementation thereof.***
