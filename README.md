@@ -2118,7 +2118,36 @@ The `<small>` HTML element represents side-comments and small print, like copyri
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***How do you serve a page with content in multiple languages?***
+## Q. ***How do you serve a page with content in multiple languages?***
+
+The **lang** attribute specifies the language of the element\'s content.
+
+**Example**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML5 Multilanguage Page</title>
+  </head>
+  <body>
+      <h2>English</h2>
+      <p lang="en">This is demo text</p>
+     
+      <h2>French</h2>
+      <p lang="fr">Ceci est un texte de démonstration</p>
+     
+      <h2>Spanish</h2>
+      <p lang="es">Este es un texto de demostración</p>
+  </body>
+</html>
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***What is the difference between `<section>` and `<div>`?***
 #### Q. ***Where and why is the rel="noopener" attribute used?*** 
 #### Q. ***Can a web page contain multiple `<header>` elements? What about `<footer>` elements?***
