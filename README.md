@@ -2148,7 +2148,74 @@ The **lang** attribute specifies the language of the element\'s content.
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is the difference between `<section>` and `<div>`?***
+## Q. ***What is the difference between `<section>` and `<div>`?***
+
+The `<section>` tag creates independent sections within a webpage having logically connected content. And the `<div>` tag is an empty container specifying a division or a section.
+
+**The `<section>` Element**
+
+According to the W3C specification, the `<section>` tag means that the content inside this element is grouped. In other words, the content relates to a single theme. It must be an entry in the outline of the page.
+
+**Example**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Section Tag Example</title>
+  </head>
+  <body>
+    <h1>W3Docs</h1>
+    <section>
+      <h2>W3Docs Sections</h2>
+      <ul>
+        <li>Books</li>
+        <li>Quizzes</li>
+        <li>Snippets</li>
+      </ul>
+    </section>
+    <section>
+      <h3>Books</h3>
+      <p>Learn HTML</p>
+      <p>Learn CSS</p>
+      <p>Learn Javascript</p>
+    </section>
+  </body>
+</html>
+```
+
+**The `<div>` Element**
+
+The `<div>` element only represents its child elements and doesn\'t have a special meaning. It can be used with the `lang`, `title`, and `class` attributes to add semantics that is common to a group of consecutive elements. This element can also be used in a `<dl>` tag and wrap groups of `<dt>` and `<dd>` elements.
+
+**Example**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Div Tag Example</title>
+    <style>
+      div {
+        background-color: #87f5b3
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <div>
+      <h2>A heading in a <div> tag.</h2>
+      <p>Some text in a <div> tag.</p>
+    </div>
+    <p>Here is some other text in a <p> tag.</p>
+  </body>
+</html>
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***Where and why is the rel="noopener" attribute used?*** 
 #### Q. ***Can a web page contain multiple `<header>` elements? What about `<footer>` elements?***
 #### Q. ***What are Web Workers?***
