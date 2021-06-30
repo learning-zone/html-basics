@@ -2328,9 +2328,130 @@ The syntax is similar to the display density descriptor, but instead of display 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What is WebP?***
-#### Q. ***What are Web Components?***
-#### Q. ***What is accessibility & ARIA role means in a web application?***
+## Q. ***What is accessibility & ARIA role means in a web application?***
+
+The Accessible Rich Internet Applications (ARIA) Suite, defines a way to make Web content and Web applications more accessible to people with disabilities. It especially helps with dynamic content and advanced user interface controls developed with HTML, JavaScript, and related technologies.
+
+Screen readers work with regular HTML, but adding ARIA can provide screen reader users with greater context and interactivity with the content on the page. ARIA has no effect on how elements are displayed or behave in browsers. It does not add new functionality, and is meant to act only as an extra descriptive layer for screen readers.
+
+Without WAI-ARIA certain functionality used in Web sites is not available to some users with disabilities, especially people who rely on screen readers and people who cannot use a mouse. WAI-ARIA addresses these accessibility challenges, for example, by defining ways for functionality to be provided to assistive technology. With WAI-ARIA, developers can make advanced Web applications accessible and usable to people with disabilities.
+
+ARIA attributes are divided into two categories: roles, and states & properties.
+
+### **ARIA Roles**
+
+An ARIA role is added via a `role="<ROLE TYPE>"` attribute, and does not ever change for an element once it is set. There are four categories of ARIA roles:
+
+* landmark
+* document
+* widget
+* abstract
+
+### **Landmark ARIA Roles**
+
+Much like semantic HTML elements, landmark ARIA Roles are used to give users of assistive technology a better way to navigate and identify the different parts of a web page.
+
+**Example**
+
+```html
+ <nav class='mobile-nav' role='navigation' aria-label='Mobile Menu'> List of Links </nav>
+```
+
+While seeming redundant, is actually useful for screen readers. It wouldn\'t read the aria-label on this navigation, which is really helpful for giving greater context to visually impaired users, without the `role="navigation"`.
+
+The different landmark roles you can use are as follows, copied from the W3C Wiki Page:
+
+* **banner**: A region that contains the prime heading or internal title of a page.
+* **complementary**: Any section of the document that supports the main content, yet is separate and meaningful on its own.
+* **contentinfo**: A region that contains information about the parent document such as copyrights and links to privacy statements.
+* **form**: A region of the document that represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server for processing.
+* **main**: Main content in a document. In almost all cases a page will have only one `role=“main”`.
+* **navigation**: A collection of links suitable for use when navigating the document or related documents.
+* **search**: The search tool of a Web document.
+* **application**: A region declared as a web application, as opposed to a web document.
+
+### **Document ARIA Roles**
+
+Document roles describe the structure of the content on the page, as opposed to the structure of the whole page, which landmark roles describe. The roles in bold are the ones we think are the most common document aria roles, and the ones which are useful to think about including in your HTML.
+
+* **article**: A section of a page that consists of a composition that forms an independent part of a document, page, or site.
+* **columnheader**
+* **definition**: A definition of a term or concept.
+* **directory**
+* **document**
+* **group**: A set of user interface objects which are not intended to be included in a page summary or table of contents by assistive technologies.
+* **heading**: A heading for a section of the page.
+* **img**
+* **list**
+* **listitem**
+* **math**
+* **note**
+* **presentation**
+* **region**
+* **row**
+* **rowgroup**
+* **rowheader**
+* **separator**
+* **toolbar**
+
+### **Widget ARIA Roles**
+
+Widget Roles are used to describe what are often javascript-based interfaces, or the more complicated parts of your web page\'s interface. The roles that are starred are the ones we think are the most common elements widget aria roles, and the ones which are useful useful to think about including in your HTML.
+
+* **alert**: A message with important, and usually time-sensitive, information. 
+* **alertdialog**: A type of dialog that contains an alert message, where initial focus goes to an element within the dialog. 
+* **button**: An input that allows for user-triggered actions when clicked or pressed.
+* **checkbox**: A checkable input that has three possible values: true, false, or mixed.
+* **dialog**: A dialog is an application window that is designed to interrupt the current processing of an application in order to prompt the user to enter information or require a response. 
+* **gridcell**
+* **link**
+* **log**
+* **marquee**
+* **menuitem**
+* **menuitemcheckbox**
+* **menuitemradio**
+* **option**
+* **progressbar**
+* **radio**: A checkable input in a group of radio roles, only one of which can be checked at a time.
+* **scrollbar**
+* **slider**
+* **spinbutton**
+* **status**
+* **tab**: A grouping label providing a mechanism for selecting the tab content that is to be rendered to the user.
+* **tabpanel**: A container for the resources associated with a tab, where each tab is contained in a tablist.
+* **textbox**: Input that allows free-form text as its value.
+* **timer**
+* **tooltip**
+* **treeitem**
+
+### **Abstract ARIA Roles**
+
+Abstract aria roles are the basis of how the other ARIA roles are defined. These are not to be used in HTML.
+
+### **ARIA States & Properties**
+
+ARIA states and properties are often used to support ARIA roles that exist on a page. ARIA Properties often describe relationships with other elements, and for the most part, do not change once they\'re set.
+
+ARIA States are more dynamic and are typically updated with JavaScript as a user interacts with a page. Screen readers are notified when these states change, and can announce these changes to users after an interaction takes place.
+
+While there are 35 aria properties and states the W3C defines and which you can read more about on the W3C site, here are the ones we believe to most commonly used and practical for most web pages/applications.
+
+* **aria-activedescendant**: Identifies the currently active descendant of a composite widget. Use with autofill search suggestions.
+* **aria-autocomplete**: Indicates whether user input completion suggestions are provided. Use with autofill search suggestions.
+* **aria-checked (state)**: Indicates the current “checked” state of checkboxes, radio buttons, and other widgets. You can set this to true, false, or mixed state. 
+* **aria-controls**: Identifies the element (or elements) whose contents or presence are controlled by the current element.
+* **aria-describedby**: Identifies the element (or elements) that describes the object.
+* **aria-disabled (state)**: Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
+* **aria-expanded (state)**: Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.
+* **aria-hidden (state)**: Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author.
+* **aria-invalid (state)**: Indicates the entered value does not conform to the format expected by the application.
+* **aria-label**: Defines a string value that labels the current element.
+* **aria-labelledby**: Identifies the element (or elements) that labels the current element.
+* **aria-live**: Indicates that an element is dynamic, changing, and will be updated, and describes the types of updates the user can expect from the live region.
+* **aria-owns**: Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child  relationship between DOM elements where the DOM hierarchy cannot be used to represent the relationship.
+* **aria-pressed (state)**: Indicates the current “pressed” state of toggle buttons.
+* **aria-required**: Indicates that user input is required on the element before a form may be submitted.
+* **aria-selected (state)**: Indicates the current “selected” state of various widgets.
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
