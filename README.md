@@ -2254,13 +2254,13 @@ Yes, header elements can be used multiple times in documents. A `<header>` tag m
 **From W3**
 
 ```html
-A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup element), 
-but this is not required. The header element can also be used to wrap a section's table of contents, a search 
-form, or any relevant logos.
+A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup 
+element), but this is not required. The header element can also be used to wrap a section's table of 
+contents, a search form, or any relevant logos.
 
-The footer element represents a footer for its nearest ancestor sectioning content or sectioning root element.
-A footer typically contains information about its section such as who wrote it, links to related documents, 
-copyright data, and the like.
+The footer element represents a footer for its nearest ancestor sectioning content or sectioning root 
+element. A footer typically contains information about its section such as who wrote it, links to related 
+documents, copyright data, and the like.
 ```
 
 <div align="right">
