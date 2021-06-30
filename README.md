@@ -2267,8 +2267,18 @@ documents, copyright data, and the like.
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***What are Web Workers?***
-#### Q. ***Discuss the differences between an HTML specification and a browser\'s implementation thereof.***
+## Q. ***Discuss the differences between an HTML specification and a browser\'s implementation thereof.***
+
+HTML specifications such as HTML5 define a set of rules that a document must adhere to in order to be "valid" according to that specification. In addition, a specification provides instructions on how a browser must interpret and render such a document.
+
+A browser is said to "support" a specification if it handles valid documents according to the rules of the specification. As of yet, no browser supports all aspects of the HTML5 specification (although all of the major browser support most of it), and as a result, it is necessary for the developer to confirm whether the aspect they are making use of will be supported by all of the browsers on which they hope to display their content. This is why cross-browser support continues to be a headache for developers, despite the improved specificiations.
+
+In addition, while HTML5 defines some rules to follow for an invalid HTML5 document (i.e., one that contains syntactical errors), invalid documents may contain anything, and it is impossible for the specification to handle all possibilities comprehensively. Thus, many decisions about how to handle malformed documents are left up to the browser.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***Why you would use a srcset attribute in an image tag? Explain the process the browser used when evaluating the content of this attribute.***
 #### Q. ***What is an HTML preprocessor and are you using it?***
 #### Q. ***What is WebP?***
