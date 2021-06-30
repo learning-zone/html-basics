@@ -186,7 +186,7 @@ There are five new form elements in the HTML5 forms specification: `<datalist>`,
 </datalist>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/datalist.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/datalist.html)
 
 **2.) Meter Tag**: indicates a numeric value that falls within a range. The tag supports a number of attributes:
 value: If you don\'t specify a value, the first numeric value inside the `<meter></meter>` pair becomes the value.
@@ -205,7 +205,7 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 <p>Pollution Level: <meter low="60" high="80" max="100" value="85">Very High</meter></p>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/meter.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/meter.html)
 
 **3.) Output Tag**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript).
 
@@ -217,7 +217,7 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 </form>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/output.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/output.html)
 
 **4.) Progress Tag**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
 
@@ -244,7 +244,7 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 </script>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/progress.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/progress.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -643,7 +643,7 @@ Syntax:
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/application-cache.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/application-cache.html)
 
 *Note: Using the application caching feature described here is at this point highly discouraged; it\'s in the process of being removed from the Web platform. Use **Service Workers** instead. In fact as of Firefox 44, when AppCache is used to provide offline support for a page a warning message is now displayed in the console advising developers to use Service workers instead (bug 1204581).*
 
@@ -1211,7 +1211,7 @@ function toggleFullScreen() {
 }
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/html5-api.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/html5-api.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1282,7 +1282,7 @@ if ("geolocation" in navigator) {
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/geolocation.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/geolocation.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1456,7 +1456,7 @@ socket.addEventListener('message', function(event) {
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1502,7 +1502,7 @@ There are following advantages of using SVG over other image formats like JPEG, 
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/svg.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/svg.html)
 
 ### **Canvas**
 
@@ -1528,7 +1528,7 @@ Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html) 
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html) 
 
 **Differences between SVG and Canvas**
 
@@ -1588,7 +1588,7 @@ Example
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/drag-drop.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/drag-drop.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1814,7 +1814,7 @@ The `<iframe>` HTML element represents a nested browsing context, embedding anot
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/iframe.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/iframe.html)
 
 ### **The Iframe Tag Attributes**
 
@@ -1855,7 +1855,7 @@ The `<mark>` HTML element represents text which is marked or highlighted for ref
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/mark.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/mark.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -2105,7 +2105,7 @@ The `<small>` HTML element represents side-comments and small print, like copyri
 </html>
 ```
 
-[Live Example](https://learning-zone.github.io/html-interview-questions/assets/files/small-element.html)
+[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/small-element.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -2279,7 +2279,53 @@ In addition, while HTML5 defines some rules to follow for an invalid HTML5 docum
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***Why you would use a srcset attribute in an image tag? Explain the process the browser used when evaluating the content of this attribute.***
+## Q. ***Why you would use a srcset attribute in an image tag? Explain the process the browser used when evaluating the content of this attribute.***
+
+The `srcset` attribute allows to define a list of different image resources along with size information so that browser can pick the most appropriate image based on the actual device\'s resolution.
+
+**Syntax**
+
+```html
+<img 
+   srcset=" 
+      url size, 
+      url size, 
+      url size " 
+    src="default url" 
+>
+```
+
+### **1. Using display density descriptor**
+
+`srcset` provides a comma-separated list of image resources along with display density it should be used, for example1x, 2x etc.
+
+**Example**
+
+```html
+<img src="image.jpg" 
+     srcset="image.jpg,
+             image_2x.jpg 2x"
+/>
+```
+
+### **2. Using width descriptor**
+
+The syntax is similar to the display density descriptor, but instead of display density values, we provide the actual width of the image.
+
+**Example**
+
+```html
+<img src="image.jpg" 
+     srcset="small.jpg 300w,
+             medium.jpg 600w,
+             large.jpg 900w"
+/>
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***What is an HTML preprocessor and are you using it?***
 #### Q. ***What is WebP?***
 #### Q. ***Could you generate a public key in HTML?***
