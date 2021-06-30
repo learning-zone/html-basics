@@ -2254,7 +2254,22 @@ It prevents the new page from being able to access the `window.opener` property 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-#### Q. ***Can a web page contain multiple `<header>` elements? What about `<footer>` elements?***
+## Q. ***Can a web page contain multiple `<header>` elements? What about `<footer>` elements?***
+
+Yes, header elements can be used multiple times in documents. A `<header>` tag must be present for all articles, sections, and pages, although a `<footer>` tag is not necessary.
+
+**From W3**
+
+```html
+A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup element), but this is not required. The header element can also be used to wrap a section's table of contents, a search form, or any relevant logos.
+
+The footer element represents a footer for its nearest ancestor sectioning content or sectioning root element. A footer typically contains information about its section such as who wrote it, links to related documents, copyright data, and the like.
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 #### Q. ***What are Web Workers?***
 #### Q. ***Discuss the differences between an HTML specification and a browser\'s implementation thereof.***
 #### Q. ***Why you would use a srcset attribute in an image tag? Explain the process the browser used when evaluating the content of this attribute.***
