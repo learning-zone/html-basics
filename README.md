@@ -2041,7 +2041,9 @@ The following lists all optional tags.
 
 ## Q. ***What is an HTML preprocessor? Have you used different HTML templating languages before?***
 
-No, but I heard about html template language like PUG (formerly Jade), ERB, Slim, Handlebars, Jinja, Liquid etc which is HTML preprocessor this mean that it is basically a language that will be converted to native html code.
+A **HTML preprocessor** is a program that takes one type of data and converts it to another one. In case of HTML and CSS, some of the more popular preprocessor languages are Slim and Sass. Slim is processed into HTML and Sass is processed into CSS.
+
+No, but I heard about html template language like PUG (formerly Jade), Haml, ERB, Slim, Handlebars, Jinja, Liquid etc which is HTML preprocessor this mean that it is basically a language that will be converted to native html code.
 
 The typical usage is when you render something on the server side. The usual use-case is when you have to add dynamic content to your website, so when you fetch something from your database, you will have to replace some parts in your original template.
 
