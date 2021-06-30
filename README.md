@@ -2098,14 +2098,7 @@ The `<small>` HTML element represents side-comments and small print, like copyri
     }
   </style>
   <body>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, 
-        when an unknown printer took a galley of type and scrambled it to make a type 
-        specimen book. It has survived not only five centuries, but also the leap into 
-        electronic typesetting, remaining essentially unchanged. It was popularised in 
-        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
-        and more recently with desktop publishing software like Aldus PageMaker including 
-        versions of Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
     <hr>
     <p><small>The content is licensed under a W3C License.</small></p>
   </body>
@@ -2261,9 +2254,13 @@ Yes, header elements can be used multiple times in documents. A `<header>` tag m
 **From W3**
 
 ```html
-A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup element), but this is not required. The header element can also be used to wrap a section's table of contents, a search form, or any relevant logos.
+A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup element), 
+but this is not required. The header element can also be used to wrap a section's table of contents, a search 
+form, or any relevant logos.
 
-The footer element represents a footer for its nearest ancestor sectioning content or sectioning root element. A footer typically contains information about its section such as who wrote it, links to related documents, copyright data, and the like.
+The footer element represents a footer for its nearest ancestor sectioning content or sectioning root element.
+A footer typically contains information about its section such as who wrote it, links to related documents, 
+copyright data, and the like.
 ```
 
 <div align="right">
