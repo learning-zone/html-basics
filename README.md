@@ -258,7 +258,7 @@ Indicates how much of a task has been completed (often marked as a percentage). 
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***What are different new form element types provided by HTML5?***
+## Q. ***How many new form elements are introduced in html5?***
 
 |Sl.No| Element     | Description   |
 |-----|-------------|---------------------------|
@@ -430,7 +430,9 @@ Yes, header elements can be used multiple times in documents. A `<header>` tag m
 A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup 
 element), but this is not required. The header element can also be used to wrap a section's table of 
 contents, a search form, or any relevant logos.
+```
 
+```html
 The footer element represents a footer for its nearest ancestor sectioning content or sectioning root 
 element. A footer typically contains information about its section such as who wrote it, links to related 
 documents, copyright data, and the like.
@@ -617,7 +619,9 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
 
 ## Q. ***Why to use IndexedDB instead of WebSQL in HTML5?***
 
-**1.) WebSQL** is an API that is only supported in Chrome and Safari (and Android and iOS by extension). It provides an asynchronous, transactional interface to SQLite. Since 2010, it has been deprecated in favor of IndexedDB.
+### **1. WebSQL**
+
+It is an API that is only supported in Chrome and Safari (and Android and iOS by extension). It provides an asynchronous, transactional interface to SQLite. Since 2010, it has been deprecated in favor of IndexedDB.
 
 **Advantages**
 
@@ -634,7 +638,9 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
 * Suffers from object-relational impedance mismatch.
 * Diminishes agility, as database schema must be defined upfront, with all records in a table matching the same structure.
 
-**2.) IndexedDB** is the successor to both LocalStorage and WebSQL, designed to replace them as the “one true” browser database. It exposes an asynchronous API that supposedly avoids blocking the DOM, but as we\'ll see below, it doesn\'t necessarily live up to the hype. Browser support is extremely spotty, with only Chrome and Firefox having fully usable implementations.
+### **2. IndexedDB**
+
+It is the successor to both LocalStorage and WebSQL, designed to replace them as the “one true” browser database. It exposes an asynchronous API that supposedly avoids blocking the DOM, but as we\'ll see below, it doesn\'t necessarily live up to the hype. Browser support is extremely spotty, with only Chrome and Firefox having fully usable implementations.
 
 **Advantages**
 
