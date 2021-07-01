@@ -12,78 +12,78 @@
 
 |Sl.No|  Questions                        |
 |----|------------------------------------|
-|01. |[Q. What is difference between HTML and XHTML?](#q-what-is-difference-between-html-and-xhtml)|
-|02. |[Q. What are the building blocks of HTML5?](#q-what-are-the-building-blocks-of-html5)|
-|03. |[Q. What are the semantic tags available in html5?](#q-what-are-the-semantic-tags-available-in-html5)|
-|04. |[Q. Why you would like to use semantic tag?](#q-why-you-would-like-to-use-semantic-tag)|
-|05. |[Q. What does a `<DOCTYPE html>` do?](#q-what-does-a-doctype-html-do)|
-|06. |[Q. What happens when DOCTYPE is not given?](#q-what-happens-when-doctype-is-not-given)|
-|07. |[Q. What are the new form elements in HTML5?](#q-what-are-the-new-form-elements-in-html5)|
-|08. |[Q. How many new form elements are introduced in html5?](#q-how-many-new-form-elements-are-introduced-in-html5)|
-|09. |[Q. What is difference between `span` tag and `div` tag?](#q-what-is-difference-between-span-tag-and-div-tag)|
-|10. |[Q. What are optional closing tag?](#q-what-are-optional-closing-tag)|
-|11. |[Q. What is a self closing tag?](#q-what-is-a-self-closing-tag)|
-|12. |[Q. Explain the difference between block elements and inline elements?](#q-explain-the-difference-between-block-elements-and-inline-elements)|
-|13.|[Q. What are semantic and non-semantic elements?](#q-what-are-semantic-and-non-semantic-elements)|
-|14.|[Q. What is the purpose of `main` element?](#q-what-is-the-purpose-of-main-element)|
-|15.|[Q. Define semantic markup. What are the semantic meanings for `<section>, <article>, <aside>, <nav>, <header>, <footer>` and when/how should each be used in structuring html markup?](#q-define-semantic-markup-what-are-the-semantic-meanings-for-section-article-aside-nav-header-footer-and-when-how-should-each-be-used-in-structuring-html-markup)|
-|16. |[Q. When should you use `section`, `div` or `article`?](#q-when-should-you-use-section-div-or-article)|
-|17. |[Q. Can a web page contain multiple `<header>` elements? What about `<footer>` elements?](#q-can-a-web-page-contain-multiple-header-elements-what-about-footer-elements)|
-|18. |[Q. What is Character Encoding?](#q-what-is-character-encoding)|
-|19. |[Q. What is the purpose of meta tags?](#q-what-is-the-purpose-of-meta-tags)|
-|20. |[Q. What does async and defer refer in script tag? Describe the difference between `<script>`, `<script async>` and `<script defer>`](#q-what-does-async-and-defer-refer-in-script-tag-describe-the-difference-between-script-script-async-and-script-defer)|
-|21. |[Q. Describe the difference between a `cookie`, `sessionStorage` and `localStorage`?](#q-describe-the-difference-between-a-cookie-sessionstorage-and-localstorage)|
-|22. |[Q. Does localStorage throw error after reaches maximum limits?](#q-does-localstorage-throw-error-after-reaches-maximum-limits)|
-|23. |[Q. Why to use IndexedDB instead of WebSQL in HTML5?](#q-why-to-use-indexeddb-instead-of-websql-in-html5)|
-|24. |[Q. Explain Application Cache in HTML5. OR What is a manifest file in HTML?](#q-explain-application-cache-in-html5-or-what-is-a-manifest-file-in-html)|
-|25. |[Q. What is the purpose of cache busting and how can you achieve it?](#q-what-is-the-purpose-of-cache-busting-and-how-can-you-achieve-it)|
-|26. |[Q. What ARIA and screenreaders are, and how to make a website accessible?](#q-what-aria-and-screenreaders-are-and-how-to-make-a-website-accessible)|
-|27. |[Q. What is the purpose of the `alt` attribute on images?](#q-what-is-the-purpose-of-the-alt-attribute-on-images)|
-|28. |[Q. What does `enctype='multipart/form-data'` mean?](#q-what-does-enctype-multipart-form-data-mean)|
-|29. |[Q. What is difference between Select and Datalist?](#q-what-is-difference-between-select-and-datalist)|
-|30. |[Q. Explain some of the pros and cons for CSS animations versus JavaScript animations?](#q-explain-some-of-the-pros-and-cons-for-css-animations-versus-javascript-animations)|
-|31. |[Q. What does CORS stand for and what issue does it address?](#q-what-does-cors-stand-for-and-what-issue-does-it-address)|
-|32. |[Q. Can you describe the difference between progressive enhancement and graceful degradation?](#q-can-you-describe-the-difference-between-progressive-enhancement-and-graceful-degradation)|
-|33. |[Q. What is the DOM? How does the DOM work?](#q-what-is-the-dom-how-does-the-dom-work)|
-|34. |[Q. How does the browser rendering engine work?](#q-how-does-the-browser-rendering-engine-work)|
-|35. |[Q. What is the difference between standards mode and quirks mode?](#q-what-is-the-difference-between-standards-mode-and-quirks-mode)|
-|36. |[Q. What is Critical Rendering Path?](#q-what-is-critical-rendering-path)|
-|37. |[Q. What are the Benefits of Server Side Rendering (SSR) Over Client Side Rendering (CSR)?](#q-what-are-the-benefits-of-server-side-rendering-ssr-over-client-side-rendering-csr)|
-|38. |[Q. Name 3 ways to decrease page load?](#q-name-3-ways-to-decrease-page-load)|
-|39. |[Q. Ways to improve website performance](#q-ways-to-improve-website-performance)|
-|40. |[Q. Comparison of browsers engines like Chrome, Firefox, Internet explorer, Safari?](#q-comparison-of-browsers-engines-like-chrome-firefox-internet-explorer-safari)|
-|41. |[Q. What does the lang attribute in html do?](#q-what-does-the-lang-attribute-in-html-do)|
-|42. |[Q. What is desktop first and mobile first design approach?](#q-what-is-desktop-first-and-mobile-first-design-approach)|
-|43. |[Q. What are `data-` attributes good for?](#q-what-are-data-attributes-good-for)|
-|44. |[Q. Explain the difference between layout, painting and compositing?](#q-explain-the-difference-between-layout-painting-and-compositing)|
-|45. |[Q. Explain about HTML Layout Engines used by browsers?](#q-explain-about-html-layout-engines-used-by-browsers)|
-|46. |[Q. How to make page responsive?](#q-how-to-make-page-responsive)|
-|47. |[Q. Does the following trigger http request at the time of page load?](#q-does-the-following-trigger-http-request-at-the-time-of-page-load)|
-|48. |[Q. List the API available in HTML5?](#q-list-the-api-available-in-html5)|
-|49. |[Q. How geolocation api works in html5?](#q-how-geolocation-api-works-in-html5)|
-|50. |[Q. What is the use of WebSocket API?](#q-what-is-the-use-of-websocket-api)|
-|51. |[Q. Explain about HTML Canvas?](#q-explain-about-html-canvas)|
-|53. |[Q. What is difference between SVG and Canvas?](#q-what-is-difference-between-svg-and-canvas)|
-|54. |[Q. Explain Drag and Drop in HTML5?](#q-explain-drag-and-drop-in-html5)|
-|55. |[Q. Explain Microdata in HTML5?](#q-explain-microdata-in-html5)|
-|56. |[Q. What are the HTML tags which deprecated in HTML5?](#q-what-are-the-html-tags-which-deprecated-in-html5)|
-|57. |[Q. How you can Use Modernizr in HTML5?](#q-how-you-can-use-modernizr-in-html5)|
-|58. |[Q. What is progressive rendering?](#q-what-is-progressive-rendering)|
-|59. |[Q. What is an iframe and how it works?](#q-what-is-an-iframe-and-how-it-works)|
-|60. |[Q. Explain the use of rel="nofollow", rel="noreferrer", rel="noopener" attribute?](#q-explain-the-use-of-rel-nofollow-rel-noreferrer-rel-noopener-attribute)|
-|61. |[Q. How can you highlight text in HTML?](#q-how-can-you-highlight-text-in-html)|
-|62. |[Q. How can I get indexed better by search engines?](#q-how-can-i-get-indexed-better-by-search-engines)|
-|63. |[Q. What is the difference between an "attribute" and a "property" in HTML?](#q-what-is-the-difference-between-an-attribute-and-a-property-in-html)|
-|64. |[Q. How do you set IE compatibility mode?](#q-how-do-you-set-ie-compatibility-mode)|
-|65. |[Q. What is an optional tag?](#q-what-is-an-optional-tag)|
-|66. |[Q. What is an HTML preprocessor? Have you used different HTML templating languages before?](#q-what-is-an-html-preprocessor-have-you-used-different-html-templating-languages-before)|
-|67. |[Q. How do you change the direction of html text?](#q-how-do-you-change-the-direction-of-html-text)|
-|68. |[Q. When is it appropriate to use the small element?](#q-when-is-it-appropriate-to-use-the-small-element)|
-|79. |[Q. How do you serve a page with content in multiple languages?](#q-how-do-you-serve-a-page-with-content-in-multiple-languages)|
-|70. |[Q. What is the difference between `<section>` and `<div>`?](#q-what-is-the-difference-between-section-and-div)|
-|71. |[Q. Discuss the differences between an HTML specification and a browser\'s implementation thereof.](#q-discuss-the-differences-between-an-html-specification-and-a-browser-s-implementation-thereof)|
-|72. |[Q. Why you would use a srcset attribute in an image tag? Explain the process the browser used when evaluating the content of this attribute.](#q-why-you-would-use-a-srcset-attribute-in-an-image-tag-explain-the-process-the-browser-used-when-evaluating-the-content-of-this-attribute)|
-|73. |[Q. What is accessibility & ARIA role means in a web application?](#q-what-is-accessibility-aria-role-means-in-a-web-application)|
+|01. |[What is difference between HTML and XHTML?](#q-what-is-difference-between-html-and-xhtml)|
+|02. |[What are the building blocks of HTML5?](#q-what-are-the-building-blocks-of-html5)|
+|03. |[What are the semantic tags available in html5?](#q-what-are-the-semantic-tags-available-in-html5)|
+|04. |[Why you would like to use semantic tag?](#q-why-you-would-like-to-use-semantic-tag)|
+|05. |[What does a `<DOCTYPE html>` do?](#q-what-does-a-doctype-html-do)|
+|06. |[What happens when DOCTYPE is not given?](#q-what-happens-when-doctype-is-not-given)|
+|07. |[What are the new form elements in HTML5?](#q-what-are-the-new-form-elements-in-html5)|
+|08. |[How many new form elements are introduced in html5?](#q-how-many-new-form-elements-are-introduced-in-html5)|
+|09. |[What is difference between `span` tag and `div` tag?](#q-what-is-difference-between-span-tag-and-div-tag)|
+|10. |[What are optional closing tag?](#q-what-are-optional-closing-tag)|
+|11. |[What is a self closing tag?](#q-what-is-a-self-closing-tag)|
+|12. |[Explain the difference between block elements and inline elements?](#q-explain-the-difference-between-block-elements-and-inline-elements)|
+|13.|[What are semantic and non-semantic elements?](#q-what-are-semantic-and-non-semantic-elements)|
+|14.|[What is the purpose of `main` element?](#q-what-is-the-purpose-of-main-element)|
+|15.|[Define semantic markup. What are the semantic meanings for `<section>, <article>, <aside>, <nav>, <header>, <footer>` and when/how should each be used in structuring html markup?](#q-define-semantic-markup-what-are-the-semantic-meanings-for-section-article-aside-nav-header-footer-and-when-how-should-each-be-used-in-structuring-html-markup)|
+|16. |[When should you use `section`, `div` or `article`?](#q-when-should-you-use-section-div-or-article)|
+|17. |[Can a web page contain multiple `<header>` elements? What about `<footer>` elements?](#q-can-a-web-page-contain-multiple-header-elements-what-about-footer-elements)|
+|18. |[What is Character Encoding?](#q-what-is-character-encoding)|
+|19. |[What is the purpose of meta tags?](#q-what-is-the-purpose-of-meta-tags)|
+|20. |[What does async and defer refer in script tag? Describe the difference between `<script>`, `<script async>` and `<script defer>`](#q-what-does-async-and-defer-refer-in-script-tag-describe-the-difference-between-script-script-async-and-script-defer)|
+|21. |[Describe the difference between a `cookie`, `sessionStorage` and `localStorage`?](#q-describe-the-difference-between-a-cookie-sessionstorage-and-localstorage)|
+|22. |[Does localStorage throw error after reaches maximum limits?](#q-does-localstorage-throw-error-after-reaches-maximum-limits)|
+|23. |[Why to use IndexedDB instead of WebSQL in HTML5?](#q-why-to-use-indexeddb-instead-of-websql-in-html5)|
+|24. |[Explain Application Cache in HTML5. OR What is a manifest file in HTML?](#q-explain-application-cache-in-html5-or-what-is-a-manifest-file-in-html)|
+|25. |[What is the purpose of cache busting and how can you achieve it?](#q-what-is-the-purpose-of-cache-busting-and-how-can-you-achieve-it)|
+|26. |[What ARIA and screenreaders are, and how to make a website accessible?](#q-what-aria-and-screenreaders-are-and-how-to-make-a-website-accessible)|
+|27. |[What is the purpose of the `alt` attribute on images?](#q-what-is-the-purpose-of-the-alt-attribute-on-images)|
+|28. |[What does `enctype='multipart/form-data'` mean?](#q-what-does-enctype-multipart-form-data-mean)|
+|29. |[What is difference between Select and Datalist?](#q-what-is-difference-between-select-and-datalist)|
+|30. |[Explain some of the pros and cons for CSS animations versus JavaScript animations?](#q-explain-some-of-the-pros-and-cons-for-css-animations-versus-javascript-animations)|
+|31. |[What does CORS stand for and what issue does it address?](#q-what-does-cors-stand-for-and-what-issue-does-it-address)|
+|32. |[Can you describe the difference between progressive enhancement and graceful degradation?](#q-can-you-describe-the-difference-between-progressive-enhancement-and-graceful-degradation)|
+|33. |[What is the DOM? How does the DOM work?](#q-what-is-the-dom-how-does-the-dom-work)|
+|34. |[How does the browser rendering engine work?](#q-how-does-the-browser-rendering-engine-work)|
+|35. |[What is the difference between standards mode and quirks mode?](#q-what-is-the-difference-between-standards-mode-and-quirks-mode)|
+|36. |[What is Critical Rendering Path?](#q-what-is-critical-rendering-path)|
+|37. |[What are the Benefits of Server Side Rendering (SSR) Over Client Side Rendering (CSR)?](#q-what-are-the-benefits-of-server-side-rendering-ssr-over-client-side-rendering-csr)|
+|38. |[Name 3 ways to decrease page load?](#q-name-3-ways-to-decrease-page-load)|
+|39. |[Ways to improve website performance](#q-ways-to-improve-website-performance)|
+|40. |[Comparison of browsers engines like Chrome, Firefox, Internet explorer, Safari?](#q-comparison-of-browsers-engines-like-chrome-firefox-internet-explorer-safari)|
+|41. |[What does the lang attribute in html do?](#q-what-does-the-lang-attribute-in-html-do)|
+|42. |[What is desktop first and mobile first design approach?](#q-what-is-desktop-first-and-mobile-first-design-approach)|
+|43. |[What are `data-` attributes good for?](#q-what-are-data-attributes-good-for)|
+|44. |[Explain the difference between layout, painting and compositing?](#q-explain-the-difference-between-layout-painting-and-compositing)|
+|45. |[Explain about HTML Layout Engines used by browsers?](#q-explain-about-html-layout-engines-used-by-browsers)|
+|46. |[How to make page responsive?](#q-how-to-make-page-responsive)|
+|47. |[Does the following trigger http request at the time of page load?](#q-does-the-following-trigger-http-request-at-the-time-of-page-load)|
+|48. |[List the API available in HTML5?](#q-list-the-api-available-in-html5)|
+|49. |[How geolocation api works in html5?](#q-how-geolocation-api-works-in-html5)|
+|50. |[What is the use of WebSocket API?](#q-what-is-the-use-of-websocket-api)|
+|51. |[Explain about HTML Canvas?](#q-explain-about-html-canvas)|
+|53. |[What is difference between SVG and Canvas?](#q-what-is-difference-between-svg-and-canvas)|
+|54. |[Explain Drag and Drop in HTML5?](#q-explain-drag-and-drop-in-html5)|
+|55. |[Explain Microdata in HTML5?](#q-explain-microdata-in-html5)|
+|56. |[What are the HTML tags which deprecated in HTML5?](#q-what-are-the-html-tags-which-deprecated-in-html5)|
+|57. |[How you can Use Modernizr in HTML5?](#q-how-you-can-use-modernizr-in-html5)|
+|58. |[What is progressive rendering?](#q-what-is-progressive-rendering)|
+|59. |[What is an iframe and how it works?](#q-what-is-an-iframe-and-how-it-works)|
+|60. |[Explain the use of rel="nofollow", rel="noreferrer", rel="noopener" attribute?](#q-explain-the-use-of-rel-nofollow-rel-noreferrer-rel-noopener-attribute)|
+|61. |[How can you highlight text in HTML?](#q-how-can-you-highlight-text-in-html)|
+|62. |[How can I get indexed better by search engines?](#q-how-can-i-get-indexed-better-by-search-engines)|
+|63. |[What is the difference between an "attribute" and a "property" in HTML?](#q-what-is-the-difference-between-an-attribute-and-a-property-in-html)|
+|64. |[How do you set IE compatibility mode?](#q-how-do-you-set-ie-compatibility-mode)|
+|65. |[What is an optional tag?](#q-what-is-an-optional-tag)|
+|66. |[What is an HTML preprocessor? Have you used different HTML templating languages before?](#q-what-is-an-html-preprocessor-have-you-used-different-html-templating-languages-before)|
+|67. |[How do you change the direction of html text?](#q-how-do-you-change-the-direction-of-html-text)|
+|68. |[When is it appropriate to use the small element?](#q-when-is-it-appropriate-to-use-the-small-element)|
+|79. |[How do you serve a page with content in multiple languages?](#q-how-do-you-serve-a-page-with-content-in-multiple-languages)|
+|70. |[What is the difference between `<section>` and `<div>`?](#q-what-is-the-difference-between-section-and-div)|
+|71. |[Discuss the differences between an HTML specification and a browser\'s implementation thereof.](#q-discuss-the-differences-between-an-html-specification-and-a-browser-s-implementation-thereof)|
+|72. |[Why you would use a srcset attribute in an image tag? Explain the process the browser used when evaluating the content of this attribute.](#q-why-you-would-use-a-srcset-attribute-in-an-image-tag-explain-the-process-the-browser-used-when-evaluating-the-content-of-this-attribute)|
+|73. |[What is accessibility & ARIA role means in a web application?](#q-what-is-accessibility-aria-role-means-in-a-web-application)|
 
 <br/>
 
