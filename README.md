@@ -172,7 +172,9 @@ The web page is rendered in quirks mode. The web browsers engines use quirks mod
 
 There are five new form elements in the HTML5 forms specification: `<datalist>`, `<output>`, `<progress>`, and `<meter>`. 
 
-**1.) Datalist Tag**: allows to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse.
+### **1. Datalist Tag**
+
+Allows to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse.
 
 ```html
 <p>Enter your favorite browser name:</p>
@@ -188,7 +190,9 @@ There are five new form elements in the HTML5 forms specification: `<datalist>`,
 
 [Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/datalist.html)
 
-**2.) Meter Tag**: indicates a numeric value that falls within a range. The tag supports a number of attributes:
+### **2. Meter Tag**
+
+Indicates a numeric value that falls within a range. The tag supports a number of attributes:
 value: If you don\'t specify a value, the first numeric value inside the `<meter></meter>` pair becomes the value.
 
 * **max**: The maximum possible value of the item.
@@ -207,7 +211,9 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 
 [Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/meter.html)
 
-**3.) Output Tag**: is meant to display text output. It indicates a section of the page that can be modified by a script (usually JavaScript).
+### **3. Output Tag**
+
+It indicates a section of the page that can be modified by a script (usually JavaScript).
 
 ```html
 <form oninput="result.value=parseInt(a.value)+parseInt(b.value)">
@@ -219,7 +225,9 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 
 [Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/output.html)
 
-**4.) Progress Tag**: indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code. 
+### **4. Progress Tag**
+
+Indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code.
 
 ```html
  
@@ -407,6 +415,26 @@ The HTML `<main>` element represents the dominant content of the `<body>` of a d
 * `<article>`, represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable, e.g. in syndication. This could be a forum post, a magazine or newspaper article, a blog entry, a user-submitted comment, an interactive widget or gadget, or any other independent item of content.
 
 * `<div>`, on the other hand, does not convey any meaning, aside from any found in its class, lang and title attributes.
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***Can a web page contain multiple `<header>` elements? What about `<footer>` elements?***
+
+Yes, header elements can be used multiple times in documents. A `<header>` tag must be present for all articles, sections, and pages, although a `<footer>` tag is not necessary.
+
+**From W3**
+
+```html
+A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup 
+element), but this is not required. The header element can also be used to wrap a section's table of 
+contents, a search form, or any relevant logos.
+
+The footer element represents a footer for its nearest ancestor sectioning content or sectioning root 
+element. A footer typically contains information about its section such as who wrote it, links to related 
+documents, copyright data, and the like.
+```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -741,7 +769,7 @@ The enctype attribute specifies how the form-data should be encoded when submitt
 
 For the select element, the user is required to select one of the options you\'ve given. For the datalist element, it is suggested that the user select one of the options you\'ve given, but he can actually enter anything he wants in the input.
 
-**Select-Option**
+### **Select**
 
 ```html
 <select name="browser">
@@ -753,7 +781,7 @@ For the select element, the user is required to select one of the options you\'v
 </select>
 ```
 
-**Datalist-Option**
+### **Datalist**
 
 ```html
 <input type="text" list="browsers">
@@ -1067,20 +1095,22 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 
 Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones).
 
-**1) Setting the viewport**
+### **1. Setting the viewport**
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-**2) Responsive Images**  
+### **2. Responsive Images**
+
 If the CSS width property is set to 100%, the image will be responsive and scale up and down
 
 ```html
 <img src="img.png" style="width:100%;">
 ```
 
-**3) Show different Images depending on Browser Width**  
+### **3. Show different Images depending on Browser Width**
+
 The HTML `<picture>` element allows you to define different images for different browser window sizes.
 
 ```html
@@ -1092,14 +1122,16 @@ The HTML `<picture>` element allows you to define different images for different
 </picture>
 ```
 
-**4) Responsive Text Size**  
+### **4. Responsive Text Size**
+
 The text size can be set with a "vw" unit, which means the "viewport width". That way the text size will follow the size of the browser window.
 
 ```html
 <h1 style="font-size:10vw">Hello World</h1>
 ```
 
-**5) Media Queries**  
+### **5. Media Queries**
+
 Using media queries you can define completely different styles for different browser sizes.
 
 ```css
@@ -1133,7 +1165,7 @@ Using media queries you can define completely different styles for different bro
 
 ## Q. ***List the API available in HTML5?***
 
-**1.) High Resolution Time API**
+### **1. High Resolution Time API**
 
 The High Resolution Time API provides the current time in sub-millisecond resolution and such that it is not subject to system clock skew or adjustments.
 
@@ -1143,7 +1175,8 @@ It exposes only one method, that belongs to the `window.performance` object, cal
 var time = performance.now();
 ```
 
-**2.) User Timing API**  
+### **2. User Timing API**
+
 It allows us to accurately measure and report the performance of a section of JavaScript code. It deals with two main concepts: mark and measure. The former represents an instant (timestamp), while the latter represents the time elapsed between two marks.
 
 ```javascript
@@ -1155,7 +1188,8 @@ performance.mark("endFoo");
 performance.measure("durationFoo", "startFoo", "endFoo");
 ```
 
-**3.) Network Information API**  
+### **3. Network Information API**
+
 This API belongs to the connection property of the `window.navigator` object. It exposes two read-only properties: `bandwidth` and `metered`. The former is a number representing an estimation of the current bandwidth, while the latter is a Boolean whose value is true if the user\'s connection is subject to limitation and bandwidth usage, and false otherwise.
 
 |Sl.No| API                            | Description
@@ -1163,11 +1197,12 @@ This API belongs to the connection property of the `window.navigator` object. It
 | 01. |navigator.connection.type       |Network Type                               |
 | 02. |navigator.connection.downlink   |Effective bandwidth estimate ( downlink )                               |
 | 03. |navigator.connection.rtt        |Effective round-trip time estimate ( rtt )                                |
-| 04. |navigator.connection.downlinkMax|Upper bound on the downlink speed of the first network hop ( downlinkMax )|           
+| 04. |navigator.connection.downlinkMax|Upper bound on the downlink speed of the first network hop ( downlinkMax )|
 | 05. |navigator.connection.effectiveType|Effective connection type  |
 | 06. |navigator.connection.saveData   |True if the user has requested a reduced data usage mode from the user agent ( saveData )|
 
-**4.) Vibration API**  
+### **4.) Vibration API**
+
 It exposes only one method, `vibrate()`, that belongs to the `window.navigator` object. This method accepts one parameter specifying the duration of the vibration in milliseconds. The parameter can be either an integer or an array of integers. In the second case, it\'s interpreted as alternating vibration times and pauses.
 
 ```javascript
@@ -1175,7 +1210,8 @@ It exposes only one method, `vibrate()`, that belongs to the `window.navigator` 
 navigator.vibrate(2000);
 ```
 
-**5.) Battery Status API**  
+### **5.) Battery Status API**
+
 The Battery Status API exposes four properties (`charging`, `chargingTime`, `discharingTime`, and `level`) and four events. The properties specify if the battery is in charge, the seconds remaining until the battery is fully charged, the seconds remaining until the battery is fully discharged, and the current level of the battery. These properties belongs to the `battery` property of the `window.navigator` object.
 
 ```javascript
@@ -1183,7 +1219,8 @@ The Battery Status API exposes four properties (`charging`, `chargingTime`, `dis
 var percentageLevel = navigator.battery.level * 100;
 ```
 
-**6.) Page Visibility API**  
+### **6.) Page Visibility API**
+
 The Page Visibility API enables us to determine the current visibility state of the page. The Page Visibility API is especially useful for saving resources and improving performance by letting a page avoid performing unnecessary tasks when the document isn\'t visible.
 
 ```javascript
@@ -1191,8 +1228,10 @@ The Page Visibility API enables us to determine the current visibility state of 
 console.log('Page Visibility: '+document.hidden); 
 ```
 
-**7.) Fullscreen API**  
+### **7.) Fullscreen API**
+
 The Fullscreen API provides a way to request fullscreen display from the user, and exit this mode when desired. This API exposes two methods, `requestFullscreen()` and `exitFullscreen()`, allowing us to request an element to become fullscreen and to exit fullscreen.
+
 ```javascript
 document.addEventListener("keypress", function(e) {
     if (e.keyCode === 13) { // Enter Key
@@ -1623,7 +1662,8 @@ Example
 
 ## Q. ***What are the HTML tags which deprecated in HTML5?***
 
-**Deprecated Tags**  
+### **Deprecated Tags**
+
 The following elements are not available in HTML5 anymore and their function is better handled by CSS.
 
 |Sl.No|Tags (Elements)  |	Description        |
@@ -1644,8 +1684,7 @@ The following elements are not available in HTML5 anymore and their function is 
 | 14. |`<tt>`	        |Defines teletype text|
 | 15. |`<u>`	        |Defines underlined text|
 
-
-**Deprecated Attributes**  
+### **Deprecated Attributes**  
 
 |Removed Attributes	  |From the Elements     |
 |---------------------|----------------------|
@@ -1710,7 +1749,7 @@ The following elements are not available in HTML5 anymore and their function is 
 
 Modernizr is a JavaScript library that detects which HTML5 and CSS3 features visitor\'s browser supports. In detecting feature support, it allows developers to test for some of the new technologies and then provide fallbacks for browsers that do not support them. This is called **feature detection** and is much more efficient than browser sniffing.
 
-**Using Modernizr with CSS**
+### **Using Modernizr with CSS**
 
 By default, Modernizr sets classes for all of your tests on the root element (`<html>` for websites). This means adding the class for each feature when it is supported, and adding it with a no- prefix when it is not (e.g. `.feature` or `.no-feature`).
 
@@ -1724,8 +1763,9 @@ By default, Modernizr sets classes for all of your tests on the root element (`<
 }
 ```
 
-**Using Modernizr with JavaScript**  
-Modernizr keeps track of the results of all of it\'s feature detections via the `Modernizr` object. 
+### **Using Modernizr with JavaScript**
+
+Modernizr keeps track of the results of all of it\'s feature detections via the `Modernizr` object.
 
 ```javascript
 if (Modernizr.canvas) {
@@ -1834,6 +1874,44 @@ The `<iframe>` HTML element represents a nested browsing context, embedding anot
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+## Q. ***Explain the use of rel="nofollow", rel="noreferrer", rel="noopener" attribute?*** 
+
+### **1. rel="nofollow"**
+
+When `rel="nofollow"` tag is used, it instruct the search engines not to pass any PageRank from one page to the other. It does not allow it to pass the authority to the specific website. The main advantage of using this attribute is to control the spam attack.
+
+There may be times, when you do not have control over what people publish on your websites, for example some blog comments and some kind of forum posting.
+
+**Example**
+
+```html
+<a href="https://www.website.com" rel="nofollow">Link to yoursite.com</a>
+```
+
+### **2. rel="noreferrer"**
+
+Noreferrer is related to analytics and tracking. The referrer value shows the previous page where a user came from. By using the noreferrer attribute on a link, you are preventing other pages from seeing that traffic came from a click on your link.
+
+**Example**
+
+```html
+<a href="https://www.website.com" rel="noreferrer">Link to yoursite.com</a>
+```
+
+### **3. rel="noopener"**
+
+It prevents the new page from being able to access the `window.opener` property and will make it run in a separate process. noopener tag works as a security fix which prevents malicious links to take control over an opened tab.
+
+**Example**
+
+```html
+<a href="https://www.website.com" target="_blank" rel="noopener">Link to yoursite.com</a>
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 ## Q. ***How can you highlight text in HTML?***
 
 The `<mark>` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage\'s relevance or importance in the enclosing context.
@@ -1867,7 +1945,7 @@ HTML tags are used to influence the way our pages appear in search results. With
 
 Here are all the HTML tags that still matter:
 
-**1. Title tag**
+### **1. Title tag**
 
 Title tags are used by search engines to determine the subject of a page and display it in SERP. As a rule of thumb, titles that are under 60 characters long will fit on most screens. In HTML, a title tag looks like this:
 
@@ -1875,7 +1953,7 @@ Title tags are used by search engines to determine the subject of a page and dis
 <title>Your Title Goes Here</title>
 ```
 
-**2. Meta description tag**
+### **2. Meta description tag**
 
 Meta description is a short paragraph of text used to describe your page in search results. The function of meta description is similar to the title. It provides a little more detail about your page and it helps users decide whether to visit your page or not. In HTML, a meta description tag looks like this:
 
@@ -1883,7 +1961,7 @@ Meta description is a short paragraph of text used to describe your page in sear
 <meta name="description" content="Your description goes here">
 ```
 
-**3. Heading tags**
+### **3. Heading tags**
 
 Headings (H1-H6) are used to split your page into sections or chapters. Each heading is like a small title within the page. In HTML, a heading looks like this:
 
@@ -1891,7 +1969,7 @@ Headings (H1-H6) are used to split your page into sections or chapters. Each hea
 <h1>Your heading goes here</h1>
 ```
 
-**4. Image alt attribute**
+### **4. Image alt attribute**
 
 The `alt` text attribute is a part of an image tag, and it provides a description for an image. Alt text plays a major role in image optimization. It makes your images accessible both to search engines (by telling them what a particular image means) and to people (by displaying an alternative text in case a particular image cannot be loaded or by helping screen readers convey images). In HTML it may look like this:
 
@@ -1899,7 +1977,7 @@ The `alt` text attribute is a part of an image tag, and it provides a descriptio
 <img src="url" alt="Your image description goes here">
 ```
 
-**5. Open Graph tags**
+### **5. Open Graph tags**
 
 Open Graph (OG) tags are placed in the `<head>` section of a page and allow any webpage to become a rich object in social networks. OG tags let you control how the information about your page is represented when shared via social channels. This possibility may help you enhance the performance of your links on social media, thus driving more click-throughs and increasing conversions. In HTML, it can look like this:
 
@@ -1907,7 +1985,7 @@ Open Graph (OG) tags are placed in the `<head>` section of a page and allow any 
 <meta name="og:title" property="og:title" content="Your Open Graph Title Goes Here">
 ```
 
-**6. Robots tag**
+### **6. Robots tag**
 
 A robots tag is an element in the HTML of a page that informs search engines which pages on your site should be indexed and which should not. Its functions are similar to robots.txt, but robots.txt gives suggestions. Whereas robots tags give instructions. In HTML, it can look like this:
 
@@ -1915,7 +1993,7 @@ A robots tag is an element in the HTML of a page that informs search engines whi
 <meta name="robots" content="index, follow">
 ```
 
-**7. Canonical tag**
+### **7. Canonical tag**
 
 A canonical tag is a way of telling search engines that a specific URL represents the master copy of a page. Using the canonical tag prevents problems caused by identical or "duplicate" content appearing on multiple URLs. Practically speaking, the canonical tag tells search engines which version of a URL you want to appear in search results. In HTML, it may look like this:
 
@@ -1923,12 +2001,12 @@ A canonical tag is a way of telling search engines that a specific URL represent
 <link href="URL" rel="canonical">
 ```
 
-**8. HTML5 semantic tags**
+### **8. HTML5 semantic tags**
 
 One of the most important features of HTML5 is its semantics tags. Semantic tags refers to syntax that makes the HTML more comprehensible by better defining the different sections and layout of web pages. It makes web pages more informative and adaptable, allowing browsers and search engines to better interpret content. For example, instead of using `<div id="header"></div>` you can use a `<header></hrader>` tag.
 
 <p align="center">
-    <img src="assets/images/semantic-tags.png" alt="HTML5 semantic tags" width="250px" />
+    <img src="assets/images/semantic-tags.png" alt="HTML5 semantic tags" width="300px" />
 </p>
 
 <div align="right">
@@ -2205,64 +2283,6 @@ The `<div>` element only represents its child elements and doesn\'t have a speci
     <p>Here is some other text in a <p> tag.</p>
   </body>
 </html>
-```
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
-## Q. ***Explain the use of rel="nofollow", rel="noreferrer", rel="noopener" attribute?*** 
-
-### **1. rel="nofollow"**
-
-When `rel="nofollow"` tag is used, it instruct the search engines not to pass any PageRank from one page to the other. It does not allow it to pass the authority to the specific website. The main advantage of using this attribute is to control the spam attack.
-
-There may be times, when you do not have control over what people publish on your websites, for example some blog comments and some kind of forum posting.
-
-**Example**
-
-```html
-<a href="https://www.website.com" rel="nofollow">Link to yoursite.com</a>
-```
-
-### **2. rel="noreferrer"**
-
-Noreferrer is related to analytics and tracking. The referrer value shows the previous page where a user came from. By using the noreferrer attribute on a link, you are preventing other pages from seeing that traffic came from a click on your link.
-
-**Example**
-
-```html
-<a href="https://www.website.com" rel="noreferrer">Link to yoursite.com</a>
-```
-
-### **3. rel="noopener"**
-
-It prevents the new page from being able to access the `window.opener` property and will make it run in a separate process. noopener tag works as a security fix which prevents malicious links to take control over an opened tab.
-
-**Example**
-
-```html
-<a href="https://www.website.com" target="_blank" rel="noopener">Link to yoursite.com</a>
-```
-
-<div align="right">
-    <b><a href="#">↥ back to top</a></b>
-</div>
-
-## Q. ***Can a web page contain multiple `<header>` elements? What about `<footer>` elements?***
-
-Yes, header elements can be used multiple times in documents. A `<header>` tag must be present for all articles, sections, and pages, although a `<footer>` tag is not necessary.
-
-**From W3**
-
-```html
-A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup 
-element), but this is not required. The header element can also be used to wrap a section's table of 
-contents, a search form, or any relevant logos.
-
-The footer element represents a footer for its nearest ancestor sectioning content or sectioning root 
-element. A footer typically contains information about its section such as who wrote it, links to related 
-documents, copyright data, and the like.
 ```
 
 <div align="right">
