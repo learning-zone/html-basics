@@ -439,7 +439,7 @@ The HTML `<main>` element represents the dominant content of the `<body>` of a d
 
 Yes, header elements can be used multiple times in documents. A `<header>` tag must be present for all articles, sections, and pages, although a `<footer>` tag is not necessary.
 
-**From W3**
+**From W3C standards**
 
 ```html
 A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup 
