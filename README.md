@@ -457,6 +457,14 @@ documents, copyright data, and the like.
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+## Q. ***What is a physical tag and logical tag in HTML?***
+
+*ToDo*
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 ## Q. ***What is Character Encoding?***
 
 Character encoding is a method of converting bytes into characters. To validate or display an HTML document properly, a program must choose a proper character encoding. This is specified in the tag:
@@ -724,6 +732,14 @@ The browser considers it a different file but prevents the need to change the fi
 ## Q. ***What ARIA and screenreaders are, and how to make a website accessible?***
 
 Screen readers are software programs that  provide assistive technologies that allow people with disabilities (such as no sight, sound or mouse-ing ability) to use web applications. You can make your sites more accessible by following ARIA standards such as semantic HTML, alt attributes and using [role=button] in the expected ways
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. ***How to use data- attribute in html5****
+
+*ToDo*
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
