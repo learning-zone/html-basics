@@ -737,7 +737,7 @@ Screen readers are software programs that  provide assistive technologies that a
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. ***How to use data- attribute in html5****
+## Q. ***How to use data- attribute in html5***
 
 *ToDo*
 
