@@ -414,7 +414,7 @@ The HTML `<main>` element represents the dominant content of the `<body>` of a d
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. Define semantic markup. What are the semantic meanings for `<section>, <article>, <aside>, <nav>, <header>, <footer>` and when/how should each be used in structuring html markup?
+## Q. What are the semantic meanings for `<section>, <article>, <aside>, <nav>, <header>, <footer>` and how should each be used in structuring html markup?
 
 * `<header>` is used to contain introductory and navigational information about a section of the page. This can include the section heading, the author\'s name, time and date of publication, table of contents, or other navigational information.
 
