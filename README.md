@@ -203,8 +203,6 @@ Allows to attach a list of suggestions to a text input element. As soon as the u
 </datalist>
 ```
 
-[Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/datalist.html)
-
 ### **2. Meter Tag**
 
 Indicates a numeric value that falls within a range. The tag supports a number of attributes:
@@ -224,8 +222,6 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 <p>Pollution Level: <meter low="60" high="80" max="100" value="85">Very High</meter></p>
 ```
 
-[Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/meter.html)
-
 ### **3. Output Tag**
 
 It indicates a section of the page that can be modified by a script (usually JavaScript).
@@ -237,8 +233,6 @@ It indicates a section of the page that can be modified by a script (usually Jav
   <output name="result" for="a b"></output>
 </form>
 ```
-
-[Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/output.html)
 
 ### **4. Progress Tag**
 
@@ -266,8 +260,6 @@ Indicates how much of a task has been completed (often marked as a percentage). 
     countNumbers();
 </script>
 ```
-
-[Live demo](https://learning-zone.github.io/html-interview-questions/html5-semantic-tags/progress.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -699,8 +691,6 @@ Syntax:
   ...
 </html>
 ```
-
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/application-cache.html)
 
 *Note: Using the application caching feature described here is at this point highly discouraged; it\'s in the process of being removed from the Web platform. Use **Service Workers** instead. In fact as of Firefox 44, when AppCache is used to provide offline support for a page a warning message is now displayed in the console advising developers to use Service workers instead (bug 1204581).*
 
@@ -1287,8 +1277,6 @@ function toggleFullScreen() {
 }
 ```
 
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/html5-api.html)
-
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
@@ -1357,8 +1345,6 @@ if ("geolocation" in navigator) {
 </script>
 </html>
 ```
-
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/geolocation.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1532,8 +1518,6 @@ socket.addEventListener('message', function(event) {
 </html>
 ```
 
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html)
-
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
@@ -1578,8 +1562,6 @@ There are following advantages of using SVG over other image formats like JPEG, 
 </html>
 ```
 
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/svg.html)
-
 ### **Canvas**
 
 Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap with an “immediate mode” graphics application programming interface (API) for drawing on it. The `<canvas>` element is only a container for graphics. In order to draw the graphics, you are supposed to use a script. Canvas has several strategies when it comes to drawing paths, boxes, circles, text & adding images.
@@ -1604,9 +1586,7 @@ Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap
 </html>
 ```
 
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/canvas.html) 
-
-**Differences between SVG and Canvas**
+**Differences between SVG and Canvas:**
 
 |SVG	                |Canvas                                         |
 |-----------------------|-----------------------------------------------|
@@ -1663,8 +1643,6 @@ Example
 </body>
 </html>
 ```
-
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/drag-drop.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -1891,8 +1869,6 @@ The `<iframe>` HTML element represents a nested browsing context, embedding anot
 </html>
 ```
 
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/iframe.html)
-
 ### **The Iframe Tag Attributes**
 
 |Attribute       | Description                |
@@ -1969,8 +1945,6 @@ The `<mark>` HTML element represents text which is marked or highlighted for ref
   </body>
 </html>
 ```
-
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/mark.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
@@ -2221,8 +2195,6 @@ The `<small>` HTML element represents side-comments and small print, like copyri
   </body>
 </html>
 ```
-
-[Live demo](https://learning-zone.github.io/html-interview-questions/assets/files/small-element.html)
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
