@@ -559,16 +559,25 @@ The defer attribute tells the browser to only execute the script file once the H
 **Example:**
 
 ```html
-<!-- Without async or defer, browser will run your script immediately, before rendering the elements that's below your script tag. -->
+<!-- 
+    Without async or defer, browser will run your script immediately, 
+    before rendering the elements that's below your script tag. 
+-->
 <script src="myscript.js"></script>
 
 
-<!-- With async (asynchronous), browser will continue to load the HTML page and render it while the browser load and execute the script at the same time. -->
+<!-- 
+    With async (asynchronous), browser will continue to load the HTML 
+    page and render it while the browser load and execute the script at the same time. 
+-->
 <!-- Google Analytics is usually added like this -->
 <script async src="https://google-analytics.com/analytics.js"></script>
 
 
-<!-- With defer, browser will run your script when the page finished parsing. (not necessary finishing downloading all image files. This is good.) -->
+<!-- 
+    With defer, browser will run your script when the page finished parsing. 
+    (not necessary finishing downloading all image files. This is good.) 
+-->
 <script defer src="myscript.js"></script>
 ```
 
