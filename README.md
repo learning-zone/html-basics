@@ -561,7 +561,7 @@ The defer attribute tells the browser to only execute the script file once the H
 ```html
 <!-- 
     Without async or defer, browser will run your script immediately, 
-    before rendering the elements that's below your script tag. 
+    before rendering the elements. 
 -->
 <script src="myscript.js"></script>
 
