@@ -387,7 +387,8 @@ An example of a self closing tag is something like a line break (`<br />`) or th
 
 ## Q. What are semantic and non-semantic elements?
 
-* **Semantic elements**: clearly describes its meaning to both the browser and the developer. For example: `<form>`, `<table>`,  `<article>`, `<aside>`, `<details>`, `<figcaption>`, `<figure>`, `<footer>`, `<header>`, `<main>`, `<mark>`, `<nav>`, `<section>`, `<summary>`, `<time>` clearly defines its content.
+* **Semantic elements**: clearly describes its meaning to both the browser and the developer.
+For example: `<form>`, `<table>`,  `<article>`, `<aside>`, `<details>`, `<figcaption>`, `<figure>`, `<footer>`, `<header>`, `<main>`, `<mark>`, `<nav>`, `<section>`, `<summary>`, `<time>` clearly defines its content.
   
 * **Non-semantic elements**: `<div>` and `<span>` tells nothing about its content.
 
