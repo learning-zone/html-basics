@@ -548,9 +548,34 @@ The META elements can be used to include name/value pairs describing properties 
 
 ## Q. What does async and defer refer in script tag?
 
-* **Async**: Downloads the script file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading.
+**1. Async:**
 
-* **Defer**: Defer downloads the script file during HTML parsing and will only execute it after the HTML parser has completed. Not all browsers support this.
+Downloads the script file during HTML parsing and will pause the HTML parser to execute it when it has finished downloading.
+
+**Example:**
+
+```html
+<!-- 
+    With async (asynchronous), browser will continue to load the HTML 
+    page and render it while the browser load and execute the script at the same time. 
+-->
+<!-- Google Analytics is usually added like this -->
+<script async src="https://google-analytics.com/analytics.js"></script>
+```
+
+**2. Defer:**
+
+Defer downloads the script file during HTML parsing and will only execute it after the HTML parser has completed. Not all browsers support this.
+
+**Example:**
+
+```html
+<!-- 
+    With defer, browser will run your script when the page finished parsing. 
+    (not necessary finishing downloading all image files. This is good.) 
+-->
+<script defer src="myscript.js"></script>
+```
 
 The async attribute is used to indicate to the browser that the script file can be executed asynchronously. The HTML parser does not need to pause at the point it reaches the script tag to fetch and execute, the execution can happen whenever the script becomes ready after being fetched in parallel with the document parsing.
 
@@ -564,21 +589,6 @@ The defer attribute tells the browser to only execute the script file once the H
     before rendering the elements. 
 -->
 <script src="myscript.js"></script>
-
-
-<!-- 
-    With async (asynchronous), browser will continue to load the HTML 
-    page and render it while the browser load and execute the script at the same time. 
--->
-<!-- Google Analytics is usually added like this -->
-<script async src="https://google-analytics.com/analytics.js"></script>
-
-
-<!-- 
-    With defer, browser will run your script when the page finished parsing. 
-    (not necessary finishing downloading all image files. This is good.) 
--->
-<script defer src="myscript.js"></script>
 ```
 
 <div align="right">
