@@ -595,13 +595,13 @@ The defer attribute tells the browser to only execute the script file once the H
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. Describe the difference between a `cookie`, `sessionStorage` and `localStorage`?
+## Q. Describe the difference between a cookie, sessionStorage and localStorage?
 
-* ```cookie```: A text file saved on the users computer to store and retrieve data
+**1. cookie:** A text file saved on the users computer to store and retrieve data
 
-* ```sessionStorage```: Is memory space in a browser to save temporary data until the window or tab is closed.
+**2. sessionStorage:** Is memory space in a browser to save temporary data until the window or tab is closed.
 
-* ```localStorage```: Like cookie, where data can be saved and retrieved after browser sessions, but stored in memory like sessionStorage. Data is stored as plain key value pairs and can be stored as Json objects.
+**3. localStorage:** Like cookie, where data can be saved and retrieved after browser sessions, but stored in memory like sessionStorage. Data is stored as plain key value pairs and can be stored as Json objects.
 
 |                                        | `cookie`                                                 | `localStorage` | `sessionStorage` |
 | -------------------------------------- | -------------------------------------------------------- | -------------- | ---------------- |
