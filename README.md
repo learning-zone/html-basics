@@ -199,7 +199,7 @@ The web page is rendered in quirks mode. The web browsers engines use quirks mod
 
 There are five new form elements in the HTML5 forms specification: `<datalist>`, `<output>`, `<progress>`, and `<meter>`. 
 
-### **1. Datalist Tag**
+**1. Datalist Tag**
 
 Allows to attach a list of suggestions to a text input element. As soon as the user begins to type in the text field, the list of suggestions appears and the user can choose from the suggestions with the mouse.
 
@@ -215,7 +215,7 @@ Allows to attach a list of suggestions to a text input element. As soon as the u
 </datalist>
 ```
 
-### **2. Meter Tag**
+**2. Meter Tag**
 
 Indicates a numeric value that falls within a range. The tag supports a number of attributes:
 value: If you don\'t specify a value, the first numeric value inside the `<meter></meter>` pair becomes the value.
@@ -234,7 +234,7 @@ value: If you don\'t specify a value, the first numeric value inside the `<meter
 <p>Pollution Level: <meter low="60" high="80" max="100" value="85">Very High</meter></p>
 ```
 
-### **3. Output Tag**
+**3. Output Tag**
 
 It indicates a section of the page that can be modified by a script (usually JavaScript).
 
@@ -246,7 +246,7 @@ It indicates a section of the page that can be modified by a script (usually Jav
 </form>
 ```
 
-### **4. Progress Tag**
+**4. Progress Tag**
 
 Indicates how much of a task has been completed (often marked as a percentage). It is expected to be modified through JavaScript code.
 
@@ -622,7 +622,7 @@ The defer attribute tells the browser to only execute the script file once the H
 
 Yes
 
-*Example:*
+**Example:**
 
 ```html
 <!DOCTYPE HTML>
@@ -666,7 +666,7 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
 
 ## Q. Why to use IndexedDB instead of WebSQL in HTML5?
 
-### **1. WebSQL**
+**1. WebSQL**
 
 It is an API that is only supported in Chrome and Safari (and Android and iOS by extension). It provides an asynchronous, transactional interface to SQLite. Since 2010, it has been deprecated in favor of IndexedDB.
 
@@ -685,7 +685,7 @@ It is an API that is only supported in Chrome and Safari (and Android and iOS by
 * Suffers from object-relational impedance mismatch.
 * Diminishes agility, as database schema must be defined upfront, with all records in a table matching the same structure.
 
-### **2. IndexedDB**
+**2. IndexedDB**
 
 It is the successor to both LocalStorage and WebSQL, designed to replace them as the “one true” browser database. It exposes an asynchronous API that supposedly avoids blocking the DOM, but as we\'ll see below, it doesn\'t necessarily live up to the hype. Browser support is extremely spotty, with only Chrome and Firefox having fully usable implementations.
 
@@ -783,7 +783,7 @@ The `alt` attribute provides alternative information for an image if a user cann
 
 The enctype attribute specifies how the form-data should be encoded when submitting it to the server.
 
-*Example:* 01
+**Example:** 01
 
 ```html
 <form action="fileupload.php" method="post" enctype="multipart/form-data"> 
@@ -794,7 +794,7 @@ The enctype attribute specifies how the form-data should be encoded when submitt
 </form>
 ```
 
-*Example:* 02
+**Example:** 02
 
 ```html
 <form action="/urlencoded?token=A87412B" method="POST" enctype="application/x-www-form-urlencoded">
@@ -804,7 +804,7 @@ The enctype attribute specifies how the form-data should be encoded when submitt
 </form>
 ```
 
-*Example:* 03
+**Example:** 03
 
 ```html
 <form action="action.do" method="get" enctype="text/plain">
@@ -828,7 +828,7 @@ The enctype attribute specifies how the form-data should be encoded when submitt
 
 For the select element, the user is required to select one of the options you\'ve given. For the datalist element, it is suggested that the user select one of the options you\'ve given, but he can actually enter anything he wants in the input.
 
-### **Select**
+**1. Select:**
 
 ```html
 <select name="browser">
@@ -840,7 +840,7 @@ For the select element, the user is required to select one of the options you\'v
 </select>
 ```
 
-### **Datalist**
+**2. Datalist:**
 
 ```html
 <input type="text" list="browsers">
@@ -1232,7 +1232,7 @@ Using media queries you can define completely different styles for different bro
 
 ## Q. List the API available in HTML5?
 
-### **1. High Resolution Time API**
+**1. High Resolution Time API**
 
 The High Resolution Time API provides the current time in sub-millisecond resolution and such that it is not subject to system clock skew or adjustments.
 
@@ -1242,7 +1242,7 @@ It exposes only one method, that belongs to the `window.performance` object, cal
 var time = performance.now();
 ```
 
-### **2. User Timing API**
+**2. User Timing API**
 
 It allows us to accurately measure and report the performance of a section of JavaScript code. It deals with two main concepts: mark and measure. The former represents an instant (timestamp), while the latter represents the time elapsed between two marks.
 
@@ -1255,7 +1255,7 @@ performance.mark("endFoo");
 performance.measure("durationFoo", "startFoo", "endFoo");
 ```
 
-### **3. Network Information API**
+**3. Network Information API**
 
 This API belongs to the connection property of the `window.navigator` object. It exposes two read-only properties: `bandwidth` and `metered`. The former is a number representing an estimation of the current bandwidth, while the latter is a Boolean whose value is true if the user\'s connection is subject to limitation and bandwidth usage, and false otherwise.
 
@@ -1268,7 +1268,7 @@ This API belongs to the connection property of the `window.navigator` object. It
 | 05. |navigator.connection.effectiveType|Effective connection type  |
 | 06. |navigator.connection.saveData   |True if the user has requested a reduced data usage mode from the user agent ( saveData )|
 
-### **4.) Vibration API**
+**4.) Vibration API**
 
 It exposes only one method, `vibrate()`, that belongs to the `window.navigator` object. This method accepts one parameter specifying the duration of the vibration in milliseconds. The parameter can be either an integer or an array of integers. In the second case, it\'s interpreted as alternating vibration times and pauses.
 
@@ -1277,7 +1277,7 @@ It exposes only one method, `vibrate()`, that belongs to the `window.navigator` 
 navigator.vibrate(2000);
 ```
 
-### **5.) Battery Status API**
+**5.) Battery Status API**
 
 The Battery Status API exposes four properties (`charging`, `chargingTime`, `discharingTime`, and `level`) and four events. The properties specify if the battery is in charge, the seconds remaining until the battery is fully charged, the seconds remaining until the battery is fully discharged, and the current level of the battery. These properties belongs to the `battery` property of the `window.navigator` object.
 
@@ -1286,7 +1286,7 @@ The Battery Status API exposes four properties (`charging`, `chargingTime`, `dis
 var percentageLevel = navigator.battery.level * 100;
 ```
 
-### **6.) Page Visibility API**
+**6.) Page Visibility API**
 
 The Page Visibility API enables us to determine the current visibility state of the page. The Page Visibility API is especially useful for saving resources and improving performance by letting a page avoid performing unnecessary tasks when the document isn\'t visible.
 
@@ -1295,7 +1295,7 @@ The Page Visibility API enables us to determine the current visibility state of 
 console.log('Page Visibility: '+document.hidden); 
 ```
 
-### **7.) Fullscreen API**
+**7.) Fullscreen API**
 
 The Fullscreen API provides a way to request fullscreen display from the user, and exit this mode when desired. This API exposes two methods, `requestFullscreen()` and `exitFullscreen()`, allowing us to request an element to become fullscreen and to exit fullscreen.
 
@@ -1564,7 +1564,7 @@ socket.addEventListener('message', function(event) {
 
 ## Q. What is difference between SVG and Canvas?
 
-### **SVG**
+**1. SVG:**
 
 The Scalable Vector Graphics (SVG) is an XML-based image format that is used to define two-dimensional vector based graphics for the web. Unlike raster image (e.g. .jpg, .gif, .png, etc.), a vector image can be scaled up or down to any extent without losing the image quality.
 
@@ -1576,7 +1576,7 @@ There are following advantages of using SVG over other image formats like JPEG, 
 * SVG content can be animated using the built-in animation elements.
 * SVG images can contain hyperlinks to other documents.
 
-**Example:**  
+**Example:**
 
 ```html
 <!DOCTYPE html>
@@ -1602,11 +1602,11 @@ There are following advantages of using SVG over other image formats like JPEG, 
 </html>
 ```
 
-### **Canvas**
+**2. Canvas:**
 
 Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap with an “immediate mode” graphics application programming interface (API) for drawing on it. The `<canvas>` element is only a container for graphics. In order to draw the graphics, you are supposed to use a script. Canvas has several strategies when it comes to drawing paths, boxes, circles, text & adding images.
 
-*Example:*
+**Example:**
 
 ```html
 <!DOCTYPE html>
@@ -1626,7 +1626,7 @@ Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap
 </html>
 ```
 
-**Differences between SVG and Canvas:**
+**Differences:**
 
 |SVG	                |Canvas                                         |
 |-----------------------|-----------------------------------------------|
@@ -1717,7 +1717,7 @@ Example
 
 ## Q. What are the HTML tags which deprecated in HTML5?
 
-### **Deprecated Tags**
+**1. Deprecated Tags:**
 
 The following elements are not available in HTML5 anymore and their function is better handled by CSS.
 
@@ -1739,7 +1739,7 @@ The following elements are not available in HTML5 anymore and their function is 
 | 14. |`<tt>`	        |Defines teletype text|
 | 15. |`<u>`	        |Defines underlined text|
 
-### **Deprecated Attributes**  
+**2. Deprecated Attributes:**  
 
 |Removed Attributes	  |From the Elements     |
 |---------------------|----------------------|
@@ -1804,7 +1804,7 @@ The following elements are not available in HTML5 anymore and their function is 
 
 Modernizr is a JavaScript library that detects which HTML5 and CSS3 features visitor\'s browser supports. In detecting feature support, it allows developers to test for some of the new technologies and then provide fallbacks for browsers that do not support them. This is called **feature detection** and is much more efficient than browser sniffing.
 
-### **Using Modernizr with CSS**
+**1. Using Modernizr with CSS:**
 
 By default, Modernizr sets classes for all of your tests on the root element (`<html>` for websites). This means adding the class for each feature when it is supported, and adding it with a no- prefix when it is not (e.g. `.feature` or `.no-feature`).
 
@@ -1818,7 +1818,7 @@ By default, Modernizr sets classes for all of your tests on the root element (`<
 }
 ```
 
-### **Using Modernizr with JavaScript**
+**2. Using Modernizr with JavaScript:**
 
 Modernizr keeps track of the results of all of it\'s feature detections via the `Modernizr` object.
 
@@ -1840,7 +1840,7 @@ Progressive Rendering is the technique of sequentially rendering portions of a w
 
 It implies that once the important material is produced on the server, you may stream it to the client without having to wait for non-critical stuff to be displayed. It combines the advantages of both CSR (Client Side Rendering) and SSR (Server Side Rendering) (Server Side Rendering).
 
-### **Client Side Rendering**
+**1. Client Side Rendering:**
 
 Client Side Rendering (CSR) is a technique in which content is rendered in the browser using JavaScript. Instead of getting all the content from the HTML file itself, the server sends HTML with an empty body and script tags that contain links to JavaScript bundles that the browser will use to render the content.
 
@@ -1853,7 +1853,7 @@ Typical page load behaviour in CSR —
 
 Since the all the content starts loading only after loading the initial JavaScript, it takes a longer time to show any content on the page. If the user is on a slow network, the content is blocked for an even longer time due to lower bandwidth and higher latency.
 
-### **Server Side Rendering**
+**2. Server Side Rendering:**
 
 When rendering on the server side, the HTML is rendered on the server and sent to the client. The content that we need to display on the screen becomes available immediately after the HTML is parsed; hence, primary rendering of content is faster than CSR.
 
@@ -1909,7 +1909,7 @@ The `<iframe>` HTML element represents a nested browsing context, embedding anot
 </html>
 ```
 
-### **The Iframe Tag Attributes**
+**The Iframe Tag Attributes:**
 
 |Attribute       | Description                |
 |----------------|----------------------------|
@@ -1929,33 +1929,33 @@ The `<iframe>` HTML element represents a nested browsing context, embedding anot
 
 ## Q. Explain the use of rel="nofollow", rel="noreferrer", rel="noopener" attribute? 
 
-### **1. rel="nofollow"**
+**1. rel="nofollow"**
 
 When `rel="nofollow"` tag is used, it instruct the search engines not to pass any PageRank from one page to the other. It does not allow it to pass the authority to the specific website. The main advantage of using this attribute is to control the spam attack.
 
 There may be times, when you do not have control over what people publish on your websites, for example some blog comments and some kind of forum posting.
 
-**Example**
+**Example:**
 
 ```html
 <a href="https://www.website.com" rel="nofollow">Link to yoursite.com</a>
 ```
 
-### **2. rel="noreferrer"**
+**2. rel="noreferrer"**
 
 Noreferrer is related to analytics and tracking. The referrer value shows the previous page where a user came from. By using the noreferrer attribute on a link, you are preventing other pages from seeing that traffic came from a click on your link.
 
-**Example**
+**Example:**
 
 ```html
 <a href="https://www.website.com" rel="noreferrer">Link to yoursite.com</a>
 ```
 
-### **3. rel="noopener"**
+**3. rel="noopener"**
 
 It prevents the new page from being able to access the `window.opener` property and will make it run in a separate process. noopener tag works as a security fix which prevents malicious links to take control over an opened tab.
 
-**Example**
+**Example:**
 
 ```html
 <a href="https://www.website.com" target="_blank" rel="noopener">Link to yoursite.com</a>
@@ -1969,7 +1969,7 @@ It prevents the new page from being able to access the `window.opener` property 
 
 The `<mark>` HTML element represents text which is marked or highlighted for reference or notation purposes, due to the marked passage\'s relevance or importance in the enclosing context.
 
-**Example**
+**Example:**
 
 ```html
 <!DOCTYPE html>
@@ -1996,7 +1996,7 @@ HTML tags are used to influence the way our pages appear in search results. With
 
 Here are all the HTML tags that still matter:
 
-### **1. Title tag**
+**1. Title tag:**
 
 Title tags are used by search engines to determine the subject of a page and display it in SERP. As a rule of thumb, titles that are under 60 characters long will fit on most screens. In HTML, a title tag looks like this:
 
@@ -2004,7 +2004,7 @@ Title tags are used by search engines to determine the subject of a page and dis
 <title>Your Title Goes Here</title>
 ```
 
-### **2. Meta description tag**
+**2. Meta description tag:**
 
 Meta description is a short paragraph of text used to describe your page in search results. The function of meta description is similar to the title. It provides a little more detail about your page and it helps users decide whether to visit your page or not. In HTML, a meta description tag looks like this:
 
@@ -2012,7 +2012,7 @@ Meta description is a short paragraph of text used to describe your page in sear
 <meta name="description" content="Your description goes here">
 ```
 
-### **3. Heading tags**
+**3. Heading tags:**
 
 Headings (H1-H6) are used to split your page into sections or chapters. Each heading is like a small title within the page. In HTML, a heading looks like this:
 
@@ -2020,7 +2020,7 @@ Headings (H1-H6) are used to split your page into sections or chapters. Each hea
 <h1>Your heading goes here</h1>
 ```
 
-### **4. Image alt attribute**
+**4. Image alt attribute:**
 
 The `alt` text attribute is a part of an image tag, and it provides a description for an image. Alt text plays a major role in image optimization. It makes your images accessible both to search engines (by telling them what a particular image means) and to people (by displaying an alternative text in case a particular image cannot be loaded or by helping screen readers convey images). In HTML it may look like this:
 
@@ -2028,7 +2028,7 @@ The `alt` text attribute is a part of an image tag, and it provides a descriptio
 <img src="url" alt="Your image description goes here">
 ```
 
-### **5. Open Graph tags**
+**5. Open Graph tags:**
 
 Open Graph (OG) tags are placed in the `<head>` section of a page and allow any webpage to become a rich object in social networks. OG tags let you control how the information about your page is represented when shared via social channels. This possibility may help you enhance the performance of your links on social media, thus driving more click-throughs and increasing conversions. In HTML, it can look like this:
 
@@ -2036,7 +2036,7 @@ Open Graph (OG) tags are placed in the `<head>` section of a page and allow any 
 <meta name="og:title" property="og:title" content="Your Open Graph Title Goes Here">
 ```
 
-### **6. Robots tag**
+**6. Robots tag:**
 
 A robots tag is an element in the HTML of a page that informs search engines which pages on your site should be indexed and which should not. Its functions are similar to robots.txt, but robots.txt gives suggestions. Whereas robots tags give instructions. In HTML, it can look like this:
 
@@ -2044,7 +2044,7 @@ A robots tag is an element in the HTML of a page that informs search engines whi
 <meta name="robots" content="index, follow">
 ```
 
-### **7. Canonical tag**
+**7. Canonical tag:**
 
 A canonical tag is a way of telling search engines that a specific URL represents the master copy of a page. Using the canonical tag prevents problems caused by identical or "duplicate" content appearing on multiple URLs. Practically speaking, the canonical tag tells search engines which version of a URL you want to appear in search results. In HTML, it may look like this:
 
@@ -2052,7 +2052,7 @@ A canonical tag is a way of telling search engines that a specific URL represent
 <link href="URL" rel="canonical">
 ```
 
-### **8. HTML5 semantic tags**
+**8. HTML5 semantic tags:**
 
 One of the most important features of HTML5 is its semantics tags. Semantic tags refers to syntax that makes the HTML more comprehensible by better defining the different sections and layout of web pages. It makes web pages more informative and adaptable, allowing browsers and search engines to better interpret content. For example, instead of using `<div id="header"></div>` you can use a `<header></hrader>` tag.
 
@@ -2068,7 +2068,7 @@ One of the most important features of HTML5 is its semantics tags. Semantic tags
 
 Attributes are defined by HTML. Properties are accessed from DOM (Document Object Model) nodes.
 
-**Example**
+**Example:**
 
 ```html
 <input id="inputId" type="text" value="Hello World!" />
@@ -2106,7 +2106,7 @@ The **value** property reflects the current text-content inside the input box, w
 
 Emulating the version tells the browser to use the DOCTYPE to determine how to render content. pages without a DOCTYPE will be rendered in quirks mode. Edge mode tells Windows Internet Explorer to display content in the highest mode available, which actually breaks the "lock-in" paradigm. With Internet Explorer 8, this is equivalent to IE8 mode.
 
-**Setting the Meta Element**
+**Setting the Meta Element:**
 
 The meta element includes a content attribute that enables you to specify the mode that content is rendered in for the webpage, as the following table shows.
 
@@ -2189,7 +2189,7 @@ We can set text direction in HTML in one of two ways:
 * With the HTML **dir** attribute
 * With the CSS **direction** property
 
-**Example**
+**Example:**
 
 ```html
 <!-- Syntax -->
@@ -2199,7 +2199,7 @@ We can set text direction in HTML in one of two ways:
 <textarea dir="rtl"></textarea>
 ```
 
-**Attribute Values**
+**Attribute Values:**
 
 |Value          |Description                |
 |---------------|---------------------------|
@@ -2215,7 +2215,7 @@ We can set text direction in HTML in one of two ways:
 
 The `<small>` HTML element represents side-comments and small print, like copyright and legal text, independent of its styled presentation. By default, it renders text within it one font-size smaller, such as from `small` to `x-small`.
 
-**Example**
+**Example:**
 
 ```html
 <!DOCTYPE html>
@@ -2244,7 +2244,7 @@ The `<small>` HTML element represents side-comments and small print, like copyri
 
 The **lang** attribute specifies the language of the element\'s content.
 
-**Example**
+**Example:**
 
 ```html
 <!DOCTYPE html>
@@ -2278,7 +2278,7 @@ The `<section>` tag creates independent sections within a webpage having logical
 
 According to the W3C specification, the `<section>` tag means that the content inside this element is grouped. In other words, the content relates to a single theme. It must be an entry in the outline of the page.
 
-**Example**
+**Example:**
 
 ```html
 <!DOCTYPE html>
@@ -2310,7 +2310,7 @@ According to the W3C specification, the `<section>` tag means that the content i
 
 The `<div>` element only represents its child elements and doesn\'t have a special meaning. It can be used with the `lang`, `title`, and `class` attributes to add semantics that is common to a group of consecutive elements. This element can also be used in a `<dl>` tag and wrap groups of `<dt>` and `<dd>` elements.
 
-**Example**
+**Example:**
 
 ```html
 <!DOCTYPE html>
@@ -2354,7 +2354,7 @@ In addition, while HTML5 defines some rules to follow for an invalid HTML5 docum
 
 The `srcset` attribute allows to define a list of different image resources along with size information so that browser can pick the most appropriate image based on the actual device\'s resolution.
 
-**Syntax**
+**Syntax:**
 
 ```html
 <img 
@@ -2366,11 +2366,11 @@ The `srcset` attribute allows to define a list of different image resources alon
 >
 ```
 
-### **1. Using display density descriptor**
+**1. Using display density descriptor:**
 
 `srcset` provides a comma-separated list of image resources along with display density it should be used, for example1x, 2x etc.
 
-**Example**
+**Example:**
 
 ```html
 <img src="image.jpg" 
@@ -2379,11 +2379,11 @@ The `srcset` attribute allows to define a list of different image resources alon
 />
 ```
 
-### **2. Using width descriptor**
+**2. Using width descriptor:**
 
 The syntax is similar to the display density descriptor, but instead of display density values, we provide the actual width of the image.
 
-**Example**
+**Example:**
 
 ```html
 <img src="image.jpg" 
@@ -2407,7 +2407,7 @@ Without WAI-ARIA certain functionality used in Web sites is not available to som
 
 ARIA attributes are divided into two categories: roles, and states & properties.
 
-### **ARIA Roles**
+**ARIA Roles:**
 
 An ARIA role is added via a `role="<ROLE TYPE>"` attribute, and does not ever change for an element once it is set. There are four categories of ARIA roles:
 
@@ -2416,11 +2416,11 @@ An ARIA role is added via a `role="<ROLE TYPE>"` attribute, and does not ever ch
 * widget
 * abstract
 
-### **Landmark ARIA Roles**
+**Landmark ARIA Roles:**
 
 Much like semantic HTML elements, landmark ARIA Roles are used to give users of assistive technology a better way to navigate and identify the different parts of a web page.
 
-**Example**
+**Example:**
 
 ```html
  <nav class='mobile-nav' role='navigation' aria-label='Mobile Menu'> List of Links </nav>
@@ -2439,7 +2439,7 @@ The different landmark roles you can use are as follows, copied from the W3C Wik
 * **search**: The search tool of a Web document.
 * **application**: A region declared as a web application, as opposed to a web document.
 
-### **Document ARIA Roles**
+**Document ARIA Roles:**
 
 Document roles describe the structure of the content on the page, as opposed to the structure of the whole page, which landmark roles describe. The roles in bold are the ones we think are the most common document aria roles, and the ones which are useful to think about including in your HTML.
 
@@ -2463,7 +2463,7 @@ Document roles describe the structure of the content on the page, as opposed to 
 * **separator**
 * **toolbar**
 
-### **Widget ARIA Roles**
+**Widget ARIA Roles:**
 
 Widget Roles are used to describe what are often javascript-based interfaces, or the more complicated parts of your web page\'s interface. The roles that are starred are the ones we think are the most common elements widget aria roles, and the ones which are useful useful to think about including in your HTML.
 
@@ -2493,11 +2493,11 @@ Widget Roles are used to describe what are often javascript-based interfaces, or
 * **tooltip**
 * **treeitem**
 
-### **Abstract ARIA Roles**
+**Abstract ARIA Roles:**
 
 Abstract aria roles are the basis of how the other ARIA roles are defined. These are not to be used in HTML.
 
-### **ARIA States & Properties**
+**ARIA States & Properties:**
 
 ARIA states and properties are often used to support ARIA roles that exist on a page. ARIA Properties often describe relationships with other elements, and for the most part, do not change once they\'re set.
 
