@@ -1118,7 +1118,7 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 
 ## Q. Explain the difference between layout, painting and compositing?
 
-<img src="lib/img/frame-full.jpg" alt="Browser Engine" />
+<img src="assets/lib/img/frame-full.jpg" alt="Browser Engine" />
 
 * **JavaScript**: Typically JavaScript is used to handle work that will result in visual changes, whether it\'s jQuery\'s animate function, sorting a data set, or adding DOM elements to the page. It doesn\'t have to be JavaScript that triggers a visual change, though: CSS Animations, Transitions, and the Web Animations API are also commonly used.
 
