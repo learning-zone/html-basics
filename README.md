@@ -1146,15 +1146,13 @@ Since the parts of the page were drawn into potentially multiple layers they nee
 
 ## Q. Explain about HTML Layout Engines used by browsers?
 
-|Engine	      |Status	        |Embedded in                                                                           |
-|-------------|-----------------|--------------------------------------------------------------------------------------|
-|WebKit	      |Active	        |Safari browser, plus all browsers hosted on the iOS App Store                         |
-|Blink	      |Active	        |Google Chrome and all other Chromium-based browsers like Opera and Microsoft Edge     |
-|Gecko	      |Active	        |Firefox browser and Thunderbird email client, plus forks like SeaMonkey and Waterfox  |
-|KHTML	      |Discontinued	  |Konqueror browser                                                                     |
-|Presto	      |Discontinued	  |formerly in the Opera browser                                                         |
-|EdgeHTML	  |Discontinued	  |formerly in the Microsoft Edge browser                                                |
-|Trident	  |Discontinued	  |Internet Explorer browser and Microsoft Outlook email client                          |
+|Engine	      |Status   |Embedded in           |
+|-------------|-----------------|--------------|
+|WebKit	      |Active	|Safari browser, plus all browsers hosted on the iOS App Store                        |
+|Blink	      |Active	|Google Chrome and all other Chromium-based browsers like Opera and Microsoft Edge    |
+|Gecko	      |Active	|Firefox browser and Thunderbird email client, plus forks like SeaMonkey and Waterfox |
+|EdgeHTML	  |Discontinued	  |formerly in the Microsoft Edge browser                                         |
+|Trident	  |Discontinued	  |Internet Explorer browser and Microsoft Outlook email client                   |
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
