@@ -1162,13 +1162,13 @@ Since the parts of the page were drawn into potentially multiple layers they nee
 
 Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones).
 
-### **1. Setting the viewport**
+**1. Setting the viewport:**
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 ```
 
-### **2. Responsive Images**
+**2. Responsive Images:**
 
 If the CSS width property is set to 100%, the image will be responsive and scale up and down
 
@@ -1176,7 +1176,7 @@ If the CSS width property is set to 100%, the image will be responsive and scale
 <img src="img.png" style="width:100%;">
 ```
 
-### **3. Show different Images depending on Browser Width**
+**3. Show different Images depending on Browser Width:**
 
 The HTML `<picture>` element allows you to define different images for different browser window sizes.
 
@@ -1189,7 +1189,7 @@ The HTML `<picture>` element allows you to define different images for different
 </picture>
 ```
 
-### **4. Responsive Text Size**
+**4. Responsive Text Size:**
 
 The text size can be set with a "vw" unit, which means the "viewport width". That way the text size will follow the size of the browser window.
 
@@ -1197,7 +1197,7 @@ The text size can be set with a "vw" unit, which means the "viewport width". Tha
 <h1 style="font-size:10vw">Hello World</h1>
 ```
 
-### **5. Media Queries**
+**5. Media Queries:**
 
 Using media queries you can define completely different styles for different browser sizes.
 
