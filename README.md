@@ -595,22 +595,104 @@ The defer attribute tells the browser to only execute the script file once the H
     <b><a href="#">↥ back to top</a></b>
 </div>
 
+## Q. What is local storage in html5?
+
+The **localStorage** read-only property of the window interface allows you to access a Storage object for the Document\'s origin; the stored data is saved across browser sessions.
+
+**Example:**
+
+```js
+// Store
+localStorage.setItem("name", "Kanti Ahluwalia");
+
+// Retrieve
+localStorage.getItem("name"); // Kanti Ahluwalia
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. What is session storage in html5?
+
+The **sessionStorage** object is equal to the localStorage object, except that it stores the data for only one session. The data is deleted when the user closes the specific browser tab.
+
+**Example:**
+
+```js
+// Save data to sessionStorage
+sessionStorage.setItem('key', 'value');
+
+// Get saved data from sessionStorage
+let data = sessionStorage.getItem('key');
+
+// Remove saved data from sessionStorage
+sessionStorage.removeItem('key');
+
+// Remove all saved data from sessionStorage
+sessionStorage.clear();
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
+## Q. What is cookies in html5?
+
+A cookie is an amount of information that persists between a server-side and a client-side. A web browser stores this information at the time of browsing.
+
+A cookie contains the information as a string generally in the form of a name-value pair separated by semi-colons. It maintains the state of a user and remembers the user\'s information among all the web pages.
+
+**Example 01:** Create a Cookies
+
+```js
+// create a cookie
+document.cookie = "username=Anjali Batta";
+
+// cookie with expiry date
+document.cookie = "username=Anjali Batta; expires=Thu, 18 Dec 2022 12:00:00 UTC";
+```
+
+**Example 02:** Cookie with expiry date
+
+```js
+// cookie with expiry date
+document.cookie = "username=Anjali Batta; expires=Thu, 18 Dec 2022 12:00:00 UTC";
+```
+
+**Example 03:** Read Cookie
+
+```js
+let myCookies = document.cookie;
+
+console.log(myCookies);
+```
+
+**Example 04:** Update Cookie
+
+```js
+document.cookie = "username=John Smith; expires=Thu, 18 Dec 2022 12:00:00 UTC; path=/";
+```
+
+**Example 05:** Delete Cookie
+
+```js
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+```
+
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+
 ## Q. Describe the difference between a cookie, sessionStorage and localStorage?
 
-**1. cookie:** A text file saved on the users computer to store and retrieve data
-
-**2. sessionStorage:** Is memory space in a browser to save temporary data until the window or tab is closed.
-
-**3. localStorage:** Like cookie, where data can be saved and retrieved after browser sessions, but stored in memory like sessionStorage. Data is stored as plain key value pairs and can be stored as Json objects.
-
-|                                        | `cookie`                                                 | `localStorage` | `sessionStorage` |
-| -------------------------------------- | -------------------------------------------------------- | -------------- | ---------------- |
-| Initiator                              | Client or server. Server can use `Set-Cookie` header     | Client         | Client           |
-| Expiry                                 | Manually set                                             | Forever        | On tab close     |
-| Persistent across browser sessions     | Depends on whether expiration is set                     | Yes            | No               |
-| Sent to server with every HTTP request | Cookies are automatically being sent via `Cookie` header | No             | No               |
-| Capacity (per domain)                  | 4kb                                                      | 5MB            | 5MB              |
-| Accessibility                          | Any window                                               | Any window     | Same tab         |
+|      | `cookie`  | `localStorage` | `sessionStorage` |
+|------|-----------|----------------|------------------|
+| Initiator        | Client or server. Server can use `Set-Cookie` header     | Client         | Client           |
+| Expiry           | Manually set                                             | Forever        | On tab close     |
+| Persistent across browser sessions | Depends on whether expiration is set | Yes            | No   | | Sent to server with every HTTP request | Cookies are automatically being sent via `Cookie` header | No    | No               |
+| Capacity (per domain) | 4kb        | 5MB            | 5MB              |
+| Accessibility  | Any window        | Any window     | Same tab         |
 
 *Note: If the user decides to clear browsing data via whatever mechanism provided by the browser, this will clear out any `cookie`, `localStorage`, or `sessionStorage` stored. It\'s important to keep this in mind when designing for local persistance, especially when comparing to alternatives such as server side storing in a database or similar (which of course will persist despite user actions).*
 
