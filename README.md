@@ -1636,66 +1636,67 @@ socket.addEventListener('message', function(event) {
 |strokeText()	|Draws text on the canvas (no fill)                                |
 |measureText()	|Returns an object that contains the width of the specified text   |
 
+**Example 01:** HTML5 Canvas for Text
+
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>HTML5 Canvas</title>
-  </head>
-  <body>
-    
-    <div><b>Text</b></div>
-    <canvas id="text" width="200" height="100" ></canvas><br/><br/>
+<div>Text</div>
+<canvas id="text" width="200" height="100" ></canvas>
 
+<script type="text/javascript">
+    // Text with style
+    var canvas = document.getElementById('text');
+    var context = canvas.getContext('2d');
+    context.font = '20pt Calibri';
+    context.fillStyle = 'blue';
+    context.fillText('Hello World!', 50, 50);
+</script>
+```
 
-    <div><b>Straight Line</b></div>
-    <canvas id="line" width="300" height="0" style="border: 1px solid #333;"></canvas><br/><br/>
+**Example 02:** HTML5 Canvas for Straight Line
 
+```html
+<div>Straight Line</div>
+<canvas id="line" width="300" height="0" style="border: 1px solid #333;"></canvas>
 
-    <div><b>Rectangle</b></div>
-    <canvas id="rectangle" width="300" height="200" style="border: 1px solid #999;"></canvas><br/><br/>
+<script type="text/javascript">
+    // Straight Line
+    var canvas = document.getElementById("line");
+    var context = canvas.getContext("2d");
+    context.moveTo(50, 150);
+    context.lineTo(250, 50);
+    context.stroke();
+</script>
+```
 
+**Example 03:** HTML5 Canvas for Rectangle
 
-    <div><b>Rectangle with Style</b></div>
-    <canvas id="rect">This browser does not support Canvas!</canvas><br/><br/>
+```html
+<div>Rectangle with Style</div>
+<canvas id="rect">This browser does not support Canvas!</canvas>
 
+<script type="text/javascript">
+    // Rectange with style
+    var canvas = document.getElementById("rect");
+    var context = canvas.getContext("2d");
+    context.fillStyle = "#FF0000";
+    context.fillRect(0, 0, 300, 200);
+</script>
+```
 
-    <div><b>Circle</b></div>
-    <canvas id="circle">This browser does not support Canvas!</canvas><br/><br/>
+**Example 04:** HTML5 Canvas for Circle
 
+```html
+<div>Circle</div>
+<canvas id="circle">This browser does not support Canvas!</canvas>
 
-    <script type="text/javascript">
-      // Text with style
-      var canvas = document.getElementById('text');
-      var context = canvas.getContext('2d');
-      context.font = '20pt Calibri';
-      context.fillStyle = 'blue';
-      context.fillText('Hello World!', 50, 50);
-
-
-      // Straight Line
-      var canvas = document.getElementById("line");
-      var context = canvas.getContext("2d");
-      context.moveTo(50, 150);
-      context.lineTo(250, 50);
-      context.stroke();
-
-
-      // Rectange with style
-      var canvas = document.getElementById("rect");
-      var context = canvas.getContext("2d");
-      context.fillStyle = "#FF0000";
-      context.fillRect(0, 0, 300, 200);
-
-      // Circle
-      var canvas = document.getElementById("circle");
-      var context = canvas.getContext("2d");
-      context.beginPath();
-      context.arc(95, 50, 40, 0, 2 * Math.PI);
-      context.stroke();
-    </script>
-  </body>
-</html>
+<script type="text/javascript">
+    // Circle
+    var canvas = document.getElementById("circle");
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    context.arc(95, 50, 40, 0, 2 * Math.PI);
+    context.stroke();
+</script>
 ```
 
 <div align="right">
