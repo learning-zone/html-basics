@@ -1672,11 +1672,11 @@ socket.addEventListener('message', function(event) {
 
 ```html
 <div>Rectangle with Style</div>
-<canvas id="rect">This browser does not support Canvas!</canvas>
+<canvas id="rectangle" width="300" height="200" style="border: 1px solid #999;"></canvas>
 
 <script type="text/javascript">
     // Rectange with style
-    var canvas = document.getElementById("rect");
+    var canvas = document.getElementById("rectangle");
     var context = canvas.getContext("2d");
     context.fillStyle = "#FF0000";
     context.fillRect(0, 0, 300, 200);
