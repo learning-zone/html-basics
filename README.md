@@ -881,9 +881,32 @@ Screen readers are software programs that  provide assistive technologies that a
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. How to use data- attribute in html5
+## Q. How to use data- attribute in html5?
 
-*ToDo*
+Any attribute on any element whose attribute name starts with **data-** is a data attribute. The data-* attributes gives us the ability to embed custom data attributes on all HTML elements. The stored (custom) data can then be used in the page\'s JavaScript to create a more engaging user experience.
+
+**Example:**
+
+```html
+<article
+  id="electric-cars"
+  data-columns="10"
+  data-index-number="100"
+  data-parent="cars">
+  ...
+</article>
+```
+
+```js
+/**
+ * JavaScript access of data attribute
+ */
+const article = document.getElementById("#electric-cars");
+
+article.dataset.columns; // "10"
+article.dataset.indexNumber; // "100"
+article.dataset.parent; // "cars"
+```
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
