@@ -1539,14 +1539,14 @@ if ("geolocation" in navigator) {
 
 The **WebSocket API** is an advanced technology that makes it possible to open a two-way interactive communication session between the user\'s browser and a server. With this API, you can send messages to a server and receive event-driven responses without having to poll the server for a reply.
 
-**Interfaces**  
+**Interfaces:**  
 
 |Sl.No|   API      | Description    |
 |-----|------------|----------------|
 | 01. |WebSocket   |The primary interface for connecting to a WebSocket server and then sending and receiving data on the connection.|   
 | 02. |CloseEvent  |The event sent by the WebSocket object when the connection closes.   |
-| 03. |MessageEvent|The event sent by the WebSocket object when a message is received from the server.|   
- 
+| 03. |MessageEvent|The event sent by the WebSocket object when a message is received from the server.|
+
 Example
 
 ```javascript
@@ -1572,7 +1572,7 @@ socket.addEventListener('message', function(event) {
 
 **canvas** is an HTML element which can be used to draw graphics via JavaScript. This can, for instance, be used to draw graphs, combine photos, or create animations.
 
-**Colors, Styles, and Shadows**
+**1. Colors, Styles, and Shadows:**
 
 |  Property    |	Description                                                                 |
 |--------------|--------------------------------------------------------------------------------|
@@ -1583,8 +1583,7 @@ socket.addEventListener('message', function(event) {
 |shadowOffsetX | Sets or returns the horizontal distance of the shadow from the shape           |
 |shadowOffsetY | Sets or returns the vertical distance of the shadow from the shape             |
 
-
-**Line Styles**
+**2. Line Styles:**
 
 |Property	 |  Description                                                   |
 |------------|----------------------------------------------------------------|
@@ -1593,8 +1592,7 @@ socket.addEventListener('message', function(event) {
 |lineWidth	 |Sets or returns the current line width                          |
 |miterLimit	 |Sets or returns the maximum miter length                        |
 
-
-**Rectangles**
+**3. Rectangles:**
   
 |Method	        |Description                                          |
 |---------------|-----------------------------------------------------|
@@ -1603,9 +1601,8 @@ socket.addEventListener('message', function(event) {
 |strokeRect()	|Draws a rectangle (no fill)                          |
 |clearRect()	|Clears the specified pixels within a given rectangle |
 
+**4. Paths:**
 
-**Paths**
-   
 | Method	      |   Description                                                                                 |
 |-----------------|---------------------------------------------------------------------------------------------- |
 |fill()	          |Fills the current drawing (path)                                                               |
@@ -1617,10 +1614,9 @@ socket.addEventListener('message', function(event) {
 |clip()	          |Clips a region of any shape and size from the original canvas                                  |
 |arc()	          |Creates an arc/curve (used to create circles, or parts of circles)                             |
 |arcTo()	      |Creates an arc/curve between two tangents                                                      |
-  
 
-**Transformations**
-   
+**5. Transformations:**
+
 |Method	        |Description                                                                |
 |---------------|-------------------------------------------------------------------------- |
 |scale()	    |Scales the current drawing bigger or smaller                               |
@@ -1628,10 +1624,9 @@ socket.addEventListener('message', function(event) {
 |translate()	|Remaps the (0,0) position on the canvas                                    |
 |transform()	|Replaces the current transformation matrix for the drawing                 |
 |setTransform()	|Resets the current transform to the identity matrix. Then runs transform() |
-  
 
-**Text**
-    
+**6. Text:**
+
 |Property	    |Description                                                       |
 |---------------|----------------------------------------------------------------- |
 |font	        |Sets or returns the current font properties for text content      |
