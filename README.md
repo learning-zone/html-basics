@@ -462,9 +462,49 @@ documents, copyright data, and the like.
     <b><a href="#">↥ back to top</a></b>
 </div>
 
-## Q. What is a physical tag and logical tag in HTML?
+## Q. What are the physical tags and logical tags in HTML?
 
-*ToDo*
+**1. Physical Tags:**
+
+Physical tags are used to indicate how a particular character is to be formatted. Any physical style tag may contain any item allowed in text, including conventional text, images, line breaks, etc.
+
+**Example:**
+
+|Tags      | Description                                                      |
+|----------|------------------------------------------------------------------|
+|`<sup>`   |Superscript is usually used for showing elements above base-line |
+|`<sub>`   |The subscript is used for alternate baseline.|
+|`<i>`     |An Italic tag is used to define a text with a special meaning. |
+|`<big>`   |Big tag increase the font size by 1 (Note: You can not use the big tag in HTML 5)|
+|`<small>` |A small tag defines the small text, and it is used while writing copyright.|
+|`<b>`     |Bold increases the importance of the text because bold tag covert the text into bold size.|
+|`<u>`     |It is used to underline the text.|
+|`<tt>`    |Teletype text gives the default font-family which is monospace.|
+|`<strike>`|It is an editing markup that tells the reader to ignore the text passage.|
+
+**2. Logical Tags:**
+
+Logical tags are used to tell the browser what kind of text is written inside the tags. Logical tags are also known as Structural tags because they specify the structure of the document. Logical tags are used to indicate to the visually impaired person that there is something more important in the text or to emphasize the text ie, logical tags can be used for styling purposes as well as to give special importance to text content.
+
+**Example:**
+
+|Tags       | Description                     |
+|-----------|---------------------------------|
+|`<abbr>`   |Defines the abbreviation of text.|
+|`<acronym>`|Defines the acronym.|
+|`<address>`|Contact information of a person or an organization.|
+|`<cite>`   |Defines citation. It displays the text in italic format.|
+|`<code>`   |Defines the piece of computer code.|
+|`<blockquote>`|Defines a long quotation.|
+|`<del>`    |Defines the deleted text and is used to mark a portion of text which has been deleted from the document.|
+|`<dfn>`    |Defines the definition element and is used to representing a defining instance in HTML.|
+|`<ins>`    |Defines inserted text.|
+|`<kbd>`    |Defines keyboard input text.|
+|`<pre>`    |Defines the block of preformatted text which preserves the text spaces, line breaks, tabs, and other formatting characters which are ignored by web browsers.|
+|`<q>`      |Defines the short quotation.|
+|`<samp>`   |Defines the sample output text from a computer program.|
+|`<strong>` |Defines strong text i.e. show the importance of the text.|
+|`<var>`    |Defines the variable in a mathematical equation or in the computer program.|
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
