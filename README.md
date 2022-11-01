@@ -892,21 +892,24 @@ Any attribute on any element whose attribute name starts with **data-** is a dat
   id="electric-cars"
   data-columns="10"
   data-index-number="100"
-  data-parent="cars">
-  ...
+  data-parent="cars"
+>
+  <h1>Electric Cars</h1>
 </article>
 ```
 
 ```js
 /**
- * JavaScript access of data attribute
+ * Access data attribute
  */
-const article = document.getElementById("#electric-cars");
+const article = document.getElementById("electric-cars");
 
 article.dataset.columns; // "10"
 article.dataset.indexNumber; // "100"
 article.dataset.parent; // "cars"
 ```
+
+**&#9885; [Try this example on CodeSandbox](https://codesandbox.io/s/html-data-attribute-llxlkn?file=/script.js)**
 
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
