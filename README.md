@@ -289,6 +289,107 @@ Indicates how much of a task has been completed (often marked as a percentage). 
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
+## Q. Create a HTML form with below constraints?
+
+   * Accept User Name, Email, Country and Subject
+   * Validate the fields
+   * Store data into local Storage
+   * Fetch user data and display on right side of the page
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #0e8af7;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #1181e3;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form name="contactForm" onsubmit="return validateForm()" method="post">
+    <label for="fname">User Name</label>
+    <input type="text" id="user_name" name="user_name" placeholder="Your name.." required>
+
+    <label for="lname">Email ID</label>
+    <input type="email" id="email" name="email" placeholder="Your Email Address.." required>
+
+    <label for="country">Country</label>
+    <select id="country" name="country" required>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="india">India</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<script>
+    function validateForm() {
+      let user_name = document.forms["contactForm"]["user_name"].value;
+      let email = document.forms["contactForm"]["email"].value;
+      let country = document.forms["contactForm"]["country"].value;
+      let subject = document.forms["contactForm"]["subject"].value;
+
+      console.log(user_name);
+
+      if (user_name === "") {
+        alert("User Name must be filled out");
+        return false;
+      } else {
+        alert(user_name);
+        return false;
+      }
+    }
+    </script>
+</body>
+</html>
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
 ## Q. What is difference between `span` tag and `div` tag?
 
 The primary difference between div and span tag is their default behavior. By default, a `<div>` is a **block-level-element** and a `<span>` is an **inline element**.
