@@ -304,38 +304,38 @@ Indicates how much of a task has been completed (often marked as a percentage). 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-input[type=text], input[type=email], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: #0e8af7;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #1181e3;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
+  body {font-family: Arial, Helvetica, sans-serif;}
+  * {box-sizing: border-box;}
+  
+  input[type=text], input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #0e8af7;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #1181e3;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
 </style>
 </head>
 <body>
@@ -344,7 +344,7 @@ input[type=submit]:hover {
 
 <div class="container">
   <form name="contactForm" onsubmit="return validateForm()" method="post">
-    <label for="fname">User Name</label>
+    <label for="fname">Name</label>
     <input type="text" id="user_name" name="user_name" placeholder="Your name.." required>
 
     <label for="lname">Email ID</label>
@@ -352,6 +352,7 @@ input[type=submit]:hover {
 
     <label for="country">Country</label>
     <select id="country" name="country" required>
+      <option value="">--- SELECT ---</option>
       <option value="australia">Australia</option>
       <option value="canada">Canada</option>
       <option value="india">India</option>
@@ -366,22 +367,34 @@ input[type=submit]:hover {
 </div>
 <script>
     function validateForm() {
-      let user_name = document.forms["contactForm"]["user_name"].value;
+      let name = document.forms["contactForm"]["user_name"].value;
       let email = document.forms["contactForm"]["email"].value;
       let country = document.forms["contactForm"]["country"].value;
       let subject = document.forms["contactForm"]["subject"].value;
 
-      console.log(user_name);
-
-      if (user_name === "") {
-        alert("User Name must be filled out");
+      if (name === "" || email === "" || country === "") {
+        alert("All the fields are mandatory");
         return false;
-      } else {
-        alert(user_name);
+      } else { 
+        // Create a JSON Object
+        const userData = {
+          name: name,
+          email: email,
+          country: country,
+          subject: subject
+        };
+
+        // Store the object into storage
+        localStorage.setItem("userData", JSON.stringify(userData));
+
+        // Retrieve the object from the storage
+        const data = localStorage.getItem("userData");
+        console.log("data: ", JSON.parse(data));
+        
         return false;
       }
     }
-    </script>
+</script>
 </body>
 </html>
 ```
