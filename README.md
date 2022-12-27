@@ -2790,7 +2790,7 @@ While there are 35 aria properties and states the W3C defines and which you can 
           yellow.style.opacity = 0.3;
         }, 7000);
 		
-        // yellow Signal
+        // Yellow Signal
         setTimeout(function () {
           green.style.opacity = 1;
           red.style.opacity = 0.3;
