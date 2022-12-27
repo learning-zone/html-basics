@@ -2735,3 +2735,86 @@ While there are 35 aria properties and states the W3C defines and which you can 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## Q. Create a traffic signal light in html?
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Traffic Signal
+    </title>
+    <style>
+      #green{
+        background-color: green;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 2px solid #333;
+      }
+      #yellow{
+        background-color: yellow;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 2px solid #333;
+      }
+      #red{
+        background-color: red;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 2px solid #333;
+      }
+    </style>
+  </head>
+  <body onload="timer;">
+      <div id="red"></div>
+      <div id="yellow"></div>
+	  <div id="green"></div>
+      
+    <script>
+      function startTrafficSignal() {
+        
+        const red = document.getElementById("red");
+        const yellow = document.getElementById("yellow");
+		const green = document.getElementById("green");
+      
+        green.style.opacity = 1;
+      
+	   // Red Signal
+        setTimeout(function () {
+          green.style.opacity = 0.3;
+          red.style.opacity = 1;
+          yellow.style.opacity = 0.3;
+        }, 7000);
+		
+		// yellow Signal
+        setTimeout(function () {
+          green.style.opacity = 1;
+          red.style.opacity = 0.3;
+          yellow.style.opacity = 0.3;
+        }, 5000);
+		
+	    // Green Signal
+        setTimeout(function () {
+          green.style.opacity = 0.3;
+          red.style.opacity = 0.3;
+          yellow.style.opacity = 1;
+        }, 12000);
+      }
+
+      const timer = setInterval(function () {
+        startTrafficSignal();
+      }, 12000);
+      
+      startTrafficSignal();
+    </script>
+  </body>
+</html>
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
