@@ -39,7 +39,7 @@
 
 <br/>
 
-## Q. What is difference between HTML and XHTML?
+## Q. What is the difference between HTML and XHTML?
 
 The Extensible Hypertext Markup Language, or XHTML, has two important notes for front end developers.
 
