@@ -16,7 +16,7 @@
 
 ## Table of Contents
 
-* [Introduction](#-1-introduction)
+* [Introduction](#Introduction)
 * [HTML Tags](#-2-html-tags)
 * [HTML Events](#-3-html-events)
 * [HTML Forms](#-4-html-forms)
@@ -35,7 +35,7 @@
 
 <br/>
 
-## # 1. Introduction
+## Introduction
 
 <br/>
 
