@@ -35,7 +35,7 @@
 
 <br/>
 
-## # 1. Introduction
+## #1. Introduction
 
 <br/>
 
