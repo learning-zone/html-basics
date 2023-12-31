@@ -65,7 +65,7 @@ The Extensible Hypertext Markup Language, or XHTML, has two important notes for 
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-## Q. What are the semantic tags available in html5?
+## Q. What are the semantic tags available in HTML5?
 
 HTML5 semantic tags define the function and the category of your text, simplifying the work for browsers and search engines, as well as developers.
 
