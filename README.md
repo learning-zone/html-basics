@@ -9,8 +9,8 @@
 
 * *[HTML5 Events List](html5-events.md)*
 * *[HTML5 Tags](html5-tags.md)*
+* *[HTML5 MCQ](html-mcq.md)*
 * *[CSS Basics](https://github.com/learning-zone/css-basics)*
-* *[HTML MCQ](html-mcq.md)* 
 * *[JavaScript Basics](https://github.com/learning-zone/javascript-basics)*
 
 <br/>
@@ -853,72 +853,6 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-## Q. Why to use IndexedDB instead of WebSQL in HTML5?
-
-**1. WebSQL**
-
-It is an API that is only supported in Chrome and Safari (and Android and iOS by extension). It provides an asynchronous, transactional interface to SQLite. Since 2010, it has been deprecated in favor of IndexedDB.
-
-**Advantages**
-
-* Supported on major mobile browsers (Android Browser, Mobile Safari, Opera Mobile) as well as several desktop browsers (Chrome, Safari, Opera).
-* Good performance generally, being an asynchronous API. Database interaction won't lock up the user interface. (Synchronous API is also available for WebWorkers.)
-* Good search performance, since data can be indexed according to search keys.
-* Robust, since it supports a transactional database model.
-* Easier to maintain integrity of data, due to rigid data structure.
-
-**Disadvantages**
-
-* Deprecated. Will not be supported on IE or Firefox, and will probably be phased out from the other browsers at some stage.
-* Steep learning curve, requiring knowledge of relational databases and SQL.
-* Suffers from object-relational impedance mismatch.
-* Diminishes agility, as database schema must be defined upfront, with all records in a table matching the same structure.
-
-**2. IndexedDB**
-
-It is the successor to both LocalStorage and WebSQL, designed to replace them as the “one true” browser database. It exposes an asynchronous API that supposedly avoids blocking the DOM, but as we\'ll see below, it doesn\'t necessarily live up to the hype. Browser support is extremely spotty, with only Chrome and Firefox having fully usable implementations.
-
-**Advantages**
-
-* Good performance generally, being an asynchronous API. Database interaction won't lock up the user interface. (Synchronous API is also available for WebWorkers.)
-* Good search performance, since data can be indexed according to search keys.
-* Supports versioning.
-* Robust, since it supports a transactional database model.
-* Fairly easy learning curve, due to a simple data model.
-* Decent browser support: Chrome, Firefox, mobile FF, IE10.
-
-**Disadvantages**
-
-* Very complex API resulting in large amounts of nested callbacks.
-
-<div align="right">
-    <b><a href="#table-of-contents">↥ back to top</a></b>
-</div>
-
-## Q. Explain Application Cache in HTML5. OR What is a manifest file in HTML?
-
-HTML5 provides an application caching mechanism that lets web-based applications run offline. Developers can use the Application Cache (AppCache) interface to specify resources that the browser should cache and make available to offline users. Applications that are cached load and work correctly even if users click the refresh button when they are offline.
-
-Using an application cache gives an application the following benefits:
-
-* **Offline browsing**: users can navigate a site even when they are offline.
-* **Speed**: cached resources are local, and therefore load faster.
-* **Reduced server load**: the browser only downloads resources that have changed from the server.
-
-Syntax:
-
-```html
-<html manifest="example.appcache">
-  ...
-</html>
-```
-
-*Note: Using the application caching feature described here is at this point highly discouraged; it\'s in the process of being removed from the Web platform. Use **Service Workers** instead. In fact as of Firefox 44, when AppCache is used to provide offline support for a page a warning message is now displayed in the console advising developers to use Service workers instead (bug 1204581).*
-
-<div align="right">
-    <b><a href="#table-of-contents">↥ back to top</a></b>
-</div>
-
 ## Q. What is the purpose of cache busting and how can you achieve it?
 
 Browsers have a cache to temporarily store files on websites so they don\'t need to be re-downloaded again when switching between pages or reloading the same page. The server is set up to send headers that tell the browser to store the file for a given amount of time. This greatly increases website speed and preserves bandwidth.
@@ -1274,28 +1208,6 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 * Don't Scale Images in HTML
 * Make favicon.ico Small and Cacheable
 * Avoid Empty Image src
-
-<div align="right">
-    <b><a href="#table-of-contents">↥ back to top</a></b>
-</div>
-
-## Q. Comparison of browsers engines like Chrome, Firefox, Internet explorer, Safari?
-
-* Chrome: 
-    * Layout rendering engine **Webkit**. 
-    * JavaScript engine **V8**
-
-* Firefox: 
-    * Layout rendering engine **Gecko**. 
-    * JavaScript engine **Spider monkey**
-        
-* Internet explorer: 
-    * Layout rendering engine **Trident**. 
-    * JavaScript  engine **Chakra**
-        
-* Safari:
-    * Layout rendering engine **Webkit**. 
-    * JavaScript engine JavascriptCore i.e **Nitro**
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -2011,40 +1923,6 @@ The following elements are not available in HTML5 anymore and their function is 
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-## Q. How you can Use Modernizr in HTML5?
-
-Modernizr is a JavaScript library that detects which HTML5 and CSS3 features visitor\'s browser supports. In detecting feature support, it allows developers to test for some of the new technologies and then provide fallbacks for browsers that do not support them. This is called **feature detection** and is much more efficient than browser sniffing.
-
-**1. Using Modernizr with CSS:**
-
-By default, Modernizr sets classes for all of your tests on the root element (`<html>` for websites). This means adding the class for each feature when it is supported, and adding it with a no- prefix when it is not (e.g. `.feature` or `.no-feature`).
-
-```css
-.no-cssgradients .header {
-  background: url("images/glossybutton.png");
-}
-
-.cssgradients .header {
-  background-image: linear-gradient(cornflowerblue, rebeccapurple);
-}
-```
-
-**2. Using Modernizr with JavaScript:**
-
-Modernizr keeps track of the results of all of it\'s feature detections via the `Modernizr` object.
-
-```javascript
-if (Modernizr.canvas) {
-    alert("This browser supports HTML5 canvas!");
-} else {
-    alert("no canvas :(");
-}
-```
-
-<div align="right">
-    <b><a href="#table-of-contents">↥ back to top</a></b>
-</div>
-
 ## Q. What is progressive rendering?
 
 Progressive Rendering is the technique of sequentially rendering portions of a webpage in the server and streaming it to the client in parts without waiting for the whole page to rendered.
@@ -2294,42 +2172,6 @@ The **value** property reflects the current text-content inside the input box, w
 |Attributes are defined by HTML.         |Properties are defined by the DOM.|
 |The value of an attribute is constant.  |The value of a property is variable.|
 |These are used to initialize the DOM properties.| No such job defined.|
-
-<div align="right">
-    <b><a href="#table-of-contents">↥ back to top</a></b>
-</div>
-
-## Q. How do you set IE compatibility mode?
-
-**X-UA-Compatible** is a document mode meta tag that allows to choose what version of Internet Explorer the page should be rendered as. It is used by Internet Explorer 8 to specify whether a page should be rendered as IE 7 (compatibility view) or IE 8 (standards view).
-
-```html
-<html>
-   <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <title>My Web Page</title>
-   </head>
-   <body>
-      <p>Content goes here.</p>
-   </body>
-</html>
-```
-
-Emulating the version tells the browser to use the DOCTYPE to determine how to render content. pages without a DOCTYPE will be rendered in quirks mode. Edge mode tells Windows Internet Explorer to display content in the highest mode available, which actually breaks the "lock-in" paradigm. With Internet Explorer 8, this is equivalent to IE8 mode.
-
-**Setting the Meta Element:**
-
-The meta element includes a content attribute that enables you to specify the mode that content is rendered in for the webpage, as the following table shows.
-
-|Value          |Rendering mode                                              |
-|---------------|------------------------------------------------------------|
-|IE=edge        |Display content in the highest mode available               |
-|IE=9           |Use the Windows Internet Explorer 9 standards rendering mode|
-|IE=8           |Use the Internet Explorer 8 standards rendering mode        |
-|IE=7           |Use the Windows Internet Explorer 7 standards rendering mode|
-|IE=5           |Use the Microsoft Internet Explorer 5 standards rendering mode|
-
-*Note: It is recommended that Web developers restrict their use of Edge mode to test pages and other non-production uses because of the possible unexpected results of rendering page content in future versions of Windows Internet Explorer.*
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
