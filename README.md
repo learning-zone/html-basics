@@ -2446,7 +2446,7 @@ An **HTML preprocessor** is a tool that lets you write HTML in an extended synta
 - **Avoid repetition** — define layouts/partials once, reuse everywhere
 - **Dynamic content** — inject server-side data (from DB, API, etc.) into templates
 - **Cleaner syntax** — less boilerplate than raw HTML
-- **Inheritance** — extend base layouts with child templates (like `{% extends "base.html" %}`)
+- **Inheritance** — extend base layouts with child templates
 
 
 **Popular HTML Templating Languages**
