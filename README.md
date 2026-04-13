@@ -134,7 +134,7 @@ HTML5 offers new semantic elements to define different parts of a web page:
 
 A DOCTYPE is always associated to a `DTD` ( **Document Type Definition** ). A DTD defines how documents of a certain type should be structured (i.e. a `button` can contain a `span` but not a `div`), whereas a DOCTYPE declares what DTD a document supposedly respects (i.e. this document respects the HTML DTD). For webpages, the DOCTYPE declaration is required. It is used to tell user agents what version of the HTML specifications your document respects. 
 
-Once a user agent has recognized a correct DOCTYPE, it will trigger the `no-quirks mode` matching this DOCTYPE forreading the document. If a user agent doesn't recognize a correct DOCTYPE, it will trigger the `quirks mode`.
+Once a user agent has recognized a correct DOCTYPE, it will trigger the `no-quirks mode` matching this DOCTYPE forreading the document. If a user agent doesn\'t recognize a correct DOCTYPE, it will trigger the `quirks mode`.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -215,7 +215,7 @@ Indicates how much of a task has been completed (often marked as a percentage). 
       if(i < 100) {
         i = i + 1;
         progressBar.value = i;
-        // For browsers that don't support progress tag
+        // For browsers that don\'t support progress tag
         progressBar.getElementsByTagName("span")[0].textContent = i;
       }
 
@@ -409,7 +409,7 @@ Indicates how much of a task has been completed (often marked as a percentage). 
 The primary difference between div and span tag is their default behavior. By default, a `<div>` is a **block-level-element** and a `<span>` is an **inline element**.
 
 * `<div>` is a block level element which means it will render it on it\'s own line with a width of a 100% of the parent element.
-* `<span>` is an inline element which means it will render on the same line as the previous element, if it is also an inline element, and it's width will be determined by it\'s content.
+* `<span>` is an inline element which means it will render on the same line as the previous element, if it is also an inline element, and it\'s width will be determined by it\'s content.
 
 ```html
 <div>Demo Text, with <span>some other</span> text.</div>
@@ -504,7 +504,7 @@ The HTML `<main>` element represents the dominant content of the `<body>` of a d
 </main>
 ```
 
-*Note: A document mustn\'t have more than one `<main>` element that doesn't have the hidden attribute specified.*
+*Note: A document mustn\'t have more than one `<main>` element that doesn\'t have the hidden attribute specified.*
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -514,7 +514,7 @@ The HTML `<main>` element represents the dominant content of the `<body>` of a d
 
 * `<header>` is used to contain introductory and navigational information about a section of the page. This can include the section heading, the author\'s name, time and date of publication, table of contents, or other navigational information.
 
-* `<article>` is meant to house a self-contained composition that can logically be independently recreated outside of the page without losing it\'s meaining. Individual blog posts or news stories are good examples.
+* `<article>` is meant to house a self-contained composition that can logically be independently recreated outside of the page without losing it\'s meaning. Individual blog posts or news stories are good examples.
 
 * `<section>` is a flexible container for holding content that shares a common informational theme or purpose.
 
@@ -543,8 +543,8 @@ Yes, header elements can be used multiple times in documents. A `<header>` tag m
 **From W3C standards**
 
 ```html
-A header element is intended to usually contain the section's heading (an h1–h6 element or an hgroup 
-element), but this is not required. The header element can also be used to wrap a section's table of 
+A header element is intended to usually contain the section\'s heading (an h1–h6 element or an hgroup 
+element), but this is not required. The header element can also be used to wrap a section\'s table of 
 contents, a search form, or any relevant logos.
 ```
 
@@ -929,7 +929,7 @@ Exception: QuotaExceededError: Failed to execute 'setItem' on 'Storage':
 
 Browsers have a cache to temporarily store files on websites so they don\'t need to be re-downloaded again when switching between pages or reloading the same page. The server is set up to send headers that tell the browser to store the file for a given amount of time. This greatly increases website speed and preserves bandwidth.
 
-However, it can cause problems when the website has been changed by developers because the user's cache still references old files. This can either leave them with old functionality or break a website if the cached CSS and JavaScript files are referencing elements that no longer exist, have moved or have been renamed.
+However, it can cause problems when the website has been changed by developers because the user\'s cache still references old files. This can either leave them with old functionality or break a website if the cached CSS and JavaScript files are referencing elements that no longer exist, have moved or have been renamed.
 
 **Cache busting** is the process of forcing the browser to download the new files. This is done by naming the file something different to the old file.
 
@@ -1262,7 +1262,7 @@ Here are the key techniques to improve page load performance:
 
 **Images**
 - Compress and optimize images
-- Don't scale images in HTML (serve correct size)
+- Don\'t scale images in HTML (serve correct size)
 - Use lazy loading for off-screen images
 
 **Network & DNS**
@@ -1320,7 +1320,7 @@ Here\'s a comprehensive breakdown of ways to improve website performance:
 **6. JavaScript & CSS**
 - Use external JS/CSS files (cached by browser vs. re-downloaded inline each time)
 - Minify JavaScript and CSS
-- Use **GET** for AJAX requests (single TCP packet vs. POST's two-step process)
+- Use **GET** for AJAX requests (single TCP packet vs. POST\'s two-step process)
 
 **7. Network**
 - Reduce DNS lookups
@@ -1446,7 +1446,7 @@ Start by designing for small mobile screens, then use `min-width` media queries 
 |---|---|---|
 | Default styles target | Large screens | Small screens |
 | Media query type | `max-width` | `min-width` |
-| CSS loaded on mobile | Full desktop CSS + overrides | Only what's needed |
+| CSS loaded on mobile | Full desktop CSS + overrides | Only what\'s needed |
 | Performance on mobile | Worse | Better |
 | Industry preference | Legacy approach | Modern standard |
 
@@ -1516,7 +1516,7 @@ Compacted conversationThese are the last three steps in the browser\'s rendering
 
 **Layout (Reflow)**
 
-Calculates the exact size and position of every element on the screen. Because elements affect each other (e.g., a parent's width affects its children), a change to one element can trigger recalculation of the entire tree — making layout the most expensive step to trigger repeatedly.
+Calculates the exact size and position of every element on the screen. Because elements affect each other (e.g., a parent\'s width affects its children), a change to one element can trigger recalculation of the entire tree — making layout the most expensive step to trigger repeatedly.
 
 > Caused by changes to: `width`, `height`, `margin`, `padding`, `font-size`, `top`/`left`, adding/removing DOM elements.
 
@@ -1707,7 +1707,7 @@ navigator.vibrate(2000);
 The Battery Status API exposes four properties (`charging`, `chargingTime`, `discharingTime`, and `level`) and four events. The properties specify if the battery is in charge, the seconds remaining until the battery is fully charged, the seconds remaining until the battery is fully discharged, and the current level of the battery. These properties belongs to the `battery` property of the `window.navigator` object.
 
 ```javascript
-// Retrieves the percentage of the current level of the device's battery
+// Retrieves the percentage of the current level of the device\'s battery
 var percentageLevel = navigator.battery.level * 100;
 ```
 
@@ -2062,7 +2062,7 @@ Canvas is a HTML element is used to draw graphics on a web page. It is a  bitmap
 |SVG	                |Canvas                                         |
 |-----------------------|-----------------------------------------------|
 |Vector based (composed of shapes)	|Raster based (composed of pixel)
-|Multiple graphical elements, which become the part of the page's DOM tree|	Single element similar to <img> in behavior. Canvas diagram can be saved to PNG or JPG format|
+|Multiple graphical elements, which become the part of the page\'s DOM tree|	Single element similar to <img> in behavior. Canvas diagram can be saved to PNG or JPG format|
 |Modified through script and CSS	|Modified through script only
 |Good text rendering capabilities	|Poor text rendering capabilities
 |Give better performance with smaller number of objects or larger surface, or both	|Give better performance with larger number of objects or smaller surface, or both|
@@ -2431,7 +2431,7 @@ An **optional tag** is an HTML tag whose closing (or sometimes opening) tag can 
 
 `<area>`, `<base>`, `<body>`, `<br>`, `<caption>`, `<col>`, `<colgroup>`, `<dd>`, `<dt>`, `<embed>`, `<head>`, `<hr>`, `<html>`, `<img>`, `<input>`, `<li>`, `<link>`, `<meta>`, `<optgroup>`, `<option>`, `<p>`, `<param>`, `<rp>`, `<rt>`, `<source>`, `<tbody>`, `<td>`, `<tfoot>`, `<th>`, `<thead>`, `<tr>`, `<track>`, `<wbr>`
 
-> **Note:** While omitting these tags is technically valid per the HTML spec, it's generally considered best practice to include closing tags for readability and consistency, especially in team environments.
+> **Note:** While omitting these tags is technically valid per the HTML spec, it\'s generally considered best practice to include closing tags for readability and consistency, especially in team environments.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -2510,7 +2510,7 @@ Popular in **Node.js** apps and client-side rendering.
 
 **5. Jinja2**
 
-Python's answer to templating:
+Python\'s answer to templating:
 ```html
 <h1>Hello, {{ name }}!</h1>
 {% for item in items %}
@@ -2802,7 +2802,7 @@ Web accessibility means designing and building websites so that people with disa
 
 **ARIA**
 
-**ARIA (Accessible Rich Internet Applications)** is a set of HTML attributes defined by W3C\'s WAI-ARIA specification. It adds semantic meaning to elements so assistive technologies can understand them — especially for **dynamic content and custom widgets** that plain HTML doesn't describe well.
+**ARIA (Accessible Rich Internet Applications)** is a set of HTML attributes defined by W3C\'s WAI-ARIA specification. It adds semantic meaning to elements so assistive technologies can understand them — especially for **dynamic content and custom widgets** that plain HTML doesn\'t describe well.
 
 > ARIA does **not** change visual appearance or browser behavior. It only adds an extra layer of information for assistive technologies.
 
