@@ -10,7 +10,7 @@
 * *[HTML5 Events List](html5-events.md)*
 * *[HTML5 Tags](html5-tags.md)*
 * *[CSS Basics](https://github.com/learning-zone/css-basics)*
-* *[HTML MCQ](html-mcq.md) 
+* *[HTML MCQ](html-mcq.md)* 
 * *[JavaScript Basics](https://github.com/learning-zone/javascript-basics)*
 
 <br/>
