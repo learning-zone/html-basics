@@ -2530,17 +2530,6 @@ Used by **Shopify** and **Jekyll**:
 {% endfor %}
 ```
 
-**Quick Comparison**
-
-| Language | Ecosystem | Syntax Style |
-|---|---|---|
-| **Pug** | Node.js | Indentation-based, no tags |
-| **Haml** | Ruby | Indentation-based, `%` prefix |
-| **ERB** | Ruby on Rails | `<%= %>` embedded code |
-| **Handlebars** | Node.js / client | `{{ }}` mustache syntax |
-| **Jinja2** | Python / Flask | `{{ }}` + `{% %}` blocks |
-| **Liquid** | Shopify / Jekyll | `{{ }}` + `{% %}` blocks |
-
 The key distinction from plain HTML is **server-side rendering of dynamic data** — the preprocessor fills in variables, loops through data, and outputs fully-formed HTML before it ever reaches the browser.
 
 <div align="right">
