@@ -10,6 +10,7 @@
 |`<body>`	        |Defines the document's body.|
 |`<br>`	            |Produces a single line break.|
 |`<details>` 	    |Represents a widget from which the user can obtain additional information or controls on-demand.|
+|`<dialog>` 	    |Defines a dialog box or other interactive component such as a modal window.|
 |`<div>`	        |Specifies a division or a section in a document.|
 |`<h1>` to `<h6>`	|Defines HTML headings.|
 |`<head>`	        |Defines the head portion of the document that contains information about the document.|
@@ -18,8 +19,10 @@
 |`<hr>`	            |Produce a horizontal line.|
 |`<html>`	        |Defines the root of an HTML document.|
 |`<footer>` 	    |Represents the footer of a document or a section.|
+|`<main>` 	        |Represents the dominant content of the body of a document.|
 |`<nav>` 	        |Defines a section of navigation links.|
 |`<p>`	            |Defines a paragraph.|
+|`<search>` 	    |Represents a part of the document containing search or filtering controls.|
 |`<section>` 	    |Defines a section of a document, such as header, footer etc.|
 |`<span>`	        |Defines an inline styleless section in a document.|
 |`<summary>` 	    |Defines a summary for the `<details>` element.|
@@ -44,7 +47,6 @@
 |`<fieldset>`	 |Specifies a set of related form fields.|
 |`<form>`	     |Defines an HTML form for user input.|
 |`<input>`	     |Defines an input control.|
-|`<keygen>` 	 |Represents a control for generating a public-private key pair.|
 |`<label>`	     |Defines a label for an `<input>` control.|
 |`<legend>`	     |Defines a caption for a `<fieldset>` element.|
 |`<meter>` 	     |Represents a scalar measurement within a known range.|
@@ -60,12 +62,10 @@
 |Tag	          |Description                                            |
 |-----------------|-------------------------------------------------------|
 |`<abbr>`	      |Defines an abbreviated form of a longer word or phrase.|
-|`<acronym>`      |Defines an acronym.|
 |`<address>`	  |Specifies the author's contact information.|
 |`<b>`	          |Displays text in a bold style.|
 |`<bdi>` 	      |Represents text that is isolated from its surrounding for the purposes of bidirectional text formatting.|
 |`<bdo>`	      |Overrides the current text direction.|
-|`<big>`	      |displays text in a large size.|
 |`<blockquote>`	  |Defines a long quotation.|
 |`<cite>`	      |Indicates a citation or reference to another source.|
 |`<code>`	      |Specifies text as computer code.|
@@ -85,10 +85,10 @@
 |`<ruby>` 	      |Represents a ruby annotation.|
 |`<samp>`	      |Specifies text as sample output from a computer program.|
 |`<small>`	      |Displays text in a smaller size.|
+|`<s>` 	          |Represents text that is no longer accurate or relevant.|
 |`<strong>`	      |Indicate strongly emphasized text.|
 |`<sub>`	      |Defines subscripted text.|
 |`<sup>`	      |Defines superscripted text.|
-|`<tt>`	          |Displays text in a teletype style.|
 |`<var>`	      |Defines a variable.|
 |`<wbr>` 	      |Represents a line break opportunity.|
 
@@ -142,14 +142,13 @@
 |`<embed>` 	      |Embeds external application, typically multimedia content like audio or video into an HTML document.|
 |`<figcaption>`   |Defines a caption or legend for a figure.|
 |`<figure>` 	  |Represents a figure illustrated as part of the document.|
-|`<frame>`	      |Defines a single frame within a frameset.|
-|`<frameset>`	  |Defines a collection of frames or other frameset.|
 |`<iframe>`	      |Displays a URL in an inline frame.|
 |`<img>`	      |Displays an inline image.|
 |`<map>`	      |Defines a client-side image-map.|
-|`<noframes>`	  |Defines an alternate content that displays in browsers that do not support frames.|
 |`<object>`	      |Defines an embedded object.|
 |`<param>`	      |Defines a parameter for an object or applet element.|
+|`<picture>` 	  |Defines a container for multiple image resources for responsive images.|
 |`<source>` 	  |Defines alternative media resources for the media elements like `<audio>` or `<video>`.|
 |`<time>` 	      |Represents a time and/or date.|
+|`<track>` 	      |Defines text tracks (e.g. subtitles) for media elements.|
 |`<video>` 	      |Embeds video content in an HTML document.|
