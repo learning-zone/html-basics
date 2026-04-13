@@ -54,7 +54,7 @@
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q3.** While reviewing a teammate's code you notice:
+**Q3.** While reviewing a teammate\'s code you notice:
 
 ```html
 <section>
@@ -134,7 +134,7 @@ What is the most semantically correct replacement for `<section>` here?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q8.** A checkout form has multiple sections: personal info, shipping address, and payment. The designer wants the browser's autofill to correctly distinguish between the "billing email" and the "shipping email" fields. Which attribute enables this?
+**Q8.** A checkout form has multiple sections: personal info, shipping address, and payment. The designer wants the browser\'s autofill to correctly distinguish between the "billing email" and the "shipping email" fields. Which attribute enables this?
 
 - A) `name`
 - B) `id`
@@ -201,7 +201,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q12.** An e-commerce site lets users pick a product colour. The developer wants the browser's native colour-picker widget with no extra libraries. Which input type should be used?
+**Q12.** An e-commerce site lets users pick a product colour. The developer wants the browser\'s native colour-picker widget with no extra libraries. Which input type should be used?
 
 - A) `<input type="text" pattern="#[0-9A-Fa-f]{6}">`
 - B) `<input type="color">`
@@ -229,7 +229,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q14.** A website's search bar should suggest previously entered searches from the browser history AND from a server-provided list of popular queries as the user types. Which HTML5 feature supports the server-provided suggestions natively?
+**Q14.** A website\'s search bar should suggest previously entered searches from the browser history AND from a server-provided list of popular queries as the user types. Which HTML5 feature supports the server-provided suggestions natively?
 
 - A) `<input type="search" autocomplete="on">`
 - B) `<input type="search" list="suggestions"> <datalist id="suggestions">...</datalist>`
@@ -251,7 +251,7 @@ A tester reports the form never validates even though `required` was added to th
 - D) Hidden inputs are encrypted by the browser before sending.
 
 > **Answer: C**  
-> CSRF tokens are not secret from the current page — they must be readable by the legitimate form. The protection relies on the server validating that the token in the request matches the user's session, which cross-origin requests cannot access.
+> CSRF tokens are not secret from the current page — they must be readable by the legitimate form. The protection relies on the server validating that the token in the request matches the user\'s session, which cross-origin requests cannot access.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -356,7 +356,7 @@ A colleague points out the canvas element in HTML has no `width` or `height` att
 
 ## 5. Browser Storage
 
-**Q21.** A single-page application stores the user's theme preference (dark/light). The preference should persist across browser restarts but only for that origin. Which storage mechanism is most appropriate?
+**Q21.** A single-page application stores the user\'s theme preference (dark/light). The preference should persist across browser restarts but only for that origin. Which storage mechanism is most appropriate?
 
 - A) `sessionStorage`
 - B) `localStorage`
@@ -427,7 +427,7 @@ What does the console output?
 - D) `undefined`
 
 > **Answer: B**  
-> `localStorage` stores only strings. When an object is passed to `setItem` without `JSON.stringify()`, the object's `.toString()` is called, producing `"[object Object]"`. Use `JSON.stringify()` before storing and `JSON.parse()` after retrieving.
+> `localStorage` stores only strings. When an object is passed to `setItem` without `JSON.stringify()`, the object\'s `.toString()` is called, producing `"[object Object]"`. Use `JSON.stringify()` before storing and `JSON.parse()` after retrieving.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -452,7 +452,7 @@ What does the console output?
 **Q27.** A modal dialog opens when a user clicks a "Help" button. A keyboard-only user reports they cannot interact with the modal content because the Tab key moves focus to elements behind the modal. What ARIA or HTML technique addresses this?
 
 - A) Add `tabindex="-1"` to all elements inside the modal.
-- B) Implement a focus trap — keep Tab and Shift+Tab cycling within the modal's focusable elements while it is open, and add `aria-modal="true"` to the dialog.
+- B) Implement a focus trap — keep Tab and Shift+Tab cycling within the modal\'s focusable elements while it is open, and add `aria-modal="true"` to the dialog.
 - C) Add `role="dialog"` to the modal and nothing else.
 - D) Use `pointer-events: none` on the background.
 
@@ -471,7 +471,7 @@ What does the console output?
 - D) Add `aria-label="checkbox"` to the `<div>`.
 
 > **Answer: B**  
-> `role="checkbox"` declares the element's purpose, `aria-checked` communicates its state, and `tabindex="0"` makes it keyboard-focusable. All three are required for basic accessibility.
+> `role="checkbox"` declares the element\'s purpose, `aria-checked` communicates its state, and `tabindex="0"` makes it keyboard-focusable. All three are required for basic accessibility.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -593,7 +593,7 @@ What HTML5 feature is being used and what is its purpose?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q36.** The following page outline is produced by a screen reader's heading navigation:
+**Q36.** The following page outline is produced by a screen reader\'s heading navigation:
 
 ```
 H1: Company Name
@@ -792,7 +792,7 @@ What does the `sizes` attribute tell the browser?
 
 ## 9. Web APIs
 
-**Q46.** A ride-sharing app needs the user's current GPS coordinates. The user's browser supports the HTML5 Geolocation API. Which JavaScript call correctly retrieves the position once?
+**Q46.** A ride-sharing app needs the user\'s current GPS coordinates. The user\'s browser supports the HTML5 Geolocation API. Which JavaScript call correctly retrieves the position once?
 
 - A) `navigator.location.get(callback)`
 - B) `navigator.geolocation.getCurrentPosition(successCallback, errorCallback)`
@@ -929,7 +929,7 @@ while (true) {
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q50.** A developer uses the HTML5 History API to build a single-page application with bookmarkable URLs. After calling `history.pushState({ page: 2 }, '', '/products')`, the user clicks the browser's Back button. Which event fires and where can the state be retrieved?
+**Q50.** A developer uses the HTML5 History API to build a single-page application with bookmarkable URLs. After calling `history.pushState({ page: 2 }, '', '/products')`, the user clicks the browser\'s Back button. Which event fires and where can the state be retrieved?
 
 - A) `hashchange` event; state from `location.hash`
 - B) `popstate` event on `window`; state from `event.state`
@@ -1073,7 +1073,7 @@ tooltip.textContent = element.dataset.tooltip;
 
 ## 11. Meta & Document Head
 
-**Q56.** A mobile web app's layout looks zoomed-out on smartphones, showing the desktop-sized page scaled down. Which `<meta>` tag instructs the browser to match the device's screen width and set the initial zoom to 100%?
+**Q56.** A mobile web app\'s layout looks zoomed-out on smartphones, showing the desktop-sized page scaled down. Which `<meta>` tag instructs the browser to match the device\'s screen width and set the initial zoom to 100%?
 
 - A) `<meta name="mobile" content="width=device, zoom=1">`
 - B) `<meta name="viewport" content="width=device-width, initial-scale=1">`
@@ -1210,7 +1210,7 @@ A colleague says this is unreliable because Google can still index the page. Und
 - D) An `<img>` pointing to an `.svg` file — it is resolution-independent and CSS-styleable.
 
 > **Answer: C**  
-> Inline SVG embeds the SVG DOM directly into the HTML document, making individual paths and shapes targetable by CSS and JavaScript. An `<img src="logo.svg">` is resolution-independent but its internals are isolated and cannot be styled by the page's CSS. PNG is raster-based and pixelates at high DPR. `<canvas>` is pixel-based and not resolution-independent without manual DPR scaling.
+> Inline SVG embeds the SVG DOM directly into the HTML document, making individual paths and shapes targetable by CSS and JavaScript. An `<img src="logo.svg">` is resolution-independent but its internals are isolated and cannot be styled by the page\'s CSS. PNG is raster-based and pixelates at high DPR. `<canvas>` is pixel-based and not resolution-independent without manual DPR scaling.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -1254,7 +1254,7 @@ What is the primary benefit of this pattern?
 What does `viewBox="0 0 100 50"` define?
 
 - A) The pixel dimensions the SVG will be rendered at on screen.
-- B) The internal coordinate system of the SVG — the area of SVG space mapped onto the element's width and height.
+- B) The internal coordinate system of the SVG — the area of SVG space mapped onto the element\'s width and height.
 - C) The minimum and maximum zoom levels allowed.
 - D) The clipping region that hides content outside those bounds.
 
@@ -1289,7 +1289,7 @@ Which approach is preferred and why?
 - D) Approach A — external SVG files load faster than inline SVG.
 
 > **Answer: B**  
-> With inline SVG, `aria-hidden="true"` prevents screen readers from announcing SVG internals (paths, groups) and `focusable="false"` prevents IE/Edge from placing focus on the SVG itself. The button's `aria-label` provides the single, clear accessible name. Approach A works but provides less control over how assistive technology announces the icon.
+> With inline SVG, `aria-hidden="true"` prevents screen readers from announcing SVG internals (paths, groups) and `focusable="false"` prevents IE/Edge from placing focus on the SVG itself. The button\'s `aria-label` provides the single, clear accessible name. Approach A works but provides less control over how assistive technology announces the icon.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -1311,7 +1311,7 @@ Which approach is preferred and why?
 
 ## 13. WebSocket API
 
-**Q66.** A multiplayer game needs the server to push position updates to all connected players, and each player's browser must simultaneously send its own position back to the server — all in real time with minimal latency. Which HTML5 API is the correct choice?
+**Q66.** A multiplayer game needs the server to push position updates to all connected players, and each player\'s browser must simultaneously send its own position back to the server — all in real time with minimal latency. Which HTML5 API is the correct choice?
 
 - A) Server-Sent Events (`EventSource`) — it is built for real-time server push.
 - B) `fetch` with `keepalive: true` — it maintains a persistent connection.
@@ -1410,7 +1410,7 @@ socket.onmessage = (e) => {
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q70.** A WebSocket-based chat app sends the user's session token as a query parameter: `wss://example.com/ws?token=eyJhbGci...`. A security reviewer objects. What is the primary concern and the recommended alternative?
+**Q70.** A WebSocket-based chat app sends the user\'s session token as a query parameter: `wss://example.com/ws?token=eyJhbGci...`. A security reviewer objects. What is the primary concern and the recommended alternative?
 
 - A) Query parameters are encrypted by `wss://`, so there is no concern.
 - B) Query parameters appear in server access logs, browser history, and referrer headers, potentially exposing the token. The recommended alternative is to send the token in the first WebSocket message after the connection opens, or use a short-lived ticket issued by the server over HTTPS.
@@ -1463,12 +1463,12 @@ What restrictions does a value-less `sandbox` apply?
 **Q73.** A developer adds `sandbox="allow-scripts allow-same-origin"` to an iframe loading content from the same origin as the parent page. A colleague warns this is dangerous. Why?
 
 - A) It is not dangerous — same-origin content should always be trusted.
-- B) Combining `allow-scripts` with `allow-same-origin` allows the sandboxed content to access `document.cookie`, `localStorage`, and the parent's DOM via `parent.document`, effectively bypassing the sandbox entirely.
+- B) Combining `allow-scripts` with `allow-same-origin` allows the sandboxed content to access `document.cookie`, `localStorage`, and the parent\'s DOM via `parent.document`, effectively bypassing the sandbox entirely.
 - C) `allow-same-origin` is an invalid value and will be silently ignored.
-- D) The combination causes the iframe to inherit the parent's Content Security Policy.
+- D) The combination causes the iframe to inherit the parent\'s Content Security Policy.
 
 > **Answer: B**  
-> `allow-same-origin` grants the iframe the same origin as the parent, giving it access to the parent's storage and DOM. `allow-scripts` lets it run JavaScript. Together, a script inside the iframe can call `parent.document.body.innerHTML = ''` or steal cookies — negating all sandbox protections. This combination should be avoided for same-origin embedded content.
+> `allow-same-origin` grants the iframe the same origin as the parent, giving it access to the parent\'s storage and DOM. `allow-scripts` lets it run JavaScript. Together, a script inside the iframe can call `parent.document.body.innerHTML = ''` or steal cookies — negating all sandbox protections. This combination should be avoided for same-origin embedded content.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
