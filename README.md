@@ -2499,7 +2499,7 @@ The default template language in **Ruby on Rails**.
 
 Logic-light templating with `{{ }}` syntax:
 
-```html
+```handlebars
 <h1>Hello, {{name}}!</h1>
 {{#each items}}
   <li>{{this}}</li>
@@ -2511,7 +2511,8 @@ Popular in **Node.js** apps and client-side rendering.
 **5. Jinja2**
 
 Python\'s answer to templating:
-```html
+
+```python
 <h1>Hello, {{ name }}!</h1>
 {% for item in items %}
   <li>{{ item }}</li>
@@ -2523,7 +2524,7 @@ Default in **Flask** and **Django** (Django uses a near-identical variant).
 
 Used by **Shopify** and **Jekyll**:
 
-```html
+```jekyll
 <h1>Hello, {{ customer.name }}!</h1>
 {% for product in products %}
   <li>{{ product.title }}</li>
