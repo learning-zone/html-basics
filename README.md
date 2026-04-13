@@ -421,7 +421,36 @@ The primary difference between div and span tag is their default behavior. By de
 
 ## Q. What are optional closing tag?
 
-`<p>, <li>, <td>, <tr>, <th>, <html>, <body>`, etc. don\'t have to provide end tag. Whenever browser hits a new tag it automatically ends the previous tag. 
+In HTML, **optional closing tags** are tags where the browser automatically closes them when it encounters a new tag, so the end tag is not required.
+
+Common examples: `<p>`, `<li>`, `<td>`, `<tr>`, `<th>`, `<html>`, `<body>`
+
+The full list of optional tags includes:
+
+| Tag | Tag | Tag |
+|-----|-----|-----|
+| `<area>` | `<head>` | `<option>` |
+| `<base>` | `<hr>` | `<p>` |
+| `<body>` | `<html>` | `<param>` |
+| `<br>` | `<img>` | `<rp>` |
+| `<caption>` | `<input>` | `<rt>` |
+| `<col>` | `<li>` | `<source>` |
+| `<colgroup>` | `<link>` | `<tbody>` |
+| `<dd>` | `<meta>` | `<td>` |
+| `<dt>` | `<optgroup>` | `<tfoot>` |
+| `<embed>` | | `<th>`, `<thead>`, `<tr>`, `<track>`, `<wbr>` |
+
+For example, both of these are valid:
+
+```html
+<!-- With closing tag -->
+<p>Hello World</p>
+<p>Second paragraph</p>
+
+<!-- Without closing tag — browser closes <p> automatically -->
+<p>Hello World
+<p>Second paragraph
+```
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -704,17 +733,60 @@ The defer attribute tells the browser to only execute the script file once the H
 
 ## Q. What is local storage in html5?
 
-The **localStorage** read-only property of the window interface allows you to access a Storage object for the Document\'s origin; the stored data is saved across browser sessions.
+**localStorage** is a web storage API in HTML5 that allows you to store key-value pairs in the browser with **no expiration** — data persists across browser sessions until explicitly cleared.
 
-**Example:**
+**Key characteristics:**
+- Storage capacity: ~5MB per domain
+- Data is never sent to the server
+- Accessible from any window/tab on the same origin
+- Stores data as strings
+
+**Basic API:**
 
 ```js
+// Store data
+localStorage.setItem("name", "John");
+
+// Retrieve data
+localStorage.getItem("name"); // "John"
+
+// Remove a specific item
+localStorage.removeItem("name");
+
+// Clear all items
+localStorage.clear();
+```
+
+**Storing objects** (must be serialized):
+
+```js
+const user = { name: "John", age: 30 };
+
 // Store
-localStorage.setItem("name", "Kanti Ahluwalia");
+localStorage.setItem("user", JSON.stringify(user));
 
 // Retrieve
-localStorage.getItem("name"); // Kanti Ahluwalia
+const data = JSON.parse(localStorage.getItem("user"));
 ```
+
+**Error handling** — throws `QuotaExceededError` when storage limit is reached:
+
+```js
+try {
+    localStorage.setItem("key", "value");
+} catch(e) {
+    console.log("Storage limit exceeded");
+}
+```
+
+**Comparison with related storage types:**
+
+| Feature | `localStorage` | `sessionStorage` | `cookie` |
+|---------|---------------|-----------------|---------|
+| Expiry | Never | On tab close | Manually set |
+| Capacity | 5MB | 5MB | 4KB |
+| Sent to server | No | No | Yes |
+| Scope | Any window | Same tab only | Any window |
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -809,7 +881,7 @@ document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
 ## Q. Does localStorage throw error after reaches maximum limits?
 
-Yes
+Yes - **QuotaExceededError**
 
 **Example:**
 
@@ -1097,12 +1169,34 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 
 ## Q. What is Critical Rendering Path?
 
-* Constructing the DOM Tree
-* Constructing the CSSOM Tree
-* Running JavaScript - parser blocking resource
-* Creating the Render Tree
-* Generating the Layout
-* Painting
+The **Critical Rendering Path (CRP)** is the sequence of steps the browser takes to convert HTML, CSS, and JavaScript into pixels on the screen.
+
+**The 6 steps in order:**
+
+1. **Constructing the DOM Tree** — Browser parses HTML and builds the Document Object Model (tree of nodes)
+
+2. **Constructing the CSSOM Tree** — Browser parses CSS and builds the CSS Object Model (style rules tree)
+
+3. **Running JavaScript** — JS is a **parser-blocking resource**; the browser stops HTML parsing to execute it (unless `async`/`defer` is used)
+
+4. **Creating the Render Tree** — DOM + CSSOM are combined; only visible elements are included (e.g., `display:none` nodes are excluded)
+
+5. **Generating the Layout** — Browser calculates the exact size and position of each element on the screen (also called "reflow")
+
+6. **Painting** — Browser fills in the actual pixels — text, colors, images, borders, shadows
+
+**Why it matters:** Optimizing the CRP improves page load performance. Key techniques include:
+
+- Place `<link>` stylesheets in `<head>` (avoid render blocking)
+- Place `<script>` tags at bottom of `<body>`, or use `async`/`defer`
+- Minify CSS and JS
+- Reduce render-blocking resources
+
+```
+HTML → DOM  ─┐
+             ├─→ Render Tree → Layout → Paint
+CSS → CSSOM ─┘
+```
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -1110,104 +1204,146 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 
 ## Q. What are the Benefits of Server Side Rendering (SSR) Over Client Side Rendering (CSR)?
 
-* We are using server side rendering for two reasons:
-    * performance benefit for our customers
-    * Consistent SEO performance
+**Benefits of SSR over CSR:**
 
-* The main difference is that for SSR your server\'s response to the browser is the HTML of your page that is ready to be rendered, while for CSR the browser gets a pretty empty document with links to your javascript. That means for SSR your browser will start rendering the HTML from your server without having to wait for all the JavaScript to be downloaded and executed.
-    
-* for SSR, the user can start viewing the page while all of that is happening. For the CSR world, you need to wait for all of the above to happen and then have the virtual dom moved to the browser dom for the page to be viewable.
+1. **Faster initial page load** — The server sends fully rendered HTML, so the browser displays content immediately without waiting for JavaScript bundles to download and execute.
+
+2. **Better SEO** — Search engine crawlers receive complete HTML content directly, making it easier to index pages accurately. CSR often sends an empty `<body>` that crawlers may not fully process.
+
+3. **No content blocking on slow networks** — In CSR, users on slow connections wait for JS to load before seeing anything. With SSR, content is visible as soon as HTML is parsed.
+
+4. **Co-located API calls are faster** — The server fetches data internally (low latency), renders it, and ships the final HTML — versus CSR where the browser must make separate API calls after JS loads.
+
+**Trade-offs to consider:**
+
+| | SSR | CSR |
+|---|---|---|
+| Initial load | Faster (content in HTML) | Slower (waits for JS) |
+| Subsequent navigation | Slower (full page requests) | Faster (only data fetched) |
+| Server load | Higher | Lower |
+| SEO | Better out of the box | Requires extra effort |
+| Interactivity | Requires hydration step | Immediate after JS loads |
+
+Modern frameworks like Next.js and Nuxt.js combine both approaches — using SSR for the initial load and CSR for subsequent navigation — to get the best of both worlds.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-## Q. Name 3 ways to decrease page load?
+## Q. How to improve the page load?
 
-1. LocalStorage 
-1. Caching resources 
-1. DNS-prefetch (sample below) 
-1. Keep resources on a CDN
+Here are the key techniques to improve page load performance:
+
+**Reduce HTTP Requests**
+- Combine JS files into one, CSS files into one
+- Use CSS sprites to merge multiple images into a single file
+- Remove duplicate scripts
+
+**Assets & Delivery**
+- Use a **CDN** — serves content from servers geographically closer to users
+- **Gzip** compression — reduces HTTP response size by ~70%
+- Minify JavaScript and CSS
+- Make JS and CSS external so browsers can cache them
+
+**Script & Style Placement**
+- Put `<link>` stylesheets in `<head>` — enables progressive rendering
+- Put `<script>` tags at the bottom of `<body>`, or use `async`/`defer`
+
+```html
+<script defer src="myscript.js"></script>   <!-- executes after HTML parsed -->
+<script async src="analytics.js"></script>  <!-- loads in parallel -->
+```
+
+**Caching**
+- Set `Expires` / `Cache-Control` headers on static assets
+- Use `localStorage` to cache data client-side
+- Configure ETags
+- Use **cache busting** (`script.js?v=2`) when assets change
+
+**Images**
+- Compress and optimize images
+- Don't scale images in HTML (serve correct size)
+- Use lazy loading for off-screen images
+
+**Network & DNS**
+- Use `dns-prefetch` to resolve domains early:
+```html
+<link rel="dns-prefetch" href="//example.com">
+```
+- Reduce DNS lookups
+- Avoid redirects
+- Eliminate 404 errors (wasted HTTP requests)
+- Keep cookie size small
+- Use GET instead of POST for AJAX (single TCP packet)
+
+**DOM**
+- Reduce the number of DOM elements
+- Minimize DOM access in JavaScript
+- Minimize number of iframes
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-## Q. Ways to improve website performance
+## Q. How to improve website performance?
 
-* Minimize HTTP Requests
-    * Sites are mainly slow because of too many (or too large) HTTP requests. We can eliminate unnecessary request;
-        * combined files: js to a file, css to a file
-        * CSS sprites: CSS Sprites are the preferred method for reducing the number of image requests. Combine your background images into a single image and use the CSS background-image and background-position properties to display the desired image segment.
+Here\'s a comprehensive breakdown of ways to improve website performance:
 
-* Use a Content Delivery Network CDN
+**1. Minimize HTTP Requests**
+- Combine multiple JS files into one, CSS files into one
+- Use **CSS Sprites** — merge background images into a single image, use `background-position` to display segments
+- Remove duplicate scripts
 
-    * A CDN is essentially many optimized servers around the world that deliver web content to users based on their geographic location. This means big performance improvements for site users. Because, say, if a person accessing your site in India, they will be retrieving web content from a server nearby
+**2. Use a CDN (Content Delivery Network)**
+- Serves content from geographically closer servers to users, significantly improving load times
 
-* Optimize Images:
+**3. Optimize Images**
+- Reduce resolution/quality to lower file size
+- Compress images
+- Crop to remove unnecessary areas
+- Don\'t scale images in HTML — serve the correct size
+- Optimize CSS sprites
+- Make `favicon.ico` small and cacheable
+- Avoid empty `src` attributes on `<img>`
 
-    * image sizes make a huge difference to site speed. The larger content/images, the slower the site. we could:
-        * Changing the resolution: reducing the “quality” of the image (and thereby the file size)
-        * Compressing the picture: increasing the efficiency of image data storage
-        * Cropping the picture: when cropping, you are cutting out unneeded areas and thus making the image smaller in size
+**4. Script & Stylesheet Placement**
+- Put stylesheets in `<head>` — enables progressive rendering
+- Put scripts at the bottom of `<body>`, or use `async`/`defer`
+- Avoid CSS expressions
 
-* Put Scripts at the Bottom:
+**5. Caching & Compression**
+- Add `Expires` or `Cache-Control` headers to make components cacheable
+- Enable **Gzip** compression — reduces response size by ~70%
+- Configure ETags
+- Make Ajax cacheable
 
-    * Javascript files can load after the rest of your page. The simplest solution is to place your external Javascript files at the bottom of your page, just before the close of your body tag. Now more of your site can load before your scripts. Another method that allows even more control is to use the defer or async attributes when placing external .js files on your site.
-        
-        * Async tags load the scripts while the rest of the page loads, but this means scripts can be loaded out of order. Basically, lighter files load first. This might be fine for some scripts, but can be disastrous for others.
-        
-        * The defer attribute loads your scripts after your content has finished loading. It also runs the scripts in order. Just make sure your scripts run so late without breaking your site.
+**6. JavaScript & CSS**
+- Use external JS/CSS files (cached by browser vs. re-downloaded inline each time)
+- Minify JavaScript and CSS
+- Use **GET** for AJAX requests (single TCP packet vs. POST's two-step process)
 
-* Add an Expires or a Cache-Control Header
+**7. Network**
+- Reduce DNS lookups
+- Avoid redirects
+- Eliminate 404 errors (wasted HTTP round-trips)
+- Reduce cookie size (cookies sent with every HTTP request)
 
-    * Web page designs are getting richer and richer, which means more scripts, stylesheets, images, and Flash in the page. A first-time visitor to your page may have to make several HTTP requests, but by using the Expires header you make those components cacheable. This avoids unnecessary HTTP requests on subsequent page views. Expires headers are most often used with images, but they should be used on all components including scripts, stylesheets, and Flash components.
+**8. Loading Strategy**
+- Post-load non-critical components
+- Preload components needed for next navigation
+- Reduce number of DOM elements
+- Minimize iframes
+- Minimize DOM access in JavaScript
 
-* Gzip Components
+**Quick reference summary:**
 
-    * Compression reduces response times by reducing the size of the HTTP response. Gzipping generally reduces the response size by about 70%.
-
-* Put Stylesheets at the Top:
-
-    * This is because putting stylesheets in the HEAD allows the page to render progressively.
-
-* Avoid CSS Expressions
-
-* Use GET for AJAX Requests:
-
-    * Ajax is that it provides instantaneous feedback to the user because it requests information asynchronously from the backend web server
-
-* Make JavaScript and CSS External:
-
-    *  Using external files in the real world generally produces faster pages because the JavaScript and CSS files are cached by the browser. JavaScript and CSS that are inlined in HTML documents get downloaded every time the HTML document is requested. This reduces the number of HTTP requests that are needed, but increases the size of the HTML document. On the other hand, if the JavaScript and CSS are in external files cached by the browser, the size of the HTML document is reduced without increasing the number of HTTP requests.
-
-* Use get to ajax request:
-
-    *  POST is implemented in the browsers as a two-step process: sending the headers first, then sending data. So it's best to use GET, which only takes one TCP packet to send (unless you have a lot of cookies).
-
-* No 404s:
-
-    * HTTP requests are expensive so making an HTTP request and getting a useless response (i.e. 404 Not Found) is totally unnecessary and will slow down the user experience without any benefit.
-
-* Reduce Cookie Size:
-
-    * HTTP cookies are used for a variety of reasons such as authentication and personalization. Information about cookies is exchanged in the HTTP headers between web servers and browsers. It's important to keep the size of cookies as low as possible to minimize the impact on the user's response time.
-
-* Reduce DNS Lookups
-* Minify JavaScript and CSS
-* Avoid Redirects
-* Remove Duplicate Scripts
-* Configure Etags
-* Make Ajax Cacheable
-* Post-load Components
-* Preload Components
-* Reduce the Number of DOM Elements
-* Minimize the Number of iframes
-* Minimize DOM Access
-* Optimize CSS Sprites
-* Don't Scale Images in HTML
-* Make favicon.ico Small and Cacheable
-* Avoid Empty Image src
+| Category | Technique |
+|---|---|
+| Network | CDN, DNS prefetch, avoid redirects |
+| Assets | Minify, Gzip, cache headers |
+| Images | Compress, correct size, sprites |
+| Scripts | `defer`/`async`, external files, bottom of body |
+| Requests | Combine files, remove 404s, reduce cookies |
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -1215,7 +1351,46 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 
 ## Q. What does the lang attribute in html do?
 
-* Helps in styling pages by using them in css `:lang()` pseudo class Spelling and grammar checkers Languade detection by search engines
+The `lang` attribute specifies the language of an element\'s content. It is placed on the `<html>` tag to declare the language of the entire page, or on individual elements to override the page language.
+
+```html
+<html lang="en">  <!-- English -->
+<html lang="fr">  <!-- French -->
+<html lang="ar">  <!-- Arabic -->
+```
+
+**What it does:**
+
+1. **CSS styling** — Enables the `:lang()` pseudo-class to apply language-specific styles:
+```css
+p:lang(fr) {
+    font-style: italic;
+}
+```
+
+2. **Spelling & grammar checkers** — Browsers and tools use it to apply the correct dictionary for spell-checking
+
+3. **Search engine language detection** — Helps search engines understand the language of content for accurate indexing and localized results
+
+4. **Screen readers & accessibility** — Assistive technologies use it to select the correct pronunciation and reading rules for text-to-speech
+
+5. **Browser behavior** — Affects automatic translation prompts (e.g., Chrome\'s "Translate this page?")
+
+6. **Quotation marks** — Browsers render `<q>` tag quotes using the correct style for the specified language
+
+**Example:**
+
+```html
+<html lang="en">
+  <body>
+    <p>This is in English.</p>
+    <p lang="de">Das ist auf Deutsch.</p>
+    <p lang="ja">これは日本語です。</p>
+  </body>
+</html>
+```
+
+It is a **W3C best practice** to always declare `lang` on the `<html>` element for proper accessibility and SEO.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -1223,13 +1398,57 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 
 ## Q. What is desktop first and mobile first design approach?
 
-* Desktop first : 
-        General selectors and styles designed to make the site look good on DESKTOP screens defined globally. But they affect all devices, and must be overridden by max-width media queries targeting minimum screen size
+Both are responsive design strategies that differ in **which screen size you design for first** and how you write your CSS media queries.
 
-* Mobile First : 
-        General selectors and styles designed to make the site look good on small MOBILE screens go here. But they affect all devices, and must be overridden by min-width media queries targeting maximum scrren size
-    
-    In desktop first approach the media queries will be written with respect to max-width whereas in mobile first approach media queries will be written with respect to min-width
+**Desktop First**
+
+Start by designing for large desktop screens, then use `max-width` media queries to scale down for smaller devices.
+
+```css
+/* Default styles target desktop */
+.container {
+    width: 1200px;
+    display: flex;
+}
+
+/* Override for smaller screens */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 100%;
+        flex-direction: column;
+    }
+}
+```
+
+**Mobile First**
+
+Start by designing for small mobile screens, then use `min-width` media queries to enhance the layout for larger screens.
+
+```css
+/* Default styles target mobile */
+.container {
+    width: 100%;
+    flex-direction: column;
+}
+
+/* Override for larger screens */
+@media screen and (min-width: 768px) {
+    .container {
+        width: 1200px;
+        flex-direction: row;
+    }
+}
+```
+
+**Key Differences:**
+
+| | Desktop First | Mobile First |
+|---|---|---|
+| Default styles target | Large screens | Small screens |
+| Media query type | `max-width` | `min-width` |
+| CSS loaded on mobile | Full desktop CSS + overrides | Only what's needed |
+| Performance on mobile | Worse | Better |
+| Industry preference | Legacy approach | Modern standard |
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -1237,7 +1456,55 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 
 ## Q. What are `data-` attributes good for?
 
-* The HTML5 data attribute lets you assign custom data to an element. When we want to store more information/data about the element when no suitable HTML5 element or attribute exists
+`data-*` attributes let you store custom data directly on HTML elements without using non-standard attributes or extra DOM properties.
+
+**When to use them:**
+- When you need to store extra information on an element that has no appropriate HTML attribute
+- To pass data from server-rendered HTML to JavaScript without extra API calls
+- To drive behavior in JavaScript/CSS without polluting class names
+
+**HTML syntax:**
+```html
+<button
+  data-user-id="42"
+  data-role="admin"
+  data-action="delete"
+>
+  Delete User
+</button>
+```
+
+**Access in JavaScript via `dataset`:**
+```js
+const btn = document.querySelector("button");
+
+btn.dataset.userId;   // "42"      (note: camelCase)
+btn.dataset.role;     // "admin"
+btn.dataset.action;   // "delete"
+```
+
+**Access in CSS:**
+```css
+/* Style based on data attribute value */
+[data-role="admin"] {
+    background-color: red;
+}
+
+/* Use content in pseudo-elements */
+button::after {
+    content: attr(data-action);
+}
+```
+
+**Common use cases:**
+
+| Use case | Example |
+|---|---|
+| Store IDs for JS operations | `data-product-id="123"` |
+| Configuration for widgets | `data-toggle="modal"` |
+| Track state | `data-expanded="true"` |
+| Pass server data to JS | `data-api-url="/api/users"` |
+| Analytics tracking | `data-track-event="click"` |
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -1245,27 +1512,35 @@ For HTML documents, browsers use a `<!DOCTYPE html>` in the beginning of the doc
 
 ## Q. Explain the difference between layout, painting and compositing?
 
-<img src="assets/lib/img/frame-full.jpg" alt="Browser Engine" />
+Compacted conversationThese are the last three steps in the browser\'s rendering pipeline after the Render Tree is built:
 
-**1. JavaScript:**
+**Layout (Reflow)**
 
-Typically JavaScript is used to handle work that will result in visual changes, whether it\'s jQuery\'s animate function, sorting a data set, or adding DOM elements to the page. It doesn\'t have to be JavaScript that triggers a visual change, though: CSS Animations, Transitions, and the Web Animations API are also commonly used.
+Calculates the exact size and position of every element on the screen. Because elements affect each other (e.g., a parent's width affects its children), a change to one element can trigger recalculation of the entire tree — making layout the most expensive step to trigger repeatedly.
 
-**2. Style:**
+> Caused by changes to: `width`, `height`, `margin`, `padding`, `font-size`, `top`/`left`, adding/removing DOM elements.
 
-This is the process of figuring out which CSS rules apply to which elements based on matching selectors, for example, .headline or .nav > .nav__item. From there, once rules are known, they are applied and the final styles for each element are calculated.
+**Paint**
 
-**3. Layout:**
+Fills in the actual pixels — text, colors, images, borders, shadows. This is done onto one or more **layers** (surfaces), not directly to the screen.
 
-Once the browser knows which rules apply to an element it can begin to calculate how much space it takes up and where it is on screen. The web\'s layout model means that one element can affect others, for example the width of the `<body>` element typically affects its children\'s widths and so on all the way up and down the tree, so the process can be quite involved for the browser.
+> Caused by changes to: `color`, `background`, `box-shadow`, `border-color`, `visibility`. Does **not** require a layout recalculation.
 
-**4. Paint:**
+**Compositing**
 
-Painting is the process of filling in pixels. It involves drawing out text, colors, images, borders, and shadows, essentially every visual part of the elements. The drawing is typically done onto multiple surfaces, often called layers.
+Takes all the separately painted layers and draws them to the screen in the correct order. This matters for overlapping elements — getting the order wrong would render one element on top of another incorrectly.
 
-**5. Compositing:**
+> CSS properties like `transform` and `opacity` only trigger compositing (skipping layout and paint entirely), which is why they're the most performant to animate.
 
-Since the parts of the page were drawn into potentially multiple layers they need to be drawn to the screen in the correct order so that the page renders correctly. This is especially important for elements that overlap another, since a mistake could result in one element appearing over the top of another incorrectly.
+**Performance hierarchy (fastest → slowest to trigger):**
+
+| Change affects | Steps triggered |
+|---|---|
+| `transform`, `opacity` | Composite only |
+| `color`, `background` | Paint + Composite |
+| `width`, `margin`, `top` | Layout + Paint + Composite |
+
+This is why CSS animations using `transform: translateX()` are far smoother than animating `left`/`top` — they bypass layout and paint entirely.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -1273,13 +1548,23 @@ Since the parts of the page were drawn into potentially multiple layers they nee
 
 ## Q. Explain about HTML Layout Engines used by browsers?
 
-|Engine	      |Status   |Embedded in           |
-|-------------|-----------------|--------------|
-|WebKit	      |Active	|Safari browser, plus all browsers hosted on the iOS App Store                        |
-|Blink	      |Active	|Google Chrome and all other Chromium-based browsers like Opera and Microsoft Edge    |
-|Gecko	      |Active	|Firefox browser and Thunderbird email client, plus forks like SeaMonkey and Waterfox |
-|EdgeHTML	  |Discontinued	  |formerly in the Microsoft Edge browser                                         |
-|Trident	  |Discontinued	  |Internet Explorer browser and Microsoft Outlook email client                   |
+A **layout engine** (also called a rendering engine) is the core software component of a browser responsible for parsing HTML/CSS and rendering the visual output on screen.
+
+**The three active engines today:**
+
+**Blink** (Google, 2013 — forked from WebKit)
+- Used by: Chrome, Edge (since 2020), Opera, Brave, Samsung Internet, Vivaldi
+- Powers the majority of web traffic today
+- Developed by Google + contributors via the Chromium project
+
+**WebKit** (Apple, 2003 — forked from KHTML)
+- Used by: Safari on macOS/iOS, and **all** browsers on iOS (Apple mandates WebKit on iOS App Store)
+- The original engine Chrome was based on before Google forked it into Blink
+
+**Gecko** (Mozilla, 1998)
+- Used by: Firefox, Thunderbird, SeaMonkey, Waterfox
+- The only major independent engine not owned by a big tech company
+- Uses a separate JS engine called **SpiderMonkey**
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -1289,7 +1574,7 @@ Since the parts of the page were drawn into potentially multiple layers they nee
 
 Responsive Web Design is about using HTML and CSS to automatically resize, hide, shrink, or enlarge, a website, to make it look good on all devices (desktops, tablets, and phones).
 
-**1. Setting the viewport:**
+**1. Viewport meta tag:**
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1300,43 +1585,56 @@ Responsive Web Design is about using HTML and CSS to automatically resize, hide,
 If the CSS width property is set to 100%, the image will be responsive and scale up and down
 
 ```html
-<img src="img.png" style="width:100%;">
-```
+<!-- Scales with container -->
+<img src="photo.jpg" style="max-width: 100%; height: auto;">
 
-**3. Show different Images depending on Browser Width:**
-
-The HTML `<picture>` element allows you to define different images for different browser window sizes.
-
-```html
+<!-- Serve different image per screen size -->
 <picture>
-  <source srcset="img_small.jpg" media="(max-width: 600px)">
-  <source srcset="img_large.jpg" media="(max-width: 1500px)">
-  <source srcset="img.jpg">
-  <img src="img_small.jpg" alt="Image">
+  <source srcset="small.jpg" media="(max-width: 600px)">
+  <source srcset="large.jpg" media="(min-width: 601px)">
+  <img src="large.jpg" alt="Photo">
 </picture>
 ```
 
-**4. Responsive Text Size:**
+**3. Fluid layouts:**
 
-The text size can be set with a "vw" unit, which means the "viewport width". That way the text size will follow the size of the browser window.
+Use `%`, `vw`, `fr` units instead of fixed `px`:
 
-```html
-<h1 style="font-size:10vw">Hello World</h1>
+```css
+.column { width: 48%; }        /* percentage */
+.hero   { width: 100vw; }      /* viewport width */
 ```
 
-**5. Media Queries:**
+**4. Media Queries:**
 
 Using media queries you can define completely different styles for different browser sizes.
 
 ```css
-/* Use a media query to add a breakpoint at 800px: */
-@media screen and (max-width: 800px) {
-  .left, .main, .right {
-    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
-  }
+/* Mobile first: base styles for small screens */
+.container { width: 100%; }
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .container { width: 750px; }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    .container { width: 960px; }
 }
 ```
 
+**5. CSS Flexbox and Grid**
+
+Built-in responsiveness with minimal media queries:
+
+```css
+/* Flexbox — wraps automatically */
+.row { display: flex; flex-wrap: wrap; }
+
+/* Grid — auto-fills columns based on available space */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+```
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
@@ -1395,7 +1693,7 @@ This API belongs to the connection property of the `window.navigator` object. It
 | 05. |navigator.connection.effectiveType|Effective connection type  |
 | 06. |navigator.connection.saveData   |True if the user has requested a reduced data usage mode from the user agent ( saveData )|
 
-**4.) Vibration API**
+**4. Vibration API**
 
 It exposes only one method, `vibrate()`, that belongs to the `window.navigator` object. This method accepts one parameter specifying the duration of the vibration in milliseconds. The parameter can be either an integer or an array of integers. In the second case, it\'s interpreted as alternating vibration times and pauses.
 
@@ -1404,7 +1702,7 @@ It exposes only one method, `vibrate()`, that belongs to the `window.navigator` 
 navigator.vibrate(2000);
 ```
 
-**5.) Battery Status API**
+**5. Battery Status API**
 
 The Battery Status API exposes four properties (`charging`, `chargingTime`, `discharingTime`, and `level`) and four events. The properties specify if the battery is in charge, the seconds remaining until the battery is fully charged, the seconds remaining until the battery is fully discharged, and the current level of the battery. These properties belongs to the `battery` property of the `window.navigator` object.
 
@@ -1413,7 +1711,7 @@ The Battery Status API exposes four properties (`charging`, `chargingTime`, `dis
 var percentageLevel = navigator.battery.level * 100;
 ```
 
-**6.) Page Visibility API**
+**6. Page Visibility API**
 
 The Page Visibility API enables us to determine the current visibility state of the page. The Page Visibility API is especially useful for saving resources and improving performance by letting a page avoid performing unnecessary tasks when the document isn\'t visible.
 
@@ -1422,7 +1720,7 @@ The Page Visibility API enables us to determine the current visibility state of 
 console.log('Page Visibility: '+document.hidden); 
 ```
 
-**7.) Fullscreen API**
+**7. Fullscreen API**
 
 The Fullscreen API provides a way to request fullscreen display from the user, and exit this mode when desired. This API exposes two methods, `requestFullscreen()` and `exitFullscreen()`, allowing us to request an element to become fullscreen and to exit fullscreen.
 
@@ -1456,10 +1754,8 @@ The Geolocation API is published through the `navigator.geolocation` object.
 
 ```javascript
 if ("geolocation" in navigator) {
-  /* geolocation is available */
-} else {
-  /* geolocation IS NOT available */
-}
+  /* geolocation API is available */
+} 
 ```
 
 **Example**
@@ -1529,21 +1825,33 @@ The **WebSocket API** is an advanced technology that makes it possible to open a
 | 02. |CloseEvent  |The event sent by the WebSocket object when the connection closes.   |
 | 03. |MessageEvent|The event sent by the WebSocket object when a message is received from the server.|
 
-Example
+**Example**
 
 ```javascript
- // Create WebSocket connection.
 const socket = new WebSocket('ws://localhost:8080/');
 
-// Connection opened
-socket.addEventListener('open', function(event) {
+// Connection established
+socket.addEventListener('open', (event) => {
     socket.send('Hello Server!');
 });
 
-// Listen for messages
-socket.addEventListener('message', function(event) {
-    console.log('Message from server ', event.data);
+// Message received from server
+socket.addEventListener('message', (event) => {
+    console.log('Received:', event.data);
 });
+
+// Connection closed
+socket.addEventListener('close', (event) => {
+    console.log('Connection closed:', event.code);
+});
+
+// Error occurred
+socket.addEventListener('error', (error) => {
+    console.error('WebSocket error:', error);
+});
+
+// Close connection manually
+socket.close();
 ```
 
 <div align="right">
@@ -1838,102 +2146,17 @@ Example
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-## Q. What are the HTML tags which deprecated in HTML5?
-
-**1. Deprecated Tags:**
-
-The following elements are not available in HTML5 anymore and their function is better handled by CSS.
-
-|Sl.No|Tags (Elements)  |	Description        |
-|-----|-----------------|----------------------|
-| 01. |`<acronym>`	    |Defines an acronym|
-| 02. |`<applet>`	    |Defines an applet|
-| 03. |`<basefont>`	    |Defines an base font for the page.|
-| 04. |`<big>`	        |Defines big text|
-| 05. |`<center>`	    |Defines centered text|
-| 06. |`<dir>`	        |Defines a directory list|
-| 07. |`<font>`	        |Defines text font, size, and color|
-| 08. |`<frame>`	    |Defines a frame|
-| 08. |`<frameset>`	    |Defines a set of frames|
-| 10. |`<isindex>`	    |Defines a single-line input field|
-| 11. |`<noframes>`	    |Defines a noframe section|
-| 12. |`<s>`	        |Defines strikethrough text|
-| 13. |`<strike>`	    |Defines strikethrough text|
-| 14. |`<tt>`	        |Defines teletype text|
-| 15. |`<u>`	        |Defines underlined text|
-
-**2. Deprecated Attributes:**  
-
-|Removed Attributes	  |From the Elements     |
-|---------------------|----------------------|
-|rev	              |link, a|
-|charset	          |link and a|
-|shape	              |a|
-|coords	              |a|
-|longdesc	          |img and iframe.|
-|target	              |link|
-|nohref	              |area|
-|profile	          |head|
-|version	          |html|
-|name	              |img|
-|scheme	              |meta|
-|archive	          |object|
-|classid	          |object|
-|codebase	          |object|
-|codetype	          |object|
-|declare	          |object|
-|standby	          |object|
-|valuetype	          |param|
-|type	              |param|
-|axis	              |td and t|
-|abbr	              |td and t|
-|scope	              |td|
-|align	              |caption, iframe, img, input, object, legend, table, hr, div, h1, h2, h3, h4, h5, h6, p, col, colgroup, tbody, td, tfoot, th, thead and tr.|
-|alink	              |body|
-|link	              |body|
-|vlink	              |body|
-|text	              |body|
-|background	          |body|
-|bgcolor	          |table, tr, td, th and body.|
-|border	              |table and object.|
-|cellpadding	      |table|
-|cellspacing	      |table|
-|char	              |col, colgroup, tbody, td, tfoot, th, thead and tr.|
-|charoff 	          |col, colgroup, tbody, td, tfoot, th, thead and tr.|
-|clear	              |br|
-|compact	          |dl, menu, ol and ul.|
-|frame	              |table|
-|compact	          |dl, menu, ol and ul.|
-|frame	              |table|
-|frameborder	      |iframe|
-|hspace	              |img and object.|
-|vspace	              |img and object.|
-|marginheight	      |iframe|
-|marginwidth	      |iframe|
-|noshade	          |hr|
-|nowrap	              |td and th|
-|rules	              |table|
-|scrolling	          |iframe|
-|size	              |hr|
-|type	              |li, ol and ul.|
-|valign	              |col, colgroup, tbody, td, tfoot, th, thead and tr|
-|width	              |hr, table, td, th, col, colgroup and pre.|
-
-<div align="right">
-    <b><a href="#table-of-contents">↥ back to top</a></b>
-</div>
-
 ## Q. What is progressive rendering?
 
 Progressive Rendering is the technique of sequentially rendering portions of a webpage in the server and streaming it to the client in parts without waiting for the whole page to rendered.
 
-It implies that once the important material is produced on the server, you may stream it to the client without having to wait for non-critical stuff to be displayed. It combines the advantages of both CSR (Client Side Rendering) and SSR (Server Side Rendering) (Server Side Rendering).
+It combines the advantages of both CSR (Client Side Rendering) and SSR (Server Side Rendering) (Server Side Rendering).
 
 **1. Client Side Rendering:**
 
 Client Side Rendering (CSR) is a technique in which content is rendered in the browser using JavaScript. Instead of getting all the content from the HTML file itself, the server sends HTML with an empty body and script tags that contain links to JavaScript bundles that the browser will use to render the content.
 
-Typical page load behaviour in CSR —
+Typical page load behavior in CSR —
 
 * Browser requests the server for HTML
 * Server sends HTML with script tags in head and no content in body
@@ -1946,13 +2169,13 @@ Since the all the content starts loading only after loading the initial JavaScri
 
 When rendering on the server side, the HTML is rendered on the server and sent to the client. The content that we need to display on the screen becomes available immediately after the HTML is parsed; hence, primary rendering of content is faster than CSR.
 
-Typical page load behaviour in SSR —
+Typical page load behavior in SSR —
 
 * Browser requests the server for HTML.
 * Server makes API requests (usually co-located) and renders the content in the server.
 * Once the page is ready, the server sends it to the browser.
 * The browser loads and parses the HTML and paints the content on the screen without waiting for the JavaScript bundle(s) to load.
-* Once the JavaScript bundle(s) are loaded, the browser hydrates interactivity to DOM elements, which is usually attaching event handlers and other interactive behaviours.
+* Once the JavaScript bundle(s) are loaded, the browser hydrates interactivity to DOM elements, which is usually attaching event handlers and other interactive behaviors.
 
 Since the APIs are usually co-located with the server, the content is loaded super fast (faster than CSR) and the HTML is sent to the browser. Initial JavaScript load doesn\'t block content load as the HTML sent by the server already has the content.
 
@@ -2027,7 +2250,7 @@ There may be times, when you do not have control over what people publish on you
 **Example:**
 
 ```html
-<a href="https://www.website.com" rel="nofollow">Link to yoursite.com</a>
+<a href="https://www.website.com" rel="nofollow">Link</a>
 ```
 
 **2. rel="noreferrer"**
@@ -2037,7 +2260,7 @@ Noreferrer is related to analytics and tracking. The referrer value shows the pr
 **Example:**
 
 ```html
-<a href="https://www.website.com" rel="noreferrer">Link to yoursite.com</a>
+<a href="https://www.website.com" rel="noreferrer">Link</a>
 ```
 
 **3. rel="noopener"**
@@ -2047,7 +2270,7 @@ It prevents the new page from being able to access the `window.opener` property 
 **Example:**
 
 ```html
-<a href="https://www.website.com" target="_blank" rel="noopener">Link to yoursite.com</a>
+<a href="https://www.website.com" target="_blank" rel="noopener">Link</a>
 ```
 
 <div align="right">
@@ -2061,19 +2284,13 @@ The `<mark>` HTML element represents text which is marked or highlighted for ref
 **Example:**
 
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Highlight text in HTML</title>
-  </head>
-  <body>
-    <p>Search results for "salamander":</p>
-    <hr>
-    <p>Several species of <mark>salamander</mark> inhabit the temperate rainforest of the Pacific Northwest.</p>
-    <p>Most <mark>salamander</mark>s are nocturnal, and hunt for insects, worms, and other small creatures.</p>
-  </body>
-</html>
+<p>Search results for "salamander":</p>
+<p>Several species of <mark>salamander</mark> inhabit the Pacific Northwest.</p>
 ```
+
+**Note**:
+
+By default, browsers render `<mark>` with a yellow background.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -2103,13 +2320,13 @@ Meta description is a short paragraph of text used to describe your page in sear
 
 **3. Heading tags:**
 
-Headings (H1-H6) are used to split your page into sections or chapters. Each heading is like a small title within the page. In HTML, a heading looks like this:
+Headings (h1-h6) are used to split your page into sections or chapters. Each heading is like a small title within the page. In HTML, a heading looks like this:
 
 ```html
 <h1>Your heading goes here</h1>
 ```
 
-**4. Image alt attribute:**
+**4. Image `alt` attribute:**
 
 The `alt` text attribute is a part of an image tag, and it provides a description for an image. Alt text plays a major role in image optimization. It makes your images accessible both to search engines (by telling them what a particular image means) and to people (by displaying an alternative text in case a particular image cannot be loaded or by helping screen readers convey images). In HTML it may look like this:
 
@@ -2122,12 +2339,13 @@ The `alt` text attribute is a part of an image tag, and it provides a descriptio
 Open Graph (OG) tags are placed in the `<head>` section of a page and allow any webpage to become a rich object in social networks. OG tags let you control how the information about your page is represented when shared via social channels. This possibility may help you enhance the performance of your links on social media, thus driving more click-throughs and increasing conversions. In HTML, it can look like this:
 
 ```html
-<meta name="og:title" property="og:title" content="Your Open Graph Title Goes Here">
+<meta property="og:title" content="Your Page Title">
+<meta property="og:description" content="Page description">
 ```
 
-**6. Robots tag:**
+**6. Robots meta tag:**
 
-A robots tag is an element in the HTML of a page that informs search engines which pages on your site should be indexed and which should not. Its functions are similar to robots.txt, but robots.txt gives suggestions. Whereas robots tags give instructions. In HTML, it can look like this:
+A robots meta tag is an element in the HTML of a page that informs search engines which pages on your site should be indexed and which should not. Its functions are similar to robots.txt, but robots.txt gives suggestions. Whereas robots tags give instructions. In HTML, it can look like this:
 
 ```html
 <meta name="robots" content="index, follow">
@@ -2138,7 +2356,7 @@ A robots tag is an element in the HTML of a page that informs search engines whi
 A canonical tag is a way of telling search engines that a specific URL represents the master copy of a page. Using the canonical tag prevents problems caused by identical or "duplicate" content appearing on multiple URLs. Practically speaking, the canonical tag tells search engines which version of a URL you want to appear in search results. In HTML, it may look like this:
 
 ```html
-<link href="URL" rel="canonical">
+<link rel="canonical" href="https://example.com/page">
 ```
 
 **8. HTML5 semantic tags:**
@@ -2179,43 +2397,41 @@ The **value** property reflects the current text-content inside the input box, w
 
 ## Q. What is an optional tag?
 
-The following lists all optional tags.
+An **optional tag** is an HTML tag whose closing (or sometimes opening) tag can be omitted because the browser automatically closes it when it encounters the next element.
 
-|Tag            |Description  |
-|---------------|-------------|
-|`<area>`       |             |
-|`<base>`       |             |
-|`<body>`       |             |
-|`<br>`         |             |
-|`<caption>`    |             |
-|`<col>`        |             |
-|`<colgroup>`   |             |
-|`<dd>`         |             |
-|`<dt>`         |             |
-|`<embed>`      |             |
-|`<head>`       |             |
-|`<hr>`         |             |
-|`<html>`       |             |
-|`<img>`        |             |
-|`<input>`      |             |
-|`<li>`         |             |
-|`<link>`       |             |
-|`<meta>`       |             |  
-|`<optgroup>`   |             |
-|`<option>`     |             |
-|`<p>`          |             |
-|`<param>`      |             |
-|`<rp>`         |             |
-|`<rt>`         |             |
-|`<source>`     |             |
-|`<tbody>`      |             |
-|`<td>`         |             |
-|`<tfoot>`      |             |
-|`<th>`         |             |
-|`<thead>`      |             |
-|`<tr>`         |             |
-|`<track>`      |             |
-|`<wbr>`        |             |
+**Example**:
+
+```html
+<!-- Both of these are valid HTML -->
+
+<!-- With closing tags -->
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+<!-- Without closing tags — browser auto-closes <li> -->
+<ul>
+  <li>Item 1
+  <li>Item 2
+</ul>
+```
+
+**Common optional tags**
+
+| Tag | When it auto-closes |
+|---|---|
+| `<p>` | When another block element starts |
+| `<li>` | When another `<li>` or parent closes |
+| `<td>`, `<th>` | When another cell or row starts |
+| `<tr>` | When another `<tr>` starts |
+| `<html>`, `<body>`, `<head>` | Always optional |
+
+**Full list of optional tags**
+
+`<area>`, `<base>`, `<body>`, `<br>`, `<caption>`, `<col>`, `<colgroup>`, `<dd>`, `<dt>`, `<embed>`, `<head>`, `<hr>`, `<html>`, `<img>`, `<input>`, `<li>`, `<link>`, `<meta>`, `<optgroup>`, `<option>`, `<p>`, `<param>`, `<rp>`, `<rt>`, `<source>`, `<tbody>`, `<td>`, `<tfoot>`, `<th>`, `<thead>`, `<tr>`, `<track>`, `<wbr>`
+
+> **Note:** While omitting these tags is technically valid per the HTML spec, it's generally considered best practice to include closing tags for readability and consistency, especially in team environments.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -2223,11 +2439,109 @@ The following lists all optional tags.
 
 ## Q. What is an HTML preprocessor? Have you used different HTML templating languages before?
 
-A **HTML preprocessor** is a program that takes one type of data and converts it to another one. In case of HTML and CSS, some of the more popular preprocessor languages are Slim and Sass. Slim is processed into HTML and Sass is processed into CSS.
+An **HTML preprocessor** is a tool that lets you write HTML in an extended syntax with features like variables, loops, conditionals, and mixins — then compiles it down to standard HTML that browsers can read.
 
-No, but I heard about html template language like PUG (formerly Jade), Haml, ERB, Slim, Handlebars, Jinja, Liquid etc which is HTML preprocessor this mean that it is basically a language that will be converted to native html code.
+**Why Use One?**
 
-The typical usage is when you render something on the server side. The usual use-case is when you have to add dynamic content to your website, so when you fetch something from your database, you will have to replace some parts in your original template.
+- **Avoid repetition** — define layouts/partials once, reuse everywhere
+- **Dynamic content** — inject server-side data (from DB, API, etc.) into templates
+- **Cleaner syntax** — less boilerplate than raw HTML
+- **Inheritance** — extend base layouts with child templates (like `{% extends "base.html" %}`)
+
+
+**Popular HTML Templating Languages**
+
+**1. Pug (formerly Jade)**
+
+Indentation-based, no closing tags:
+
+```pug
+doctype html
+html(lang="en")
+  head
+    title My Page
+  body
+    h1 Hello, #{name}!
+    ul
+      each item in items
+        li= item
+```
+Compiles to standard HTML. Used heavily with **Node.js/Express**.
+
+**2. Haml**
+
+Ruby-inspired, clean and minimal:
+
+```haml
+%html
+  %head
+    %title My Page
+  %body
+    %h1= "Hello, #{name}!"
+```
+Popular in the **Ruby on Rails** ecosystem.
+
+**3. ERB (Embedded Ruby)**
+
+Embeds Ruby directly inside HTML tags:
+
+```erb
+<h1>Hello, <%= name %>!</h1>
+<ul>
+  <% items.each do |item| %>
+    <li><%= item %></li>
+  <% end %>
+</ul>
+```
+The default template language in **Ruby on Rails**.
+
+**4. Handlebars**
+
+Logic-light templating with `{{ }}` syntax:
+
+```html
+<h1>Hello, {{name}}!</h1>
+{{#each items}}
+  <li>{{this}}</li>
+{{/each}}
+```
+
+Popular in **Node.js** apps and client-side rendering.
+
+**5. Jinja2**
+
+Python's answer to templating:
+```html
+<h1>Hello, {{ name }}!</h1>
+{% for item in items %}
+  <li>{{ item }}</li>
+{% endfor %}
+```
+Default in **Flask** and **Django** (Django uses a near-identical variant).
+
+**6. Liquid**
+
+Used by **Shopify** and **Jekyll**:
+
+```html
+<h1>Hello, {{ customer.name }}!</h1>
+{% for product in products %}
+  <li>{{ product.title }}</li>
+{% endfor %}
+```
+
+**Quick Comparison**
+
+| Language | Ecosystem | Syntax Style |
+|---|---|---|
+| **Pug** | Node.js | Indentation-based, no tags |
+| **Haml** | Ruby | Indentation-based, `%` prefix |
+| **ERB** | Ruby on Rails | `<%= %>` embedded code |
+| **Handlebars** | Node.js / client | `{{ }}` mustache syntax |
+| **Jinja2** | Python / Flask | `{{ }}` + `{% %}` blocks |
+| **Liquid** | Shopify / Jekyll | `{{ }}` + `{% %}` blocks |
+
+The key distinction from plain HTML is **server-side rendering of dynamic data** — the preprocessor fills in variables, loops through data, and outputs fully-formed HTML before it ever reaches the browser.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -2393,57 +2707,82 @@ The `<div>` element only represents its child elements and doesn\'t have a speci
 
 ## Q. Discuss the differences between an HTML specification and a browser\'s implementation thereof.
 
-HTML specifications such as HTML5 define a set of rules that a document must adhere to in order to be "valid" according to that specification. In addition, a specification provides instructions on how a browser must interpret and render such a document.
+**HTML Specification**
 
-A browser is said to "support" a specification if it handles valid documents according to the rules of the specification. As of yet, no browser supports all aspects of the HTML5 specification (although all of the major browser support most of it), and as a result, it is necessary for the developer to confirm whether the aspect they are making use of will be supported by all of the browsers on which they hope to display their content. This is why cross-browser support continues to be a headache for developers, despite the improved specificiations.
+An HTML specification (like **HTML5**, maintained by the W3C and WHATWG) is a formal document that defines:
 
-In addition, while HTML5 defines some rules to follow for an invalid HTML5 document (i.e., one that contains syntactical errors), invalid documents may contain anything, and it is impossible for the specification to handle all possibilities comprehensively. Thus, many decisions about how to handle malformed documents are left up to the browser.
+- What elements and attributes are valid
+- How browsers **must** parse and render those elements
+- How to handle **invalid/malformed** markup
+- What APIs and behaviors JavaScript can access
+
+
+**Browser Implementation**
+
+A browser implementation is the actual code (the rendering engine — Blink, WebKit, Gecko) that **attempts to follow** the specification. The key word is *attempts*.
+
+**Key Differences**
+
+| Aspect | Specification | Browser Implementation |
+|---|---|---|
+| **Authority** | Defines the standard | Interprets the standard |
+| **Completeness** | 100% of features defined | Partial — no browser supports *all* of any spec |
+| **Consistency** | Single source of truth | Varies across Chrome, Firefox, Safari, etc. |
+| **Invalid HTML** | Defines some error-handling rules | Many edge cases left to browser discretion |
+| **Timing** | Features defined before implemented | Implementations lag behind specs |
+| **Vendor prefixes** | Not in spec | Browsers add `-webkit-`, `-moz-` for experimental features |
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-## Q. Why you would use a srcset attribute in an image tag? Explain the process the browser used when evaluating the content of this attribute.
+## Q. Why you would use a srcset attribute in an image tag?
 
 The `srcset` attribute allows to define a list of different image resources along with size information so that browser can pick the most appropriate image based on the actual device\'s resolution.
 
-**Syntax:**
+`srcset` lets you provide multiple image versions and let the browser pick the best one for the current device automatically.
 
-```html
-<img 
-   srcset=" 
-      url size, 
-      url size, 
-      url size " 
-    src="default url" 
->
-```
+The Two Ways to Use `srcset`
 
-**1. Using display density descriptor:**
+**1. Using display density descriptor(`x`):**
 
 `srcset` provides a comma-separated list of image resources along with display density it should be used, for example1x, 2x etc.
 
 **Example:**
 
 ```html
-<img src="image.jpg" 
-     srcset="image.jpg,
-             image_2x.jpg 2x"
-/>
+<img 
+  src="logo.png"
+  srcset="logo.png 1x,
+          logo@2x.png 2x,
+          logo@3x.png 3x"
+  alt="Logo"
+>
 ```
 
-**2. Using width descriptor:**
+| Descriptor | Meaning |
+|---|---|
+| `1x` | Standard screen (96 DPI) |
+| `2x` | Retina/HiDPI screen (192 DPI) |
+| `3x` | Very high-density screen (e.g., some Android phones) |
+
+**2. Using Width Descriptor(`w`):**
 
 The syntax is similar to the display density descriptor, but instead of display density values, we provide the actual width of the image.
 
 **Example:**
 
 ```html
-<img src="image.jpg" 
-     srcset="small.jpg 300w,
-             medium.jpg 600w,
-             large.jpg 900w"
-/>
+<img
+  src="photo-800.jpg"
+  srcset="photo-400.jpg 400w,
+          photo-800.jpg 800w,
+          photo-1200.jpg 1200w"
+  sizes="(max-width: 600px) 100vw,
+         (max-width: 1024px) 50vw,
+         800px"
+  alt="A landscape photo"
+>
 ```
 
 <div align="right">
@@ -2452,128 +2791,130 @@ The syntax is similar to the display density descriptor, but instead of display 
 
 ## Q. What is accessibility & ARIA role means in a web application?
 
-The **Accessible Rich Internet Applications (ARIA)** Suite, defines a way to make Web content and Web applications more accessible to people with disabilities. It especially helps with dynamic content and advanced user interface controls developed with HTML, JavaScript, and related technologies.
+**Web Accessibility**
 
-Screen readers work with regular HTML, but adding ARIA can provide screen reader users with greater context and interactivity with the content on the page. ARIA has no effect on how elements are displayed or behave in browsers. It does not add new functionality, and is meant to act only as an extra descriptive layer for screen readers.
+Web accessibility means designing and building websites so that people with disabilities can **perceive, understand, navigate, and interact** with them. This includes users who rely on:
 
-Without WAI-ARIA certain functionality used in Web sites is not available to some users with disabilities, especially people who rely on screen readers and people who cannot use a mouse. WAI-ARIA addresses these accessibility challenges, for example, by defining ways for functionality to be provided to assistive technology. With WAI-ARIA, developers can make advanced Web applications accessible and usable to people with disabilities.
+- **Screen readers** (e.g., NVDA, JAWS, VoiceOver) — read page content aloud
+- **Keyboard-only navigation** — no mouse
+- **Switch devices** — for users with motor impairments
+- **Braille displays**
 
-ARIA attributes are divided into two categories: roles, and states & properties.
+**ARIA**
 
-**ARIA Roles:**
+**ARIA (Accessible Rich Internet Applications)** is a set of HTML attributes defined by W3C\'s WAI-ARIA specification. It adds semantic meaning to elements so assistive technologies can understand them — especially for **dynamic content and custom widgets** that plain HTML doesn't describe well.
 
-An ARIA role is added via a `role="<ROLE TYPE>"` attribute, and does not ever change for an element once it is set. There are four categories of ARIA roles:
+> ARIA does **not** change visual appearance or browser behavior. It only adds an extra layer of information for assistive technologies.
 
-* landmark
-* document
-* widget
-* abstract
-
-**Landmark ARIA Roles:**
-
-Much like semantic HTML elements, landmark ARIA Roles are used to give users of assistive technology a better way to navigate and identify the different parts of a web page.
+**Golden rule:** Use native semantic HTML first. Only add ARIA when HTML alone is insufficient.
 
 **Example:**
 
 ```html
- <nav class='mobile-nav' role='navigation' aria-label='Mobile Menu'> List of Links </nav>
+<!-- Prefer this (native semantics) -->
+<button>Submit</button>
+
+<!-- Over this (requires ARIA to be accessible) -->
+<div role="button" tabindex="0">Submit</div>
 ```
 
-While seeming redundant, is actually useful for screen readers. It wouldn\'t read the aria-label on this navigation, which is really helpful for giving greater context to visually impaired users, without the `role="navigation"`.
+**The Three Types of ARIA Attributes**
 
-The different landmark roles you can use are as follows, copied from the W3C Wiki Page:
+**1. Roles — What an element *is***
 
-* **banner**: A region that contains the prime heading or internal title of a page.
-* **complementary**: Any section of the document that supports the main content, yet is separate and meaningful on its own.
-* **contentinfo**: A region that contains information about the parent document such as copyrights and links to privacy statements.
-* **form**: A region of the document that represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server for processing.
-* **main**: Main content in a document. In almost all cases a page will have only one `role=“main”`.
-* **navigation**: A collection of links suitable for use when navigating the document or related documents.
-* **search**: The search tool of a Web document.
-* **application**: A region declared as a web application, as opposed to a web document.
+**Example:**
 
-**Document ARIA Roles:**
+```html
+<div role="navigation">...</div>
+<div role="dialog">...</div>
+<div role="alert">Error: Invalid input</div>
+<span role="button" tabindex="0">Click me</span>
+```
 
-Document roles describe the structure of the content on the page, as opposed to the structure of the whole page, which landmark roles describe. The roles in bold are the ones we think are the most common document aria roles, and the ones which are useful to think about including in your HTML.
+**2. Properties — Describe characteristics (static)**
 
-* **article**: A section of a page that consists of a composition that forms an independent part of a document, page, or site.
-* **columnheader**
-* **definition**: A definition of a term or concept.
-* **directory**
-* **document**
-* **group**: A set of user interface objects which are not intended to be included in a page summary or table of contents by assistive technologies.
-* **heading**: A heading for a section of the page.
-* **img**
-* **list**
-* **listitem**
-* **math**
-* **note**
-* **presentation**
-* **region**
-* **row**
-* **rowgroup**
-* **rowheader**
-* **separator**
-* **toolbar**
+**Example:**
 
-**Widget ARIA Roles:**
+```html
+<!-- Labels the element -->
+<input aria-label="Search" type="text">
 
-Widget Roles are used to describe what are often javascript-based interfaces, or the more complicated parts of your web page\'s interface. The roles that are starred are the ones we think are the most common elements widget aria roles, and the ones which are useful useful to think about including in your HTML.
+<!-- Points to another element that labels this one -->
+<h2 id="title">Login</h2>
+<form aria-labelledby="title">...</form>
 
-* **alert**: A message with important, and usually time-sensitive, information. 
-* **alertdialog**: A type of dialog that contains an alert message, where initial focus goes to an element within the dialog. 
-* **button**: An input that allows for user-triggered actions when clicked or pressed.
-* **checkbox**: A checkable input that has three possible values: true, false, or mixed.
-* **dialog**: A dialog is an application window that is designed to interrupt the current processing of an application in order to prompt the user to enter information or require a response. 
-* **gridcell**
-* **link**
-* **log**
-* **marquee**
-* **menuitem**
-* **menuitemcheckbox**
-* **menuitemradio**
-* **option**
-* **progressbar**
-* **radio**: A checkable input in a group of radio roles, only one of which can be checked at a time.
-* **scrollbar**
-* **slider**
-* **spinbutton**
-* **status**
-* **tab**: A grouping label providing a mechanism for selecting the tab content that is to be rendered to the user.
-* **tabpanel**: A container for the resources associated with a tab, where each tab is contained in a tablist.
-* **textbox**: Input that allows free-form text as its value.
-* **timer**
-* **tooltip**
-* **treeitem**
+<!-- Describes with additional context -->
+<input aria-describedby="hint">
+<span id="hint">Must be at least 8 characters</span>
 
-**Abstract ARIA Roles:**
+<!-- Marks required fields -->
+<input aria-required="true">
+```
 
-Abstract aria roles are the basis of how the other ARIA roles are defined. These are not to be used in HTML.
+**3. States — Dynamic values changed by JavaScript**
 
-**ARIA States & Properties:**
+**Example:**
 
-ARIA states and properties are often used to support ARIA roles that exist on a page. ARIA Properties often describe relationships with other elements, and for the most part, do not change once they\'re set.
+```html
+<!-- Expanded/collapsed (accordion, dropdown) -->
+<button aria-expanded="false">Menu</button>
 
-ARIA States are more dynamic and are typically updated with JavaScript as a user interacts with a page. Screen readers are notified when these states change, and can announce these changes to users after an interaction takes place.
+<!-- Checkbox state -->
+<div role="checkbox" aria-checked="true">Accept terms</div>
 
-While there are 35 aria properties and states the W3C defines and which you can read more about on the W3C site, here are the ones we believe to most commonly used and practical for most web pages/applications.
+<!-- Hidden from screen readers -->
+<div aria-hidden="true">Decorative icon</div>
 
-* **aria-activedescendant**: Identifies the currently active descendant of a composite widget. Use with autofill search suggestions.
-* **aria-autocomplete**: Indicates whether user input completion suggestions are provided. Use with autofill search suggestions.
-* **aria-checked (state)**: Indicates the current “checked” state of checkboxes, radio buttons, and other widgets. You can set this to true, false, or mixed state. 
-* **aria-controls**: Identifies the element (or elements) whose contents or presence are controlled by the current element.
-* **aria-describedby**: Identifies the element (or elements) that describes the object.
-* **aria-disabled (state)**: Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
-* **aria-expanded (state)**: Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.
-* **aria-hidden (state)**: Indicates that the element and all of its descendants are not visible or perceivable to any user as implemented by the author.
-* **aria-invalid (state)**: Indicates the entered value does not conform to the format expected by the application.
-* **aria-label**: Defines a string value that labels the current element.
-* **aria-labelledby**: Identifies the element (or elements) that labels the current element.
-* **aria-live**: Indicates that an element is dynamic, changing, and will be updated, and describes the types of updates the user can expect from the live region.
-* **aria-owns**: Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child  relationship between DOM elements where the DOM hierarchy cannot be used to represent the relationship.
-* **aria-pressed (state)**: Indicates the current “pressed” state of toggle buttons.
-* **aria-required**: Indicates that user input is required on the element before a form may be submitted.
-* **aria-selected (state)**: Indicates the current “selected” state of various widgets.
+<!-- Invalid form field -->
+<input aria-invalid="true">
+
+<!-- Disabled element -->
+<button aria-disabled="true">Submit</button>
+```
+
+**ARIA Role Categories**
+
+**1. Landmark Roles — Page regions for navigation**
+
+**Example:**
+
+```html
+<header role="banner">...</header>
+<nav role="navigation" aria-label="Main menu">...</nav>
+<main role="main">...</main>
+<aside role="complementary">...</aside>
+<footer role="contentinfo">...</footer>
+<form role="search">...</form>
+```
+
+**2. Widget Roles — Interactive UI components**
+
+| Role | Use case |
+|---|---|
+| `button` | Clickable action element |
+| `checkbox` | Toggleable input |
+| `dialog` | Modal window |
+| `tab` / `tabpanel` | Tab interface |
+| `slider` | Range input |
+| `progressbar` | Loading/progress indicator |
+| `alert` | Important time-sensitive message |
+| `tooltip` | Hover/focus hint |
+
+**3. Live Region — Announce dynamic content changes**
+
+**Example:**
+
+```html
+<!-- Screen reader announces changes automatically -->
+<div aria-live="polite" aria-atomic="true">
+  Cart updated: 3 items
+</div>
+
+<!-- For urgent alerts (interrupts current reading) -->
+<div role="alert">
+  Error: Session expired
+</div>
+```
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -2584,77 +2925,73 @@ While there are 35 aria properties and states the W3C defines and which you can 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Traffic Signal
-    </title>
-    <style>
-      #green{
-        background-color: green;
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	border: 2px solid #333;
-      }
-      #yellow{
-        background-color: yellow;
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	border: 2px solid #333;
-      }
-      #red{
-        background-color: red;
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	border: 2px solid #333;
-      }
-    </style>
-  </head>
-  <body onload="timer;">
-      <div id="red"></div>
-      <div id="yellow"></div>
-      <div id="green"></div>
-      
-    <script>
-      function startTrafficSignal() {
-        
-        const red = document.getElementById("red");
-        const yellow = document.getElementById("yellow");
-	const green = document.getElementById("green");
-      
-        green.style.opacity = 1;
-      
-	// Red Signal
-        setTimeout(function () {
-          green.style.opacity = 0.3;
-          red.style.opacity = 1;
-          yellow.style.opacity = 0.3;
-        }, 7000);
-		
-        // Yellow Signal
-        setTimeout(function () {
-          green.style.opacity = 1;
-          red.style.opacity = 0.3;
-          yellow.style.opacity = 0.3;
-        }, 5000);
-		
-	// Green Signal
-        setTimeout(function () {
-          green.style.opacity = 0.3;
-          red.style.opacity = 0.3;
-          yellow.style.opacity = 1;
-        }, 12000);
-      }
+<head>
+  <meta charset="UTF-8">
+  <title>Traffic Signal</title>
+  <style>
+    .container { 
+      background: #333; 
+      padding: 10px; 
+      width: fit-content; 
+      border-radius: 10px; 
+    }
+    .signal {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 10px;
+      opacity: 0.2; /* Dim by default */
+      transition: opacity 0.3s;
+    }
+    /* Only full brightness when active */
+    .red.active    { background-color: red;    opacity: 1; box-shadow: 0 0 20px red; }
+    .yellow.active { background-color: yellow; opacity: 1; box-shadow: 0 0 20px yellow; }
+    .green.active  { background-color: green;  opacity: 1; box-shadow: 0 0 20px green; }
+  </style>
+</head>
+<body>
 
-      const timer = setInterval(function () {
-        startTrafficSignal();
-      }, 12000);
-      
-      startTrafficSignal();
-    </script>
-  </body>
+  <div class="container">
+    <div id="red"    class="signal red"></div>
+    <div id="yellow" class="signal yellow"></div>
+    <div id="green"  class="signal green"></div>
+  </div>
+
+  <script>
+    const signals = {
+      red:    document.getElementById("red"),
+      yellow: document.getElementById("yellow"),
+      green:  document.getElementById("green")
+    };
+
+    // Helper to wait
+    const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+    async function startTrafficCycle() {
+      while (true) { // Infinite loop
+        // Green
+        setLight('green');
+        await wait(5000);
+
+        // Yellow
+        setLight('yellow');
+        await wait(2000);
+
+        // Red
+        setLight('red');
+        await wait(5000);
+      }
+    }
+
+    function setLight(color) {
+      // Remove 'active' from everyone, add to the target
+      Object.values(signals).forEach(el => el.classList.remove('active'));
+      signals[color].classList.add('active');
+    }
+
+    startTrafficCycle();
+  </script>
+</body>
 </html>
 ```
 
