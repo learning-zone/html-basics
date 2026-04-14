@@ -2451,85 +2451,12 @@ An **HTML preprocessor** is a tool that lets you write HTML in an extended synta
 
 **Popular HTML Templating Languages**
 
-**1. Pug (formerly Jade)**
-
-Indentation-based, no closing tags:
-
-```pug
-doctype html
-html(lang="en")
-  head
-    title My Page
-  body
-    h1 Hello, #{name}!
-    ul
-      each item in items
-        li= item
-```
-Compiles to standard HTML. Used heavily with **Node.js/Express**.
-
-**2. Haml**
-
-Ruby-inspired, clean and minimal:
-
-```haml
-%html
-  %head
-    %title My Page
-  %body
-    %h1= "Hello, #{name}!"
-```
-Popular in the **Ruby on Rails** ecosystem.
-
-**3. ERB (Embedded Ruby)**
-
-Embeds Ruby directly inside HTML tags:
-
-```erb
-<h1>Hello, <%= name %>!</h1>
-<ul>
-  <% items.each do |item| %>
-    <li><%= item %></li>
-  <% end %>
-</ul>
-```
-The default template language in **Ruby on Rails**.
-
-**4. Handlebars**
-
-Logic-light templating with `{{ }}` syntax:
-
-```handlebars
-<h1>Hello, {{name}}!</h1>
-{{#each items}}
-  <li>{{this}}</li>
-{{/each}}
-```
-
-Popular in **Node.js** apps and client-side rendering.
-
-**5. Jinja2**
-
-Python\'s answer to templating:
-
-```python
-<h1>Hello, {{ name }}!</h1>
-{% for item in items %}
-  <li>{{ item }}</li>
-{% endfor %}
-```
-Default in **Flask** and **Django** (Django uses a near-identical variant).
-
-**6. Liquid**
-
-Used by **Shopify** and **Jekyll**:
-
-```jekyll
-<h1>Hello, {{ customer.name }}!</h1>
-{% for product in products %}
-  <li>{{ product.title }}</li>
-{% endfor %}
-```
+* Pug (formerly Jade)
+* Haml
+* ERB (Embedded Ruby)
+* Handlebars
+* Jinja2
+* Liquid
 
 The key distinction from plain HTML is **server-side rendering of dynamic data** — the preprocessor fills in variables, loops through data, and outputs fully-formed HTML before it ever reaches the browser.
 
