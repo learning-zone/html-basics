@@ -33,6 +33,16 @@
 * [HTML Web Worker](#-12-html-web-worker)
 * [HTML Accessibility](#-13-html-accessibility)
 * [Miscellaneous](#-14-miscellaneous)
+* [HTML Media](#-15-html-media)
+* [HTML5 Advanced APIs](#-16-html5-advanced-apis)
+* [Service Workers & Web Workers](#-17-service-workers--web-workers)
+* [IndexedDB & Advanced Web Storage](#-18-indexeddb--advanced-web-storage)
+* [Atomic Design & Pixel Perfect Design](#-19-atomic-design--pixel-perfect-design)
+* [SEO Basics & Advanced](#-20-seo-basics--advanced)
+* [HTML Performance Optimization](#-21-html-performance-optimization)
+* [HTML Tags & Elements (Intermediate)](#-22-html-tags--elements-intermediate)
+* [Web Components](#-23-web-components)
+* [HTML Security](#-24-html-security)
 
 <br/>
 
@@ -134,7 +144,7 @@ HTML5 offers new semantic elements to define different parts of a web page:
 
 A DOCTYPE is always associated to a `DTD` ( **Document Type Definition** ). A DTD defines how documents of a certain type should be structured (i.e. a `button` can contain a `span` but not a `div`), whereas a DOCTYPE declares what DTD a document supposedly respects (i.e. this document respects the HTML DTD). For webpages, the DOCTYPE declaration is required. It is used to tell user agents what version of the HTML specifications your document respects. 
 
-Once a user agent has recognized a correct DOCTYPE, it will trigger the `no-quirks mode` matching this DOCTYPE forreading the document. If a user agent doesn\'t recognize a correct DOCTYPE, it will trigger the `quirks mode`.
+Once a user agent has recognized a correct DOCTYPE, it will trigger the `no-quirks mode` matching this DOCTYPE for reading the document. If a user agent doesn\'t recognize a correct DOCTYPE, it will trigger the `quirks mode`.
 
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
@@ -2837,6 +2847,78 @@ Web accessibility means designing and building websites so that people with disa
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
+## Q. What is tabindex attribute and how does it affect keyboard navigation?
+
+The `tabindex` attribute controls the order in which elements receive focus when the user navigates using the **Tab** key. It can be applied to any HTML element.
+
+| Value | Behavior |
+|---|---|
+| `tabindex="0"` | Element is focusable in natural DOM order |
+| `tabindex="-1"` | Focusable via JavaScript only (`element.focus()`), excluded from Tab sequence |
+| `tabindex="n"` (positive) | Focused before elements with lower or no tabindex (avoid — breaks natural order) |
+
+**Example:**
+
+```html
+<!-- Custom button accessible by keyboard -->
+<div role="button" tabindex="0" onclick="doAction()">Click Me</div>
+
+<!-- Skip link — focused programmatically, not via Tab -->
+<a href="#main" tabindex="-1" id="skip">Skip to content</a>
+```
+
+**Best practice:** Use `tabindex="0"` to make custom interactive elements keyboard-accessible. Avoid positive tabindex values as they break the natural reading order for keyboard and screen reader users.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What are skip navigation links and why are they important?
+
+**Skip navigation links** (or "skip links") are hidden anchor links placed at the very top of a page that allow keyboard and screen reader users to jump past repetitive navigation blocks directly to the main content.
+
+Without a skip link, keyboard users must Tab through every navigation item on every page load before reaching the content — a significant accessibility barrier.
+
+**Implementation:**
+
+```html
+<!-- Place as the first element inside <body> -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav>
+  <!-- ...many nav links... -->
+</nav>
+
+<main id="main-content" tabindex="-1">
+  <h1>Page Title</h1>
+  <!-- page content -->
+</main>
+```
+
+```css
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Become visible when focused */
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+```
+
+*Note: `tabindex="-1"` on `<main>` ensures it can receive programmatic focus when the skip link is activated.*
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
 ## Q. Create a traffic signal light in html?
 
 ```html
@@ -2915,3 +2997,2868 @@ Web accessibility means designing and building websites so that people with disa
 <div align="right">
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
+
+## # 15. HTML Media
+
+<br/>
+
+## Q. How to use the HTML5 `<video>` element?
+
+The `<video>` element embeds a media player that supports video playback directly in the browser without requiring any plugin.
+
+**Attributes:**
+
+| Attribute | Description |
+|---|---|
+| `src` | URL of the video file |
+| `controls` | Show browser's built-in play/pause/volume controls |
+| `autoplay` | Start playback automatically (requires `muted` in most browsers) |
+| `muted` | Mute audio by default |
+| `loop` | Restart video when it ends |
+| `poster` | Image to show before the video plays |
+| `preload` | `none` / `metadata` / `auto` — hints how much to preload |
+| `width` / `height` | Dimensions in pixels |
+
+**Example — Basic video with fallback sources:**
+
+```html
+<video width="640" height="360" controls poster="thumbnail.jpg">
+  <source src="video.mp4"  type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  <source src="video.ogv"  type="video/ogg">
+  <p>Your browser does not support HTML5 video. 
+     <a href="video.mp4">Download the video</a>.
+  </p>
+</video>
+```
+
+**Example — Autoplay muted loop (common for hero videos):**
+
+```html
+<video autoplay muted loop playsinline>
+  <source src="hero.mp4" type="video/mp4">
+</video>
+```
+
+**Controlling via JavaScript:**
+
+```js
+const video = document.getElementById("myVideo");
+
+video.play();          // Start playback
+video.pause();         // Pause
+video.currentTime = 0; // Seek to start
+video.volume = 0.5;    // Set volume (0–1)
+video.playbackRate = 2; // 2× speed
+
+// Events
+video.addEventListener("ended", () => console.log("Video finished"));
+video.addEventListener("timeupdate", () => console.log(video.currentTime));
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. How to use the HTML5 `<audio>` element?
+
+The `<audio>` element embeds sound content such as music, podcasts, or sound effects.
+
+**Attributes:**
+
+| Attribute | Description |
+|---|---|
+| `src` | URL of the audio file |
+| `controls` | Show browser\'s built-in controls |
+| `autoplay` | Start playback automatically |
+| `muted` | Mute audio by default |
+| `loop` | Repeat when finished |
+| `preload` | `none` / `metadata` / `auto` |
+
+**Supported formats:**
+
+| Format | MIME type | Browser support |
+|---|---|---|
+| MP3 | `audio/mpeg` | All modern browsers |
+| OGG | `audio/ogg` | Firefox, Chrome, Opera |
+| WAV | `audio/wav` | All modern browsers |
+| AAC | `audio/aac` | Chrome, Edge, Safari |
+| WebM | `audio/webm` | Chrome, Firefox, Edge |
+
+**Example — with multiple fallback sources:**
+
+```html
+<audio controls>
+  <source src="audio.mp3" type="audio/mpeg">
+  <source src="audio.ogg" type="audio/ogg">
+  <source src="audio.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+```
+
+**Controlling via JavaScript:**
+
+```js
+const audio = new Audio("audio.mp3");
+
+audio.play();
+audio.pause();
+audio.volume = 0.8;
+
+audio.addEventListener("ended", () => {
+  console.log("Audio finished");
+});
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the `<picture>` element and how does it work?
+
+The `<picture>` element provides multiple image sources so the browser can choose the most appropriate one based on screen size, resolution, or format support. It is the recommended way to serve **art-directed** or **format-switched** responsive images.
+
+**Syntax:**
+
+```html
+<picture>
+  <source media="..." srcset="...">
+  <source type="..."  srcset="...">
+  <img src="fallback.jpg" alt="Description">
+</picture>
+```
+
+The `<img>` inside is **required** — it serves as the fallback for browsers that don\'t support `<picture>`.
+
+**Use Case 1 — Art direction (different crop per screen):**
+
+```html
+<picture>
+  <!-- Wide landscape crop for desktop -->
+  <source media="(min-width: 1024px)" srcset="hero-wide.jpg">
+  <!-- Square crop for tablet -->
+  <source media="(min-width: 600px)"  srcset="hero-square.jpg">
+  <!-- Tight portrait crop for mobile (fallback) -->
+  <img src="hero-mobile.jpg" alt="Team photo">
+</picture>
+```
+
+**Use Case 2 — Modern format with fallback:**
+
+```html
+<picture>
+  <source srcset="photo.avif" type="image/avif">
+  <source srcset="photo.webp" type="image/webp">
+  <img src="photo.jpg" alt="Photo" loading="lazy">
+</picture>
+```
+
+The browser uses the first `<source>` it supports — e.g., AVIF → WebP → JPEG.
+
+**Difference between `<picture>` and `srcset`:**
+
+| | `srcset` on `<img>` | `<picture>` |
+|---|---|---|
+| Purpose | Resolution/density switching | Art direction + format switching |
+| Browser picks | Best resolution match | First supported `<source>` |
+| Control | Browser decides | Developer specifies conditions |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. How to add subtitles and captions to an HTML5 video?
+
+The `<track>` element is used inside `<video>` to provide timed text tracks such as subtitles, captions, chapters, and metadata.
+
+**Attributes of `<track>`:**
+
+| Attribute | Description |
+|---|---|
+| `src` | URL of the `.vtt` (WebVTT) or `.srt` subtitle file |
+| `kind` | `subtitles` / `captions` / `descriptions` / `chapters` / `metadata` |
+| `srclang` | Language of the track (e.g., `en`, `fr`) |
+| `label` | Human-readable label shown in the browser UI |
+| `default` | Enables this track by default |
+
+**Difference between subtitles and captions:**
+- **Subtitles** — translate dialogue for users who don\'t speak the language
+- **Captions** — include dialogue + sound effects for deaf/hard-of-hearing users
+
+**Example:**
+
+```html
+<video controls width="640">
+  <source src="movie.mp4" type="video/mp4">
+
+  <track src="subtitles-en.vtt" kind="subtitles" srclang="en" label="English" default>
+  <track src="subtitles-fr.vtt" kind="subtitles" srclang="fr" label="Français">
+  <track src="captions-en.vtt"  kind="captions"  srclang="en" label="English Captions">
+</video>
+```
+
+**Sample WebVTT file (`subtitles-en.vtt`):**
+
+```
+WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+Hello, welcome to the tutorial.
+
+00:00:05.000 --> 00:00:09.500
+In this video we will cover HTML5 media elements.
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## # 16. HTML5 Advanced APIs
+
+<br/>
+
+## Q. What is the Server-Sent Events (SSE) API?
+
+**Server-Sent Events (SSE)** is a server push technology that enables a server to send real-time updates to the browser over a single, long-lived HTTP connection. Unlike WebSockets, SSE is **one-directional** — server to client only — and automatically reconnects if the connection is lost.
+
+**When to use SSE vs WebSockets:**
+
+| | SSE | WebSocket |
+|---|---|---|
+| Direction | Server → Client only | Full duplex (both directions) |
+| Protocol | HTTP/HTTPS | ws:// / wss:// |
+| Auto-reconnect | Yes (built-in) | No (must implement manually) |
+| Format | Text (UTF-8) | Text or binary |
+| Use case | Live feeds, notifications, dashboards | Chat, gaming, collaboration |
+
+**Client-side (browser):**
+
+```js
+const source = new EventSource("/api/stream");
+
+// Listen for default message events
+source.onmessage = (event) => {
+  console.log("Data:", event.data);
+};
+
+// Listen for named custom events
+source.addEventListener("update", (event) => {
+  console.log("Update received:", event.data);
+});
+
+// Handle errors
+source.onerror = (error) => {
+  console.error("SSE error:", error);
+  // Browser will automatically retry
+};
+
+// Close connection
+source.close();
+```
+
+**Server-side (Node.js example):**
+
+```js
+const http = require("http");
+
+http.createServer((req, res) => {
+  if (req.url === "/api/stream") {
+    res.writeHead(200, {
+      "Content-Type":  "text/event-stream",
+      "Cache-Control": "no-cache",
+      "Connection":    "keep-alive"
+    });
+
+    // Send a message every second
+    const interval = setInterval(() => {
+      const data = JSON.stringify({ time: new Date().toISOString() });
+      res.write(`data: ${data}\n\n`);
+    }, 1000);
+
+    // Clean up when client disconnects
+    req.on("close", () => clearInterval(interval));
+  }
+}).listen(3000);
+```
+
+**SSE message format:**
+
+```
+data: Hello World\n\n          ← simple message
+
+event: update\n                ← named event
+data: {"value": 42}\n\n
+
+id: 1\n                        ← message ID (used for reconnect)
+data: Message with ID\n\n
+
+retry: 5000\n\n                ← ask client to retry after 5s
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the Intersection Observer API?
+
+The **Intersection Observer API** provides an asynchronous way to observe changes in the intersection (visibility) of a target element with its ancestor or the viewport. It is the recommended approach for implementing lazy loading, infinite scrolling, and animation triggers — replacing expensive scroll event listeners.
+
+**Core concepts:**
+
+- **root** — the ancestor element used as the viewport (defaults to browser viewport)
+- **rootMargin** — margin around the root (like CSS `margin`)
+- **threshold** — percentage of the target visible before the callback fires (0.0 to 1.0)
+
+**Example — Lazy load images:**
+
+```html
+<img data-src="photo.jpg" alt="Photo" class="lazy">
+```
+
+```js
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src;       // Load the actual image
+      img.classList.remove("lazy");
+      observer.unobserve(img);         // Stop observing once loaded
+    }
+  });
+}, {
+  root: null,        // browser viewport
+  rootMargin: "0px",
+  threshold: 0.1     // trigger when 10% of image is visible
+});
+
+document.querySelectorAll(".lazy").forEach(img => observer.observe(img));
+```
+
+**Example — Animate elements on scroll:**
+
+```js
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animate");
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+```
+
+**Benefits over scroll event listeners:**
+
+| | Scroll Event | Intersection Observer |
+|---|---|---|
+| Performance | Fires on every scroll tick (main thread) | Async, off main thread |
+| Throttling | Must implement manually | Built-in |
+| Viewport detection | Complex calculations needed | Built-in |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the History API in HTML5?
+
+The **History API** (`window.history`) enables JavaScript to manipulate the browser\'s session history — adding or modifying history entries — without reloading the page. This is the foundation of **Single Page Applications (SPAs)**.
+
+**Key methods:**
+
+| Method | Description |
+|---|---|
+| `history.pushState(state, title, url)` | Add a new history entry |
+| `history.replaceState(state, title, url)` | Replace the current history entry |
+| `history.back()` | Go back one step (same as browser back button) |
+| `history.forward()` | Go forward one step |
+| `history.go(n)` | Jump `n` steps (`-1` = back, `2` = forward two) |
+| `history.length` | Number of entries in the session history |
+
+**Example — SPA-style navigation:**
+
+```js
+// Navigate to /users without page reload
+history.pushState({ page: "users" }, "Users", "/users");
+
+// Navigate to /users/42
+history.pushState({ page: "user", id: 42 }, "User 42", "/users/42");
+
+// Replace current URL (no new history entry)
+history.replaceState({ page: "home" }, "Home", "/");
+```
+
+**Handling the browser back/forward button:**
+
+```js
+// popstate fires when user clicks back/forward
+window.addEventListener("popstate", (event) => {
+  console.log("State:", event.state); // { page: "users" }
+  // Render the correct content based on event.state or location.pathname
+  renderPage(event.state);
+});
+```
+
+**Example — Complete SPA routing pattern:**
+
+```js
+function navigate(path, state = {}) {
+  history.pushState(state, "", path);
+  renderPage(path);
+}
+
+window.addEventListener("popstate", (e) => {
+  renderPage(location.pathname);
+});
+
+function renderPage(path) {
+  switch (path) {
+    case "/":       document.getElementById("app").innerHTML = "<h1>Home</h1>"; break;
+    case "/about":  document.getElementById("app").innerHTML = "<h1>About</h1>"; break;
+    default:        document.getElementById("app").innerHTML = "<h1>404</h1>";
+  }
+}
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the Notification API?
+
+The **Notification API** allows web applications to display system-level notifications to the user outside the browser tab — even when the browser is minimized, as long as it is running.
+
+**Permission lifecycle:**
+
+```js
+// 1. Request permission (must be triggered by user gesture)
+Notification.requestPermission().then(permission => {
+  console.log(permission); // "granted" | "denied" | "default"
+});
+
+// 2. Check current permission
+console.log(Notification.permission); // "granted" | "denied" | "default"
+```
+
+**Creating a notification:**
+
+```js
+if (Notification.permission === "granted") {
+  const notification = new Notification("New Message!", {
+    body:  "You have a new message from Alice.",
+    icon:  "/icons/chat.png",
+    badge: "/icons/badge.png",
+    tag:   "message-1",        // Replaces previous notification with same tag
+    silent: false,
+    requireInteraction: true   // Stays until user dismisses it
+  });
+
+  // Events
+  notification.onclick = () => {
+    window.focus();
+    notification.close();
+  };
+
+  notification.onclose = () => console.log("Notification closed");
+  notification.onerror = (e) => console.error("Error:", e);
+
+  // Auto-close after 5 seconds
+  setTimeout(() => notification.close(), 5000);
+}
+```
+
+**Full example with permission request:**
+
+```js
+async function sendNotification(title, options) {
+  if (!("Notification" in window)) {
+    console.log("Browser does not support notifications");
+    return;
+  }
+
+  let permission = Notification.permission;
+
+  if (permission === "default") {
+    permission = await Notification.requestPermission();
+  }
+
+  if (permission === "granted") {
+    new Notification(title, options);
+  }
+}
+
+sendNotification("Hello!", { body: "Welcome back.", icon: "/logo.png" });
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the File API in HTML5?
+
+The **File API** provides a way to read and interact with files that users select via `<input type="file">` or drag-and-drop, entirely on the client side — without uploading to a server.
+
+**Key interfaces:**
+
+| Interface | Description |
+|---|---|
+| `File` | Represents a single file; extends `Blob` |
+| `FileList` | Array-like list of `File` objects from an `<input>` |
+| `FileReader` | Reads the content of a `File` or `Blob` asynchronously |
+| `Blob` | Raw binary data; `File` is a specialized `Blob` |
+
+**Example — Read a text file:**
+
+```html
+<input type="file" id="fileInput" accept=".txt">
+```
+
+```js
+document.getElementById("fileInput").addEventListener("change", (event) => {
+  const file = event.target.files[0];
+
+  if (!file) return;
+
+  console.log("Name:", file.name);
+  console.log("Size:", file.size, "bytes");
+  console.log("Type:", file.type);
+  console.log("Last modified:", new Date(file.lastModified));
+
+  const reader = new FileReader();
+
+  reader.onload = (e) => {
+    console.log("Content:", e.target.result);
+  };
+
+  reader.onerror = () => console.error("Error reading file");
+
+  reader.readAsText(file);         // Read as text
+  // reader.readAsDataURL(file);   // Read as base64 Data URL (for images)
+  // reader.readAsArrayBuffer(file); // Read as binary ArrayBuffer
+});
+```
+
+**Example — Preview an uploaded image:**
+
+```html
+<input type="file" id="imageInput" accept="image/*">
+<img id="preview" src="" alt="Preview">
+```
+
+```js
+document.getElementById("imageInput").addEventListener("change", (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    document.getElementById("preview").src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+});
+```
+
+**FileReader methods:**
+
+| Method | Returns |
+|---|---|
+| `readAsText(file)` | String (UTF-8 by default) |
+| `readAsDataURL(file)` | Base64 data URL string |
+| `readAsArrayBuffer(file)` | ArrayBuffer (raw binary) |
+| `readAsBinaryString(file)` | Binary string (deprecated) |
+| `abort()` | Cancel the read |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is MathML and how is it used in HTML5?
+
+**MathML (Mathematical Markup Language)** is an XML-based markup language for describing mathematical notation. It is natively supported inside HTML5 using the `<math>` element, allowing mathematical expressions to be rendered by the browser without images or JavaScript libraries.
+
+**Two types of MathML:**
+
+1. **Presentation MathML** — controls how math *looks* (most commonly used)
+2. **Content MathML** — describes the mathematical *meaning*
+
+**Example — Inline math (within text):**
+
+```html
+<p>The quadratic formula is 
+  <math>
+    <mrow>
+      <mi>x</mi>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <mo>-</mo><mi>b</mi>
+          <mo>&#xB1;</mo>
+          <msqrt>
+            <mrow>
+              <msup><mi>b</mi><mn>2</mn></msup>
+              <mo>-</mo>
+              <mn>4</mn><mi>a</mi><mi>c</mi>
+            </mrow>
+          </msqrt>
+        </mrow>
+        <mrow><mn>2</mn><mi>a</mi></mrow>
+      </mfrac>
+    </mrow>
+  </math>
+</p>
+```
+
+**Common MathML elements:**
+
+| Element | Description | Example |
+|---|---|---|
+| `<math>` | Root element | `<math>...</math>` |
+| `<mi>` | Identifier (variable) | `<mi>x</mi>` → *x* |
+| `<mn>` | Number | `<mn>42</mn>` → 42 |
+| `<mo>` | Operator | `<mo>+</mo>` → + |
+| `<mrow>` | Horizontal group | Groups subexpressions |
+| `<mfrac>` | Fraction | numerator / denominator |
+| `<msqrt>` | Square root | √ |
+| `<mroot>` | nth root | ∜ |
+| `<msup>` | Superscript | x² |
+| `<msub>` | Subscript | x₁ |
+| `<msubsup>` | Both sub and superscript | xₙᵏ |
+
+**Display attribute:**
+
+```html
+<!-- Inline formula -->
+<math display="inline"><mi>E</mi><mo>=</mo><mi>mc</mi><msup><mi></mi><mn>2</mn></msup></math>
+
+<!-- Block (centered) formula -->
+<math display="block">
+  <mrow>
+    <msup><mi>a</mi><mn>2</mn></msup>
+    <mo>+</mo>
+    <msup><mi>b</mi><mn>2</mn></msup>
+    <mo>=</mo>
+    <msup><mi>c</mi><mn>2</mn></msup>
+  </mrow>
+</math>
+```
+
+**Browser support & fallback:** MathML is natively supported in Firefox and Safari. For Chrome/Edge, use a polyfill like [MathJax](https://www.mathjax.org/) for maximum compatibility.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## # 17. Service Workers & Web Workers
+
+<br/>
+
+## Q. What is a Web Worker in HTML5?
+
+A **Web Worker** runs JavaScript in a **background thread**, separate from the main UI thread. This allows CPU-intensive computations to run without freezing or blocking the user interface.
+
+**Key characteristics:**
+- Runs in an isolated thread (no access to DOM, `window`, or `document`)
+- Communicates with the main thread via `postMessage()` / `onmessage`
+- Has access to `fetch`, `XMLHttpRequest`, `IndexedDB`, `WebSockets`
+- **Dedicated worker** — owned by one script only
+- **Shared worker** — shared across multiple scripts/tabs on the same origin
+
+**Example — Dedicated Worker:**
+
+`worker.js`:
+```js
+// Runs in the worker thread
+self.onmessage = (event) => {
+  const { data } = event;
+  let result = 0;
+  for (let i = 0; i < data; i++) result += i; // Heavy computation
+  self.postMessage(result);
+};
+```
+
+`main.js` (in the page):
+```js
+const worker = new Worker("worker.js");
+
+// Send data to worker
+worker.postMessage(1_000_000);
+
+// Receive result
+worker.onmessage = (event) => {
+  console.log("Result:", event.data);
+};
+
+worker.onerror = (error) => {
+  console.error("Worker error:", error.message);
+};
+
+// Terminate worker when done
+worker.terminate();
+```
+
+**What Web Workers can and cannot access:**
+
+| Can Access | Cannot Access |
+|---|---|
+| `fetch` / `XMLHttpRequest` | `document` |
+| `setTimeout` / `setInterval` | `window` |
+| `WebSockets` | `DOM elements` |
+| `IndexedDB` | `localStorage` / `sessionStorage` |
+| `crypto` | `alert()` / `confirm()` |
+| `postMessage` | Parent page variables |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is a Service Worker?
+
+A **Service Worker** is a script that the browser runs in the background, separate from a web page, enabling features that don\'t require a web page or user interaction. It acts as a **programmable network proxy** between the browser and the server.
+
+**Core capabilities:**
+- Intercept and cache network requests (offline support)
+- Background sync
+- Push notifications
+- Periodic background sync
+
+**Service Worker lifecycle:**
+
+```
+Register → Install → Activate → Idle → Fetch/Push/Sync events
+```
+
+**Example — Register and install a Service Worker:**
+
+`main.js`:
+```js
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js")
+    .then(reg => console.log("SW registered:", reg.scope))
+    .catch(err => console.error("SW registration failed:", err));
+}
+```
+
+`sw.js` (Service Worker file):
+```js
+const CACHE_NAME = "my-app-v1";
+const ASSETS = ["/", "/index.html", "/styles.css", "/app.js", "/logo.png"];
+
+// Install: pre-cache static assets
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+  );
+  self.skipWaiting(); // Activate immediately
+});
+
+// Activate: clean up old caches
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
+});
+
+// Fetch: serve from cache, fallback to network
+self.addEventListener("fetch", (event) => {
+  event.respondWith(
+    caches.match(event.request).then(cached => cached || fetch(event.request))
+  );
+});
+```
+
+**Caching strategies:**
+
+| Strategy | Description | Best for |
+|---|---|---|
+| Cache First | Serve from cache; fetch if not cached | Static assets, fonts |
+| Network First | Fetch from network; fallback to cache | API data, dynamic content |
+| Stale-While-Revalidate | Serve cache immediately, update in background | News feeds, user profiles |
+| Cache Only | Never go to network | Pre-cached offline assets |
+| Network Only | Always fetch from network | Non-cacheable real-time data |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the difference between Web Workers and Service Workers?
+
+Both run JavaScript off the main thread, but they have very different purposes and lifetimes.
+
+| Feature | Web Worker | Service Worker |
+|---|---|---|
+| **Purpose** | CPU-intensive background computation | Network proxy, offline support, push notifications |
+| **Scope** | Tied to the page that created it | Registered to an origin/scope, independent of any page |
+| **Lifetime** | Lives as long as the creating page | Persists beyond page close (in background) |
+| **DOM access** | No | No |
+| **Network interception** | No | Yes (via `fetch` event) |
+| **Cache API access** | No | Yes |
+| **Push notifications** | No | Yes |
+| **Background sync** | No | Yes |
+| **Multiple instances** | One per `new Worker()` call | One per scope |
+| **Communication** | `postMessage` with the creating page | `postMessage` with all controlled clients |
+| **Requires HTTPS** | No | Yes (except localhost) |
+| **Types** | Dedicated, Shared | Single type |
+
+**Simple analogy:**
+- **Web Worker** = a calculator in the background (compute things for me)
+- **Service Worker** = a local post office (intercept all mail going in/out, cache deliveries, deliver even when the recipient is away)
+
+**When to use each:**
+
+Use **Web Workers** for:
+- Image/video processing
+- Parsing large JSON or CSV files
+- Complex mathematical computations
+- Encryption/decryption operations
+
+Use **Service Workers** for:
+- Offline-first Progressive Web Apps (PWA)
+- Caching static and dynamic content
+- Background push notifications
+- Background sync (send data when back online)
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## # 18. IndexedDB & Advanced Web Storage
+
+<br/>
+
+## Q. What is IndexedDB in HTML5?
+
+**IndexedDB** is a low-level, NoSQL, client-side database built into the browser. It stores large amounts of structured data — including files and blobs — and supports indexes for high-performance queries. It is asynchronous and uses a transaction-based model.
+
+**Key characteristics:**
+- Storage capacity: typically hundreds of MBs to GBs (browser/OS dependent)
+- Stores JavaScript objects, files, binary data (Blob, ArrayBuffer)
+- Supports indexes for efficient querying
+- Fully asynchronous (Promise or event-based)
+- Scoped per origin (same-origin policy)
+- Data persists across sessions (until cleared)
+
+**Core concepts:**
+
+| Concept | Description |
+|---|---|
+| **Database** | Container for object stores; has a name and version |
+| **Object Store** | Like a table in SQL; stores records as key-value pairs |
+| **Index** | Secondary key for querying by properties other than the primary key |
+| **Transaction** | All operations happen inside a transaction (read or read/write) |
+| **Cursor** | Iterator for traversing multiple records |
+
+**Example — Store and retrieve data:**
+
+```js
+// 1. Open the database (creates it if it doesn\'t exist)
+const request = indexedDB.open("MyDatabase", 1);
+
+// 2. Create schema on first creation or version upgrade
+request.onupgradeneeded = (event) => {
+  const db = event.target.result;
+
+  // Create an object store with auto-incrementing key
+  const store = db.createObjectStore("users", {
+    keyPath: "id",
+    autoIncrement: true
+  });
+
+  // Create an index on the "email" property
+  store.createIndex("email", "email", { unique: true });
+};
+
+request.onsuccess = (event) => {
+  const db = event.target.result;
+
+  // 3. Add a record
+  const tx = db.transaction("users", "readwrite");
+  const store = tx.objectStore("users");
+
+  store.add({ name: "Alice", email: "alice@example.com", age: 30 });
+
+  tx.oncomplete = () => console.log("User added");
+
+  // 4. Read a record by primary key
+  const getTx = db.transaction("users", "readonly");
+  const getStore = getTx.objectStore("users");
+  const getReq = getStore.get(1);
+
+  getReq.onsuccess = () => console.log("User:", getReq.result);
+
+  // 5. Query by index
+  const indexTx = db.transaction("users", "readonly");
+  const emailIndex = indexTx.objectStore("users").index("email");
+  const indexReq = emailIndex.get("alice@example.com");
+
+  indexReq.onsuccess = () => console.log("Found:", indexReq.result);
+};
+
+request.onerror = (event) => console.error("DB error:", event.target.error);
+```
+
+**Comparison with other storage options:**
+
+| | `localStorage` | `sessionStorage` | `Cookie` | `IndexedDB` |
+|---|---|---|---|---|
+| Capacity | ~5 MB | ~5 MB | ~4 KB | Hundreds of MB |
+| Data types | String only | String only | String only | Any JS object |
+| Async | No (sync) | No (sync) | No (sync) | Yes |
+| Indexes | No | No | No | Yes |
+| Transactions | No | No | No | Yes |
+| Works in SW | No | No | No | Yes |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is WebSQL?
+
+**WebSQL** is a deprecated browser API that provided a relational database using a variant of **SQLite** directly in the browser. It allowed web pages to use SQL queries (`SELECT`, `INSERT`, `UPDATE`, `DELETE`) on a local client-side database.
+
+**Status: Deprecated and removed**  
+WebSQL was never standardized by the W3C. It was rejected in favor of IndexedDB and was **removed from Chrome in 2024** and has not been supported in Firefox or Edge for many years.
+
+**Basic WebSQL usage (historical reference):**
+
+```js
+// Open (or create) a database
+const db = openDatabase(
+  "myDB",     // name
+  "1.0",      // version
+  "My DB",    // display name
+  2 * 1024 * 1024  // size (2 MB)
+);
+
+// Create a table
+db.transaction((tx) => {
+  tx.executeSql("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT, email TEXT)");
+});
+
+// Insert data
+db.transaction((tx) => {
+  tx.executeSql("INSERT INTO users (name, email) VALUES (?, ?)", ["Alice", "alice@example.com"]);
+});
+
+// Query data
+db.transaction((tx) => {
+  tx.executeSql("SELECT * FROM users", [], (tx, results) => {
+    for (let i = 0; i < results.rows.length; i++) {
+      console.log(results.rows.item(i));
+    }
+  });
+});
+```
+
+**Why WebSQL was deprecated:**
+1. It was based on SQLite, which tied the spec to a specific SQL dialect
+2. No browser other than WebKit-based browsers implemented it
+3. The W3C stopped working on it in 2010
+4. IndexedDB was chosen as the standard replacement
+
+**Migration path:** Use **IndexedDB** (with a library like [Dexie.js](https://dexie.org/) or [idb](https://github.com/jakearchibald/idb) for a friendlier API) instead of WebSQL.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## # 19. Atomic Design & Pixel Perfect Design
+
+<br/>
+
+## Q. What is Atomic Design Pattern?
+
+**Atomic Design** is a methodology for creating design systems by composing UI components in a hierarchy inspired by chemistry. It was introduced by Brad Frost.
+
+The five levels are:
+
+**1. Atoms**  
+The smallest, indivisible UI building blocks — single HTML elements that cannot be broken down further without losing their functionality.
+
+```html
+<!-- Atom: A button -->
+<button class="btn btn-primary">Submit</button>
+
+<!-- Atom: An input -->
+<input type="text" placeholder="Enter email">
+
+<!-- Atom: A label -->
+<label for="email">Email Address</label>
+```
+
+**2. Molecules**  
+Simple groups of atoms functioning together as a unit.
+
+```html
+<!-- Molecule: A search form (input + button atoms) -->
+<form class="search-form">
+  <input type="search" placeholder="Search...">
+  <button type="submit">Go</button>
+</form>
+```
+
+**3. Organisms**  
+Relatively complex components composed of molecules and/or atoms, forming distinct sections of an interface.
+
+```html
+<!-- Organism: A site header -->
+<header class="site-header">
+  <a class="logo" href="/">Brand</a>
+  <nav class="main-nav">
+    <a href="/about">About</a>
+    <a href="/blog">Blog</a>
+  </nav>
+  <form class="search-form">
+    <input type="search" placeholder="Search...">
+    <button type="submit">Go</button>
+  </form>
+</header>
+```
+
+**4. Templates**  
+Page-level structures that arrange organisms into a layout. They define the content structure without real content (using placeholder/lorem ipsum).
+
+```html
+<!-- Template: Blog page layout -->
+<div class="blog-template">
+  <header class="site-header">...</header>
+  <main class="content">
+    <article class="post-grid">...</article>
+    <aside class="sidebar">...</aside>
+  </main>
+  <footer class="site-footer">...</footer>
+</div>
+```
+
+**5. Pages**  
+Specific instances of templates with real, representative content. This is what users actually see.
+
+```html
+<!-- Page: Blog post with actual content -->
+<div class="blog-template">
+  <header><!-- real nav --></header>
+  <main>
+    <article>
+      <h1>10 Tips for Responsive Design</h1>
+      <img src="real-photo.jpg" alt="...">
+      <p>Real article content...</p>
+    </article>
+  </main>
+</div>
+```
+
+**Benefits of Atomic Design:**
+
+| Benefit | Description |
+|---|---|
+| Reusability | Components built once, used everywhere |
+| Consistency | Unified UI language across the entire product |
+| Maintainability | Change an atom and all molecules/organisms update |
+| Scalability | Easy to extend and add new components |
+| Better collaboration | Shared vocabulary between designers and developers |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. How to achieve pixel perfect design in HTML/CSS?
+
+**Pixel perfect design** means implementing a UI that matches the designer\'s mockup precisely — every margin, padding, font size, color, and spacing aligns exactly with the design specification.
+
+**1. Use the correct base styles**
+
+Reset browser defaults to eliminate inconsistencies across browsers:
+
+```css
+/* Modern CSS reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+```
+
+**2. Match the design\'s spacing system**
+
+Use a consistent spacing scale (e.g., 4px or 8px grid):
+
+```css
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+}
+```
+
+**3. Use exact font settings from the design**
+
+```css
+.heading {
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;       /* = 40px */
+  letter-spacing: -0.5px;
+  color: #1A1A2E;
+}
+```
+
+**4. Match colors exactly**
+
+Copy hex/rgba values directly from design tools (Figma, Sketch, XD):
+
+```css
+:root {
+  --color-primary:    #3B82F6;
+  --color-secondary:  #8B5CF6;
+  --color-text:       #111827;
+  --color-muted:      #6B7280;
+  --color-background: #F9FAFB;
+}
+```
+
+**5. Use a design overlay extension**
+
+Browser extensions (e.g., **PerfectPixel** for Chrome/Firefox) let you overlay the design mockup directly on top of the browser — you can adjust opacity to compare pixel by pixel.
+
+**6. Inspect with browser DevTools**
+
+- Right-click → Inspect → use the **Box Model** diagram to verify margins and padding
+- Use the **ruler tool** and **element measurement** (Shift+click in DevTools)
+
+**7. Handle sub-pixel rendering**
+
+```css
+/* Prevent blurry sub-pixel text */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+```
+
+**8. Use rem/em consistently for scaling**
+
+```css
+html { font-size: 16px; } /* 1rem = 16px */
+
+.card {
+  padding: 1.5rem;     /* 24px */
+  border-radius: 0.5rem; /* 8px */
+}
+```
+
+**9. Match border-radius, shadows exactly**
+
+```css
+.card {
+  /* Figma shows: shadow x=0, y=4, blur=16, spread=0, color=#00000014 */
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+}
+```
+
+**10. Verify at multiple viewport sizes**
+
+Test at the exact breakpoints defined in the design (e.g., 375px mobile, 768px tablet, 1440px desktop) and compare against the design mockup.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## # 20. SEO Basics & Advanced
+
+<br/>
+
+## Q. What are Core Web Vitals?
+
+**Core Web Vitals** are a set of real-world performance metrics defined by Google that measure user experience on the web. They are official Google Search ranking signals as of 2021.
+
+**The three Core Web Vitals:**
+
+**1. Largest Contentful Paint (LCP)**
+Measures **loading performance** — the time it takes for the largest visible content element (image, video, or block of text) to fully render.
+
+| Score | Threshold |
+|---|---|
+| Good | ≤ 2.5 seconds |
+| Needs Improvement | 2.5s – 4.0s |
+| Poor | > 4.0 seconds |
+
+**How to improve LCP:**
+- Optimize and compress large images
+- Use `<link rel="preload">` for the hero image
+- Use a CDN
+- Remove render-blocking CSS/JS
+- Use `loading="eager"` on above-the-fold images
+
+**2. Interaction to Next Paint (INP)** *(replaced FID in March 2024)*
+Measures **interactivity** — the latency of all user interactions (clicks, taps, keyboard input) throughout the page\'s lifetime.
+
+| Score | Threshold |
+|---|---|
+| Good | ≤ 200 ms |
+| Needs Improvement | 200ms – 500ms |
+| Poor | > 500 ms |
+
+**How to improve INP:**
+- Minimize long tasks on the main thread
+- Use Web Workers for heavy computation
+- Avoid unnecessary re-renders
+- Defer non-critical JavaScript
+
+**3. Cumulative Layout Shift (CLS)**
+Measures **visual stability** — how much the page layout unexpectedly shifts during loading.
+
+| Score | Threshold |
+|---|---|
+| Good | ≤ 0.1 |
+| Needs Improvement | 0.1 – 0.25 |
+| Poor | > 0.25 |
+
+**How to improve CLS:**
+- Always specify `width` and `height` on images and videos
+- Reserve space for ads and embeds
+- Avoid inserting content above existing content
+- Use `font-display: optional` or preload fonts
+
+**Measurement tools:**
+- Google PageSpeed Insights (`pagespeed.web.dev`)
+- Chrome DevTools → Lighthouse
+- Chrome User Experience Report (CrUX)
+- `web-vitals` JavaScript library
+
+```js
+import { getLCP, getINP, getCLS } from "web-vitals";
+
+getLCP(console.log);
+getINP(console.log);
+getCLS(console.log);
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is structured data and JSON-LD for SEO?
+
+**Structured data** is a standardized format for providing explicit information about a page\'s content so that search engines can better understand it and display **rich results** (also called rich snippets) in search engine results pages (SERPs).
+
+**JSON-LD (JavaScript Object Notation for Linked Data)** is Google\'s recommended format for embedding structured data in a `<script>` tag, using vocabulary from [Schema.org](https://schema.org).
+
+**Benefits of structured data:**
+- Eligibility for rich results (star ratings, FAQ boxes, breadcrumbs, product carousels)
+- Improved click-through rate (CTR) from search results
+- Better understanding of content by search engines
+
+**Example — Article schema:**
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Top 10 HTML5 Interview Questions",
+  "author": {
+    "@type": "Person",
+    "name": "John Doe"
+  },
+  "datePublished": "2024-01-15",
+  "dateModified": "2024-04-01",
+  "image": "https://example.com/article-image.jpg",
+  "publisher": {
+    "@type": "Organization",
+    "name": "HTML Basics",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.com/logo.png"
+    }
+  }
+}
+</script>
+```
+
+**Example — FAQ schema (creates FAQ dropdowns in SERPs):**
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is HTML5?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HTML5 is the latest version of HyperText Markup Language..."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are semantic HTML elements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Semantic elements clearly describe their meaning to the browser..."
+      }
+    }
+  ]
+}
+</script>
+```
+
+**Example — Product schema:**
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Laptop Pro 15",
+  "image": "https://example.com/laptop.jpg",
+  "description": "High-performance laptop for developers.",
+  "brand": { "@type": "Brand", "name": "TechBrand" },
+  "offers": {
+    "@type": "Offer",
+    "price": "1299.99",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "245"
+  }
+}
+</script>
+```
+
+**Popular Schema.org types:**
+
+| Type | Rich result |
+|---|---|
+| `Article` | Article appearance |
+| `FAQPage` | FAQ accordion in SERPs |
+| `Product` | Price, availability, reviews |
+| `BreadcrumbList` | Breadcrumb navigation |
+| `Organization` | Knowledge panel |
+| `LocalBusiness` | Business info with map |
+| `Recipe` | Recipe cards with ratings |
+| `Event` | Event details |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What are hreflang tags and when should you use them?
+
+**`hreflang`** is an HTML attribute used to tell search engines which language and/or geographic region a page is intended for. It helps Google serve the correct regional or language variant to users.
+
+**When to use:**
+- Your site has content in multiple languages (e.g., English, French, Spanish)
+- Your site has region-specific versions (e.g., `en-US`, `en-GB`, `en-AU`)
+- Your site has translated pages with different URLs
+
+**Syntax:**
+
+```html
+<!-- In the <head> of each page: -->
+
+<!-- English (default, all regions) -->
+<link rel="alternate" hreflang="en" href="https://example.com/en/page">
+
+<!-- French -->
+<link rel="alternate" hreflang="fr" href="https://example.com/fr/page">
+
+<!-- Spanish (all regions) -->
+<link rel="alternate" hreflang="es" href="https://example.com/es/page">
+
+<!-- English for US -->
+<link rel="alternate" hreflang="en-US" href="https://example.com/en-us/page">
+
+<!-- English for UK -->
+<link rel="alternate" hreflang="en-GB" href="https://example.com/en-gb/page">
+
+<!-- Fallback for all other regions/languages -->
+<link rel="alternate" hreflang="x-default" href="https://example.com/page">
+```
+
+**Rules:**
+1. Every page in the set must reference all other pages, including itself
+2. The `x-default` tag indicates the fallback page when no language match is found
+3. Language codes follow IETF BCP 47 format (e.g., `en`, `en-GB`, `zh-Hant`)
+4. Hreflang can also be set in the HTTP header or XML sitemap
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the difference between crawling and indexing in SEO?
+
+**Crawling** and **indexing** are two separate steps search engines perform before a page can appear in search results.
+
+**Crawling**
+
+Crawling is the process by which search engine bots (called **crawlers** or **spiders**, e.g., Googlebot) discover and download web pages by following links.
+
+- Googlebot starts from a list of known URLs and follows hyperlinks
+- Pages are added to a crawl queue based on PageRank, update frequency, and site authority
+- **Robots.txt** controls which paths crawlers are allowed or forbidden to access:
+
+```
+# robots.txt
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Allow: /public/
+
+Sitemap: https://example.com/sitemap.xml
+```
+
+**Indexing**
+
+Indexing is the process of analyzing and storing crawled content in the search engine\'s database (index) so it can be retrieved in response to a search query.
+
+- After crawling, Google processes the page\'s content, HTML, images, metadata
+- If the page is deemed indexable, it enters the index
+- The `<meta name="robots" content="noindex">` tag prevents a page from being indexed
+
+```html
+<!-- Allow both crawling and indexing (default) -->
+<meta name="robots" content="index, follow">
+
+<!-- Prevent indexing but allow link following -->
+<meta name="robots" content="noindex, follow">
+
+<!-- Prevent crawling of links -->
+<meta name="robots" content="index, nofollow">
+
+<!-- Prevent both indexing and link following -->
+<meta name="robots" content="noindex, nofollow">
+```
+
+**Key differences:**
+
+| | Crawling | Indexing |
+|---|---|---|
+| **What happens** | Bot discovers and downloads the page | Page is analyzed and stored in the index |
+| **Controlled by** | `robots.txt`, crawl budget | `<meta name="robots">`, `X-Robots-Tag` |
+| **Outcome** | Page is fetched | Page can appear in search results |
+| **Can be blocked** | Yes, via `Disallow` in robots.txt | Yes, via `noindex` directive |
+| **Order** | Always first | Happens after crawling |
+
+*Note: Blocking crawling (robots.txt) also prevents indexing. But `noindex` only blocks indexing — the page can still be crawled.*
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## # 21. HTML Performance Optimization
+
+<br/>
+
+## Q. What are resource hints in HTML5?
+
+**Resource hints** are HTML link directives that tell the browser to perform certain network operations early — before they are needed — to speed up page load. They are set in the `<head>` using `<link>` tags.
+
+**1. `dns-prefetch` — Resolve DNS early**
+
+Resolves the DNS lookup for a domain before any resource from it is requested. Cheap and broadly supported.
+
+```html
+<!-- Resolve DNS for external font/analytics domains -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+```
+
+**2. `preconnect` — Establish connection early**
+
+Opens a TCP connection (and TLS handshake for HTTPS) to an origin before it is needed. Stronger than dns-prefetch — use for critical third-party origins.
+
+```html
+<!-- Critical: fonts will be loaded from here -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.example.com">
+```
+
+**3. `preload` — Fetch a resource immediately**
+
+Tells the browser to download a resource as soon as possible (high priority) because it will be needed very soon. Does **not** execute it — just downloads it.
+
+```html
+<!-- Preload the hero image (above the fold) -->
+<link rel="preload" href="hero.jpg" as="image">
+
+<!-- Preload critical font to avoid FOUT -->
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Preload a JS module needed right after parse -->
+<link rel="preload" href="/app.js" as="script">
+
+<!-- Preload critical CSS -->
+<link rel="preload" href="/critical.css" as="style">
+```
+
+**The `as` attribute values:**
+
+| `as` value | Resource type |
+|---|---|
+| `image` | Image files |
+| `font` | Web fonts (must add `crossorigin`) |
+| `script` | JavaScript |
+| `style` | CSS stylesheet |
+| `fetch` | `fetch()` / `XHR` requests |
+| `document` | HTML documents (iframes) |
+
+**4. `prefetch` — Download for future navigation**
+
+Fetches a resource at **low priority** in the browser\'s idle time — for resources that will likely be needed on the **next page** (not the current one).
+
+```html
+<!-- User is likely to go to the dashboard next -->
+<link rel="prefetch" href="/dashboard.html">
+<link rel="prefetch" href="/dashboard.css">
+```
+
+**5. `prerender` — Render a whole page in the background**
+
+Fetches and renders the entire next page in a hidden tab — the fastest possible experience when users navigate to it.
+
+```html
+<link rel="prerender" href="https://example.com/next-page">
+```
+
+**Comparison:**
+
+| Hint | Timing | Priority | Use for |
+|---|---|---|---|
+| `dns-prefetch` | Current page | Low | DNS only, third-party domains |
+| `preconnect` | Current page | Medium | Critical third-party origins |
+| `preload` | Current page | High | Critical current-page resources |
+| `prefetch` | Next navigation | Idle (low) | Resources for next page |
+| `prerender` | Next navigation | Idle | Entire next page |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. How to implement lazy loading in HTML?
+
+**Lazy loading** defers loading of off-screen resources (images, iframes) until the user scrolls near them, reducing initial page load time and saving bandwidth.
+
+**1. Native lazy loading (HTML attribute — recommended)**
+
+Supported in all modern browsers natively:
+
+```html
+<!-- Lazy load an image -->
+<img src="photo.jpg" alt="Photo" loading="lazy" width="800" height="600">
+
+<!-- Lazy load an iframe -->
+<iframe src="https://www.youtube.com/embed/video" loading="lazy"></iframe>
+```
+
+**Always specify `width` and `height`** to prevent layout shifts (CLS) when the image loads.
+
+`loading` attribute values:
+- `lazy` — defer loading until near the viewport
+- `eager` — load immediately (default for above-the-fold images)
+- `auto` — browser decides
+
+**2. JavaScript lazy loading with Intersection Observer**
+
+```js
+const images = document.querySelectorAll("img[data-src]");
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src;
+
+      if (img.dataset.srcset) {
+        img.srcset = img.dataset.srcset;
+      }
+
+      img.removeAttribute("data-src");
+      observer.unobserve(img);
+    }
+  });
+}, {
+  rootMargin: "0px 0px 200px 0px" // Start loading 200px before entering viewport
+});
+
+images.forEach(img => observer.observe(img));
+```
+
+```html
+<!-- Use data-src instead of src -->
+<img data-src="photo.jpg"
+     data-srcset="photo-400.jpg 400w, photo-800.jpg 800w"
+     src="placeholder.svg"
+     alt="Photo"
+     width="800"
+     height="600">
+```
+
+**3. Lazy loading background images (CSS + JS)**
+
+```css
+.lazy-bg {
+  background-image: none;
+  background-color: #eee; /* placeholder */
+}
+
+.lazy-bg.loaded {
+  background-image: url("hero.jpg");
+}
+```
+
+```js
+const bgEls = document.querySelectorAll(".lazy-bg");
+const bgObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("loaded");
+      bgObserver.unobserve(entry.target);
+    }
+  });
+});
+
+bgEls.forEach(el => bgObserver.observe(el));
+```
+
+**Best practices:**
+- Never lazy load the LCP (Largest Contentful Paint) image — use `loading="eager"` or `<link rel="preload">` for it
+- Always provide `width` and `height` to prevent layout shift
+- Use `loading="lazy"` for all below-the-fold images as a baseline
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the difference between `async` and `defer` in `<script>` and when to use each?
+
+Both `async` and `defer` allow the browser to **download** the script without blocking HTML parsing. The difference is **when the script executes**.
+
+**Without `async` or `defer` (default behavior):**
+
+```html
+<script src="script.js"></script>
+```
+
+1. HTML parsing stops
+2. Script is downloaded
+3. Script executes
+4. HTML parsing resumes
+
+**With `async`:**
+
+```html
+<script async src="analytics.js"></script>
+```
+
+1. HTML parsing continues in parallel while script downloads
+2. As soon as download completes, HTML parsing **pauses** and script executes immediately
+3. HTML parsing resumes after execution
+4. **Order of execution is NOT guaranteed** when multiple async scripts are used
+
+**With `defer`:**
+
+```html
+<script defer src="app.js"></script>
+```
+
+1. HTML parsing continues in parallel while script downloads
+2. Script executes **after the HTML is fully parsed** (before `DOMContentLoaded`)
+3. **Order of execution IS guaranteed** — scripts execute in document order
+
+**Visual comparison:**
+
+```
+Default:  |----HTML parsing----|[pause]|--download--|--execute--|[resume]|---HTML---|
+async:    |----HTML parsing----|--download--|[pause]|--execute--|[resume]-------------|
+defer:    |----HTML parsing---(downloads in background)---|--execute--|DOMContentLoaded|
+```
+
+**Decision guide:**
+
+| Use case | Attribute |
+|---|---|
+| Script has no dependencies and order doesn\'t matter (e.g., analytics, ads) | `async` |
+| Script depends on the DOM being fully parsed | `defer` |
+| Script depends on other scripts being loaded first | `defer` (respects order) |
+| Small inline script | Neither (inline scripts can\'t use these attributes) |
+| Module scripts (`type="module"`) | `defer` by default |
+
+```html
+<!-- Example: proper script loading strategy -->
+<head>
+  <!-- Critical styles: no defer/async needed -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Analytics: async (no dependencies, order doesn\'t matter) -->
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+
+  <!-- App code: defer (needs DOM ready, must run in order) -->
+  <script defer src="vendor.js"></script>
+  <script defer src="app.js"></script>
+</head>
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is Content Security Policy (CSP) and how is it configured in HTML?
+
+**Content Security Policy (CSP)** is a browser security mechanism that helps prevent **Cross-Site Scripting (XSS)**, clickjacking, and other code injection attacks by declaring which sources of content are trusted.
+
+**How it works:** The server sends a `Content-Security-Policy` HTTP header (or a `<meta>` tag) telling the browser to only execute/load resources from the approved sources.
+
+**Via HTTP header (recommended):**
+
+```
+Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.example.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com
+```
+
+**Via HTML `<meta>` tag (limited — cannot use `report-uri`):**
+
+```html
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://trusted-cdn.com; style-src 'self';">
+```
+
+**Common CSP directives:**
+
+| Directive | Controls |
+|---|---|
+| `default-src` | Fallback for all resource types |
+| `script-src` | JavaScript sources |
+| `style-src` | CSS sources |
+| `img-src` | Image sources |
+| `font-src` | Font sources |
+| `connect-src` | AJAX, WebSocket, fetch targets |
+| `frame-src` | `<iframe>` sources |
+| `media-src` | `<audio>` and `<video>` sources |
+| `form-action` | `<form action>` targets |
+| `upgrade-insecure-requests` | Upgrade HTTP to HTTPS |
+
+**Common source values:**
+
+| Value | Meaning |
+|---|---|
+| `'self'` | Same origin only |
+| `'none'` | No sources allowed |
+| `'unsafe-inline'` | Allow inline `<script>` and `<style>` (avoid when possible) |
+| `'unsafe-eval'` | Allow `eval()` (avoid when possible) |
+| `'nonce-xxxxx'` | Allow specific inline script with matching nonce |
+| `https:` | Any HTTPS source |
+| `https://cdn.example.com` | Specific origin |
+
+**Nonce-based approach (preferred over `unsafe-inline`):**
+
+```html
+<!-- Server generates a unique nonce per request -->
+<script nonce="abc123xyz">
+  // This inline script is allowed
+  console.log("Trusted inline script");
+</script>
+```
+
+```
+Content-Security-Policy: script-src 'nonce-abc123xyz'
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the purpose of `<link rel="preload">` and how does it improve performance?
+
+`<link rel="preload">` is a **declarative fetch directive** that tells the browser to download a resource as soon as possible (at high priority) because it will be needed shortly — without delaying the current render. It eliminates the "late discovery" problem where the browser only discovers critical resources after parsing deep into the HTML or CSS.
+
+**Why it matters:**
+
+Without preload, fonts are typically discovered only after:
+1. HTML is parsed
+2. CSS is downloaded and parsed
+3. `@font-face` rule is encountered
+
+This causes **Flash of Invisible Text (FOIT)** or **Flash of Unstyled Text (FOUT)**. Preloading the font starts the download immediately.
+
+**Common use cases and examples:**
+
+```html
+<head>
+  <!-- 1. Preload hero image (above the fold = LCP element) -->
+  <link rel="preload" href="/images/hero.webp" as="image">
+
+  <!-- 2. Preload critical web font -->
+  <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- 3. Preload a critical JavaScript module -->
+  <link rel="preload" href="/js/app.js" as="script">
+
+  <!-- 4. Preload critical CSS (then apply it) -->
+  <link rel="preload" href="/css/critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/critical.css"></noscript>
+
+  <!-- 5. Preload an API response used immediately on page load -->
+  <link rel="preload" href="/api/user/profile" as="fetch" crossorigin>
+</head>
+```
+
+**Key rules:**
+- Always include the `as` attribute — without it, the resource is fetched at low priority and may be downloaded twice
+- Fonts require `crossorigin` even if same-origin (due to CORS requirements for font loading)
+- Don\'t over-preload — preloading too many resources competes for bandwidth and can slow down other resources
+
+**Preload vs Prefetch:**
+
+| | `preload` | `prefetch` |
+|---|---|---|
+| Priority | High (current page) | Low (future page, idle time) |
+| Purpose | Critical resources needed now | Resources for next navigation |
+| Browser behavior | Downloads immediately | Downloads during idle time |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What are WCAG guidelines and accessibility levels?
+
+**WCAG (Web Content Accessibility Guidelines)** is the international standard for web accessibility, developed by the W3C\'s Web Accessibility Initiative (WAI). The current version is **WCAG 2.2** (2023), with WCAG 3.0 in development.
+
+**The four WCAG principles (POUR):**
+
+**1. Perceivable** — Information and UI components must be presentable to all users.
+- Provide text alternatives for non-text content (`alt` attributes)
+- Provide captions and transcripts for audio/video
+- Ensure sufficient color contrast
+- Don\'t rely on color alone to convey information
+
+**2. Operable** — UI components must be operable by all users.
+- All functionality must be accessible via keyboard
+- Provide enough time for users to read content
+- No content that flashes more than 3 times per second (seizure risk)
+- Provide skip links and descriptive page titles
+
+**3. Understandable** — Information and UI operation must be understandable.
+- Identify the language of the page (`lang` attribute)
+- Make pages behave predictably
+- Provide clear error messages and instructions
+
+**4. Robust** — Content must be robust enough to be interpreted by assistive technologies.
+- Use valid, semantic HTML
+- Ensure name, role, and value of components are exposed to assistive tech
+
+**Conformance levels:**
+
+| Level | Description | Requirement |
+|---|---|---|
+| **A** | Minimum accessibility | Must satisfy (basic barriers removed) |
+| **AA** | Standard accessibility target | Should satisfy (legal requirement in many countries) |
+| **AAA** | Highest accessibility | May satisfy (aspirational, not required for all content) |
+
+**Key AA requirements:**
+- Minimum color contrast ratio: **4.5:1** for normal text, **3:1** for large text (18pt+)
+- All functionality operable by keyboard
+- Error identification: identify field in error and describe it in text
+- Consistent navigation across pages
+- No time limit on user tasks (or user can extend it)
+
+**HTML implementation examples:**
+
+```html
+<!-- Perceivable: meaningful alt text -->
+<img src="chart.png" alt="Sales increased 40% from Q1 to Q2 2024">
+
+<!-- Operable: keyboard-accessible custom button -->
+<div role="button" tabindex="0" 
+     onkeydown="if(event.key==='Enter'||event.key===' ')this.click()"
+     onclick="doAction()">
+  Custom Button
+</div>
+
+<!-- Understandable: form with clear error -->
+<label for="email">Email <span aria-hidden="true">*</span></label>
+<input type="email" id="email" 
+       aria-required="true" 
+       aria-describedby="email-error"
+       aria-invalid="true">
+<span id="email-error" role="alert">Please enter a valid email address.</span>
+
+<!-- Robust: landmark roles -->
+<header role="banner">
+  <nav role="navigation" aria-label="Main navigation">...</nav>
+</header>
+<main role="main" id="main-content">...</main>
+<footer role="contentinfo">...</footer>
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## # 22. HTML Tags & Elements (Intermediate)
+
+<br/>
+
+## Q. What is the difference between `<strong>` and `<b>`, `<em>` and `<i>`?
+
+Both pairs look visually similar but differ in semantic meaning:
+
+| Tag | Type | Meaning |
+|---|---|---|
+| `<b>` | Presentational | Bold text — no semantic weight |
+| `<strong>` | Semantic | **Important** content; screen readers may stress it |
+| `<i>` | Presentational | Italic text — no semantic meaning |
+| `<em>` | Semantic | **Emphasized** content; screen readers change tone |
+
+```html
+<!-- Presentational (avoid for meaningful content) -->
+<b>Warning</b>
+<i>Technical term</i>
+
+<!-- Semantic (preferred) -->
+<strong>Warning: Do not proceed without authorization.</strong>
+<em>This step is critical.</em>
+```
+
+Use `<strong>` and `<em>` when the emphasis carries meaning. Use `<b>` and `<i>` only for purely stylistic formatting (e.g., keywords in a document, foreign words, technical terms without added importance).
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What are the `<details>` and `<summary>` elements?
+
+The `<details>` element creates a native browser disclosure widget — content that is hidden by default and revealed when the user toggles it. The `<summary>` element provides the visible label/heading for the widget.
+
+**Example:**
+
+```html
+<details>
+  <summary>What is the capital of France?</summary>
+  <p>The capital of France is <strong>Paris</strong>.</p>
+</details>
+```
+
+**Key attributes:**
+
+| Attribute | Description |
+|---|---|
+| `open` | If present, the content is shown by default |
+
+```html
+<details open>
+  <summary>System Requirements</summary>
+  <ul>
+    <li>OS: Windows 10 or later</li>
+    <li>RAM: 8 GB minimum</li>
+    <li>Storage: 20 GB free disk space</li>
+  </ul>
+</details>
+```
+
+**Why it matters:** No JavaScript required. Screen readers expose the state (`expanded`/`collapsed`) automatically via ARIA. Commonly used in FAQs, accordions, and progressive disclosure patterns.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What are the `<figure>` and `<figcaption>` elements?
+
+`<figure>` represents self-contained content (images, diagrams, code blocks, charts) that is referenced from the main content but could be moved without affecting the document flow. `<figcaption>` provides a caption for the figure.
+
+**Example:**
+
+```html
+<figure>
+  <img src="architecture-diagram.png" alt="Microservices architecture showing 5 services">
+  <figcaption>Fig. 1 — Microservices architecture of the payment platform.</figcaption>
+</figure>
+
+<!-- Also valid with code -->
+<figure>
+  <pre><code>const sum = (a, b) => a + b;</code></pre>
+  <figcaption>Arrow function example in JavaScript</figcaption>
+</figure>
+```
+
+**Why it matters:** `<figure>` + `<figcaption>` creates an accessible, semantic association between a visual/media element and its description — something `<img>` + `<p>` does not do structurally.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the `<time>` element and why is it useful?
+
+The `<time>` element represents a specific date, time, or duration. The `datetime` attribute provides a machine-readable format while the element\'s text content can be human-readable.
+
+**Syntax:**
+
+```html
+<!-- Date -->
+<time datetime="2025-04-28">April 28, 2025</time>
+
+<!-- Date and time -->
+<time datetime="2025-04-28T09:00">9:00 AM on April 28</time>
+
+<!-- Duration -->
+<time datetime="PT2H30M">2 hours 30 minutes</time>
+
+<!-- In context -->
+<p>The conference starts on <time datetime="2025-06-15">June 15</time>.</p>
+<p>Article published <time datetime="2025-04-28T12:00Z">today at noon UTC</time>.</p>
+```
+
+**Why it matters:** Search engines (Google\'s Knowledge Graph, schema.org microdata) use the `datetime` attribute to accurately index events, articles, and schedules. Screen readers can interpret the date format correctly regardless of how it\'s displayed.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the difference between the `hidden` attribute and `display: none`?
+
+Both hide an element visually, but they differ in semantics and behavior:
+
+| | `hidden` attribute | `display: none` |
+|---|---|---|
+| Type | HTML boolean attribute | CSS rule |
+| Semantic | Element is **not relevant** to the current state | No semantic meaning |
+| Override | CSS can override it (e.g., `display: block` overrides `hidden`) | Cannot be overridden by `hidden` |
+| JavaScript toggle | `el.hidden = true/false` | `el.style.display = 'none'/'block'` |
+| Accessibility | Excluded from accessibility tree | Excluded from accessibility tree |
+
+```html
+<!-- Hidden attribute -->
+<div hidden>This content is not relevant right now.</div>
+
+<!-- Toggle with JS -->
+<script>
+  document.getElementById("panel").hidden = false; // Reveal
+</script>
+```
+
+**Best practice:** Use `hidden` when the content is semantically not applicable in the current state (e.g., a step in a wizard). Use `display: none` when hiding for pure visual/layout reasons.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the `<base>` element in HTML?
+
+The `<base>` element specifies a **base URL** for all relative URLs in a document and/or a default `target` for all links. It must be placed in `<head>` and there can only be one per document.
+
+**Syntax:**
+
+```html
+<head>
+  <base href="https://www.example.com/projects/" target="_blank">
+</head>
+
+<body>
+  <!-- Resolved as: https://www.example.com/projects/overview.html -->
+  <a href="overview.html">Overview</a>
+
+  <!-- Resolved as: https://www.example.com/projects/assets/logo.png -->
+  <img src="assets/logo.png" alt="Logo">
+</body>
+```
+
+**Caveats:**
+- Affects **all** relative URLs on the page including `<link>`, `<script>`, `<img>`, and `<a>` tags
+- Fragment identifiers (`#section`) are also resolved relative to the base URL, which can break in-page anchor links
+- Single-Page Applications (SPAs) using the History API often set `<base href="/">` to ensure correct asset resolution after deep-link navigations
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the `<dialog>` element in HTML?
+
+The `<dialog>` element is a native HTML modal/dialog box. It provides built-in accessibility (focus trapping, `role="dialog"`, ARIA attributes) without any JavaScript libraries.
+
+**Example:**
+
+```html
+<dialog id="confirmDialog">
+  <h2>Confirm Delete</h2>
+  <p>Are you sure you want to delete this item?</p>
+  <button id="confirmBtn">Yes, Delete</button>
+  <button id="cancelBtn">Cancel</button>
+</dialog>
+
+<button id="openBtn">Delete Item</button>
+
+<script>
+  const dialog = document.getElementById("confirmDialog");
+
+  document.getElementById("openBtn").addEventListener("click", () => {
+    dialog.showModal(); // Opens as a modal (blocks background)
+  });
+
+  document.getElementById("cancelBtn").addEventListener("click", () => {
+    dialog.close(); // Closes the dialog
+  });
+
+  document.getElementById("confirmBtn").addEventListener("click", () => {
+    // perform delete action
+    dialog.close("confirmed");
+  });
+
+  // Listen for close event
+  dialog.addEventListener("close", () => {
+    console.log("Return value:", dialog.returnValue);
+  });
+</script>
+```
+
+**Key methods:**
+
+| Method | Description |
+|---|---|
+| `show()` | Opens as a non-modal (no backdrop) |
+| `showModal()` | Opens as a modal with a backdrop, traps focus |
+| `close(returnValue)` | Closes dialog, optionally sets `returnValue` |
+
+**Why it matters over `div`-based modals:**
+- Native focus trapping (keyboard users can\'t escape to background)
+- Backdrop via `::backdrop` pseudo-element
+- Escape key closes it automatically
+- Proper ARIA semantics out of the box
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the `<noscript>` element?
+
+The `<noscript>` element defines fallback content to display when JavaScript is **disabled** in the browser or when the browser does not support scripting.
+
+**In `<head>`** — used to inject alternative `<meta>` or `<link>` tags:
+
+```html
+<head>
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=no-js-version.html">
+  </noscript>
+</head>
+```
+
+**In `<body>`** — used to show fallback UI:
+
+```html
+<body>
+  <noscript>
+    <p>This application requires JavaScript. Please enable it to continue.</p>
+  </noscript>
+
+  <div id="app"></div>
+  <script src="app.js"></script>
+</body>
+```
+
+**Common use cases:**
+- Displaying a meaningful message for users with JS disabled
+- Providing a server-rendered fallback for JS-driven SPAs
+- Inserting no-JS tracking pixels (`<img>` inside `<noscript>`) for analytics
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the difference between `src` and `href` attributes?
+
+Both attributes link to external resources, but they are used differently:
+
+| | `src` | `href` |
+|---|---|---|
+| Full form | Source | Hypertext Reference |
+| Purpose | **Embeds** the resource into the current document | **Links** to the resource (creates a relationship) |
+| Blocks rendering? | Yes — browser pauses parsing to fetch and execute | No — fetched in parallel |
+| Used on | `<img>`, `<script>`, `<iframe>`, `<video>`, `<audio>` | `<a>`, `<link>`, `<base>` |
+
+```html
+<!-- src: resource is embedded and parsed immediately -->
+<img src="logo.png" alt="Logo">
+<script src="app.js"></script>
+<iframe src="widget.html"></iframe>
+
+<!-- href: document navigates to or includes a relationship -->
+<a href="https://example.com">Visit</a>
+<link rel="stylesheet" href="styles.css">
+```
+
+**Key insight:** When a browser encounters `<script src="app.js">`, it **stops HTML parsing** to download and execute the script. When it encounters `<link href="styles.css">`, it downloads the CSS in parallel with HTML parsing (though it does block rendering until CSS is processed).
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the difference between `innerHTML`, `textContent`, and `innerText`?
+
+All three access or modify element content but behave differently:
+
+| | `innerHTML` | `textContent` | `innerText` |
+|---|---|---|---|
+| Returns | HTML markup as a string | Raw text of all nodes (including hidden) | Rendered text (respects CSS, no hidden elements) |
+| Parses HTML on set | Yes | No (treats input as plain text) | No |
+| XSS risk | **Yes** — can execute injected scripts | **No** — safe | **No** — safe |
+| Performance | Slower (triggers reflow/repaint) | Faster | Slower than `textContent` |
+| `display:none` nodes | Included | Included | **Excluded** |
+
+```html
+<div id="el">Hello <span style="display:none">hidden</span> <b>World</b></div>
+
+<script>
+  const el = document.getElementById("el");
+
+  console.log(el.innerHTML);     // 'Hello <span style="display:none">hidden</span> <b>World</b>'
+  console.log(el.textContent);   // 'Hello hidden World'
+  console.log(el.innerText);     // 'Hello World'  (hidden span excluded)
+
+  // XSS risk with innerHTML:
+  el.innerHTML = userInput;       // DANGEROUS if userInput is untrusted
+  el.textContent = userInput;     // SAFE — renders as plain text
+</script>
+```
+
+**Best practice:** Always use `textContent` when setting plain text from user input. Only use `innerHTML` with sanitized, trusted content.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What are HTML entities and when do you use them?
+
+HTML entities are special character codes used to represent characters that have a reserved meaning in HTML (like `<`, `>`, `&`) or that are not easily typeable.
+
+**Syntax:** `&name;` or `&#number;` (decimal) or `&#xHEX;` (hex)
+
+**Common entities:**
+
+| Character | Entity Name | Entity Number | Use case |
+|---|---|---|---|
+| `<` | `&lt;` | `&#60;` | Less-than (HTML tag delimiter) |
+| `>` | `&gt;` | `&#62;` | Greater-than (HTML tag delimiter) |
+| `&` | `&amp;` | `&#38;` | Ampersand (entity start character) |
+| `"` | `&quot;` | `&#34;` | Quote inside attribute values |
+| `'` | `&apos;` | `&#39;` | Apostrophe inside attribute values |
+| ` ` (non-breaking space) | `&nbsp;` | `&#160;` | Prevent line break between words |
+| `©` | `&copy;` | `&#169;` | Copyright symbol |
+| `®` | `&reg;` | `&#174;` | Registered trademark |
+| `→` | `&rarr;` | `&#8594;` | Right arrow |
+
+**Example:**
+
+```html
+<!-- Without entity: browser treats < as start of a tag -->
+<p>Use <code>&lt;div&gt;</code> for block-level containers.</p>
+
+<!-- Non-breaking space: keeps "10 km" on one line -->
+<p>The distance is 10&nbsp;km.</p>
+
+<!-- Copyright footer -->
+<footer>&copy; 2025 Acme Corp. All rights reserved.</footer>
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the `contenteditable` attribute?
+
+The `contenteditable` attribute makes any HTML element directly editable by the user in the browser, similar to a text field but with rich-text capabilities.
+
+**Values:**
+
+| Value | Behavior |
+|---|---|
+| `true` or empty string | Element is editable |
+| `false` | Element is not editable (overrides inherited editability) |
+| `plaintext-only` | Editable but pasting formatted content is stripped to plain text |
+
+**Example:**
+
+```html
+<!-- Editable div -->
+<div contenteditable="true" style="border: 1px solid #ccc; padding: 10px; min-height: 100px;">
+  Click here to start editing...
+</div>
+
+<!-- Read current content via JS -->
+<script>
+  const editor = document.querySelector('[contenteditable]');
+
+  editor.addEventListener('input', () => {
+    console.log('Content:', editor.innerHTML);      // HTML content
+    console.log('Plain text:', editor.innerText);   // Plain text
+  });
+</script>
+```
+
+**Key characteristics:**
+- Supports copy/paste, undo/redo, and spell-checking natively
+- Used as the foundation for rich text editors (e.g., Medium, Notion, Quill.js, Slate.js)
+- Content can be retrieved via `innerHTML` or `innerText`
+- Does **not** submit with `<form>` — use a hidden `<input>` to capture the value on submit
+- Always sanitize `innerHTML` output before persisting to avoid XSS
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is HTML5 native form validation and what are constraint validation attributes?
+
+HTML5 provides built-in client-side form validation without JavaScript, using **constraint validation attributes** on form controls. The browser validates automatically on submit and shows native error messages.
+
+**Key attributes:**
+
+| Attribute | Applies to | Description |
+|---|---|---|
+| `required` | All inputs | Field must not be empty |
+| `minlength` / `maxlength` | `text`, `email`, `password`, `textarea` | Min/max character count |
+| `min` / `max` | `number`, `date`, `range` | Min/max value |
+| `pattern` | `text`, `email`, `tel`, `url` | RegExp the value must match |
+| `type` | `<input>` | `email`, `url`, `number` validate format automatically |
+| `step` | `number`, `date`, `range` | Valid value intervals |
+
+**Example:**
+
+```html
+<form>
+  <label for="username">Username (3–20 chars, alphanumeric):</label>
+  <input
+    type="text"
+    id="username"
+    name="username"
+    required
+    minlength="3"
+    maxlength="20"
+    pattern="[a-zA-Z0-9]+"
+    title="Only letters and numbers allowed"
+  >
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="age">Age (18–99):</label>
+  <input type="number" id="age" name="age" min="18" max="99" required>
+
+  <button type="submit">Submit</button>
+</form>
+```
+
+**Custom validation via JavaScript:**
+
+```js
+const input = document.getElementById("username");
+
+input.addEventListener("input", () => {
+  if (input.validity.patternMismatch) {
+    input.setCustomValidity("Only alphanumeric characters are allowed.");
+  } else {
+    input.setCustomValidity(""); // Clear error
+  }
+});
+```
+
+**Constraint Validation API properties on `input.validity`:**
+
+| Property | True when |
+|---|---|
+| `valueMissing` | `required` field is empty |
+| `typeMismatch` | Value doesn\'t match `type` (e.g., invalid email) |
+| `patternMismatch` | Value doesn\'t match `pattern` |
+| `tooShort` / `tooLong` | Below `minlength` / above `maxlength` |
+| `rangeUnderflow` / `rangeOverflow` | Below `min` / above `max` |
+| `valid` | All constraints pass |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the difference between GET and POST methods in HTML forms?
+
+| | `GET` | `POST` |
+|---|---|---|
+| Data location | Appended to URL as query string (`?key=value`) | Sent in the HTTP request body |
+| Visibility | Visible in URL / browser history / server logs | Not visible in URL |
+| Bookmarkable | Yes | No |
+| Idempotent | Yes — repeated requests produce same result | No — can cause side effects |
+| Data limit | ~2000 characters (URL length limit) | No practical limit |
+| Caching | Browsers and proxies can cache | Not cached by default |
+| Security | Less secure — data in URL | More secure for sensitive data |
+| Use case | Search queries, filters, read-only operations | Login forms, file upload, data submission |
+
+```html
+<!-- GET: search query visible in URL -->
+<form action="/search" method="get">
+  <input type="text" name="q" placeholder="Search...">
+  <button type="submit">Search</button>
+</form>
+<!-- Result: /search?q=html+interview -->
+
+<!-- POST: login credentials in request body -->
+<form action="/login" method="post">
+  <input type="text" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Login</button>
+</form>
+```
+
+**Note:** HTML forms natively support only `GET` and `POST`. `PUT`, `PATCH`, and `DELETE` require JavaScript (`fetch` / `XMLHttpRequest`) or a workaround like a hidden `_method` field.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## # 23. Web Components
+
+<br/>
+
+## Q. What is Shadow DOM and how does it work?
+
+**Shadow DOM** is a browser API that allows you to attach an **encapsulated, isolated DOM subtree** to an element — separate from the main document DOM. Styles and scripts inside the shadow DOM do not leak out, and external styles cannot accidentally affect it.
+
+**Key concepts:**
+
+| Term | Description |
+|---|---|
+| Shadow host | The regular DOM element that the shadow DOM is attached to |
+| Shadow root | The root node of the shadow tree (`attachShadow()` returns this) |
+| Shadow tree | The DOM subtree inside the shadow root |
+| Light DOM | The regular document DOM (as opposed to the shadow DOM) |
+
+**Example:**
+
+```js
+// Attach shadow DOM to an element
+const host = document.getElementById("my-widget");
+const shadow = host.attachShadow({ mode: "open" }); // "open" = accessible via JS
+
+// Build shadow DOM content
+shadow.innerHTML = `
+  <style>
+    /* This style ONLY applies inside the shadow DOM */
+    p { color: red; font-weight: bold; }
+  </style>
+  <p>This text is styled in isolation.</p>
+`;
+```
+
+```html
+<div id="my-widget"></div>
+```
+
+**`mode` option:**
+
+| Mode | Description |
+|---|---|
+| `"open"` | Shadow root accessible via `element.shadowRoot` |
+| `"closed"` | Shadow root is not accessible externally |
+
+**Why Shadow DOM matters:**
+- Scoped CSS — no class name collisions between components
+- Encapsulated DOM — child nodes hidden from `querySelector` on the main document
+- Foundation for Web Components and frameworks like Lit, Stencil, and native browser UI elements (`<input>`, `<video>`)
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What are Custom Elements in HTML5 (Web Components)?
+
+**Custom Elements** allow developers to define new HTML tags with their own behavior and lifecycle callbacks. They are one of the four Web Components standards (Custom Elements, Shadow DOM, HTML Templates, ES Modules).
+
+**Two types:**
+
+1. **Autonomous custom elements** — extend `HTMLElement` directly, create a brand-new tag
+2. **Customized built-in elements** — extend an existing HTML element (e.g., `HTMLButtonElement`)
+
+**Example — Autonomous Custom Element:**
+
+```js
+class UserCard extends HTMLElement {
+  // Called when element is added to the DOM
+  connectedCallback() {
+    const name = this.getAttribute("name");
+    const role = this.getAttribute("role");
+
+    this.innerHTML = `
+      <div class="card">
+        <h3>${name}</h3>
+        <p>${role}</p>
+      </div>
+    `;
+  }
+
+  // Called when element is removed from the DOM
+  disconnectedCallback() {
+    console.log("UserCard removed");
+  }
+
+  // Called when a watched attribute changes
+  static get observedAttributes() {
+    return ["name", "role"];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log(`Attribute "${name}" changed from ${oldValue} to ${newValue}`);
+    this.connectedCallback(); // Re-render on attribute change
+  }
+}
+
+// Register the custom element
+customElements.define("user-card", UserCard);
+```
+
+```html
+<!-- Use like any HTML element -->
+<user-card name="Alice Johnson" role="Senior Engineer"></user-card>
+<user-card name="Bob Smith" role="Product Manager"></user-card>
+```
+
+**Lifecycle callbacks:**
+
+| Callback | When it fires |
+|---|---|
+| `connectedCallback` | Element is inserted into the DOM |
+| `disconnectedCallback` | Element is removed from the DOM |
+| `attributeChangedCallback` | A watched attribute changes |
+| `adoptedCallback` | Element is moved to a new document |
+
+**Why it matters:** Custom Elements allow creation of reusable, framework-independent components that work in any HTML page without React, Angular, or Vue.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the `<template>` element in HTML?
+
+The `<template>` element holds **inert HTML markup** that is not rendered or executed when the page loads. Its content is only activated (cloned and inserted) via JavaScript. It is a key part of the Web Components standard.
+
+**Key properties:**
+- Content inside `<template>` is **parsed** but not rendered
+- Scripts inside do not execute, images do not load, styles have no effect
+- Accessible via `template.content` which returns a `DocumentFragment`
+
+**Example:**
+
+```html
+<template id="product-card-template">
+  <div class="card">
+    <img class="card-img" src="" alt="">
+    <h3 class="card-title"></h3>
+    <p class="card-price"></p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+</template>
+
+<div id="product-list"></div>
+
+<script>
+  const template = document.getElementById("product-card-template");
+  const container = document.getElementById("product-list");
+
+  const products = [
+    { title: "Laptop", price: "$999", img: "laptop.jpg" },
+    { title: "Phone",  price: "$499", img: "phone.jpg" }
+  ];
+
+  products.forEach(product => {
+    // Clone the template content
+    const clone = template.content.cloneNode(true);
+
+    clone.querySelector(".card-title").textContent = product.title;
+    clone.querySelector(".card-price").textContent = product.price;
+    clone.querySelector(".card-img").src = product.img;
+    clone.querySelector(".card-img").alt = product.title;
+
+    container.appendChild(clone);
+  });
+</script>
+```
+
+**Advantages over `innerHTML`:**
+- Parsed once by the browser (efficient)
+- No XSS risk from template structure itself
+- Works with `DocumentFragment`, which is faster to manipulate than live DOM
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the `<slot>` element in Web Components?
+
+The `<slot>` element is a **placeholder inside a Shadow DOM** where users of the component can inject their own content (called "light DOM"). Slots enable content composition in Web Components.
+
+**Default slot — accepts any light DOM content:**
+
+```js
+class InfoBox extends HTMLElement {
+  connectedCallback() {
+    const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        .box { border: 2px solid #007bff; padding: 12px; border-radius: 4px; }
+        .title { font-weight: bold; color: #007bff; }
+      </style>
+      <div class="box">
+        <p class="title"><slot name="title">Default Title</slot></p>
+        <slot></slot>
+      </div>
+    `;
+  }
+}
+customElements.define("info-box", InfoBox);
+```
+
+```html
+<!-- Light DOM content fills the slots -->
+<info-box>
+  <span slot="title">Important Notice</span>
+  <p>Your session will expire in 5 minutes.</p>
+</info-box>
+```
+
+**Named vs default slots:**
+
+| Type | Definition | Usage |
+|---|---|---|
+| Default slot | `<slot></slot>` | Any unassigned light DOM children |
+| Named slot | `<slot name="header"></slot>` | `<el slot="header">` in light DOM |
+
+**Why slots matter:** They allow component authors to control the **structure and styling** while users control the **content** — similar to Angular `ng-content` or React `props.children`.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## # 24. HTML Security
+
+<br/>
+
+## Q. What is Subresource Integrity (SRI) and how is it used?
+
+**Subresource Integrity (SRI)** is a security feature that allows browsers to verify that files loaded from third-party sources (CDNs) have not been tampered with. The browser computes a cryptographic hash of the downloaded file and compares it to the expected hash in the `integrity` attribute. If they don\'t match, the resource is blocked.
+
+**Syntax:**
+
+```html
+<!-- CSS from CDN with SRI -->
+<link
+  rel="stylesheet"
+  href="https://cdn.example.com/bootstrap.min.css"
+  integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  crossorigin="anonymous"
+>
+
+<!-- Script from CDN with SRI -->
+<script
+  src="https://cdn.example.com/jquery.min.js"
+  integrity="sha384-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  crossorigin="anonymous"
+></script>
+```
+
+**Generating the hash:**
+
+```bash
+# Generate SHA-384 hash of a file
+openssl dgst -sha384 -binary jquery.min.js | openssl base64 -A
+```
+
+Or use [srihash.org](https://www.srihash.org/) to generate hashes online.
+
+**Why `crossorigin="anonymous"` is required:** SRI requires the resource to be served with CORS headers. The `crossorigin="anonymous"` attribute tells the browser to make a CORS request without sending credentials.
+
+**Why it matters for security:**
+- Prevents **CDN compromise attacks** — if an attacker modifies a CDN-hosted file, browsers will refuse to load it
+- Mitigates supply-chain attacks for third-party scripts
+- Recommended by OWASP as a best practice for third-party resource inclusion
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is the `sandbox` attribute on `<iframe>` and how does it enhance security?
+
+The `sandbox` attribute on `<iframe>` applies a set of **extra restrictions** to the content of the iframe. By default, `sandbox` with no value restricts almost everything. You can selectively allow capabilities by adding specific token values.
+
+**Default behavior with `sandbox` (no values) — ALL of these are blocked:**
+- Script execution
+- Form submission
+- Popups and new windows
+- Access to parent frame (`window.parent`)
+- Same-origin access (treated as a different origin)
+- Plugin loading
+
+**Selective allow tokens:**
+
+| Token | Allows |
+|---|---|
+| `allow-scripts` | JavaScript execution |
+| `allow-forms` | Form submission |
+| `allow-same-origin` | Same-origin access (use with caution) |
+| `allow-popups` | `window.open()`, `target="_blank"` links |
+| `allow-top-navigation` | Frame can navigate the top-level window |
+| `allow-modals` | `alert()`, `confirm()`, `prompt()` |
+| `allow-downloads` | File download triggers |
+
+**Examples:**
+
+```html
+<!-- Maximum restriction: no scripts, no forms, no nothing -->
+<iframe src="untrusted-content.html" sandbox></iframe>
+
+<!-- Allow only scripts (no same-origin — common for ad widgets) -->
+<iframe src="ad-widget.html" sandbox="allow-scripts"></iframe>
+
+<!-- Allow scripts and form submission (e.g., embedded payment form) -->
+<iframe
+  src="https://payments.example.com/checkout"
+  sandbox="allow-scripts allow-forms allow-same-origin"
+></iframe>
+```
+
+**Security warning:** Never combine `allow-scripts` and `allow-same-origin` on untrusted content — this effectively removes the sandbox protection because the script can remove the `sandbox` attribute via DOM access.
+
+**Why it matters:** Sandboxed iframes are critical for embedding third-party content (ads, widgets, user-generated content) without allowing it to compromise the host page.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. How do you prevent Cross-Site Scripting (XSS) in HTML?
+
+**Cross-Site Scripting (XSS)** is an attack where malicious scripts are injected into a trusted web page and executed in a victim\'s browser. HTML is a primary attack surface.
+
+**1. Never set `innerHTML` with untrusted data:**
+
+```js
+// VULNERABLE
+element.innerHTML = userInput;  // Executes <script> or event handlers in input
+
+// SAFE alternatives
+element.textContent = userInput;       // Renders as plain text
+element.setAttribute("data-x", val);   // For attributes
+```
+
+**2. Use Content Security Policy (CSP) headers:**
+
+```html
+<!-- Meta tag CSP (limited; HTTP header preferred) -->
+<meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://trusted.cdn.com">
+```
+
+CSP blocks inline scripts and restricts which domains can serve scripts, eliminating entire classes of XSS.
+
+**3. Sanitize HTML when rich text is needed:**
+
+```js
+// Use a library like DOMPurify
+const clean = DOMPurify.sanitize(userInput);
+element.innerHTML = clean;  // Safe — dangerous tags/attributes stripped
+```
+
+**4. Encode output in templates:**
+
+Always HTML-encode user-controlled values in templates:
+
+| Character | Encode as |
+|---|---|
+| `<` | `&lt;` |
+| `>` | `&gt;` |
+| `"` | `&quot;` |
+| `'` | `&#x27;` |
+| `&` | `&amp;` |
+
+**5. Avoid dangerous patterns:**
+
+```js
+// DANGEROUS — executes string as code
+eval(userInput);
+setTimeout(userInput, 0);
+new Function(userInput)();
+
+// DANGEROUS attributes — avoid with user input
+element.setAttribute("onclick", userInput);
+element.href = "javascript:" + userInput;
+```
+
+**6. Use `httpOnly` and `Secure` cookie flags** to prevent XSS from stealing session cookies:
+
+```http
+Set-Cookie: session=abc123; HttpOnly; Secure; SameSite=Strict
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+## Q. What is Clickjacking and how do you prevent it in HTML?
+
+**Clickjacking** is a UI redressing attack where a malicious page embeds your website inside a transparent or hidden `<iframe>` and tricks users into clicking on elements of your site while thinking they are clicking on the attacker\'s page.
+
+**Example scenario:**
+1. Attacker creates a page with an attractive button: "Click to win a prize!"
+2. Your bank\'s "Transfer Funds" button is overlaid invisibly via a transparent iframe
+3. User clicks the "prize" button, unknowingly triggering the fund transfer
+
+**Prevention — HTTP Header (preferred):**
+
+```http
+X-Frame-Options: DENY
+# or
+X-Frame-Options: SAMEORIGIN
+```
+
+**Prevention — Content Security Policy `frame-ancestors`:**
+
+```http
+Content-Security-Policy: frame-ancestors 'none';
+# or allow same origin only
+Content-Security-Policy: frame-ancestors 'self';
+# or allow specific domains
+Content-Security-Policy: frame-ancestors 'self' https://trusted-partner.com;
+```
+
+**Prevention — HTML meta tag (limited effectiveness):**
+
+```html
+<!-- Note: X-Frame-Options via meta is NOT supported by most browsers -->
+<!-- Always set it as an HTTP response header instead -->
+```
+
+**JavaScript frame-busting (legacy fallback):**
+
+```js
+// Prevent being embedded in an iframe
+if (window.top !== window.self) {
+  window.top.location = window.self.location;
+}
+```
+
+**Comparison:**
+
+| Method | Effectiveness | Recommended |
+|---|---|---|
+| `X-Frame-Options: DENY` header | High | Yes (legacy support) |
+| `CSP: frame-ancestors 'none'` | Highest | Yes (modern, more flexible) |
+| JavaScript frame-busting | Low (easily bypassed with `sandbox`) | No (use as last resort) |
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
