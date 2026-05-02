@@ -26,7 +26,135 @@
 
 ## 1. Semantic Elements
 
-**Q1.** You are building a news website. The page has a site-wide navigation bar at the top, a main article in the centre, a sidebar with related links, and a copyright notice at the bottom. Which combination of semantic elements best structures this page?
+**Q.** Alex\'s web application involves presenting tabular data. Which HTML element must she use to create a table header for the data?
+
+- A) `<td>` 
+- B) `<tr>` 
+- C) `<th>` 
+- D) `<table>` 
+
+> **Answer: C**  
+> `<th>` (table header) defines a header cell in a table. By default, browsers render `<th>` text bold and centred, and it provides semantic meaning that assistive technologies use to associate header labels with data cells. `<td>` defines a standard data cell. `<tr>` defines a table row (container for cells). `<table>` is the outermost container for the entire table structure.
+
+**Example:**
+```html
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td>30</td>
+      <td>London</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** Alex is using HTML5 to create his web page. Some words he uses are too long, and the browser may break lines at the wrong place to fit the text.
+
+Which option can Alex use to define a position within the text which can be used as a line break by the browsers? Also, which option is appropriate if he must put a hyphen at the line breakpoint?
+
+- A) `<wbr>` 
+- B) `<br>` 
+- C) `<bdi>` and `&shy;`
+- D) `<mark>` and `-`
+
+> **Answer: A** (first part); `&shy;` (second part)  
+> `<wbr>` (Word Break Opportunity) defines a position where the browser *may* break a line if needed — no hyphen is added. `<br>` forces an unconditional line break regardless of line length. For the second part, the soft hyphen entity `&shy;` inserts an invisible hyphen character that only becomes visible when the browser chooses to break the line at that point — exactly what Alex needs. `<bdi>` is for bidirectional text isolation and is unrelated. Note: option C contains a typo (`&;` should be `&shy;`); the concept in C is correct but the tag (`<bdi>`) is wrong.
+
+**Example:**
+```html
+<!-- <wbr>: suggests a break point, no hyphen shown -->
+<p>This is a very long word: super&#8203;cali&#8203;fragilistic<wbr>expialidocious</p>
+
+<!-- &shy;: break point with a visible hyphen when wrapping occurs -->
+<p>This is a very long word: super&shy;cali&shy;fragilistic&shy;expialidocious</p>
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** Alex, who is working on her company\'s web page, must divide the entire page into different parts based on its content. Which tag can she use to group a generic block of related content?
+
+Which type of code does this represent?
+
+```css
+section {
+    border: 10px block;
+    padding: 10px;
+    margin: 2px;
+}
+```
+- A) `<section>` tag and HTML code
+- B) `<content>` tag and CSS code
+- C) `<subsection>` tag and CSS code
+- D) `<mark>` tag and HTML code
+
+> **Answer: B**  
+> The code snippet shown is **CSS** — it is a CSS ruleset that targets the `section` selector to apply border, padding, and margin styles. To group a generic block of related content, the correct HTML5 tag is `<section>`. Note: option B incorrectly names the tag as `<content>` (which is not a valid HTML5 element); the correct tag is `<section>`. B is the best available choice as it correctly identifies the code type as CSS, which is the key distinction being tested here.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** In HTML5, you are working on semantic elements. Which keyboard event attributes should be used to display the "hackhtml.jpg" image when you press the Enter key on your keyboard using the tag?
+
+- A) onkeydown
+- B) onkeyup
+- C) onkeypress
+- D) onkeyrelease
+
+> **Answer: C**  
+> `onkeypress` fires when a key that produces a character value is pressed and held — Enter triggers this event. `onkeydown` fires on initial key depression (before the character is generated), `onkeyup` fires when the key is released, and `onkeyrelease` is not a valid HTML event attribute. Note: `onkeypress` is deprecated in modern HTML5; for new code, prefer `onkeydown` with a `keyCode` or `key` check (e.g., `event.key === 'Enter'`).
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** What will the following code do?
+
+```html
+<ahref="/" title="Look">The dog is running.</a>
+```
+
+- A) The code will display a link to reload the page.
+- B) The code will display plain text with a hint "Look".
+- C) The code will display a broken link with a hint "Look".
+- D) The code will display a link to the main page with a hint "Look".
+
+> **Answer: B**  
+> The tag name `<ahref` is missing a space between `a` and `href`. The HTML5 parser reads characters until a non-tag-name character (`=`) is encountered, producing a tag named `ahref` — an unknown inline element, not `<a>`. Because there is no anchor element, no link is created; the text "The dog is running." renders as plain text. The `title="Look"` attribute is still present on the unknown element, so browsers show "Look" as a tooltip on hover.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** HTML is an important language for creating web pages. What is the purpose of HTML?
+
+- A) HTML is used for creating interactive animations on web pages.
+- B) HTML is used for styling and designing the layout of a web page.
+- C) HTML is used for structuring and organizing the content of a web page.
+- D) HTML is used for managing server-side database operations.
+
+> **Answer: C**  
+> HTML (HyperText Markup Language) is used to structure and organize web content using elements and tags. It defines the meaning and layout of content such as headings, paragraphs, links, and images. CSS handles styling and layout; JavaScript handles interactivity; and server-side languages handle database operations.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** You are building a news website. The page has a site-wide navigation bar at the top, a main article in the centre, a sidebar with related links, and a copyright notice at the bottom. Which combination of semantic elements best structures this page?
 
 - A) `<div id="nav">`, `<div id="main">`, `<div id="sidebar">`, `<div id="footer">`
 - B) `<nav>`, `<main>`, `<aside>`, `<footer>`
@@ -40,7 +168,7 @@
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q2.** A developer renders a blog post that contains a heading, body text, and a publication date. Which element should wrap the entire blog post so that search engines and screen readers correctly identify it as a self-contained piece of content?
+**Q.** A developer renders a blog post that contains a heading, body text, and a publication date. Which element should wrap the entire blog post so that search engines and screen readers correctly identify it as a self-contained piece of content?
 
 - A) `<section>`
 - B) `<div>`
@@ -54,7 +182,7 @@
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q3.** While reviewing a teammate\'s code you notice:
+**Q.** While reviewing a teammate\'s code you notice:
 
 ```html
 <section>
@@ -76,7 +204,7 @@ What is the most semantically correct replacement for `<section>` here?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q4.** A documentation site groups related topics under expandable headings. Each group has a visible title and hidden details that toggle on click. Without any JavaScript, which HTML5 element pair enables this behaviour natively?
+**Q.** A documentation site groups related topics under expandable headings. Each group has a visible title and hidden details that toggle on click. Without any JavaScript, which HTML5 element pair enables this behavior natively?
 
 - A) `<div>` and `<span>`
 - B) `<summary>` inside `<details>`
@@ -90,7 +218,7 @@ What is the most semantically correct replacement for `<section>` here?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q5.** A recipe website uses the same header (logo + nav) on every page and the same footer (links + copyright). A developer wraps each in `<header>` and `<footer>` tags respectively. A junior colleague says this is wrong because only one `<header>` and one `<footer>` is allowed per page. Who is correct?
+**Q.** A recipe website uses the same header (logo + nav) on every page and the same footer (links + copyright). A developer wraps each in `<header>` and `<footer>` tags respectively. A junior colleague says this is wrong because only one `<header>` and one `<footer>` is allowed per page. Who is correct?
 
 - A) The junior colleague — only one `<header>` and one `<footer>` are allowed.
 - B) The developer — `<header>` and `<footer>` can appear multiple times, including inside `<article>` or `<section>`.
@@ -106,7 +234,21 @@ What is the most semantically correct replacement for `<section>` here?
 
 ## 2. Forms & Validation Attributes
 
-**Q6.** A registration form has an email field that must be filled in before submission. The field should also show a custom error message "Please enter a valid company email" when invalid. Which markup achieves both requirements using only HTML5 attributes?
+**Q.** While working on developing a page that would accept user inputs, you decide to add validation to your input controls. You conducted research and found that HTML5 has added a lot of attribute support for input elements. Which attribute will help you validate the inputs provided by the user?
+
+- A) Pattern
+- B) Placeholder
+- C) Step
+- D) Format 
+
+> **Answer: A**  
+> The `pattern` attribute accepts a regular expression that the input\'s value must match before the form can be submitted. It is the primary HTML5 attribute for custom input validation. `placeholder` only shows hint text, `step` constrains numeric intervals, and `format` is not a valid HTML5 attribute.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** A registration form has an email field that must be filled in before submission. The field should also show a custom error message "Please enter a valid company email" when invalid. Which markup achieves both requirements using only HTML5 attributes?
 
 - A) `<input type="email" required placeholder="Please enter a valid company email">`
 - B) `<input type="email" required title="Please enter a valid company email">`
@@ -120,7 +262,7 @@ What is the most semantically correct replacement for `<section>` here?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q7.** A password field must be between 8 and 20 characters and contain only alphanumeric characters. Which HTML5 attributes enforce these constraints without JavaScript?
+**Q.** A password field must be between 8 and 20 characters and contain only alphanumeric characters. Which HTML5 attributes enforce these constraints without JavaScript?
 
 - A) `minlength="8" maxlength="20" type="password"`
 - B) `min="8" max="20" pattern="[a-zA-Z0-9]+" type="password"`
@@ -134,7 +276,7 @@ What is the most semantically correct replacement for `<section>` here?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q8.** A checkout form has multiple sections: personal info, shipping address, and payment. The designer wants the browser\'s autofill to correctly distinguish between the "billing email" and the "shipping email" fields. Which attribute enables this?
+**Q.** A checkout form has multiple sections: personal info, shipping address, and payment. The designer wants the browser\'s autofill to correctly distinguish between the "billing email" and the "shipping email" fields. Which attribute enables this?
 
 - A) `name`
 - B) `id`
@@ -148,7 +290,7 @@ What is the most semantically correct replacement for `<section>` here?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q9.** A developer writes the following form:
+**Q.** A developer writes the following form:
 
 ```html
 <form>
@@ -171,7 +313,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q10.** A survey form has a "Rating" field that accepts only whole numbers from 1 to 10, in steps of 1. Which input correctly enforces this?
+**Q.** A survey form has a "Rating" field that accepts only whole numbers from 1 to 10, in steps of 1. Which input correctly enforces this?
 
 - A) `<input type="number" min="1" max="10" step="1">`
 - B) `<input type="range" min="1" max="10" step="1">`
@@ -187,7 +329,7 @@ A tester reports the form never validates even though `required` was added to th
 
 ## 3. HTML5 Input Types
 
-**Q11.** A travel booking site needs a field where users enter their departure date. The field should display a native date-picker on supported browsers and store the value in `YYYY-MM-DD` format. Which input type should be used?
+**Q.** A travel booking site needs a field where users enter their departure date. The field should display a native date-picker on supported browsers and store the value in `YYYY-MM-DD` format. Which input type should be used?
 
 - A) `<input type="text" placeholder="YYYY-MM-DD">`
 - B) `<input type="datetime">`
@@ -201,7 +343,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q12.** An e-commerce site lets users pick a product colour. The developer wants the browser\'s native colour-picker widget with no extra libraries. Which input type should be used?
+**Q.** An e-commerce site lets users pick a product colour. The developer wants the browser\'s native colour-picker widget with no extra libraries. Which input type should be used?
 
 - A) `<input type="text" pattern="#[0-9A-Fa-f]{6}">`
 - B) `<input type="color">`
@@ -215,7 +357,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q13.** A fitness app collects data via a mobile form. For the "Weight (kg)" field, the developer wants the numeric keypad to open automatically on mobile devices and prevent non-numeric input. Which input type is most appropriate?
+**Q.** A fitness app collects data via a mobile form. For the "Weight (kg)" field, the developer wants the numeric keypad to open automatically on mobile devices and prevent non-numeric input. Which input type is most appropriate?
 
 - A) `<input type="text" inputmode="numeric">`
 - B) `<input type="tel">`
@@ -229,7 +371,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q14.** A website\'s search bar should suggest previously entered searches from the browser history AND from a server-provided list of popular queries as the user types. Which HTML5 feature supports the server-provided suggestions natively?
+**Q.** A website\'s search bar should suggest previously entered searches from the browser history AND from a server-provided list of popular queries as the user types. Which HTML5 feature supports the server-provided suggestions natively?
 
 - A) `<input type="search" autocomplete="on">`
 - B) `<input type="search" list="suggestions"> <datalist id="suggestions">...</datalist>`
@@ -243,7 +385,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q15.** A developer uses `<input type="hidden">` to pass a CSRF token through a form. A colleague suggests this is a security risk because the value is visible in the page source. What is the correct assessment?
+**Q.** A developer uses `<input type="hidden">` to pass a CSRF token through a form. A colleague suggests this is a security risk because the value is visible in the page source. What is the correct assessment?
 
 - A) Hidden inputs are fully secure — the value cannot be seen by anyone.
 - B) The colleague is correct — hidden inputs should never store sensitive tokens.
@@ -259,7 +401,32 @@ A tester reports the form never validates even though `required` was added to th
 
 ## 4. Media — Audio, Video & Canvas
 
-**Q16.** A developer is embedding a promotional video that should play automatically and silently when the page loads, loop continuously, and never show playback controls. Which attribute combination achieves this?
+**Q.** Which element would you use to stream the videos present in an external link?
+
+- A) `<video>`
+- B) `<source>`
+- C) `<a>`
+- D) `<iframe>`
+
+> **Answer: D**  
+> `<iframe>` is used to embed and stream videos from external sources such as YouTube or Vimeo, which provide their own player via an embeddable URL. `<video>` is for self-hosted video files served directly by your server. `<source>` is a child element of `<video>` or `<audio>` for specifying multiple file formats — it is not a standalone element. `<a>` creates a hyperlink that navigates to the video URL rather than streaming it inline.
+
+**Example:**
+```html
+<!-- Streaming an external YouTube video -->
+<iframe width="560" height="315"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+        allowfullscreen>
+</iframe>
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** A developer is embedding a promotional video that should play automatically and silently when the page loads, loop continuously, and never show playback controls. Which attribute combination achieves this?
 
 - A) `autoplay loop muted`
 - B) `autoplay loop controls="false"`
@@ -273,7 +440,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q17.** A video element must support three formats to maximise browser compatibility. The browser should pick the first format it supports. How should this be marked up?
+**Q.** A video element must support three formats to maximize browser compatibility. The browser should pick the first format it supports. How should this be marked up?
 
 - A)
 ```html
@@ -303,7 +470,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q18.** A data dashboard needs to draw a bar chart that updates every second with live data. The chart involves pixel-level custom rendering. Which HTML5 element is the best fit?
+**Q.** A data dashboard needs to draw a bar chart that updates every second with live data. The chart involves pixel-level custom rendering. Which HTML5 element is the best fit?
 
 - A) `<svg>`
 - B) `<canvas>`
@@ -317,7 +484,7 @@ A tester reports the form never validates even though `required` was added to th
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q19.** A developer writes the following Canvas code but the text never appears:
+**Q.** A developer writes the following Canvas code but the text never appears:
 
 ```javascript
 const canvas = document.getElementById('myCanvas');
@@ -340,7 +507,7 @@ A colleague points out the canvas element in HTML has no `width` or `height` att
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q20.** An accessibility auditor flags that an `<audio>` element on a podcast page has no text alternative. What is the recommended HTML5-compliant fix?
+**Q.** An accessibility auditor flags that an `<audio>` element on a podcast page has no text alternative. What is the recommended HTML5-compliant fix?
 
 - A) Add `alt="Podcast audio"` to the `<audio>` element.
 - B) Add `controls` and provide a transcript or `<track kind="descriptions">` alongside the `<audio>` element.
@@ -356,7 +523,7 @@ A colleague points out the canvas element in HTML has no `width` or `height` att
 
 ## 5. Browser Storage
 
-**Q21.** A single-page application stores the user\'s theme preference (dark/light). The preference should persist across browser restarts but only for that origin. Which storage mechanism is most appropriate?
+**Q.** A single-page application stores the user\'s theme preference (dark/light). The preference should persist across browser restarts but only for that origin. Which storage mechanism is most appropriate?
 
 - A) `sessionStorage`
 - B) `localStorage`
@@ -370,7 +537,7 @@ A colleague points out the canvas element in HTML has no `width` or `height` att
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q22.** A collaborative document editor needs to store megabytes of structured JSON data (revision history) client-side and query it efficiently. Which browser storage option is the best fit?
+**Q.** A collaborative document editor needs to store megabytes of structured JSON data (revision history) client-side and query it efficiently. Which browser storage option is the best fit?
 
 - A) `localStorage`
 - B) `sessionStorage`
@@ -384,7 +551,7 @@ A colleague points out the canvas element in HTML has no `width` or `height` att
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q23.** A developer stores a JWT in `localStorage` to keep a user logged in. A security consultant flags this. What is the primary concern?
+**Q.** A developer stores a JWT in `localStorage` to keep a user logged in. A security consultant flags this. What is the primary concern?
 
 - A) `localStorage` data is deleted after 24 hours.
 - B) `localStorage` is accessible via JavaScript, making it vulnerable to XSS attacks that could steal the token.
@@ -398,7 +565,7 @@ A colleague points out the canvas element in HTML has no `width` or `height` att
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q24.** A user fills out a long multi-step form. The developer uses `sessionStorage` to save progress between steps. The user accidentally closes the tab and reopens the page. What happens to the saved form data?
+**Q.** A user fills out a long multi-step form. The developer uses `sessionStorage` to save progress between steps. The user accidentally closes the tab and reopens the page. What happens to the saved form data?
 
 - A) The data is still available because `sessionStorage` lasts for the browser session.
 - B) The data is lost because `sessionStorage` is cleared when the tab is closed.
@@ -412,7 +579,7 @@ A colleague points out the canvas element in HTML has no `width` or `height` att
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q25.** Examine the following code:
+**Q.** Examine the following code:
 
 ```javascript
 localStorage.setItem('cart', { items: ['book', 'pen'], total: 150 });
@@ -435,7 +602,7 @@ What does the console output?
 
 ## 6. Accessibility
 
-**Q26.** A designer creates a decorative divider image (a horizontal flourish). A screen reader user is reading the page. What is the correct way to mark up this image so screen readers skip it?
+**Q.** A designer creates a decorative divider image (a horizontal flourish). A screen reader user is reading the page. What is the correct way to mark up this image so screen readers skip it?
 
 - A) `<img src="divider.png" alt="divider">`
 - B) `<img src="divider.png" alt="">`
@@ -449,7 +616,7 @@ What does the console output?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q27.** A modal dialog opens when a user clicks a "Help" button. A keyboard-only user reports they cannot interact with the modal content because the Tab key moves focus to elements behind the modal. What ARIA or HTML technique addresses this?
+**Q.** A modal dialog opens when a user clicks a "Help" button. A keyboard-only user reports they cannot interact with the modal content because the Tab key moves focus to elements behind the modal. What ARIA or HTML technique addresses this?
 
 - A) Add `tabindex="-1"` to all elements inside the modal.
 - B) Implement a focus trap — keep Tab and Shift+Tab cycling within the modal\'s focusable elements while it is open, and add `aria-modal="true"` to the dialog.
@@ -463,7 +630,7 @@ What does the console output?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q28.** A form has a custom-styled checkbox built from a `<div>`. A screen reader user cannot determine the checkbox state or interact with it. What is the minimum change to make it accessible without replacing the `<div>`?
+**Q.** A form has a custom-styled checkbox built from a `<div>`. A screen reader user cannot determine the checkbox state or interact with it. What is the minimum change to make it accessible without replacing the `<div>`?
 
 - A) Add `class="checkbox"` to the `<div>`.
 - B) Add `role="checkbox"`, `aria-checked="false"`, and `tabindex="0"` to the `<div>`, then toggle `aria-checked` on interaction.
@@ -477,7 +644,7 @@ What does the console output?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q29.** A developer adds the following to a navigation landmark:
+**Q.** A developer adds the following to a navigation landmark:
 
 ```html
 <nav aria-label="Main navigation">...</nav>
@@ -498,7 +665,7 @@ A colleague says using `aria-label` on `<nav>` is redundant. Who is correct?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q30.** An icon-only button uses a magnifying glass SVG for "Search". A blind user navigates to the button and hears nothing descriptive. Which is the correct accessible fix?
+**Q.** An icon-only button uses a magnifying glass SVG for "Search". A blind user navigates to the button and hears nothing descriptive. Which is the correct accessible fix?
 
 - A) Add `title="Search"` to the `<button>`.
 - B) Add `aria-label="Search"` to the `<button>` and `aria-hidden="true"` to the SVG inside it.
@@ -514,7 +681,7 @@ A colleague says using `aria-label` on `<nav>` is redundant. Who is correct?
 
 ## 7. Semantics (Advanced)
 
-**Q31.** A developer adds the following markup to a product listing:
+**Q.** A developer adds the following markup to a product listing:
 
 ```html
 <div itemscope itemtype="https://schema.org/Product">
@@ -537,7 +704,7 @@ What HTML5 feature is being used and what is its purpose?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q32.** A developer must mark up an abbreviation on first use so that its full form is available to all users including those using screen readers. Which markup is correct?
+**Q.** A developer must mark up an abbreviation on first use so that its full form is available to all users including those using screen readers. Which markup is correct?
 
 - A) `<acronym title="World Health Organization">WHO</acronym>`
 - B) `<abbr title="World Health Organization">WHO</abbr>`
@@ -551,7 +718,7 @@ What HTML5 feature is being used and what is its purpose?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q33.** A legal document page contains a passage that was recently changed. The old price "$40" was replaced with "$35". Which HTML5 markup correctly represents this edit so that the change is semantically conveyed?
+**Q.** A legal document page contains a passage that was recently changed. The old price "$40" was replaced with "$35". Which HTML5 markup correctly represents this edit so that the change is semantically conveyed?
 
 - A) `<strike>$40</strike> <b>$35</b>`
 - B) `<del>$40</del> <ins>$35</ins>`
@@ -565,7 +732,7 @@ What HTML5 feature is being used and what is its purpose?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q34.** A blog engine outputs breadcrumbs as an ordered list: Home > Blog > Article. Which semantic element should wrap the breadcrumb trail?
+**Q.** A blog engine outputs breadcrumbs as an ordered list: Home > Blog > Article. Which semantic element should wrap the breadcrumb trail?
 
 - A) `<div class="breadcrumb">`
 - B) `<nav aria-label="Breadcrumb"><ol>...</ol></nav>`
@@ -579,7 +746,7 @@ What HTML5 feature is being used and what is its purpose?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q35.** A developer builds a side panel that shows supplementary content — author bio, related articles — next to the main article on a blog. Which element should wrap this side panel?
+**Q.** A developer builds a side panel that shows supplementary content — author bio, related articles — next to the main article on a blog. Which element should wrap this side panel?
 
 - A) `<section>`
 - B) `<div>`
@@ -593,7 +760,7 @@ What HTML5 feature is being used and what is its purpose?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q36.** The following page outline is produced by a screen reader\'s heading navigation:
+**Q.** The following page outline is produced by a screen reader\'s heading navigation:
 
 ```
 H1: Company Name
@@ -615,7 +782,7 @@ What is wrong with this structure?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q37.** A developer needs to display a table of data showing quarterly sales figures. Each column has a header. Which attribute ensures screen readers correctly associate data cells with column headers?
+**Q.** A developer needs to display a table of data showing quarterly sales figures. Each column has a header. Which attribute ensures screen readers correctly associate data cells with column headers?
 
 - A) `id` on each `<td>`
 - B) `scope="col"` on each `<th>`
@@ -629,7 +796,7 @@ What is wrong with this structure?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q38.** An online magazine uses the following structure:
+**Q.** An online magazine uses the following structure:
 
 ```html
 <body>
@@ -659,7 +826,7 @@ A reviewer says nesting `<header>` and `<footer>` inside `<article>` is invalid 
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q39.** A `<figure>` element contains a chart image. Which element should be used to provide a caption that is programmatically associated with the image?
+**Q.** A `<figure>` element contains a chart image. Which element should be used to provide a caption that is programmatically associated with the image?
 
 - A) `<caption>`
 - B) `<legend>`
@@ -673,7 +840,7 @@ A reviewer says nesting `<header>` and `<footer>` inside `<article>` is invalid 
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q40.** A developer is unsure whether to use a `<div>` or `<section>` for grouping related content. What is the key distinction?
+**Q.** A developer is unsure whether to use a `<div>` or `<section>` for grouping related content. What is the key distinction?
 
 
 
@@ -691,7 +858,49 @@ A reviewer says nesting `<header>` and `<footer>` inside `<article>` is invalid 
 
 ## 8. Responsive Images
 
-**Q41.** A news site serves hero images. On mobile (viewport ≤ 600 px) it should display a 480 px wide image; on desktop it should display a 1200 px wide image — both in WebP format with JPEG fallbacks. Which HTML5 element is designed for this use case?
+**Q.** Which is the tag to specify illustrations, diagrams, and photos?
+
+- A) `<picture>`
+- B) `<img>`
+- C) `<canvas>`
+- D) `<figure>`
+
+> **Answer: D**  
+> `<figure>` is the HTML5 semantic element for self-contained content that is referenced from the main flow — illustrations, diagrams, code listings, and photos. It is typically paired with `<figcaption>` for a caption. `<img>` embeds the image itself but carries no semantic "figure" meaning. `<picture>` provides multiple source candidates for responsive/art-directed images. `<canvas>` is a scriptable drawing surface.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** Alex is a web developer working on an e-commerce website for a furniture store. As he adds product images to the website, he wants to ensure they are displayed in the correct dimensions to maintain a consistent and visually pleasing layout. Alex wants to specify the width and height of the images using HTML to ensure proper rendering across different devices. Which attributes should he use in the `<img>` tag to define the desired width and height of the images on the web pages?
+
+- A) Width and height
+- B) Size and dimensions
+- C) Width and size
+- D) Dimensions and height
+
+> **Answer: A**  
+> The `width` and `height` attributes are the correct HTML attributes for specifying image dimensions on an `<img>` tag (e.g., `<img src="chair.jpg" width="400" height="300" alt="Chair">`). Setting both also allows the browser to reserve the correct space in the layout before the image loads, preventing content reflow. Options B, C, and D use non-existent HTML attributes.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** Which element defines the area for drawing lines, shapes and text using JavaScript commands?
+
+- A) `<img>`
+- B) `<picture>`
+- C) `<canvas>`
+- D) `<iframe>`
+
+> **Answer: C**  
+> The `<canvas>` element provides a resolution-dependent bitmap area that can be drawn on with JavaScript via the Canvas 2D API (`getContext('2d')`) or WebGL. It is used to render graphics, animations, charts, and game visuals programmatically. `<img>` and `<picture>` display static or responsive images; `<iframe>` embeds external documents.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** A news site serves hero images. On mobile (viewport ≤ 600 px) it should display a 480 px wide image; on desktop it should display a 1200 px wide image — both in WebP format with JPEG fallbacks. Which HTML5 element is designed for this use case?
 
 - A) `<img srcset="small.jpg 480w, large.jpg 1200w">`
 - B) `<picture>` with multiple `<source>` elements
@@ -715,7 +924,7 @@ A reviewer says nesting `<header>` and `<footer>` inside `<article>` is invalid 
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q42.** A developer writes:
+**Q.** A developer writes:
 
 ```html
 <img src="photo.jpg"
@@ -738,7 +947,7 @@ What does the `sizes` attribute tell the browser?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q43.** An e-commerce page lists product thumbnails. Each thumbnail is always rendered at exactly 200 px wide regardless of viewport. The same image is available at 200 px, 400 px (for 2× Retina), and 600 px (for 3× Retina). Which markup serves the correct resolution to each device?
+**Q.** An e-commerce page lists product thumbnails. Each thumbnail is always rendered at exactly 200 px wide regardless of viewport. The same image is available at 200 px, 400 px (for 2× Retina), and 600 px (for 3× Retina). Which markup serves the correct resolution to each device?
 
 - A) `<img src="thumb-200.jpg" srcset="thumb-400.jpg 2x, thumb-600.jpg 3x" alt="Product">`
 - B) `<img src="thumb-200.jpg" srcset="thumb-400.jpg 400w, thumb-600.jpg 600w" alt="Product">`
@@ -752,7 +961,7 @@ What does the `sizes` attribute tell the browser?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q44.** A developer removes the `alt` attribute entirely from an `<img>` to save bytes. What is the impact?
+**Q.** A developer removes the `alt` attribute entirely from an `<img>` to save bytes. What is the impact?
 
 - A) The browser displays a broken-image icon and announces the file path to screen reader users.
 - B) The image is treated as decorative and screen readers skip it — identical to `alt=""`.
@@ -766,7 +975,7 @@ What does the `sizes` attribute tell the browser?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q45.** A developer wants to defer loading of below-the-fold images so they only load when the user scrolls near them, using a native browser feature and no JavaScript library. Which attribute enables this?
+**Q.** A developer wants to defer loading of below-the-fold images so they only load when the user scrolls near them, using a native browser feature and no JavaScript library. Which attribute enables this?
 
 - A) `<img src="photo.jpg" defer>`
 - B) `<img src="photo.jpg" loading="lazy">`
@@ -792,7 +1001,7 @@ What does the `sizes` attribute tell the browser?
 
 ## 9. Web APIs
 
-**Q46.** A ride-sharing app needs the user\'s current GPS coordinates. The user\'s browser supports the HTML5 Geolocation API. Which JavaScript call correctly retrieves the position once?
+**Q.** A ride-sharing app needs the user\'s current GPS coordinates. The user\'s browser supports the HTML5 Geolocation API. Which JavaScript call correctly retrieves the position once?
 
 - A) `navigator.location.get(callback)`
 - B) `navigator.geolocation.getCurrentPosition(successCallback, errorCallback)`
@@ -830,7 +1039,7 @@ What does the `sizes` attribute tell the browser?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q47.** A project management app allows users to drag tasks between columns. A developer implements drag-and-drop using the HTML5 Drag and Drop API. Which event on the **drop target** must call `event.preventDefault()` to allow a drop?
+**Q.** A project management app allows users to drag tasks between columns. A developer implements drag-and-drop using the HTML5 Drag and Drop API. Which event on the **drop target** must call `event.preventDefault()` to allow a drop?
 
 - A) `dragstart`
 - B) `dragend`
@@ -862,7 +1071,7 @@ What does the `sizes` attribute tell the browser?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q48.** A data-processing web app runs a complex sorting algorithm that freezes the UI for several seconds. A colleague suggests moving it to a Web Worker. What is the primary benefit?
+**Q.** A data-processing web app runs a complex sorting algorithm that freezes the UI for several seconds. A colleague suggests moving it to a Web Worker. What is the primary benefit?
 
 - A) Web Workers allow direct DOM manipulation on a background thread, speeding up rendering.
 - B) Web Workers run scripts on a separate thread, keeping the main (UI) thread responsive while heavy computation executes in the background.
@@ -893,7 +1102,7 @@ self.onmessage = function (e) {
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q49.** A financial trading dashboard streams live price updates from a server. The connection must remain open and push data to the client continuously. Which HTML5 API is purpose-built for this one-way server-to-client streaming?
+**Q.** A financial trading dashboard streams live price updates from a server. The connection must remain open and push data to the client continuously. Which HTML5 API is purpose-built for this one-way server-to-client streaming?
 
 - A) `XMLHttpRequest` with long polling
 - B) `WebSocket`
@@ -929,7 +1138,7 @@ while (true) {
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q50.** A developer uses the HTML5 History API to build a single-page application with bookmarkable URLs. After calling `history.pushState({ page: 2 }, '', '/products')`, the user clicks the browser\'s Back button. Which event fires and where can the state be retrieved?
+**Q.** A developer uses the HTML5 History API to build a single-page application with bookmarkable URLs. After calling `history.pushState({ page: 2 }, '', '/products')`, the user clicks the browser\'s Back button. Which event fires and where can the state be retrieved?
 
 - A) `hashchange` event; state from `location.hash`
 - B) `popstate` event on `window`; state from `event.state`
@@ -959,7 +1168,7 @@ window.addEventListener('popstate', (e) => {
 
 ## 10. Custom Data Attributes
 
-**Q51.** A developer stores product IDs on list items using the `data-*` attribute pattern:
+**Q.** A developer stores product IDs on list items using the `data-*` attribute pattern:
 
 ```html
 <li data-product-id="SKU-9821" data-category="electronics">Laptop</li>
@@ -992,7 +1201,7 @@ How is `data-product-id` accessed in JavaScript?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q52.** A team stores sensitive user data such as credit card numbers in `data-*` attributes to pass them around the DOM. A security reviewer objects. Who is correct, and why?
+**Q.** A team stores sensitive user data such as credit card numbers in `data-*` attributes to pass them around the DOM. A security reviewer objects. Who is correct, and why?
 
 - A) The reviewer is wrong — `data-*` attributes are invisible to users.
 - B) The reviewer is correct — `data-*` attributes are part of the DOM and accessible to any JavaScript running on the page, including malicious scripts injected via XSS.
@@ -1006,7 +1215,7 @@ How is `data-product-id` accessed in JavaScript?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q53.** A developer uses CSS to style a button differently based on its state using a `data-*` attribute. Which CSS selector targets a button where `data-state="active"`?
+**Q.** A developer uses CSS to style a button differently based on its state using a `data-*` attribute. Which CSS selector targets a button where `data-state="active"`?
 
 - A) `button.data-state-active`
 - B) `button[data-state="active"]`
@@ -1034,7 +1243,7 @@ How is `data-product-id` accessed in JavaScript?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q54.** A developer needs to store a multi-word string `"free shipping"` in a `data-*` attribute and retrieve it via `dataset`. What is the correct attribute name so that `element.dataset.shippingType` returns `"free shipping"`?
+**Q.** A developer needs to store a multi-word string `"free shipping"` in a `data-*` attribute and retrieve it via `dataset`. What is the correct attribute name so that `element.dataset.shippingType` returns `"free shipping"`?
 
 - A) `data-shippingType="free shipping"`
 - B) `data-shipping-type="free shipping"`
@@ -1048,7 +1257,7 @@ How is `data-product-id` accessed in JavaScript?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q55.** A developer writes a tooltip library that reads the tooltip text from a `data-tooltip` attribute and creates a `<div>` dynamically. The text is inserted with `innerHTML`. A colleague warns this is dangerous. What is the correct fix?
+**Q.** A developer writes a tooltip library that reads the tooltip text from a `data-tooltip` attribute and creates a `<div>` dynamically. The text is inserted with `innerHTML`. A colleague warns this is dangerous. What is the correct fix?
 
 - A) Use `data-tooltip-safe` instead of `data-tooltip`.
 - B) Sanitise the `data-tooltip` value or use `textContent` / `innerText` instead of `innerHTML` to prevent XSS.
@@ -1073,7 +1282,41 @@ tooltip.textContent = element.dataset.tooltip;
 
 ## 11. Meta & Document Head
 
-**Q56.** A mobile web app\'s layout looks zoomed-out on smartphones, showing the desktop-sized page scaled down. Which `<meta>` tag instructs the browser to match the device\'s screen width and set the initial zoom to 100%?
+**Q.** Alex, a web developer, is working on a new website for a global e-commerce company.
+
+As customers from around the world will visit the website, it is crucial to ensure that the character encoding is specified correctly to support various languages and special characters.
+
+To achieve this, Alex must use the appropriate HTML `<meta>` tag to specify the character encoding for the web page. By doing so, he can ensure that the browser interprets the text on the website correctly, displaying it as intended.
+
+Which HTML `<meta>` tag should Alex use?
+
+- A) `<title>`
+- B) `<meta name="description" />`
+- C) `<meta charset="utf-8">`
+- D) `<lin rel="stylesheet">`
+
+> **Answer: C**  
+> `<meta charset="utf-8">` is the correct HTML5 declaration for specifying UTF-8 character encoding, which supports virtually all characters and languages worldwide. `<title>` sets the page title displayed in the browser tab — it has nothing to do with encoding. `<meta name="description">` provides a summary for search engines. `<lin rel="stylesheet">` is a typo of `<link rel="stylesheet">` and is used to link external CSS files, not to set encoding.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** Which syntax of meta charset is correct for HTML5?
+
+- A) `<meta http-equiv="Content" content="text/html; charset=utf-8" />`
+- B) `<meta http-equiv="Content-Type" charset=utf-8" />`
+- C) `<meta charset="utf-8">`
+- D) `<meta equiv="Content" content="text/html; charset=utf-8" />`
+
+> **Answer: C**  
+> HTML5 introduced the simplified `<meta charset="UTF-8">` declaration. The older HTML4/XHTML form (option B) using `http-equiv="Content-Type"` is valid but verbose and unnecessary in HTML5. Option A uses a wrong `http-equiv` value (`"Content"` instead of `"Content-Type"`), and option D uses `equiv` instead of the correct `http-equiv` attribute.
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** A mobile web app\'s layout looks zoomed-out on smartphones, showing the desktop-sized page scaled down. Which `<meta>` tag instructs the browser to match the device\'s screen width and set the initial zoom to 100%?
 
 - A) `<meta name="mobile" content="width=device, zoom=1">`
 - B) `<meta name="viewport" content="width=device-width, initial-scale=1">`
@@ -1100,7 +1343,7 @@ tooltip.textContent = element.dataset.tooltip;
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q57.** A developer wants to load a third-party analytics script without blocking HTML parsing, but the script depends on the fully parsed DOM. Which `<script>` attribute should be used?
+**Q.** A developer wants to load a third-party analytics script without blocking HTML parsing, but the script depends on the fully parsed DOM. Which `<script>` attribute should be used?
 
 - A) `async`
 - B) `defer`
@@ -1125,7 +1368,7 @@ tooltip.textContent = element.dataset.tooltip;
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q58.** A developer wants to hint to the browser to establish a connection to `https://api.example.com` early — before any actual fetch is made — to reduce latency. Which `<link>` relationship achieves this?
+**Q.** A developer wants to hint to the browser to establish a connection to `https://api.example.com` early — before any actual fetch is made — to reduce latency. Which `<link>` relationship achieves this?
 
 - A) `<link rel="prefetch" href="https://api.example.com">`
 - B) `<link rel="preload" href="https://api.example.com" as="fetch">`
@@ -1150,7 +1393,7 @@ tooltip.textContent = element.dataset.tooltip;
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q59.** A developer sets the following `<meta>` tag to prevent search engines from indexing a staging site:
+**Q.** A developer sets the following `<meta>` tag to prevent search engines from indexing a staging site:
 
 ```html
 <meta name="robots" content="noindex, nofollow">
@@ -1170,7 +1413,7 @@ A colleague says this is unreliable because Google can still index the page. Und
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q60.** A developer wants shareable links to their news article to show a rich preview card (title, description, image) when posted on social media. Which set of `<meta>` tags is responsible for this?
+**Q.** A developer wants shareable links to their news article to show a rich preview card (title, description, image) when posted on social media. Which set of `<meta>` tags is responsible for this?
 
 - A) `<meta name="keywords">` and `<meta name="description">`
 - B) Open Graph tags — `<meta property="og:title">`, `<meta property="og:description">`, `<meta property="og:image">`
@@ -1202,7 +1445,7 @@ A colleague says this is unreliable because Google can still index the page. Und
 
 ## 12. SVG
 
-**Q61.** A company logo must remain crisp at every screen resolution and be styleable with CSS (colour changes on hover). A developer is choosing between embedding the logo as a PNG, a `<canvas>` drawing, or inline SVG. Which approach is best suited?
+**Q.** A company logo must remain crisp at every screen resolution and be styleable with CSS (colour changes on hover). A developer is choosing between embedding the logo as a PNG, a `<canvas>` drawing, or inline SVG. Which approach is best suited?
 
 - A) PNG — it is universally supported and requires no extra markup.
 - B) `<canvas>` — it renders at any resolution without quality loss.
@@ -1216,7 +1459,7 @@ A colleague says this is unreliable because Google can still index the page. Und
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q62.** An icon library defines reusable SVG shapes with `<symbol>` and references them with `<use>`. A developer writes:
+**Q.** An icon library defines reusable SVG shapes with `<symbol>` and references them with `<use>`. A developer writes:
 
 ```html
 <svg style="display:none">
@@ -1243,7 +1486,7 @@ What is the primary benefit of this pattern?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q63.** A developer embeds an SVG with the following `viewBox`:
+**Q.** A developer embeds an SVG with the following `viewBox`:
 
 ```html
 <svg viewBox="0 0 100 50" width="400" height="200">
@@ -1265,7 +1508,7 @@ What does `viewBox="0 0 100 50"` define?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q64.** A developer compares two approaches for displaying a search icon button:
+**Q.** A developer compares two approaches for displaying a search icon button:
 
 ```html
 <!-- A -->
@@ -1295,7 +1538,7 @@ Which approach is preferred and why?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q65.** A developer adds a CSS animation to an inline SVG path to draw a loading spinner. The animation uses `stroke-dashoffset`. Which statement correctly describes SVG versus Canvas for this scenario?
+**Q.** A developer adds a CSS animation to an inline SVG path to draw a loading spinner. The animation uses `stroke-dashoffset`. Which statement correctly describes SVG versus Canvas for this scenario?
 
 - A) Canvas is better because CSS animations cannot target SVG elements.
 - B) SVG is better because individual SVG elements are DOM nodes that CSS transitions and animations can target directly; Canvas pixels have no DOM representation.
@@ -1311,7 +1554,7 @@ Which approach is preferred and why?
 
 ## 13. WebSocket API
 
-**Q66.** A multiplayer game needs the server to push position updates to all connected players, and each player\'s browser must simultaneously send its own position back to the server — all in real time with minimal latency. Which HTML5 API is the correct choice?
+**Q.** A multiplayer game needs the server to push position updates to all connected players, and each player\'s browser must simultaneously send its own position back to the server — all in real time with minimal latency. Which HTML5 API is the correct choice?
 
 - A) Server-Sent Events (`EventSource`) — it is built for real-time server push.
 - B) `fetch` with `keepalive: true` — it maintains a persistent connection.
@@ -1325,7 +1568,7 @@ Which approach is preferred and why?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q67.** A WebSocket client connects using `ws://chat.example.com/socket`. A security engineer flags the connection as insecure. What is the correct fix and why?
+**Q.** A WebSocket client connects using `ws://chat.example.com/socket`. A security engineer flags the connection as insecure. What is the correct fix and why?
 
 - A) Use `wss://chat.example.com/socket` — `wss` tunnels WebSocket traffic through TLS, encrypting data in transit.
 - B) Add `secure="true"` to the `WebSocket` constructor options.
@@ -1348,7 +1591,7 @@ const socket = new WebSocket('wss://chat.example.com/socket');
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q68.** A developer opens a WebSocket and needs to handle incoming messages, connection errors, and clean closure. Which set of event handlers covers all three?
+**Q.** A developer opens a WebSocket and needs to handle incoming messages, connection errors, and clean closure. Which set of event handlers covers all three?
 
 - A) `socket.ondata`, `socket.onfail`, `socket.ondone`
 - B) `socket.onmessage`, `socket.onerror`, `socket.onclose`
@@ -1372,7 +1615,7 @@ socket.onclose   = (e) => console.log('Closed, code:', e.code);
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q69.** A developer sends an object over a WebSocket:
+**Q.** A developer sends an object over a WebSocket:
 
 ```javascript
 const socket = new WebSocket('wss://example.com/ws');
@@ -1410,7 +1653,7 @@ socket.onmessage = (e) => {
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q70.** A WebSocket-based chat app sends the user\'s session token as a query parameter: `wss://example.com/ws?token=eyJhbGci...`. A security reviewer objects. What is the primary concern and the recommended alternative?
+**Q.** A WebSocket-based chat app sends the user\'s session token as a query parameter: `wss://example.com/ws?token=eyJhbGci...`. A security reviewer objects. What is the primary concern and the recommended alternative?
 
 - A) Query parameters are encrypted by `wss://`, so there is no concern.
 - B) Query parameters appear in server access logs, browser history, and referrer headers, potentially exposing the token. The recommended alternative is to send the token in the first WebSocket message after the connection opens, or use a short-lived ticket issued by the server over HTTPS.
@@ -1426,7 +1669,7 @@ socket.onmessage = (e) => {
 
 ## 14. IFrame & Sandbox
 
-**Q71.** A content management platform embeds third-party widgets using `<iframe>`. A security auditor recommends adding the `sandbox` attribute with no value:
+**Q.** A content management platform embeds third-party widgets using `<iframe>`. A security auditor recommends adding the `sandbox` attribute with no value:
 
 ```html
 <iframe src="https://widget.example.com" sandbox></iframe>
@@ -1446,7 +1689,7 @@ What restrictions does a value-less `sandbox` apply?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q72.** An embedded payment iframe must be able to submit a form but must not be allowed to run JavaScript or open popups. Which `sandbox` value is correct?
+**Q.** An embedded payment iframe must be able to submit a form but must not be allowed to run JavaScript or open popups. Which `sandbox` value is correct?
 
 - A) `sandbox="allow-scripts allow-forms"`
 - B) `sandbox="allow-forms"`
@@ -1460,7 +1703,7 @@ What restrictions does a value-less `sandbox` apply?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q73.** A developer adds `sandbox="allow-scripts allow-same-origin"` to an iframe loading content from the same origin as the parent page. A colleague warns this is dangerous. Why?
+**Q.** A developer adds `sandbox="allow-scripts allow-same-origin"` to an iframe loading content from the same origin as the parent page. A colleague warns this is dangerous. Why?
 
 - A) It is not dangerous — same-origin content should always be trusted.
 - B) Combining `allow-scripts` with `allow-same-origin` allows the sandboxed content to access `document.cookie`, `localStorage`, and the parent\'s DOM via `parent.document`, effectively bypassing the sandbox entirely.
@@ -1474,7 +1717,7 @@ What restrictions does a value-less `sandbox` apply?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q74.** A media article embeds dozens of YouTube iframes below the fold. Page load performance is poor because all iframes load immediately. Which HTML5 attribute defers iframe loading until the user scrolls near them, with no JavaScript required?
+**Q.** A media article embeds dozens of YouTube iframes below the fold. Page load performance is poor because all iframes load immediately. Which HTML5 attribute defers iframe loading until the user scrolls near them, with no JavaScript required?
 
 - A) `<iframe src="..." defer>`
 - B) `<iframe src="..." async>`
@@ -1505,7 +1748,30 @@ What restrictions does a value-less `sandbox` apply?
 
 ## 15. Progress, Meter, Time & Dialog
 
-**Q75.** A file upload UI must show a progress bar that reflects the percentage of bytes uploaded. While the upload is in progress but the total size is unknown, the bar should display an animated indeterminate state. Which markup produces the indeterminate state?
+**Q.** Which form element displays an indicator to show the completion percentage of a particular tasks?
+
+- A) `<progress>`
+- B) `<process>` 
+- C) `<output>`
+- D) `<meter>`
+
+> **Answer: A**  
+> `<progress>` is the HTML5 element purpose-built to display task completion progress. It accepts `value` (current progress) and `max` (total) attributes to render a determinate bar. `<process>` is not a valid HTML element. `<output>` displays the result of a calculation. `<meter>` represents a scalar measurement within a known range (e.g. disk usage) — not task completion.
+
+**Example:**
+```html
+<!-- Determinate — 60% complete -->
+<progress value="60" max="100"></progress>
+
+<!-- Indeterminate — total unknown, shows animated bar -->
+<progress></progress>
+```
+
+<div align="right">
+    <b><a href="#table-of-contents">↥ back to top</a></b>
+</div>
+
+**Q.** A file upload UI must show a progress bar that reflects the percentage of bytes uploaded. While the upload is in progress but the total size is unknown, the bar should display an animated indeterminate state. Which markup produces the indeterminate state?
 
 - A) `<progress value="0" max="100"></progress>`
 - B) `<progress></progress>` — omitting the `value` attribute
@@ -1528,7 +1794,7 @@ What restrictions does a value-less `sandbox` apply?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q76.** A server dashboard shows disk usage. The developer must choose between `<progress>` and `<meter>` for the display. The disk is 60 % full — considered high but not critical; values above 80 % are dangerous. Which element is semantically correct and which attributes communicate the threshold levels?
+**Q.** A server dashboard shows disk usage. The developer must choose between `<progress>` and `<meter>` for the display. The disk is 60 % full — considered high but not critical; values above 80 % are dangerous. Which element is semantically correct and which attributes communicate the threshold levels?
 
 - A) `<progress>` — it natively supports `low`, `high`, and `optimum` attributes for thresholds.
 - B) `<meter value="60" min="0" max="100" low="30" high="80" optimum="10">60%</meter>` — `<meter>` represents a scalar measurement within a known range and supports threshold attributes.
@@ -1549,7 +1815,7 @@ What restrictions does a value-less `sandbox` apply?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q77.** A news article displays its publication date as `"April 13, 2026"`. A developer wants search engines and screen readers to interpret the date programmatically. Which markup is correct?
+**Q.** A news article displays its publication date as `"April 13, 2026"`. A developer wants search engines and screen readers to interpret the date programmatically. Which markup is correct?
 
 - A) `<date>April 13, 2026</date>`
 - B) `<span class="date">April 13, 2026</span>`
@@ -1572,7 +1838,7 @@ What restrictions does a value-less `sandbox` apply?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q78.** A mortgage calculator form has two number inputs (`principal` and `rate`) and must display the computed monthly payment in a read-only field that is semantically associated with the form. Which HTML5 element is purpose-built for this?
+**Q.** A mortgage calculator form has two number inputs (`principal` and `rate`) and must display the computed monthly payment in a read-only field that is semantically associated with the form. Which HTML5 element is purpose-built for this?
 
 - A) `<input type="text" readonly>`
 - B) `<span id="result"></span>`
@@ -1595,7 +1861,7 @@ What restrictions does a value-less `sandbox` apply?
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q79.** A developer includes the following in the HTML:
+**Q.** A developer includes the following in the HTML:
 
 ```html
 <template id="card-tpl">
@@ -1629,7 +1895,7 @@ document.getElementById('container').appendChild(clone);
     <b><a href="#table-of-contents">↥ back to top</a></b>
 </div>
 
-**Q80.** A web app needs a modal confirmation dialog. Previously the team used a `<div>` overlay with ARIA roles. HTML5.2 introduced a native element for this. Which element and method correctly open a modal dialog that traps focus and adds an `::backdrop` overlay?
+**Q.** A web app needs a modal confirmation dialog. Previously the team used a `<div>` overlay with ARIA roles. HTML5.2 introduced a native element for this. Which element and method correctly open a modal dialog that traps focus and adds an `::backdrop` overlay?
 
 - A) `<dialog open>` with no JavaScript needed.
 - B) `<dialog>` element opened with `dialogElement.showModal()` — this renders it as a modal, adds the native `::backdrop`, and traps focus within the dialog.
